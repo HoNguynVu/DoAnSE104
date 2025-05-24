@@ -32,7 +32,7 @@ namespace DoAnSE104.DAL
 
         public bool ThemBenhNhan(DTO_BenhNhan BenhNhan)
         {
-            string query = "INSERT INTO BenhNhan (MaBenhNhan, HoTen, GioiTinh, NamSinh, DiaChi) " +
+            string query = "INSERT INTO BENHNHAN (MaBenhNhan, HoTen, GioiTinh, NamSinh, DiaChi) " +
                            "VALUES (@MaBenhNhan, @HoTen, @GioiTinh, @NamSinh, @DiaChi)";
 
             MySqlParameter[] parameters = new MySqlParameter[]

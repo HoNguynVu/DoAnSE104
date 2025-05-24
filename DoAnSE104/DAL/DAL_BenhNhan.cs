@@ -14,7 +14,7 @@ namespace DoAnSE104.DAL
         DatabaseHelper DatabaseHelper = new DatabaseHelper();
         public List<DTO_BenhNhan> LayDanhSachBenhNhan()
         {
-            string query = "SELECT * FROM BenhNhan";
+            string query = "SELECT * FROM BENHNHAN";
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
             List<DTO_BenhNhan> DanhSachBenhNhan = new List<DTO_BenhNhan>();
             foreach (DataRow row in dt.Rows)
@@ -45,6 +45,27 @@ namespace DoAnSE104.DAL
             };
 
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
+        }
+
+        public string LayMaBenhNhanMoi()
+        {
+            string query = "SELECT MAX(MaBenhNhan) FROM BENHNHAN";
+            object result = DatabaseHelper.ExecuteScalar(query);
+
+           
+            if (result == DBNull.Value || result == null)
+                return "BN001";
+
+            string maCuoi = result.ToString(); 
+
+            
+            int so;
+            if (int.TryParse(maCuoi.Substring(2), out so))
+            {
+                so += 1;
+                return "BN" + so.ToString("D3"); 
+            }
+            return "BN001";
         }
     }
 }

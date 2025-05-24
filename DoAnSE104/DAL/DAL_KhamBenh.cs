@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
 using DoAnSE104.DTO;
+using System.Diagnostics.Eventing.Reader;
 
 namespace DoAnSE104.DAL
 {
@@ -16,7 +17,7 @@ namespace DoAnSE104.DAL
         {
             string query = "SELECT * FROM KhamBenh";
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
-            List<DTO.DTO_KhamBenh> DanhSachKhamBenh = new List<DTO.DTO_KhamBenh>();
+            List<DTO_KhamBenh> DanhSachKhamBenh = new List<DTO_KhamBenh>();
             foreach (DataRow row in dt.Rows)
             {
                 string maKhamBenh = row["MaKhamBenh"].ToString();
@@ -24,24 +25,25 @@ namespace DoAnSE104.DAL
                 string maBenhNhan = row["MaBenhNhan"].ToString();
                 string trieuChung = row["TrieuChung"].ToString();
                 string maLoaiBenh = row["MaLoaiBenh"].ToString();
-                DTO.DTO_KhamBenh khamBenh = new DTO.DTO_KhamBenh(maKhamBenh, ngayKham, maBenhNhan, trieuChung, maLoaiBenh);
+                DTO_KhamBenh khamBenh = new DTO_KhamBenh(maKhamBenh, ngayKham, maBenhNhan, trieuChung, maLoaiBenh);
                 DanhSachKhamBenh.Add(khamBenh);
             }
             return DanhSachKhamBenh;
         }
         public string LayMaKhamBenhMoi()
         {
-            string query = "SELECT MaKhamBenh FROM KHAMBENH ORDER BY MaKhamBenh DESC LIMIT 1";
-            DataTable result = DatabaseHelper.ExecuteQuery(query);
-            if(result.Rows.Count > 0)
+            string query = "SELECT MAX(MaKhamBenh) AS MaKhamBenh FROM KHAMBENH";
+            object result = DatabaseHelper.ExecuteScalar(query);
+            if (result == DBNull.Value || result == null)
+                return "KB001";
+            string maCuoi = result.ToString();
+            int soMoi;
+            if(int.TryParse(maCuoi.Substring(2), out soMoi))
             {
-                return "KB001"; // Neu chua co kham benh nao, tra ve ma mac dinh
+                soMoi++;
+                return "KB" + soMoi.ToString("D3");
             }
-            string MaKhamBenh_prev = result.Rows[0]["MaKhamBenh"].ToString();
-            int soMoi = int.Parse(MaKhamBenh_prev.Substring(2)) + 1;
-            return "KB" + soMoi.ToString("D3");
-
-
+            return "KB001";
         }
         public bool ThemKhamBenh(DTO_KhamBenh newKhamBenh)
         {
@@ -55,6 +57,17 @@ namespace DoAnSE104.DAL
             };
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
         }
+        public bool CapNhatKhamBenh(string maKhamBenh, string maLoaiBenh, string trieuChung)
+        {
+            string query = "UPDATE KhamBenh SET MaLoaiBenh = @maLoaiBenh, TrieuChung = @trieuChung WHERE MaKhamBenh = @maKhamBenh";
 
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                new MySqlParameter("@maLoaiBenh", maLoaiBenh),
+                new MySqlParameter("@trieuChung", trieuChung),
+                new MySqlParameter("@maKhamBenh", maKhamBenh)
+            };
+            return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
+        }
     }
 }

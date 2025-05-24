@@ -15,7 +15,7 @@ namespace DoAnSE104.DAL
         {
             return new MySqlConnection(connectionString);
         }
-        public DataTable ExecuteQuery(string query)
+        public DataTable ExecuteQuery(string query) //truy vấn trả về bảng dữ liệu (select...)
         {
             using (var conn = GetConnection())
             {
@@ -28,7 +28,7 @@ namespace DoAnSE104.DAL
             }
         }
 
-        public int ExecuteNonQuery(string query)
+        public int ExecuteNonQuery(string query) //truy vấn không trả về giá trị nào (insert, update, delete...)
         {
             using (var conn = GetConnection())
             {
@@ -37,7 +37,21 @@ namespace DoAnSE104.DAL
                 return cmd.ExecuteNonQuery();
             }
         }
-        public int ExecuteNonQuery(string query, MySqlParameter[] parameters)
+
+        public object ExecuteScalar(string query) //truy vấn trả về 1 giá trị duy nhất (count, max, min...)
+        {
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    return cmd.ExecuteScalar();
+                }
+            }
+        }
+
+
+        public int ExecuteNonQuery(string query, MySqlParameter[] parameters) //truy vấn không trả về giá trị nào (insert, update, delete...)
         {
             using (MySqlConnection conn = GetConnection())
             {

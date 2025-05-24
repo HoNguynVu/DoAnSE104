@@ -46,7 +46,5 @@ namespace DoAnSE104.DAL
 
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
         }
-
-
     }
 }

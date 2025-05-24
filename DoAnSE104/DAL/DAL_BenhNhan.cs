@@ -29,5 +29,6 @@ namespace DoAnSE104.DAL
             }
             return DanhSachBenhNhan;
         }
+        HashSet<string> MaBenhNhanSet = new HashSet<string>();
     }
 }

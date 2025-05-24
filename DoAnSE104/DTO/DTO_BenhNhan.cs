@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace DoAnSE104.DTO
 {
-    internal class DTO_BenhNhan
+    public class DTO_BenhNhan
     {
+        private string MaBenhNhan;
+        private string HoTen;
+        private string GioiTinh;
+        private DateTime NamSinh;
+        private string DiaChi;
+        public string maBenhNhan { get => MaBenhNhan; set => MaBenhNhan = value; }
+        public string hoTen { get => HoTen; set => HoTen = value; }
+        public string gioiTinh { get => GioiTinh; set => GioiTinh = value; }
+        public DateTime namSinh { get => NamSinh; set => NamSinh = value; }
+        public string diaChi { get => DiaChi; set => DiaChi = value; }
+        public DTO_BenhNhan(string maBenhNhan, string hoTen, string gioiTinh, DateTime namSinh, string diaChi)
+        {
+            this.MaBenhNhan = maBenhNhan;
+            this.HoTen = hoTen;
+            this.GioiTinh = gioiTinh;
+            this.NamSinh = namSinh;
+            this.DiaChi = diaChi;
+        }
     }
 }

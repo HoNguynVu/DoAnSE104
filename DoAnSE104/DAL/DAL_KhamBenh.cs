@@ -69,5 +69,19 @@ namespace DoAnSE104.DAL
             };
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
         }
+        public List<string> LayDanhSachMaKhamBenh()
+        {
+            string query = "SELECT MaKhamBenh FROM KHAMBENH ORDER BY CAST(SUBSTRING(MaKhamBenh, 3) AS UNSIGNED) ASC";
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query);
+            List<string> danhSach = new List<string>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                danhSach.Add(row["MaKhamBenh"].ToString());
+            }
+
+            return danhSach;
+        }
     }
 }

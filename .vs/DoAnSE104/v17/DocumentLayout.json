@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\SE104\\DoAnSE104\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\se104\\doanse104\\doanse104\\dal\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\se104\\doanse104\\doanse104\\dal\\dal_benhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_benhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dto\\dto_benhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dto\\dto_benhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dto\\dto_ctkhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dto\\dto_ctkhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dto\\dto_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dto\\dto_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dto\\dto_cachdung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dto\\dto_cachdung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,63 +35,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DatabaseHelper.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DatabaseHelper.cs",
+              "RelativeToolTip": "DoAnSE104\\DAL\\DatabaseHelper.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAkwBUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T04:26:52.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DAL_BenhNhan.cs",
               "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_BenhNhan.cs",
               "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_BenhNhan.cs",
               "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_BenhNhan.cs",
               "RelativeToolTip": "DoAnSE104\\DAL\\DAL_BenhNhan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAqwDIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T03:45:34.399Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DTO_HoaDon.cs",
-              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_HoaDon.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\DTO\\DTO_HoaDon.cs",
-              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_HoaDon.cs",
-              "RelativeToolTip": "DoAnSE104\\DTO\\DTO_HoaDon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T03:45:07.867Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DTO_CTKhamBenh.cs",
-              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_CTKhamBenh.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\DTO\\DTO_CTKhamBenh.cs",
-              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_CTKhamBenh.cs",
-              "RelativeToolTip": "DoAnSE104\\DTO\\DTO_CTKhamBenh.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T03:45:07.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DTO_CachDung.cs",
-              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_CachDung.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\DTO\\DTO_CachDung.cs",
-              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_CachDung.cs",
-              "RelativeToolTip": "DoAnSE104\\DTO\\DTO_CachDung.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T03:45:06.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DTO_BenhNhan.cs",
-              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_BenhNhan.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\DTO\\DTO_BenhNhan.cs",
-              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_BenhNhan.cs",
-              "RelativeToolTip": "DoAnSE104\\DTO\\DTO_BenhNhan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T03:44:56.5Z"
             }
           ]
         }

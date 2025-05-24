@@ -52,6 +52,5 @@ namespace DoAnSE104.DAL
                 }
             }
         }
-
     }
 }

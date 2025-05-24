@@ -43,7 +43,6 @@ namespace DoAnSE104.DAL
             }
         }
 
-
         public int ExecuteNonQuery(string query) //truy vấn không trả về giá trị nào (insert, update, delete...)
         {
             using (var conn = GetConnection())
@@ -61,6 +60,22 @@ namespace DoAnSE104.DAL
                 conn.Open();
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
+                    return cmd.ExecuteScalar();
+                }
+            }
+        }
+
+        public object ExcuteScalar(string query, MySqlParameter[] parameters) //truy vấn trả về 1 giá trị duy nhất (count, max, min...)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    if (parameters != null)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
                     return cmd.ExecuteScalar();
                 }
             }

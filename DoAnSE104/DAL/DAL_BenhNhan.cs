@@ -47,6 +47,29 @@ namespace DoAnSE104.DAL
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
         }
 
+        public string LayMaBenhNhanMoi()
+        {
+            string query = "SELECT MAX(MaBenhNhan) FROM BenhNhan";
+            object result = DatabaseHelper.ExecuteScalar(query);
+
+           
+            if (result == DBNull.Value || result == null)
+                return "BN001";
+
+            string maCuoi = result.ToString(); 
+
+            
+            int so;
+            if (int.TryParse(maCuoi.Substring(2), out so))
+            {
+                so += 1;
+                return "BN" + so.ToString("D3"); 
+            }
+
+           
+            return "BN001";
+        }
+
 
     }
 }

@@ -98,7 +98,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\DAL_BenhNhan.cs" />
     <Compile Include="DAL\DatabaseHelper.cs" />
+    <Compile Include="DTO\DTO_BenhNhan.cs" />
+    <Compile Include="DTO\DTO_CachDung.cs" />
+    <Compile Include="DTO\DTO_CTKhamBenh.cs" />
+    <Compile Include="DTO\DTO_DonVi.cs" />
+    <Compile Include="DTO\DTO_HoaDon.cs" />
+    <Compile Include="DTO\DTO_KhamBenh.cs" />
+    <Compile Include="DTO\DTO_LoaiBenh.cs" />
+    <Compile Include="DTO\DTO_LoaiThuoc.cs" />
+    <Compile Include="DTO\DTO_ThamSo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,7 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BUS\" />
-    <Folder Include="DTO\" />
     <Folder Include="GUI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

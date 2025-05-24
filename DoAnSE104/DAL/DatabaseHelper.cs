@@ -37,5 +37,21 @@ namespace DoAnSE104.DAL
                 return cmd.ExecuteNonQuery();
             }
         }
+        public int ExecuteNonQuery(string query, MySqlParameter[] parameters)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    if (parameters != null)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

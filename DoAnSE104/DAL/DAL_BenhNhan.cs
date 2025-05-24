@@ -30,6 +30,21 @@ namespace DoAnSE104.DAL
             return DanhSachBenhNhan;
         }
 
-        
+        public bool ThemBenhNhan(DTO_BenhNhan BenhNhan)
+        {
+            string query = "INSERT INTO BenhNhan (MaBenhNhan, HoTen, GioiTinh, NamSinh, DiaChi) " +
+                           "VALUES (@MaBenhNhan, @HoTen, @GioiTinh, @NamSinh, @DiaChi)";
+
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                new MySqlParameter("@MaBenhNhan", BenhNhan.maBenhNhan),
+                new MySqlParameter("@HoTen", BenhNhan.hoTen),
+                new MySqlParameter("@GioiTinh", BenhNhan.gioiTinh),
+                new MySqlParameter("@NamSinh", BenhNhan.namSinh),
+                new MySqlParameter("@DiaChi", BenhNhan.diaChi)
+            };
+
+            return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
+        }
     }
 }

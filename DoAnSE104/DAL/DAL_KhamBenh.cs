@@ -15,7 +15,7 @@ namespace DoAnSE104.DAL
         DatabaseHelper DatabaseHelper = new DatabaseHelper();
         public List<DTO_KhamBenh> LayDanhSachKhamBenh()
         {
-            string query = "SELECT * FROM KhamBenh";
+            string query = "SELECT * FROM KHAMBENH";
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
             List<DTO_KhamBenh> DanhSachKhamBenh = new List<DTO_KhamBenh>();
             foreach (DataRow row in dt.Rows)
@@ -68,6 +68,20 @@ namespace DoAnSE104.DAL
                 new MySqlParameter("@maKhamBenh", maKhamBenh)
             };
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
+        }
+        public List<string> LayDanhSachMaKhamBenh()
+        {
+            string query = "SELECT MaKhamBenh FROM KHAMBENH ORDER BY CAST(SUBSTRING(MaKhamBenh, 3) AS UNSIGNED) ASC";
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query);
+            List<string> danhSach = new List<string>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                danhSach.Add(row["MaKhamBenh"].ToString());
+            }
+
+            return danhSach;
         }
     }
 }

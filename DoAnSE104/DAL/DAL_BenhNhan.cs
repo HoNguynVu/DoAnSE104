@@ -14,7 +14,7 @@ namespace DoAnSE104.DAL
         DatabaseHelper DatabaseHelper = new DatabaseHelper();
         public List<DTO_BenhNhan> LayDanhSachBenhNhan()
         {
-            string query = "SELECT * FROM BenhNhan";
+            string query = "SELECT * FROM BENHNHAN";
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
             List<DTO_BenhNhan> DanhSachBenhNhan = new List<DTO_BenhNhan>();
             foreach (DataRow row in dt.Rows)
@@ -32,7 +32,7 @@ namespace DoAnSE104.DAL
 
         public bool ThemBenhNhan(DTO_BenhNhan BenhNhan)
         {
-            string query = "INSERT INTO BenhNhan (MaBenhNhan, HoTen, GioiTinh, NamSinh, DiaChi) " +
+            string query = "INSERT INTO BENHNHAN (MaBenhNhan, HoTen, GioiTinh, NamSinh, DiaChi) " +
                            "VALUES (@MaBenhNhan, @HoTen, @GioiTinh, @NamSinh, @DiaChi)";
 
             MySqlParameter[] parameters = new MySqlParameter[]
@@ -49,7 +49,7 @@ namespace DoAnSE104.DAL
 
         public string LayMaBenhNhanMoi()
         {
-            string query = "SELECT MAX(MaBenhNhan) FROM BenhNhan";
+            string query = "SELECT MAX(MaBenhNhan) FROM BENHNHAN";
             object result = DatabaseHelper.ExecuteScalar(query);
 
            

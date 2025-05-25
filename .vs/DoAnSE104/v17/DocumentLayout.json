@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\SE104\\DoAnSE104\\",
+  "WorkspaceRootPath": "D:\\SoftwareTechnology\\Code\\",
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dal\\dal_doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -52,6 +52,32 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "D:\\SoftwareTechnology\\Code\\DoAnSE104\\Form2.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\Form2.cs",
+              "ToolTip": "D:\\SoftwareTechnology\\Code\\DoAnSE104\\Form2.cs",
+              "RelativeToolTip": "DoAnSE104\\Form2.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADgvxUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T18:01:41.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\SoftwareTechnology\\Code\\DoAnSE104\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\Form1.Designer.cs",
+              "ToolTip": "D:\\SoftwareTechnology\\Code\\DoAnSE104\\Form1.Designer.cs",
+              "RelativeToolTip": "DoAnSE104\\Form1.Designer.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T17:47:49.184Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"

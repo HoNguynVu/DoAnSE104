@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -147,6 +147,12 @@
               "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_ThamSo.cs",
               "RelativeToolTip": "DoAnSE104\\DAL\\DAL_ThamSo.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAcwEkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\SoftwareTechnology\\Code\\DoAnSE104\\Form1.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\Form1.cs",
+              "ToolTip": "D:\\SoftwareTechnology\\Code\\DoAnSE104\\Form1.cs [Design]",
+              "RelativeToolTip": "DoAnSE104\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T07:09:57.502Z"
             },

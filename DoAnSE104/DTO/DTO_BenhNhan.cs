@@ -11,14 +11,14 @@ namespace DoAnSE104.DTO
         private string MaBenhNhan;
         private string HoTen;
         private string GioiTinh;
-        private DateTime NamSinh;
+        private int NamSinh;
         private string DiaChi;
         public string maBenhNhan { get => MaBenhNhan; set => MaBenhNhan = value; }
         public string hoTen { get => HoTen; set => HoTen = value; }
         public string gioiTinh { get => GioiTinh; set => GioiTinh = value; }
-        public DateTime namSinh { get => NamSinh; set => NamSinh = value; }
+        public int namSinh { get => NamSinh; set => NamSinh = value; }
         public string diaChi { get => DiaChi; set => DiaChi = value; }
-        public DTO_BenhNhan(string maBenhNhan, string hoTen, string gioiTinh, DateTime namSinh, string diaChi)
+        public DTO_BenhNhan(string maBenhNhan, string hoTen, string gioiTinh, int namSinh, string diaChi)
         {
             this.MaBenhNhan = maBenhNhan;
             this.HoTen = hoTen;

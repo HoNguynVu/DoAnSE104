@@ -1,18 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\",
+  "WorkspaceRootPath": "D:\\SE104\\DoAnSE104\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\nh\u1EADp m\u00F4n c\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\doanse104\\doanse104\\dal\\dal_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\se104\\doanse104\\doanse104\\dal\\dal_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dal\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\se104\\doanse104\\doanse104\\dal\\dal_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\nh\u1EADp m\u00F4n c\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\doanse104\\doanse104\\dto\\dto_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dto\\dto_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dal\\dal_tracuu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_tracuu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\nh\u1EADp m\u00F4n c\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\doanse104\\doanse104\\dal\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dal\\dal_doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dto\\dto_benhnhantracuu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dto\\dto_benhnhantracuu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dal\\dal_ctkhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_ctkhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dal\\dal_thamso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_thamso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dto\\dto_thamso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dto\\dto_thamso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\doanse104\\dto\\dto_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dto\\dto_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,90 +50,142 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DAL_KhamBenh.cs",
-              "DocumentMoniker": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\DAL\\DAL_KhamBenh.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_KhamBenh.cs",
-              "ToolTip": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\DAL\\DAL_KhamBenh.cs",
-              "RelativeToolTip": "DoAnSE104\\DAL\\DAL_KhamBenh.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAYwAkAAAAAAAAAAAAAAA==",
+              "Title": "DAL_HoaDon.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_HoaDon.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_HoaDon.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_HoaDon.cs",
+              "RelativeToolTip": "DoAnSE104\\DAL\\DAL_HoaDon.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAhwEIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T04:09:36.733Z",
+              "WhenOpened": "2025-05-24T08:06:38.324Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DAL_TraCuu.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_TraCuu.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_TraCuu.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_TraCuu.cs",
+              "RelativeToolTip": "DoAnSE104\\DAL\\DAL_TraCuu.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAQwG0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T07:43:05.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DTO_BenhNhanTraCuu.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_BenhNhanTraCuu.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DTO\\DTO_BenhNhanTraCuu.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_BenhNhanTraCuu.cs",
+              "RelativeToolTip": "DoAnSE104\\DTO\\DTO_BenhNhanTraCuu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T07:36:43.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DAL_DoanhThu.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_DoanhThu.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_DoanhThu.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_DoanhThu.cs",
+              "RelativeToolTip": "DoAnSE104\\DAL\\DAL_DoanhThu.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAawCUAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T07:25:52.727Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DTO_KhamBenh.cs",
-              "DocumentMoniker": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\DTO\\DTO_KhamBenh.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\DTO\\DTO_KhamBenh.cs",
-              "ToolTip": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\DTO\\DTO_KhamBenh.cs",
-              "RelativeToolTip": "DoAnSE104\\DTO\\DTO_KhamBenh.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBoAAAAWAAAAAAAAAA==",
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DatabaseHelper.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DatabaseHelper.cs*",
+              "RelativeToolTip": "DoAnSE104\\DAL\\DatabaseHelper.cs*",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAhwC4AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T02:54:36.071Z",
+              "WhenOpened": "2025-05-24T04:26:52.484Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\DAL\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DatabaseHelper.cs",
-              "ToolTip": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\DAL\\DatabaseHelper.cs",
-              "RelativeToolTip": "DoAnSE104\\DAL\\DatabaseHelper.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAA5wEMAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "DTO_ThamSo.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_ThamSo.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DTO\\DTO_ThamSo.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_ThamSo.cs",
+              "RelativeToolTip": "DoAnSE104\\DTO\\DTO_ThamSo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T02:22:05.558Z",
+              "WhenOpened": "2025-05-24T07:10:37.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DAL_ThamSo.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_ThamSo.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_ThamSo.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_ThamSo.cs",
+              "RelativeToolTip": "DoAnSE104\\DAL\\DAL_ThamSo.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAcwEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T07:09:57.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DTO_KhamBenh.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_KhamBenh.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DTO\\DTO_KhamBenh.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DTO\\DTO_KhamBenh.cs",
+              "RelativeToolTip": "DoAnSE104\\DTO\\DTO_KhamBenh.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T06:47:22.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DAL_KhamBenh.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_KhamBenh.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_KhamBenh.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_KhamBenh.cs",
+              "RelativeToolTip": "DoAnSE104\\DAL\\DAL_KhamBenh.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T06:44:22.931Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DAL_CTKhamBenh.cs",
+              "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_CTKhamBenh.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_CTKhamBenh.cs",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_CTKhamBenh.cs",
+              "RelativeToolTip": "DoAnSE104\\DAL\\DAL_CTKhamBenh.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T06:23:25.202Z"
             }
           ]
         }

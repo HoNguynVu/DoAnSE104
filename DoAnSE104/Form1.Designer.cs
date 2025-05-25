@@ -29,40 +29,43 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTiepNhanBenhNhan));
-            this.maKhamBenh = new System.Windows.Forms.TextBox();
+            this.txtMaKhamBenh = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaBenhNhan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNgayKham = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtNamSinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.pictureBoxToggleCalendar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToggleCalendar)).BeginInit();
             this.SuspendLayout();
             // 
-            // maKhamBenh
+            // txtMaKhamBenh
             // 
-            this.maKhamBenh.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.maKhamBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maKhamBenh.Location = new System.Drawing.Point(41, 186);
-            this.maKhamBenh.Margin = new System.Windows.Forms.Padding(5);
-            this.maKhamBenh.Multiline = true;
-            this.maKhamBenh.Name = "maKhamBenh";
-            this.maKhamBenh.Size = new System.Drawing.Size(370, 46);
-            this.maKhamBenh.TabIndex = 0;
-            this.maKhamBenh.TextChanged += new System.EventHandler(this.maKhamBenh_TextChanged);
+            this.txtMaKhamBenh.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtMaKhamBenh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtMaKhamBenh.Enabled = false;
+            this.txtMaKhamBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKhamBenh.Location = new System.Drawing.Point(41, 186);
+            this.txtMaKhamBenh.Margin = new System.Windows.Forms.Padding(5);
+            this.txtMaKhamBenh.Multiline = true;
+            this.txtMaKhamBenh.Name = "txtMaKhamBenh";
+            this.txtMaKhamBenh.ReadOnly = true;
+            this.txtMaKhamBenh.Size = new System.Drawing.Size(370, 46);
+            this.txtMaKhamBenh.TabIndex = 0;
+            this.txtMaKhamBenh.TabStop = false;
             // 
             // label1
             // 
@@ -71,10 +74,9 @@
             this.label1.Location = new System.Drawing.Point(34, 149);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 32);
+            this.label1.Size = new System.Drawing.Size(136, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã khám bệnh";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -83,21 +85,19 @@
             this.label2.Location = new System.Drawing.Point(34, 269);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 32);
+            this.label2.Size = new System.Drawing.Size(133, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Mã bệnh nhân";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox1
+            // txtMaBenhNhan
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(41, 306);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(370, 39);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtMaBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaBenhNhan.Location = new System.Drawing.Point(41, 306);
+            this.txtMaBenhNhan.Margin = new System.Windows.Forms.Padding(5);
+            this.txtMaBenhNhan.Multiline = true;
+            this.txtMaBenhNhan.Name = "txtMaBenhNhan";
+            this.txtMaBenhNhan.Size = new System.Drawing.Size(370, 39);
+            this.txtMaBenhNhan.TabIndex = 1;
             // 
             // label3
             // 
@@ -106,22 +106,24 @@
             this.label3.Location = new System.Drawing.Point(34, 394);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 32);
+            this.label3.Size = new System.Drawing.Size(78, 24);
             this.label3.TabIndex = 5;
             this.label3.Text = "Giới tính";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox2
+            // txtGioiTinh
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(41, 431);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(370, 39);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtGioiTinh.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtGioiTinh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtGioiTinh.Enabled = false;
+            this.txtGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioiTinh.Location = new System.Drawing.Point(41, 431);
+            this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(5);
+            this.txtGioiTinh.Multiline = true;
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.ReadOnly = true;
+            this.txtGioiTinh.Size = new System.Drawing.Size(370, 39);
+            this.txtGioiTinh.TabIndex = 4;
+            this.txtGioiTinh.TabStop = false;
             // 
             // label4
             // 
@@ -130,21 +132,20 @@
             this.label4.Location = new System.Drawing.Point(533, 149);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 32);
+            this.label4.Size = new System.Drawing.Size(105, 24);
             this.label4.TabIndex = 7;
             this.label4.Text = "Ngày khám";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox3
+            // txtNgayKham
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(540, 186);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(370, 39);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtNgayKham.Enabled = false;
+            this.txtNgayKham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayKham.Location = new System.Drawing.Point(540, 186);
+            this.txtNgayKham.Margin = new System.Windows.Forms.Padding(5);
+            this.txtNgayKham.Multiline = true;
+            this.txtNgayKham.Name = "txtNgayKham";
+            this.txtNgayKham.Size = new System.Drawing.Size(370, 39);
+            this.txtNgayKham.TabIndex = 6;
             // 
             // label5
             // 
@@ -152,22 +153,24 @@
             this.label5.Location = new System.Drawing.Point(533, 269);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 32);
+            this.label5.Size = new System.Drawing.Size(90, 24);
             this.label5.TabIndex = 9;
             this.label5.Text = "Họ và tên";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBox4
+            // txtHoTen
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(540, 306);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(370, 39);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtHoTen.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtHoTen.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtHoTen.Enabled = false;
+            this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoTen.Location = new System.Drawing.Point(540, 306);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(5);
+            this.txtHoTen.Multiline = true;
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.ReadOnly = true;
+            this.txtHoTen.Size = new System.Drawing.Size(370, 39);
+            this.txtHoTen.TabIndex = 0;
+            this.txtHoTen.TabStop = false;
             // 
             // label6
             // 
@@ -176,22 +179,24 @@
             this.label6.Location = new System.Drawing.Point(533, 394);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 32);
+            this.label6.Size = new System.Drawing.Size(90, 24);
             this.label6.TabIndex = 11;
             this.label6.Text = "Năm sinh";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // textBox5
+            // txtNamSinh
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(540, 431);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(370, 39);
-            this.textBox5.TabIndex = 10;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtNamSinh.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNamSinh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNamSinh.Enabled = false;
+            this.txtNamSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNamSinh.Location = new System.Drawing.Point(540, 431);
+            this.txtNamSinh.Margin = new System.Windows.Forms.Padding(5);
+            this.txtNamSinh.Multiline = true;
+            this.txtNamSinh.Name = "txtNamSinh";
+            this.txtNamSinh.ReadOnly = true;
+            this.txtNamSinh.Size = new System.Drawing.Size(370, 39);
+            this.txtNamSinh.TabIndex = 10;
+            this.txtNamSinh.TabStop = false;
             // 
             // label7
             // 
@@ -200,10 +205,9 @@
             this.label7.Location = new System.Drawing.Point(29, 39);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(585, 64);
+            this.label7.Size = new System.Drawing.Size(404, 44);
             this.label7.TabIndex = 12;
             this.label7.Text = "Tiếp nhận khám bệnh";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -212,57 +216,57 @@
             this.label8.Location = new System.Drawing.Point(34, 521);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 32);
+            this.label8.Size = new System.Drawing.Size(67, 24);
             this.label8.TabIndex = 14;
             this.label8.Text = "Địa chỉ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // textBox6
+            // txtDiaChi
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(40, 567);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(869, 39);
-            this.textBox6.TabIndex = 13;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.txtDiaChi.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtDiaChi.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtDiaChi.Enabled = false;
+            this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Location = new System.Drawing.Point(40, 567);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(5);
+            this.txtDiaChi.Multiline = true;
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.ReadOnly = true;
+            this.txtDiaChi.Size = new System.Drawing.Size(869, 39);
+            this.txtDiaChi.TabIndex = 13;
+            this.txtDiaChi.TabStop = false;
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(756, 662);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 63);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Thoát";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.Location = new System.Drawing.Point(756, 662);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(154, 63);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Thoát";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Location = new System.Drawing.Point(44, 662);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 63);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Tiếp nhận";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAdd.Location = new System.Drawing.Point(44, 662);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(181, 63);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Tiếp nhận";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnNew
             // 
-            this.button3.Location = new System.Drawing.Point(231, 662);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(264, 63);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Bệnh nhân mới";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnNew.Location = new System.Drawing.Point(231, 662);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(264, 63);
+            this.btnNew.TabIndex = 3;
+            this.btnNew.Text = "Bệnh nhân mới";
+            this.btnNew.UseVisualStyleBackColor = true;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(597, 230);
+            this.monthCalendar1.Location = new System.Drawing.Point(572, 239);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 18;
             this.monthCalendar1.Visible = false;
@@ -282,31 +286,31 @@
             // 
             // FrmTiepNhanBenhNhan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 776);
             this.Controls.Add(this.pictureBoxToggleCalendar);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtNamSinh);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtNgayKham);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMaBenhNhan);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.maKhamBenh);
+            this.Controls.Add(this.txtMaKhamBenh);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmTiepNhanBenhNhan";
@@ -314,33 +318,34 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tiep nhan benh nhan";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToggleCalendar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+       
+
         #endregion
 
-        private System.Windows.Forms.TextBox maKhamBenh;
+        private System.Windows.Forms.TextBox txtMaKhamBenh;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaBenhNhan;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNgayKham;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNamSinh;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.PictureBox pictureBoxToggleCalendar;
     }

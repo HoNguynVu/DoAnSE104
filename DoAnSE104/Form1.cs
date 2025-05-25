@@ -15,6 +15,31 @@ namespace DoAnSE104
         public FrmTiepNhanBenhNhan()
         {
             InitializeComponent();
+            // Đổi màu nền form
+            this.BackColor = Color.WhiteSmoke;
+            // Đổi font chữ toàn form
+            this.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            // Làm đẹp các button nếu có
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button btn)
+                {
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                }
+                // Làm đẹp các textbox
+                if (ctrl is TextBox tb)
+                {
+                    tb.BorderStyle = BorderStyle.FixedSingle;
+                    tb.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+                }
+                // Làm đẹp các label
+                if (ctrl is Label lb)
+                {
+                    lb.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                    lb.ForeColor = Color.DimGray;
+                }
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -22,44 +47,14 @@ namespace DoAnSE104
 
         }
 
-        private void maKhamBenh_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            
+            // Khi chọn ngày trên lịch, cập nhật giá trị vào textBox3 (ngày khám)
+            txtNgayKham.Text = e.Start.ToString("dd/MM/yyyy");
         }
 
-        private void pictureBoxToggleCalendar_Click(object sender, EventArgs e)
+        private void pictureBoxToggleCalendar_Click_1(object sender, EventArgs e)
         {
-            
             monthCalendar1.Visible = !monthCalendar1.Visible;
 
             if (monthCalendar1.Visible)
@@ -72,76 +67,9 @@ namespace DoAnSE104
             }
         }
 
-        private void pictureBoxToggleCalendar_Click_1(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (!monthCalendar1.Visible)
-            {
-                var x = pictureBoxToggleCalendar.Left;
-                var y = pictureBoxToggleCalendar.Bottom + 2;
-                monthCalendar1.Location = new Point(x, y);
-            }
-
-            monthCalendar1.Visible = !monthCalendar1.Visible;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

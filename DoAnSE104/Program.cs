@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using DoAnSE104.GUI;
 
 namespace DoAnSE104
 {
@@ -10,7 +11,7 @@ namespace DoAnSE104
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI.GUI_TiepNhanBenhNhan());
+            Application.Run(new GUI_TiepNhanKhamBenh());
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_TiepNhanKhamBenh));
             this.txtMaKhamBenh = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +50,9 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.pictureBoxToggleCalendar = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToggleCalendar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMaKhamBenh
@@ -74,7 +77,7 @@
             this.label1.Location = new System.Drawing.Point(34, 149);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 24);
+            this.label1.Size = new System.Drawing.Size(170, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã khám bệnh";
             // 
@@ -85,7 +88,7 @@
             this.label2.Location = new System.Drawing.Point(34, 269);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 24);
+            this.label2.Size = new System.Drawing.Size(164, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Mã bệnh nhân";
             // 
@@ -98,6 +101,7 @@
             this.txtMaBenhNhan.Name = "txtMaBenhNhan";
             this.txtMaBenhNhan.Size = new System.Drawing.Size(370, 39);
             this.txtMaBenhNhan.TabIndex = 1;
+            this.txtMaBenhNhan.TextChanged += new System.EventHandler(this.txtMaBenhNhan_TextChanged);
             // 
             // label3
             // 
@@ -106,7 +110,7 @@
             this.label3.Location = new System.Drawing.Point(34, 394);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 24);
+            this.label3.Size = new System.Drawing.Size(101, 29);
             this.label3.TabIndex = 5;
             this.label3.Text = "Giới tính";
             // 
@@ -132,7 +136,7 @@
             this.label4.Location = new System.Drawing.Point(533, 149);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 24);
+            this.label4.Size = new System.Drawing.Size(133, 29);
             this.label4.TabIndex = 7;
             this.label4.Text = "Ngày khám";
             // 
@@ -153,7 +157,7 @@
             this.label5.Location = new System.Drawing.Point(533, 269);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 24);
+            this.label5.Size = new System.Drawing.Size(113, 29);
             this.label5.TabIndex = 9;
             this.label5.Text = "Họ và tên";
             // 
@@ -179,7 +183,7 @@
             this.label6.Location = new System.Drawing.Point(533, 394);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 24);
+            this.label6.Size = new System.Drawing.Size(114, 29);
             this.label6.TabIndex = 11;
             this.label6.Text = "Năm sinh";
             // 
@@ -205,7 +209,7 @@
             this.label7.Location = new System.Drawing.Point(29, 39);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(404, 44);
+            this.label7.Size = new System.Drawing.Size(492, 54);
             this.label7.TabIndex = 12;
             this.label7.Text = "Tiếp nhận khám bệnh";
             // 
@@ -216,7 +220,7 @@
             this.label8.Location = new System.Drawing.Point(34, 521);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 24);
+            this.label8.Size = new System.Drawing.Size(86, 29);
             this.label8.TabIndex = 14;
             this.label8.Text = "Địa chỉ";
             // 
@@ -254,6 +258,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Tiếp nhận";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnNew
             // 
@@ -263,10 +268,11 @@
             this.btnNew.TabIndex = 3;
             this.btnNew.Text = "Bệnh nhân mới";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(572, 239);
+            this.monthCalendar1.Location = new System.Drawing.Point(594, 239);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 18;
             this.monthCalendar1.Visible = false;
@@ -285,13 +291,17 @@
             this.pictureBoxToggleCalendar.TabStop = false;
             this.pictureBoxToggleCalendar.Click += new System.EventHandler(this.pictureBoxToggleCalendar_Click_1);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // GUI_TiepNhanKhamBenh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 776);
-            this.Controls.Add(this.pictureBoxToggleCalendar);
             this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.pictureBoxToggleCalendar);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCancel);
@@ -318,8 +328,10 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tiep nhan benh nhan";
+            this.Text = "Tiep nhan kham benh";
+            this.Load += new System.EventHandler(this.GUI_TiepNhanKhamBenh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToggleCalendar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,6 +361,7 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.PictureBox pictureBoxToggleCalendar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

@@ -135,22 +135,34 @@
     <Compile Include="DTO\DTO_LoaiBenh.cs" />
     <Compile Include="DTO\DTO_LoaiThuoc.cs" />
     <Compile Include="DTO\DTO_ThamSo.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\GUI_TiepNhanBenhNhan.resx">
+      <DependentUpon>GUI_TiepNhanBenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_TiepNhanKhamBenh.resx">
+      <DependentUpon>GUI_TiepNhanKhamBenh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="GUI\GUI_TiepNhanBenhNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_TiepNhanBenhNhan.Designer.cs">
+      <DependentUpon>GUI_TiepNhanBenhNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_TiepNhanKhamBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_TiepNhanKhamBenh.Designer.cs">
+      <DependentUpon>GUI_TiepNhanKhamBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -168,7 +180,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BUS\" />
-    <Folder Include="GUI\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -181,6 +192,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f53a56be77f9e248dff19a0dffafb95e_t.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

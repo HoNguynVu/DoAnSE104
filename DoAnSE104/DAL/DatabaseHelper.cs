@@ -43,6 +43,9 @@ namespace DoAnSE104.DAL
             }
         }
 
+
+       
+
         public int ExecuteNonQuery(string query) //truy vấn không trả về giá trị nào (insert, update, delete...)
         {
             using (var conn = GetConnection())

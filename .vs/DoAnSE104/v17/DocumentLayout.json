@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "D:\\SE104\\DoAnSE104\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\se104\\doanse104\\doanse104\\gui\\gui_tiepnhanbenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_tiepnhanbenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_BenhNhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:DoAnSE104\\DAL\\DAL_BenhNhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\SE104\\DoAnSE104\\DoAnSE104\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:DoAnSE104\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SE104\\DoAnSE104\\DoAnSE104\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnSE104\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\se104\\doanse104\\doanse104\\gui\\gui_tiepnhanbenhnhan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_tiepnhanbenhnhan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_BenhNhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnSE104\\DAL\\DAL_BenhNhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,12 +50,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "GUI_TiepNhanBenhNhan.Designer.cs",
               "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.Designer.cs",
               "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.Designer.cs",
-              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.Designer.cs*",
-              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.Designer.cs*",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.Designer.cs",
+              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T10:37:00.655Z",
@@ -67,8 +67,8 @@
               "Title": "GUI_TiepNhanBenhNhan.cs",
               "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
               "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
-              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs*",
-              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs*",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
+              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAlwBMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T10:31:04.054Z",
@@ -76,12 +76,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "GUI_TiepNhanBenhNhan.cs [Design]",
               "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
               "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
-              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs [Design]*",
-              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs [Design]*",
+              "ToolTip": "D:\\SE104\\DoAnSE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs [Design]",
+              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T10:29:41.869Z",
               "EditorCaption": " [Design]"
@@ -101,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "DAL_BenhNhan.cs",
               "DocumentMoniker": "D:\\SE104\\DoAnSE104\\DoAnSE104\\DAL\\DAL_BenhNhan.cs",
               "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_BenhNhan.cs",

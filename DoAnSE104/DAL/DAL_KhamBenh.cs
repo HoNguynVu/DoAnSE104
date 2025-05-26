@@ -47,7 +47,7 @@ namespace DoAnSE104.DAL
         }
         public bool ThemKhamBenh(DTO_KhamBenh newKhamBenh)
         {
-            string query = "INSERT INTO KhamBenh (MaKhamBenh, NgayKham, MaLoaiBenh) " +
+            string query = "INSERT INTO KhamBenh (MaKhamBenh, NgayKham, MaBenhNhan) " +
                            "VALUES (@MaKhamBenh, @NgayKham, @MaBenhNhan)";
             MySqlParameter[] parameters = new MySqlParameter[]
             {

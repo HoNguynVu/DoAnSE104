@@ -73,7 +73,7 @@ namespace DoAnSE104.GUI
             this.comboBox2.BackColor = System.Drawing.Color.LightGray;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.ItemHeight = 29;
-            this.comboBox2.Location = new System.Drawing.Point(180, 361);
+            this.comboBox2.Location = new System.Drawing.Point(180, 381);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.comboBox2.MaxDropDownItems = 20;
             this.comboBox2.Name = "comboBox2";
@@ -83,47 +83,47 @@ namespace DoAnSE104.GUI
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(429, 319);
+            this.label11.Location = new System.Drawing.Point(432, 329);
             this.label11.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(139, 29);
+            this.label11.Size = new System.Drawing.Size(109, 29);
             this.label11.TabIndex = 79;
-            this.label11.Text = "SỐ LƯỢNG";
+            this.label11.Text = "Số lượng";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(779, 319);
+            this.label10.Location = new System.Drawing.Point(779, 329);
             this.label10.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(155, 29);
+            this.label10.Size = new System.Drawing.Size(128, 29);
             this.label10.TabIndex = 78;
-            this.label10.Text = "CÁCH DÙNG";
+            this.label10.Text = "Cách dùng";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(601, 319);
+            this.label9.Location = new System.Drawing.Point(601, 329);
             this.label9.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 29);
+            this.label9.Size = new System.Drawing.Size(80, 29);
             this.label9.TabIndex = 77;
-            this.label9.Text = "ĐƠN VỊ";
+            this.label9.Text = "Đơn vị";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(175, 319);
+            this.label8.Location = new System.Drawing.Point(175, 329);
             this.label8.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(214, 29);
+            this.label8.Size = new System.Drawing.Size(165, 29);
             this.label8.TabIndex = 76;
-            this.label8.Text = "TÊN LOẠI THUỐC";
+            this.label8.Text = "Tên loại thuốc";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 319);
+            this.label7.Location = new System.Drawing.Point(30, 329);
             this.label7.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 29);
@@ -236,7 +236,6 @@ namespace DoAnSE104.GUI
             this.textBox1.Size = new System.Drawing.Size(268, 45);
             this.textBox1.TabIndex = 96;
             this.textBox1.TabStop = false;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // textBox2
             // 
@@ -258,14 +257,13 @@ namespace DoAnSE104.GUI
             this.textBox5.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(606, 353);
+            this.textBox5.Location = new System.Drawing.Point(606, 373);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(132, 45);
             this.textBox5.TabIndex = 96;
             this.textBox5.TabStop = false;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // textBox3
             // 
@@ -273,14 +271,13 @@ namespace DoAnSE104.GUI
             this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(784, 353);
+            this.textBox3.Location = new System.Drawing.Point(784, 373);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(312, 45);
             this.textBox3.TabIndex = 96;
             this.textBox3.TabStop = false;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // textBox4
             // 
@@ -288,7 +285,7 @@ namespace DoAnSE104.GUI
             this.textBox4.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(35, 352);
+            this.textBox4.Location = new System.Drawing.Point(35, 372);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -302,7 +299,7 @@ namespace DoAnSE104.GUI
             this.textBox6.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(434, 352);
+            this.textBox6.Location = new System.Drawing.Point(434, 372);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
@@ -315,7 +312,7 @@ namespace DoAnSE104.GUI
             this.comboBox1.BackColor = System.Drawing.Color.LightGray;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 29;
-            this.comboBox1.Location = new System.Drawing.Point(180, 423);
+            this.comboBox1.Location = new System.Drawing.Point(180, 443);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.comboBox1.MaxDropDownItems = 20;
             this.comboBox1.Name = "comboBox1";
@@ -328,7 +325,7 @@ namespace DoAnSE104.GUI
             this.textBox7.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox7.Enabled = false;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(35, 414);
+            this.textBox7.Location = new System.Drawing.Point(35, 434);
             this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
@@ -342,7 +339,7 @@ namespace DoAnSE104.GUI
             this.textBox8.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox8.Enabled = false;
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(434, 414);
+            this.textBox8.Location = new System.Drawing.Point(434, 434);
             this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
@@ -356,14 +353,13 @@ namespace DoAnSE104.GUI
             this.textBox9.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox9.Enabled = false;
             this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(606, 415);
+            this.textBox9.Location = new System.Drawing.Point(606, 435);
             this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(132, 45);
             this.textBox9.TabIndex = 96;
             this.textBox9.TabStop = false;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // textBox10
             // 
@@ -371,21 +367,20 @@ namespace DoAnSE104.GUI
             this.textBox10.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox10.Enabled = false;
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(784, 415);
+            this.textBox10.Location = new System.Drawing.Point(784, 435);
             this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(312, 45);
             this.textBox10.TabIndex = 96;
             this.textBox10.TabStop = false;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // comboBox3
             // 
             this.comboBox3.BackColor = System.Drawing.Color.LightGray;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.ItemHeight = 29;
-            this.comboBox3.Location = new System.Drawing.Point(180, 491);
+            this.comboBox3.Location = new System.Drawing.Point(180, 511);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.comboBox3.MaxDropDownItems = 20;
             this.comboBox3.Name = "comboBox3";
@@ -398,7 +393,7 @@ namespace DoAnSE104.GUI
             this.textBox12.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox12.Enabled = false;
             this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(35, 482);
+            this.textBox12.Location = new System.Drawing.Point(35, 502);
             this.textBox12.Margin = new System.Windows.Forms.Padding(4);
             this.textBox12.Multiline = true;
             this.textBox12.Name = "textBox12";
@@ -412,7 +407,7 @@ namespace DoAnSE104.GUI
             this.textBox13.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox13.Enabled = false;
             this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(434, 482);
+            this.textBox13.Location = new System.Drawing.Point(434, 502);
             this.textBox13.Margin = new System.Windows.Forms.Padding(4);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
@@ -426,14 +421,13 @@ namespace DoAnSE104.GUI
             this.textBox14.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox14.Enabled = false;
             this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(606, 483);
+            this.textBox14.Location = new System.Drawing.Point(606, 503);
             this.textBox14.Margin = new System.Windows.Forms.Padding(4);
             this.textBox14.Multiline = true;
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(132, 45);
             this.textBox14.TabIndex = 96;
             this.textBox14.TabStop = false;
-            this.textBox14.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // textBox15
             // 
@@ -441,14 +435,13 @@ namespace DoAnSE104.GUI
             this.textBox15.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox15.Enabled = false;
             this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(784, 483);
+            this.textBox15.Location = new System.Drawing.Point(784, 503);
             this.textBox15.Margin = new System.Windows.Forms.Padding(4);
             this.textBox15.Multiline = true;
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(312, 45);
             this.textBox15.TabIndex = 96;
             this.textBox15.TabStop = false;
-            this.textBox15.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // GUI_LapPhieuKhamBenh
             // 

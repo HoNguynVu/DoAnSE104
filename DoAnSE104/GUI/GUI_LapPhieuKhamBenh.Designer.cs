@@ -65,7 +65,7 @@ namespace DoAnSE104.GUI
             this.textBox11.Location = new System.Drawing.Point(173, 245);
             this.textBox11.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(923, 34);
+            this.textBox11.Size = new System.Drawing.Size(956, 34);
             this.textBox11.TabIndex = 94;
             // 
             // comboBox2
@@ -135,7 +135,7 @@ namespace DoAnSE104.GUI
             this.cbLoaiBenh.BackColor = System.Drawing.Color.LightGray;
             this.cbLoaiBenh.FormattingEnabled = true;
             this.cbLoaiBenh.ItemHeight = 29;
-            this.cbLoaiBenh.Location = new System.Drawing.Point(859, 152);
+            this.cbLoaiBenh.Location = new System.Drawing.Point(892, 153);
             this.cbLoaiBenh.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.cbLoaiBenh.MaxDropDownItems = 20;
             this.cbLoaiBenh.Name = "cbLoaiBenh";
@@ -146,7 +146,7 @@ namespace DoAnSE104.GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label6.Location = new System.Drawing.Point(854, 109);
+            this.label6.Location = new System.Drawing.Point(887, 109);
             this.label6.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 29);
@@ -157,7 +157,7 @@ namespace DoAnSE104.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label5.Location = new System.Drawing.Point(555, 109);
+            this.label5.Location = new System.Drawing.Point(564, 109);
             this.label5.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(174, 29);
@@ -168,7 +168,7 @@ namespace DoAnSE104.GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label4.Location = new System.Drawing.Point(297, 109);
+            this.label4.Location = new System.Drawing.Point(306, 109);
             this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 29);
@@ -215,7 +215,7 @@ namespace DoAnSE104.GUI
             this.maKhamBenh.Cursor = System.Windows.Forms.Cursors.Default;
             this.maKhamBenh.Enabled = false;
             this.maKhamBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maKhamBenh.Location = new System.Drawing.Point(302, 145);
+            this.maKhamBenh.Location = new System.Drawing.Point(311, 145);
             this.maKhamBenh.Margin = new System.Windows.Forms.Padding(4);
             this.maKhamBenh.Multiline = true;
             this.maKhamBenh.Name = "maKhamBenh";
@@ -229,7 +229,7 @@ namespace DoAnSE104.GUI
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(550, 145);
+            this.textBox1.Location = new System.Drawing.Point(571, 145);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -247,7 +247,7 @@ namespace DoAnSE104.GUI
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(221, 45);
+            this.textBox2.Size = new System.Drawing.Size(238, 45);
             this.textBox2.TabIndex = 96;
             this.textBox2.TabStop = false;
             // 
@@ -275,7 +275,7 @@ namespace DoAnSE104.GUI
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(312, 45);
+            this.textBox3.Size = new System.Drawing.Size(345, 45);
             this.textBox3.TabIndex = 96;
             this.textBox3.TabStop = false;
             // 
@@ -371,7 +371,7 @@ namespace DoAnSE104.GUI
             this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(312, 45);
+            this.textBox10.Size = new System.Drawing.Size(345, 45);
             this.textBox10.TabIndex = 96;
             this.textBox10.TabStop = false;
             // 
@@ -439,7 +439,7 @@ namespace DoAnSE104.GUI
             this.textBox15.Margin = new System.Windows.Forms.Padding(4);
             this.textBox15.Multiline = true;
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(312, 45);
+            this.textBox15.Size = new System.Drawing.Size(345, 45);
             this.textBox15.TabIndex = 96;
             this.textBox15.TabStop = false;
             // 
@@ -448,7 +448,7 @@ namespace DoAnSE104.GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(1157, 586);
+            this.ClientSize = new System.Drawing.Size(1182, 635);
             this.Controls.Add(this.textBox15);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox3);

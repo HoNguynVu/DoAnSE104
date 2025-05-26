@@ -26,14 +26,14 @@ namespace DoAnSE104.GUI
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtTrieuChung = new System.Windows.Forms.TextBox();
+            this.selectTenLoaiThuoc = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbLoaiBenh = new System.Windows.Forms.ComboBox();
+            this.selectLoaiBenh = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,13 +41,13 @@ namespace DoAnSE104.GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.maKhamBenh = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtNgayKham = new System.Windows.Forms.TextBox();
+            this.txtTenBenhNhan = new System.Windows.Forms.TextBox();
+            this.txtMaKhamBenh = new System.Windows.Forms.TextBox();
+            this.txtDonVi = new System.Windows.Forms.TextBox();
+            this.txtCachDung = new System.Windows.Forms.TextBox();
+            this.txtSTT = new System.Windows.Forms.TextBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -60,25 +60,25 @@ namespace DoAnSE104.GUI
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox11
+            // txtTrieuChung
             // 
-            this.textBox11.Location = new System.Drawing.Point(173, 245);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(956, 34);
-            this.textBox11.TabIndex = 94;
+            this.txtTrieuChung.Location = new System.Drawing.Point(173, 245);
+            this.txtTrieuChung.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.txtTrieuChung.Name = "txtTrieuChung";
+            this.txtTrieuChung.Size = new System.Drawing.Size(956, 34);
+            this.txtTrieuChung.TabIndex = 94;
             // 
-            // comboBox2
+            // selectTenLoaiThuoc
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.LightGray;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ItemHeight = 29;
-            this.comboBox2.Location = new System.Drawing.Point(180, 381);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.comboBox2.MaxDropDownItems = 20;
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(221, 37);
-            this.comboBox2.TabIndex = 89;
+            this.selectTenLoaiThuoc.BackColor = System.Drawing.Color.LightGray;
+            this.selectTenLoaiThuoc.FormattingEnabled = true;
+            this.selectTenLoaiThuoc.ItemHeight = 29;
+            this.selectTenLoaiThuoc.Location = new System.Drawing.Point(180, 381);
+            this.selectTenLoaiThuoc.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.selectTenLoaiThuoc.MaxDropDownItems = 20;
+            this.selectTenLoaiThuoc.Name = "selectTenLoaiThuoc";
+            this.selectTenLoaiThuoc.Size = new System.Drawing.Size(221, 37);
+            this.selectTenLoaiThuoc.TabIndex = 89;
             // 
             // label11
             // 
@@ -130,17 +130,17 @@ namespace DoAnSE104.GUI
             this.label7.TabIndex = 75;
             this.label7.Text = "STT";
             // 
-            // cbLoaiBenh
+            // selectLoaiBenh
             // 
-            this.cbLoaiBenh.BackColor = System.Drawing.Color.LightGray;
-            this.cbLoaiBenh.FormattingEnabled = true;
-            this.cbLoaiBenh.ItemHeight = 29;
-            this.cbLoaiBenh.Location = new System.Drawing.Point(892, 153);
-            this.cbLoaiBenh.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.cbLoaiBenh.MaxDropDownItems = 20;
-            this.cbLoaiBenh.Name = "cbLoaiBenh";
-            this.cbLoaiBenh.Size = new System.Drawing.Size(237, 37);
-            this.cbLoaiBenh.TabIndex = 74;
+            this.selectLoaiBenh.BackColor = System.Drawing.Color.LightGray;
+            this.selectLoaiBenh.FormattingEnabled = true;
+            this.selectLoaiBenh.ItemHeight = 29;
+            this.selectLoaiBenh.Location = new System.Drawing.Point(892, 153);
+            this.selectLoaiBenh.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.selectLoaiBenh.MaxDropDownItems = 20;
+            this.selectLoaiBenh.Name = "selectLoaiBenh";
+            this.selectLoaiBenh.Size = new System.Drawing.Size(237, 37);
+            this.selectLoaiBenh.TabIndex = 74;
             // 
             // label6
             // 
@@ -209,103 +209,103 @@ namespace DoAnSE104.GUI
             this.label1.Text = "Lập phiếu khám bệnh";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // maKhamBenh
+            // txtNgayKham
             // 
-            this.maKhamBenh.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.maKhamBenh.Cursor = System.Windows.Forms.Cursors.Default;
-            this.maKhamBenh.Enabled = false;
-            this.maKhamBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maKhamBenh.Location = new System.Drawing.Point(311, 145);
-            this.maKhamBenh.Margin = new System.Windows.Forms.Padding(4);
-            this.maKhamBenh.Multiline = true;
-            this.maKhamBenh.Name = "maKhamBenh";
-            this.maKhamBenh.Size = new System.Drawing.Size(221, 45);
-            this.maKhamBenh.TabIndex = 96;
-            this.maKhamBenh.TabStop = false;
+            this.txtNgayKham.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNgayKham.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNgayKham.Enabled = false;
+            this.txtNgayKham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayKham.Location = new System.Drawing.Point(311, 145);
+            this.txtNgayKham.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNgayKham.Multiline = true;
+            this.txtNgayKham.Name = "txtNgayKham";
+            this.txtNgayKham.Size = new System.Drawing.Size(221, 45);
+            this.txtNgayKham.TabIndex = 96;
+            this.txtNgayKham.TabStop = false;
             // 
-            // textBox1
+            // txtTenBenhNhan
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(571, 145);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 45);
-            this.textBox1.TabIndex = 96;
-            this.textBox1.TabStop = false;
+            this.txtTenBenhNhan.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtTenBenhNhan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTenBenhNhan.Enabled = false;
+            this.txtTenBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenBenhNhan.Location = new System.Drawing.Point(571, 145);
+            this.txtTenBenhNhan.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenBenhNhan.Multiline = true;
+            this.txtTenBenhNhan.Name = "txtTenBenhNhan";
+            this.txtTenBenhNhan.Size = new System.Drawing.Size(268, 45);
+            this.txtTenBenhNhan.TabIndex = 96;
+            this.txtTenBenhNhan.TabStop = false;
             // 
-            // textBox2
+            // txtMaKhamBenh
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(35, 145);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(238, 45);
-            this.textBox2.TabIndex = 96;
-            this.textBox2.TabStop = false;
+            this.txtMaKhamBenh.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtMaKhamBenh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtMaKhamBenh.Enabled = false;
+            this.txtMaKhamBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKhamBenh.Location = new System.Drawing.Point(35, 145);
+            this.txtMaKhamBenh.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaKhamBenh.Multiline = true;
+            this.txtMaKhamBenh.Name = "txtMaKhamBenh";
+            this.txtMaKhamBenh.Size = new System.Drawing.Size(238, 45);
+            this.txtMaKhamBenh.TabIndex = 96;
+            this.txtMaKhamBenh.TabStop = false;
             // 
-            // textBox5
+            // txtDonVi
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(606, 373);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(132, 45);
-            this.textBox5.TabIndex = 96;
-            this.textBox5.TabStop = false;
+            this.txtDonVi.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtDonVi.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtDonVi.Enabled = false;
+            this.txtDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonVi.Location = new System.Drawing.Point(606, 373);
+            this.txtDonVi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDonVi.Multiline = true;
+            this.txtDonVi.Name = "txtDonVi";
+            this.txtDonVi.Size = new System.Drawing.Size(132, 45);
+            this.txtDonVi.TabIndex = 96;
+            this.txtDonVi.TabStop = false;
             // 
-            // textBox3
+            // txtCachDung
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(784, 373);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(345, 45);
-            this.textBox3.TabIndex = 96;
-            this.textBox3.TabStop = false;
+            this.txtCachDung.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCachDung.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtCachDung.Enabled = false;
+            this.txtCachDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCachDung.Location = new System.Drawing.Point(784, 373);
+            this.txtCachDung.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCachDung.Multiline = true;
+            this.txtCachDung.Name = "txtCachDung";
+            this.txtCachDung.Size = new System.Drawing.Size(345, 45);
+            this.txtCachDung.TabIndex = 96;
+            this.txtCachDung.TabStop = false;
             // 
-            // textBox4
+            // txtSTT
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(35, 372);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(107, 45);
-            this.textBox4.TabIndex = 96;
-            this.textBox4.TabStop = false;
+            this.txtSTT.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSTT.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSTT.Enabled = false;
+            this.txtSTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTT.Location = new System.Drawing.Point(35, 372);
+            this.txtSTT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSTT.Multiline = true;
+            this.txtSTT.Name = "txtSTT";
+            this.txtSTT.Size = new System.Drawing.Size(107, 45);
+            this.txtSTT.TabIndex = 96;
+            this.txtSTT.TabStop = false;
             // 
-            // textBox6
+            // txtSoLuong
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(434, 372);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(107, 45);
-            this.textBox6.TabIndex = 96;
-            this.textBox6.TabStop = false;
+            this.txtSoLuong.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSoLuong.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSoLuong.Enabled = false;
+            this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Location = new System.Drawing.Point(434, 372);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoLuong.Multiline = true;
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(138, 45);
+            this.txtSoLuong.TabIndex = 96;
+            this.txtSoLuong.TabStop = false;
             // 
             // comboBox1
             // 
@@ -343,7 +343,7 @@ namespace DoAnSE104.GUI
             this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(107, 45);
+            this.textBox8.Size = new System.Drawing.Size(138, 45);
             this.textBox8.TabIndex = 96;
             this.textBox8.TabStop = false;
             // 
@@ -411,7 +411,7 @@ namespace DoAnSE104.GUI
             this.textBox13.Margin = new System.Windows.Forms.Padding(4);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(107, 45);
+            this.textBox13.Size = new System.Drawing.Size(138, 45);
             this.textBox13.TabIndex = 96;
             this.textBox13.TabStop = false;
             // 
@@ -451,31 +451,31 @@ namespace DoAnSE104.GUI
             this.ClientSize = new System.Drawing.Size(1182, 635);
             this.Controls.Add(this.textBox15);
             this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtCachDung);
             this.Controls.Add(this.textBox14);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDonVi);
+            this.Controls.Add(this.txtTenBenhNhan);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtSoLuong);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.maKhamBenh);
+            this.Controls.Add(this.txtSTT);
+            this.Controls.Add(this.txtMaKhamBenh);
+            this.Controls.Add(this.txtNgayKham);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.txtTrieuChung);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbLoaiBenh);
+            this.Controls.Add(this.selectLoaiBenh);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.selectTenLoaiThuoc);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -491,14 +491,14 @@ namespace DoAnSE104.GUI
         }
 
         #endregion
-        private TextBox textBox11;
-        private ComboBox comboBox2;
+        private TextBox txtTrieuChung;
+        private ComboBox selectTenLoaiThuoc;
         private Label label11;
         private Label label10;
         private Label label9;
         private Label label8;
         private Label label7;
-        private ComboBox cbLoaiBenh;
+        private ComboBox selectLoaiBenh;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -506,13 +506,13 @@ namespace DoAnSE104.GUI
         private Label label2;
         private Label label1;
         private SaveFileDialog saveFileDialog1;
-        private TextBox maKhamBenh;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox5;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox6;
+        private TextBox txtNgayKham;
+        private TextBox txtTenBenhNhan;
+        private TextBox txtMaKhamBenh;
+        private TextBox txtDonVi;
+        private TextBox txtCachDung;
+        private TextBox txtSTT;
+        private TextBox txtSoLuong;
         private ComboBox comboBox1;
         private TextBox textBox7;
         private TextBox textBox8;

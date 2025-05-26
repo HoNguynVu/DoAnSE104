@@ -69,7 +69,7 @@ namespace DoAnSE104.GUI
             this.txtTrieuChung.Location = new System.Drawing.Point(173, 245);
             this.txtTrieuChung.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.txtTrieuChung.Name = "txtTrieuChung";
-            this.txtTrieuChung.Size = new System.Drawing.Size(923, 34);
+            this.txtTrieuChung.Size = new System.Drawing.Size(956, 34);
             this.txtTrieuChung.TabIndex = 94;
             // 
             // cbLoaiThuoc1
@@ -151,7 +151,7 @@ namespace DoAnSE104.GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label6.Location = new System.Drawing.Point(854, 109);
+            this.label6.Location = new System.Drawing.Point(887, 109);
             this.label6.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 29);
@@ -162,7 +162,7 @@ namespace DoAnSE104.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label5.Location = new System.Drawing.Point(555, 109);
+            this.label5.Location = new System.Drawing.Point(564, 109);
             this.label5.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(174, 29);
@@ -173,7 +173,7 @@ namespace DoAnSE104.GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label4.Location = new System.Drawing.Point(297, 109);
+            this.label4.Location = new System.Drawing.Point(306, 109);
             this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 29);
@@ -283,19 +283,19 @@ namespace DoAnSE104.GUI
             this.txtCachDung1.TabIndex = 96;
             this.txtCachDung1.TabStop = false;
             // 
-            // textBox4
+            // txtSTT
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(35, 372);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(107, 45);
-            this.textBox4.TabIndex = 96;
-            this.textBox4.TabStop = false;
+            this.txtSTT.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSTT.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSTT.Enabled = false;
+            this.txtSTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTT.Location = new System.Drawing.Point(35, 372);
+            this.txtSTT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSTT.Multiline = true;
+            this.txtSTT.Name = "txtSTT";
+            this.txtSTT.Size = new System.Drawing.Size(107, 45);
+            this.txtSTT.TabIndex = 96;
+            this.txtSTT.TabStop = false;
             // 
             // txtSLThuoc1
             // 
@@ -503,7 +503,7 @@ namespace DoAnSE104.GUI
             this.Controls.Add(this.txtTrieuChung);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbLoaiBenh);
+            this.Controls.Add(this.selectLoaiBenh);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbLoaiThuoc3);
             this.Controls.Add(this.cbLoaiThuoc2);
@@ -531,7 +531,7 @@ namespace DoAnSE104.GUI
         private Label label9;
         private Label label8;
         private Label label7;
-        private ComboBox cbLoaiBenh;
+        private ComboBox selectLoaiBenh;
         private Label label6;
         private Label label5;
         private Label label4;

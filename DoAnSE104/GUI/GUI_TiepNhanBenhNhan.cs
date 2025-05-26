@@ -16,27 +16,31 @@ namespace DoAnSE104.GUI
     public partial class GUI_TiepNhanBenhNhan : Form
     {
         BUS_BenhNhan BUS_BenhNhan = new BUS_BenhNhan();
+
         public GUI_TiepNhanBenhNhan()
         {
             InitializeComponent();
         }
+
         private void LayMaBenhNhanMoi()
         {
-            maKhamBenh.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
+            maBenhNhan.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
         }
 
         private void GUI_TiepNhanBenhNhan_Load(object sender, EventArgs e)
         {
             LayMaBenhNhanMoi();
         }
+
         private void btnNew_Click(object sender, EventArgs e)
         {
             txtHoTen.Clear();
             txtDiaChi.Clear();
             txtGioiTinh.Clear();
             txtNamSinh.Clear();
-            maKhamBenh.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
+            maBenhNhan.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -53,7 +57,7 @@ namespace DoAnSE104.GUI
                 return;
             }
             DTO_BenhNhan newBenhNhan = new DTO_BenhNhan(
-                maKhamBenh.Text,
+                maBenhNhan.Text,
                 txtHoTen.Text.Trim(),
                 txtGioiTinh.Text.Trim(),
                 int.Parse(txtNamSinh.Text.Trim()),

@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\doanse104\\gui\\gui_lapphieukhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_lapphieukhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\nh\u1EADp m\u00F4n c\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\doanse104\\doanse104\\bus\\bus_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\bus\\bus_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\nh\u1EADp m\u00F4n c\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\doanse104\\doanse104\\dal\\dal_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\nh\u1EADp m\u00F4n c\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\doanse104\\doanse104\\bus\\bus_benhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\bus\\bus_benhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\doanse104\\gui\\gui_lapphieukhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_lapphieukhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\nh\u1EADp m\u00F4n c\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\doanse104\\doanse104\\dal\\dal_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_khambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DAL_KhamBenh.cs",
               "DocumentMoniker": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\DAL\\DAL_KhamBenh.cs",
               "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_KhamBenh.cs",
@@ -75,20 +75,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "BUS_KhamBenh.cs",
               "DocumentMoniker": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\BUS\\BUS_KhamBenh.cs",
               "RelativeDocumentMoniker": "DoAnSE104\\BUS\\BUS_KhamBenh.cs",
               "ToolTip": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\BUS\\BUS_KhamBenh.cs",
               "RelativeToolTip": "DoAnSE104\\BUS\\BUS_KhamBenh.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCQAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T15:40:58.964Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "BUS_BenhNhan.cs",
               "DocumentMoniker": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\BUS\\BUS_BenhNhan.cs",
               "RelativeDocumentMoniker": "DoAnSE104\\BUS\\BUS_BenhNhan.cs",
@@ -101,13 +101,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GUI_LapPhieuKhamBenh.cs",
               "DocumentMoniker": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs",
               "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs",
-              "ToolTip": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs*",
-              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs*",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAUwE8AAAANAAAAAAAAAA==",
+              "ToolTip": "D:\\NH\u1EACP M\u00D4N C\u00D4NG NGH\u1EC6 PH\u1EA6N M\u1EC0M\\DoAnSE104\\DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs",
+              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T10:16:14.498Z",
               "EditorCaption": ""

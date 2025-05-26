@@ -203,7 +203,6 @@
             this.maKhamBenh.Size = new System.Drawing.Size(329, 45);
             this.maKhamBenh.TabIndex = 20;
             this.maKhamBenh.TabStop = false;
-            this.maKhamBenh.TextChanged += new System.EventHandler(this.maKhamBenh_TextChanged);
             // 
             // GUI_TiepNhanBenhNhan
             // 

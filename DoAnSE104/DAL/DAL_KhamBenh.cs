@@ -47,7 +47,7 @@ namespace DoAnSE104.DAL
         }
         public bool ThemKhamBenh(DTO_KhamBenh newKhamBenh)
         {
-            string query = "INSERT INTO KhamBenh (MaKhamBenh, NgayKham, MaBenhNhan) " +
+            string query = "INSERT INTO KHAMBENH (MaKhamBenh, NgayKham, MaBenhNhan) " +
                            "VALUES (@MaKhamBenh, @NgayKham, @MaBenhNhan)";
             MySqlParameter[] parameters = new MySqlParameter[]
             {
@@ -59,7 +59,7 @@ namespace DoAnSE104.DAL
         }
         public bool CapNhatKhamBenh(string maKhamBenh, string maLoaiBenh, string trieuChung)
         {
-            string query = "UPDATE KhamBenh SET MaLoaiBenh = @maLoaiBenh, TrieuChung = @trieuChung WHERE MaKhamBenh = @maKhamBenh";
+            string query = "UPDATE KHAMBENH SET MaLoaiBenh = @maLoaiBenh, TrieuChung = @trieuChung WHERE MaKhamBenh = @maKhamBenh";
 
             MySqlParameter[] parameters = new MySqlParameter[]
             {
@@ -82,6 +82,28 @@ namespace DoAnSE104.DAL
             }
 
             return danhSach;
+        }
+        public DTO_KhamBenh LayThongTinKhamBenh(string maKhamBenh)
+        {
+            string query = "SELECT * FROM KHAMBENH WHERE MaKhamBenh = @MaKhamBenh";
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                new MySqlParameter("@MaKhamBenh", maKhamBenh)
+            };
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query, parameters);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                string maBenhNhan = row["MaBenhNhan"].ToString();
+                DateTime ngayKham = DateTime.Parse(row["NgayKham"].ToString());
+                string trieuChung = row["TrieuChung"] != DBNull.Value ? row["TrieuChung"].ToString() : "";
+                string maLoaiBenh = row["MaLoaiBenh"] != DBNull.Value ? row["MaLoaiBenh"].ToString() : "";
+
+                return new DTO_KhamBenh(maKhamBenh, ngayKham, maBenhNhan, trieuChung, maLoaiBenh);
+            }
+            return null;
         }
     }
 }

@@ -114,7 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BUS_BenhNhan.cs" />
+    <Compile Include="BUS\BUS_CachDung.cs" />
+    <Compile Include="BUS\BUS_CTKhamBenh.cs" />
+    <Compile Include="BUS\BUS_DonVi.cs" />
     <Compile Include="BUS\BUS_KhamBenh.cs" />
+    <Compile Include="BUS\BUS_LoaiBenh.cs" />
+    <Compile Include="BUS\BUS_LoaiThuoc.cs" />
     <Compile Include="DAL\DAL_BenhNhan.cs" />
     <Compile Include="DAL\DAL_CachDung.cs" />
     <Compile Include="DAL\DAL_CTKhamBenh.cs" />

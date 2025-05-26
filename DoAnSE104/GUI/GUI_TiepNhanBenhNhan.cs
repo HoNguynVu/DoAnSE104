@@ -76,10 +76,5 @@ namespace DoAnSE104.GUI
 
             }
         }
-
-        private void maKhamBenh_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

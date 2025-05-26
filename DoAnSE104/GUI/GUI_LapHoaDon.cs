@@ -27,22 +27,12 @@ namespace DoAnSE104.GUI
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox14_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -113,6 +103,16 @@ namespace DoAnSE104.GUI
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
         {
 
         }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtSoluongThuoc = new System.Windows.Forms.TextBox();
+            this.txtSTT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -42,15 +42,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtMaLoaiThuoc = new System.Windows.Forms.TextBox();
+            this.txtTenLoaiThuoc = new System.Windows.Forms.TextBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.txtThanhTien = new System.Windows.Forms.TextBox();
+            this.txtMaKhamBenh = new System.Windows.Forms.TextBox();
+            this.txtTenBenhNhan = new System.Windows.Forms.TextBox();
+            this.txtNgayKham = new System.Windows.Forms.TextBox();
+            this.txtTienThuoc = new System.Windows.Forms.TextBox();
+            this.txtTienKham = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
@@ -65,33 +65,33 @@
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox3
+            // txtSoluongThuoc
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(610, 406);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(168, 48);
-            this.textBox3.TabIndex = 113;
-            this.textBox3.TabStop = false;
+            this.txtSoluongThuoc.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtSoluongThuoc.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSoluongThuoc.Enabled = false;
+            this.txtSoluongThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoluongThuoc.Location = new System.Drawing.Point(610, 406);
+            this.txtSoluongThuoc.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSoluongThuoc.Multiline = true;
+            this.txtSoluongThuoc.Name = "txtSoluongThuoc";
+            this.txtSoluongThuoc.Size = new System.Drawing.Size(168, 48);
+            this.txtSoluongThuoc.TabIndex = 113;
+            this.txtSoluongThuoc.TabStop = false;
             // 
-            // textBox5
+            // txtSTT
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(30, 406);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(99, 48);
-            this.textBox5.TabIndex = 110;
-            this.textBox5.TabStop = false;
+            this.txtSTT.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtSTT.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSTT.Enabled = false;
+            this.txtSTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTT.Location = new System.Drawing.Point(30, 406);
+            this.txtSTT.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSTT.Multiline = true;
+            this.txtSTT.Name = "txtSTT";
+            this.txtSTT.Size = new System.Drawing.Size(99, 48);
+            this.txtSTT.TabIndex = 110;
+            this.txtSTT.TabStop = false;
             // 
             // label7
             // 
@@ -237,131 +237,131 @@
             this.label13.Text = "Lập hóa đơn thanh toán";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // textBox1
+            // txtMaLoaiThuoc
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(143, 406);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(7);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 48);
-            this.textBox1.TabIndex = 110;
-            this.textBox1.TabStop = false;
+            this.txtMaLoaiThuoc.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtMaLoaiThuoc.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtMaLoaiThuoc.Enabled = false;
+            this.txtMaLoaiThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaLoaiThuoc.Location = new System.Drawing.Point(143, 406);
+            this.txtMaLoaiThuoc.Margin = new System.Windows.Forms.Padding(7);
+            this.txtMaLoaiThuoc.Multiline = true;
+            this.txtMaLoaiThuoc.Name = "txtMaLoaiThuoc";
+            this.txtMaLoaiThuoc.Size = new System.Drawing.Size(187, 48);
+            this.txtMaLoaiThuoc.TabIndex = 110;
+            this.txtMaLoaiThuoc.TabStop = false;
             // 
-            // textBox2
+            // txtTenLoaiThuoc
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(344, 406);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(7);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(252, 48);
-            this.textBox2.TabIndex = 110;
-            this.textBox2.TabStop = false;
+            this.txtTenLoaiThuoc.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtTenLoaiThuoc.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTenLoaiThuoc.Enabled = false;
+            this.txtTenLoaiThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLoaiThuoc.Location = new System.Drawing.Point(344, 406);
+            this.txtTenLoaiThuoc.Margin = new System.Windows.Forms.Padding(7);
+            this.txtTenLoaiThuoc.Multiline = true;
+            this.txtTenLoaiThuoc.Name = "txtTenLoaiThuoc";
+            this.txtTenLoaiThuoc.Size = new System.Drawing.Size(252, 48);
+            this.txtTenLoaiThuoc.TabIndex = 110;
+            this.txtTenLoaiThuoc.TabStop = false;
             // 
-            // textBox4
+            // txtDonGia
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(792, 406);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(7);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(173, 48);
-            this.textBox4.TabIndex = 110;
-            this.textBox4.TabStop = false;
+            this.txtDonGia.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtDonGia.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtDonGia.Enabled = false;
+            this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonGia.Location = new System.Drawing.Point(792, 406);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(7);
+            this.txtDonGia.Multiline = true;
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(173, 48);
+            this.txtDonGia.TabIndex = 110;
+            this.txtDonGia.TabStop = false;
             // 
-            // textBox6
+            // txtThanhTien
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(979, 406);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(7);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(173, 48);
-            this.textBox6.TabIndex = 110;
-            this.textBox6.TabStop = false;
+            this.txtThanhTien.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtThanhTien.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtThanhTien.Enabled = false;
+            this.txtThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThanhTien.Location = new System.Drawing.Point(979, 406);
+            this.txtThanhTien.Margin = new System.Windows.Forms.Padding(7);
+            this.txtThanhTien.Multiline = true;
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.Size = new System.Drawing.Size(173, 48);
+            this.txtThanhTien.TabIndex = 110;
+            this.txtThanhTien.TabStop = false;
             // 
-            // textBox7
+            // txtMaKhamBenh
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(41, 165);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(7);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(252, 48);
-            this.textBox7.TabIndex = 110;
-            this.textBox7.TabStop = false;
+            this.txtMaKhamBenh.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtMaKhamBenh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtMaKhamBenh.Enabled = false;
+            this.txtMaKhamBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKhamBenh.Location = new System.Drawing.Point(41, 165);
+            this.txtMaKhamBenh.Margin = new System.Windows.Forms.Padding(7);
+            this.txtMaKhamBenh.Multiline = true;
+            this.txtMaKhamBenh.Name = "txtMaKhamBenh";
+            this.txtMaKhamBenh.Size = new System.Drawing.Size(252, 48);
+            this.txtMaKhamBenh.TabIndex = 110;
+            this.txtMaKhamBenh.TabStop = false;
             // 
-            // textBox8
+            // txtTenBenhNhan
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(461, 165);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(7);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(252, 48);
-            this.textBox8.TabIndex = 110;
-            this.textBox8.TabStop = false;
+            this.txtTenBenhNhan.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtTenBenhNhan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTenBenhNhan.Enabled = false;
+            this.txtTenBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenBenhNhan.Location = new System.Drawing.Point(461, 165);
+            this.txtTenBenhNhan.Margin = new System.Windows.Forms.Padding(7);
+            this.txtTenBenhNhan.Multiline = true;
+            this.txtTenBenhNhan.Name = "txtTenBenhNhan";
+            this.txtTenBenhNhan.Size = new System.Drawing.Size(252, 48);
+            this.txtTenBenhNhan.TabIndex = 110;
+            this.txtTenBenhNhan.TabStop = false;
             // 
-            // textBox9
+            // txtNgayKham
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox9.Enabled = false;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(853, 165);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(7);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(252, 48);
-            this.textBox9.TabIndex = 110;
-            this.textBox9.TabStop = false;
+            this.txtNgayKham.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNgayKham.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNgayKham.Enabled = false;
+            this.txtNgayKham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayKham.Location = new System.Drawing.Point(853, 165);
+            this.txtNgayKham.Margin = new System.Windows.Forms.Padding(7);
+            this.txtNgayKham.Multiline = true;
+            this.txtNgayKham.Name = "txtNgayKham";
+            this.txtNgayKham.Size = new System.Drawing.Size(252, 48);
+            this.txtNgayKham.TabIndex = 110;
+            this.txtNgayKham.TabStop = false;
             // 
-            // textBox10
+            // txtTienThuoc
             // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox10.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox10.Enabled = false;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(461, 280);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(7);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(252, 48);
-            this.textBox10.TabIndex = 110;
-            this.textBox10.TabStop = false;
+            this.txtTienThuoc.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtTienThuoc.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTienThuoc.Enabled = false;
+            this.txtTienThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienThuoc.Location = new System.Drawing.Point(461, 280);
+            this.txtTienThuoc.Margin = new System.Windows.Forms.Padding(7);
+            this.txtTienThuoc.Multiline = true;
+            this.txtTienThuoc.Name = "txtTienThuoc";
+            this.txtTienThuoc.Size = new System.Drawing.Size(252, 48);
+            this.txtTienThuoc.TabIndex = 110;
+            this.txtTienThuoc.TabStop = false;
             // 
-            // textBox11
+            // txtTienKham
             // 
-            this.textBox11.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox11.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox11.Enabled = false;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(41, 280);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(7);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(252, 48);
-            this.textBox11.TabIndex = 110;
-            this.textBox11.TabStop = false;
+            this.txtTienKham.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtTienKham.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTienKham.Enabled = false;
+            this.txtTienKham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienKham.Location = new System.Drawing.Point(41, 280);
+            this.txtTienKham.Margin = new System.Windows.Forms.Padding(7);
+            this.txtTienKham.Multiline = true;
+            this.txtTienKham.Name = "txtTienKham";
+            this.txtTienKham.Size = new System.Drawing.Size(252, 48);
+            this.txtTienKham.TabIndex = 110;
+            this.txtTienKham.TabStop = false;
             // 
             // textBox12
             // 
@@ -539,27 +539,27 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox23);
             this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtSoluongThuoc);
             this.Controls.Add(this.textBox22);
             this.Controls.Add(this.textBox21);
             this.Controls.Add(this.textBox16);
             this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtThanhTien);
+            this.Controls.Add(this.txtDonGia);
+            this.Controls.Add(this.txtTienKham);
+            this.Controls.Add(this.txtTienThuoc);
+            this.Controls.Add(this.txtNgayKham);
             this.Controls.Add(this.textBox20);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtTenBenhNhan);
             this.Controls.Add(this.textBox14);
             this.Controls.Add(this.textBox19);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtMaKhamBenh);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtTenLoaiThuoc);
             this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtMaLoaiThuoc);
+            this.Controls.Add(this.txtSTT);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -581,8 +581,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSoluongThuoc;
+        private System.Windows.Forms.TextBox txtSTT;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -595,15 +595,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtMaLoaiThuoc;
+        private System.Windows.Forms.TextBox txtTenLoaiThuoc;
+        private System.Windows.Forms.TextBox txtDonGia;
+        private System.Windows.Forms.TextBox txtThanhTien;
+        private System.Windows.Forms.TextBox txtMaKhamBenh;
+        private System.Windows.Forms.TextBox txtTenBenhNhan;
+        private System.Windows.Forms.TextBox txtNgayKham;
+        private System.Windows.Forms.TextBox txtTienThuoc;
+        private System.Windows.Forms.TextBox txtTienKham;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;

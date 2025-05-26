@@ -34,7 +34,7 @@ namespace DoAnSE104.GUI
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbLoaiBenh = new System.Windows.Forms.ComboBox();
+            this.selectLoaiBenh = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,15 +46,15 @@ namespace DoAnSE104.GUI
             this.txtMaKB = new System.Windows.Forms.TextBox();
             this.txtDonVi1 = new System.Windows.Forms.TextBox();
             this.txtCachDung1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtSTT1 = new System.Windows.Forms.TextBox();
             this.txtSLThuoc1 = new System.Windows.Forms.TextBox();
             this.cbLoaiThuoc2 = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtSTT2 = new System.Windows.Forms.TextBox();
             this.txtSLThuoc2 = new System.Windows.Forms.TextBox();
             this.txtDonVi2 = new System.Windows.Forms.TextBox();
             this.txtCachDung2 = new System.Windows.Forms.TextBox();
             this.cbLoaiThuoc3 = new System.Windows.Forms.ComboBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtSTT3 = new System.Windows.Forms.TextBox();
             this.txtSLThuoc3 = new System.Windows.Forms.TextBox();
             this.txtDonVi3 = new System.Windows.Forms.TextBox();
             this.txtCachDung3 = new System.Windows.Forms.TextBox();
@@ -135,17 +135,17 @@ namespace DoAnSE104.GUI
             this.label7.TabIndex = 75;
             this.label7.Text = "STT";
             // 
-            // cbLoaiBenh
+            // selectLoaiBenh
             // 
-            this.cbLoaiBenh.BackColor = System.Drawing.Color.LightGray;
-            this.cbLoaiBenh.FormattingEnabled = true;
-            this.cbLoaiBenh.ItemHeight = 29;
-            this.cbLoaiBenh.Location = new System.Drawing.Point(859, 152);
-            this.cbLoaiBenh.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.cbLoaiBenh.MaxDropDownItems = 20;
-            this.cbLoaiBenh.Name = "cbLoaiBenh";
-            this.cbLoaiBenh.Size = new System.Drawing.Size(237, 37);
-            this.cbLoaiBenh.TabIndex = 74;
+            this.selectLoaiBenh.BackColor = System.Drawing.Color.LightGray;
+            this.selectLoaiBenh.FormattingEnabled = true;
+            this.selectLoaiBenh.ItemHeight = 29;
+            this.selectLoaiBenh.Location = new System.Drawing.Point(859, 152);
+            this.selectLoaiBenh.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.selectLoaiBenh.MaxDropDownItems = 20;
+            this.selectLoaiBenh.Name = "selectLoaiBenh";
+            this.selectLoaiBenh.Size = new System.Drawing.Size(237, 37);
+            this.selectLoaiBenh.TabIndex = 74;
             // 
             // label6
             // 
@@ -283,19 +283,19 @@ namespace DoAnSE104.GUI
             this.txtCachDung1.TabIndex = 96;
             this.txtCachDung1.TabStop = false;
             // 
-            // txtSTT
+            // txtSTT1
             // 
-            this.txtSTT.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSTT.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtSTT.Enabled = false;
-            this.txtSTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSTT.Location = new System.Drawing.Point(35, 372);
-            this.txtSTT.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSTT.Multiline = true;
-            this.txtSTT.Name = "txtSTT";
-            this.txtSTT.Size = new System.Drawing.Size(107, 45);
-            this.txtSTT.TabIndex = 96;
-            this.txtSTT.TabStop = false;
+            this.txtSTT1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSTT1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSTT1.Enabled = false;
+            this.txtSTT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTT1.Location = new System.Drawing.Point(35, 372);
+            this.txtSTT1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSTT1.Multiline = true;
+            this.txtSTT1.Name = "txtSTT1";
+            this.txtSTT1.Size = new System.Drawing.Size(107, 45);
+            this.txtSTT1.TabIndex = 96;
+            this.txtSTT1.TabStop = false;
             // 
             // txtSLThuoc1
             // 
@@ -324,19 +324,19 @@ namespace DoAnSE104.GUI
             this.cbLoaiThuoc2.TabIndex = 89;
             this.cbLoaiThuoc2.SelectedIndexChanged += new System.EventHandler(this.cbLoaiThuoc2_SelectedIndexChanged);
             // 
-            // textBox7
+            // txtSTT2
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(35, 434);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(107, 45);
-            this.textBox7.TabIndex = 96;
-            this.textBox7.TabStop = false;
+            this.txtSTT2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSTT2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSTT2.Enabled = false;
+            this.txtSTT2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTT2.Location = new System.Drawing.Point(35, 434);
+            this.txtSTT2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSTT2.Multiline = true;
+            this.txtSTT2.Name = "txtSTT2";
+            this.txtSTT2.Size = new System.Drawing.Size(107, 45);
+            this.txtSTT2.TabIndex = 96;
+            this.txtSTT2.TabStop = false;
             // 
             // txtSLThuoc2
             // 
@@ -393,19 +393,19 @@ namespace DoAnSE104.GUI
             this.cbLoaiThuoc3.TabIndex = 89;
             this.cbLoaiThuoc3.SelectedIndexChanged += new System.EventHandler(this.cbLoaiThuoc3_SelectedIndexChanged);
             // 
-            // textBox12
+            // txtSTT3
             // 
-            this.textBox12.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox12.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox12.Enabled = false;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(35, 502);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(107, 45);
-            this.textBox12.TabIndex = 96;
-            this.textBox12.TabStop = false;
+            this.txtSTT3.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSTT3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSTT3.Enabled = false;
+            this.txtSTT3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTT3.Location = new System.Drawing.Point(35, 502);
+            this.txtSTT3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSTT3.Multiline = true;
+            this.txtSTT3.Name = "txtSTT3";
+            this.txtSTT3.Size = new System.Drawing.Size(107, 45);
+            this.txtSTT3.TabIndex = 96;
+            this.txtSTT3.TabStop = false;
             // 
             // txtSLThuoc3
             // 
@@ -491,9 +491,9 @@ namespace DoAnSE104.GUI
             this.Controls.Add(this.txtSLThuoc3);
             this.Controls.Add(this.txtSLThuoc2);
             this.Controls.Add(this.txtSLThuoc1);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtSTT3);
+            this.Controls.Add(this.txtSTT2);
+            this.Controls.Add(this.txtSTT1);
             this.Controls.Add(this.txtMaKB);
             this.Controls.Add(this.txtNK);
             this.Controls.Add(this.label1);
@@ -543,15 +543,15 @@ namespace DoAnSE104.GUI
         private TextBox txtMaKB;
         private TextBox txtDonVi1;
         private TextBox txtCachDung1;
-        private TextBox textBox4;
+        private TextBox txtSTT1;
         private TextBox txtSLThuoc1;
         private ComboBox cbLoaiThuoc2;
-        private TextBox textBox7;
+        private TextBox txtSTT2;
         private TextBox txtSLThuoc2;
         private TextBox txtDonVi2;
         private TextBox txtCachDung2;
         private ComboBox cbLoaiThuoc3;
-        private TextBox textBox12;
+        private TextBox txtSTT3;
         private TextBox txtSLThuoc3;
         private TextBox txtDonVi3;
         private TextBox txtCachDung3;

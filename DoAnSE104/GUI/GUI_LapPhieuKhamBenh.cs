@@ -25,9 +25,9 @@ namespace DoAnSE104.GUI
         {
             InitializeComponent();
             // Thiết lập các giá trị mặc định cho các TextBox
-            this.textBox4.Text = "1";
-            this.textBox7.Text = "2";
-            this.textBox12.Text = "3";
+            this.txtSTT1.Text = "1";
+            this.txtSTT2.Text = "2";
+            this.txtSTT3.Text = "3";
         }
 
         private void GUI_LapPhieuKhamBenh_Load(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace DoAnSE104.GUI
             
             
             // Reset tất cả ComboBox về trạng thái trống
-            cbLoaiBenh.SelectedIndex = -1;
+            selectLoaiBenh.SelectedIndex = -1;
             cbLoaiThuoc1.SelectedIndex = -1;
             cbLoaiThuoc2.SelectedIndex = -1;
             cbLoaiThuoc3.SelectedIndex = -1;
@@ -45,9 +45,9 @@ namespace DoAnSE104.GUI
 
         private void LoadDanhSachLoaiBenh()
         {
-            cbLoaiBenh.DataSource = BUS_LoaiBenh.LayDanhSachLoaiBenh();
-            cbLoaiBenh.DisplayMember = "tenLoaiBenh";
-            cbLoaiBenh.ValueMember = "maLoaiBenh";
+            selectLoaiBenh.DataSource = BUS_LoaiBenh.LayDanhSachLoaiBenh();
+            selectLoaiBenh.DisplayMember = "tenLoaiBenh";
+            selectLoaiBenh.ValueMember = "maLoaiBenh";
         }
 
         private void LoadDanhSachLoaiThuoc()
@@ -71,7 +71,7 @@ namespace DoAnSE104.GUI
             // Validation
             if (string.IsNullOrWhiteSpace(txtMaKB.Text) ||
                 string.IsNullOrWhiteSpace(txtTrieuChung.Text) ||
-                cbLoaiBenh.SelectedValue == null)
+                selectLoaiBenh.SelectedValue == null)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin bắt buộc!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -79,7 +79,7 @@ namespace DoAnSE104.GUI
             try
             {  
                 // Thêm phiếu khám bệnh
-                if (BUS_KhamBenh.CapNhatKhamBenh(txtMaKB.Text.Trim(), cbLoaiBenh.SelectedValue.ToString(), txtTrieuChung.Text.Trim()))
+                if (BUS_KhamBenh.CapNhatKhamBenh(txtMaKB.Text.Trim(), selectLoaiBenh.SelectedValue.ToString(), txtTrieuChung.Text.Trim()))
                 {
                     // Lưu chi tiết thuốc nếu có
                     bool success = true;
@@ -145,7 +145,7 @@ namespace DoAnSE104.GUI
             txtNK.Clear();
             txtTenBN.Clear();   
             txtTrieuChung.Clear();
-            cbLoaiBenh.SelectedIndex = -1;
+            selectLoaiBenh.SelectedIndex = -1;
 
             cbLoaiThuoc1.SelectedIndex = -1;
             cbLoaiThuoc2.SelectedIndex = -1;
@@ -284,7 +284,7 @@ namespace DoAnSE104.GUI
                             // Xóa các thông tin hiển thị
                             txtNK.Text = "";
                             txtTrieuChung.Text = "";
-                            cbLoaiBenh.SelectedIndex = -1;
+                            selectLoaiBenh.SelectedIndex = -1;
                         }
                     }
                 }

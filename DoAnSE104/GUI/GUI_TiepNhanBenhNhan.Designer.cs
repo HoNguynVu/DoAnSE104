@@ -52,7 +52,7 @@
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(235, 50);
             this.btnNew.TabIndex = 5;
-            this.btnNew.Text = "Bệnh nhân mới";
+            this.btnNew.Text = "Tìm bệnh nhân";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 

@@ -32,5 +32,11 @@ namespace DoAnSE104.DTO
             this.NgayKham = ngayKham;
             this.MaBenhNhan = maBenhNhan;
         }
+        public DTO_KhamBenh(string maKhamBenh, string trieuChung, string maLoaiBenh)
+        {
+            this.MaKhamBenh = maKhamBenh;
+            this.TrieuChung = trieuChung;
+            this.maLoaiBenh = maLoaiBenh;
+        }
     }
 }

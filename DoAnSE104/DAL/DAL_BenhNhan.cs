@@ -22,12 +22,31 @@ namespace DoAnSE104.DAL
                 string maBenhNhan = row["MaBenhNhan"].ToString();
                 string hoTen = row["HoTen"].ToString();
                 string gioiTinh = row["GioiTinh"].ToString();
-                DateTime namSinh = DateTime.Parse(row["NamSinh"].ToString());
+                int namSinh = int.Parse(row["NamSinh"].ToString());
                 string diaChi = row["DiaChi"].ToString();
                 DTO_BenhNhan benhNhan = new DTO_BenhNhan(maBenhNhan, hoTen, gioiTinh, namSinh, diaChi);
                 DanhSachBenhNhan.Add(benhNhan);
             }
             return DanhSachBenhNhan;
+        }
+        public DTO_BenhNhan LayThongTinBenhNhan(string maBenhNhan)
+        {
+            string query = "SELECT * FROM BENHNHAN WHERE MaBenhNhan = @MaBenhNhan";
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                new MySqlParameter("@MaBenhNhan", maBenhNhan)
+            };
+            DataTable dt = DatabaseHelper.ExecuteQuery(query, parameters);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                string hoTen = row["HoTen"].ToString();
+                string gioiTinh = row["GioiTinh"].ToString();
+                int namSinh = int.Parse(row["NamSinh"].ToString());
+                string diaChi = row["DiaChi"].ToString();
+                return new DTO_BenhNhan(maBenhNhan, hoTen, gioiTinh, namSinh, diaChi);
+            }
+            return null;
         }
 
         public bool ThemBenhNhan(DTO_BenhNhan BenhNhan)

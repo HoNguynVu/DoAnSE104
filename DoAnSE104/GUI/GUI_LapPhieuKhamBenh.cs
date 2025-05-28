@@ -300,6 +300,5 @@ namespace DoAnSE104.GUI
                 errorProvider1.SetError(txtMaKB, "Vui lòng nhập mã khám bệnh.");
             }
         }
-        
     }
 }

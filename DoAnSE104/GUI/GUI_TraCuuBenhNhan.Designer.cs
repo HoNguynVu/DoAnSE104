@@ -392,7 +392,7 @@
             this.dgvKetQua.Name = "dgvKetQua";
             this.dgvKetQua.RowHeadersWidth = 51;
             this.dgvKetQua.RowTemplate.Height = 24;
-            this.dgvKetQua.Size = new System.Drawing.Size(1296, 52);
+            this.dgvKetQua.Size = new System.Drawing.Size(1296, 51);
             this.dgvKetQua.TabIndex = 29;
             // 
             // STT

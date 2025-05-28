@@ -14,7 +14,7 @@ namespace DoAnSE104.DAL
         DatabaseHelper DatabaseHelper = new DatabaseHelper();
         public List<DTO_CachDung> LayDanhSachCachDung()
         {
-            string query = "SELECT TenCachDung FROM CACHDUNG";
+            string query = "SELECT * FROM CACHDUNG";
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
             List<DTO_CachDung> danhSachCachDung = new List<DTO_CachDung>();
             foreach (DataRow row in dt.Rows)

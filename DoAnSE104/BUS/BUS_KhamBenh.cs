@@ -25,5 +25,17 @@ namespace DoAnSE104.BUS
         {
             return DAL_KhamBenh.LayMaKhamBenhMoi();
         }
+        public bool CapNhatKhamBenh(string maKhamBenh, string maLoaiBenh, string trieuChung)
+        {
+            if (string.IsNullOrWhiteSpace(maKhamBenh) || string.IsNullOrWhiteSpace(maLoaiBenh) || string.IsNullOrWhiteSpace(trieuChung))
+                throw new Exception("Thông tin khám bệnh không hợp lệ.");
+            return DAL_KhamBenh.CapNhatKhamBenh(maKhamBenh, maLoaiBenh, trieuChung);
+        }
+        public DTO_KhamBenh LayThongTinKhamBenh(string maKhamBenh)
+        {
+            if (string.IsNullOrWhiteSpace(maKhamBenh))
+                throw new Exception("Mã khám bệnh không được để trống.");
+            return DAL_KhamBenh.LayThongTinKhamBenh(maKhamBenh);
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace DoAnSE104.DAL
         DatabaseHelper DatabaseHelper = new DatabaseHelper();
         public List<DTO_DonVi> LayDanhSachDonVi()
         {
-            string query = "SELECT TenDonVi FROM DONVI";
+            string query = "SELECT * FROM DONVI";
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
             List<DTO_DonVi> danhSachDonVi = new List<DTO_DonVi>();
             foreach (DataRow row in dt.Rows)

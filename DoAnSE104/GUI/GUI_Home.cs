@@ -16,5 +16,17 @@ namespace DoAnSE104.GUI
         {
             InitializeComponent();
         }
+
+        private void BtnMedicalExamination_Click(object sender, EventArgs e)
+        {
+            GUI_TiepNhanBenhNhan gui_TiepNhanBenhNhan = new GUI_TiepNhanBenhNhan();
+            gui_TiepNhanBenhNhan.Show();
+        }
+
+        private void BtnCreateMedicalExamination_Click(object sender, EventArgs e)
+        {
+            GUI_LapPhieuKhamBenh gui_LapPhieuKhamBenh = new GUI_LapPhieuKhamBenh();
+            gui_LapPhieuKhamBenh.Show();
+        }
     }
 }

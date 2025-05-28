@@ -52,7 +52,7 @@
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(176, 41);
             this.btnNew.TabIndex = 5;
-            this.btnNew.Text = "Bệnh nhân mới";
+            this.btnNew.Text = "Tìm bệnh nhân";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -197,7 +197,6 @@
             this.maKhamBenh.Size = new System.Drawing.Size(329, 45);
             this.maKhamBenh.TabIndex = 20;
             this.maKhamBenh.TabStop = false;
-            this.maKhamBenh.TextChanged += new System.EventHandler(this.maKhamBenh_TextChanged);
             // 
             // GUI_TiepNhanBenhNhan
             // 

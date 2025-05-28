@@ -26,8 +26,9 @@ namespace DoAnSE104.GUI
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtTrieuChung = new System.Windows.Forms.TextBox();
-            this.selectTenLoaiThuoc = new System.Windows.Forms.ComboBox();
+            this.cbLoaiThuoc1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -40,24 +41,27 @@ namespace DoAnSE104.GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.txtNgayKham = new System.Windows.Forms.TextBox();
-            this.txtTenBenhNhan = new System.Windows.Forms.TextBox();
-            this.txtMaKhamBenh = new System.Windows.Forms.TextBox();
-            this.txtDonVi = new System.Windows.Forms.TextBox();
-            this.txtCachDung = new System.Windows.Forms.TextBox();
-            this.txtSTT = new System.Windows.Forms.TextBox();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtNK = new System.Windows.Forms.TextBox();
+            this.txtTenBN = new System.Windows.Forms.TextBox();
+            this.txtMaKB = new System.Windows.Forms.TextBox();
+            this.txtDonVi1 = new System.Windows.Forms.TextBox();
+            this.txtCachDung1 = new System.Windows.Forms.TextBox();
+            this.txtSTT1 = new System.Windows.Forms.TextBox();
+            this.txtSLThuoc1 = new System.Windows.Forms.TextBox();
+            this.cbLoaiThuoc2 = new System.Windows.Forms.ComboBox();
+            this.txtSTT2 = new System.Windows.Forms.TextBox();
+            this.txtSLThuoc2 = new System.Windows.Forms.TextBox();
+            this.txtDonVi2 = new System.Windows.Forms.TextBox();
+            this.txtCachDung2 = new System.Windows.Forms.TextBox();
+            this.cbLoaiThuoc3 = new System.Windows.Forms.ComboBox();
+            this.txtSTT3 = new System.Windows.Forms.TextBox();
+            this.txtSLThuoc3 = new System.Windows.Forms.TextBox();
+            this.txtDonVi3 = new System.Windows.Forms.TextBox();
+            this.txtCachDung3 = new System.Windows.Forms.TextBox();
+            this.btnLapPK = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTrieuChung
@@ -68,17 +72,18 @@ namespace DoAnSE104.GUI
             this.txtTrieuChung.Size = new System.Drawing.Size(956, 34);
             this.txtTrieuChung.TabIndex = 94;
             // 
-            // selectTenLoaiThuoc
+            // cbLoaiThuoc1
             // 
-            this.selectTenLoaiThuoc.BackColor = System.Drawing.Color.LightGray;
-            this.selectTenLoaiThuoc.FormattingEnabled = true;
-            this.selectTenLoaiThuoc.ItemHeight = 29;
-            this.selectTenLoaiThuoc.Location = new System.Drawing.Point(180, 381);
-            this.selectTenLoaiThuoc.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.selectTenLoaiThuoc.MaxDropDownItems = 20;
-            this.selectTenLoaiThuoc.Name = "selectTenLoaiThuoc";
-            this.selectTenLoaiThuoc.Size = new System.Drawing.Size(221, 37);
-            this.selectTenLoaiThuoc.TabIndex = 89;
+            this.cbLoaiThuoc1.BackColor = System.Drawing.Color.LightGray;
+            this.cbLoaiThuoc1.FormattingEnabled = true;
+            this.cbLoaiThuoc1.ItemHeight = 29;
+            this.cbLoaiThuoc1.Location = new System.Drawing.Point(180, 381);
+            this.cbLoaiThuoc1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.cbLoaiThuoc1.MaxDropDownItems = 20;
+            this.cbLoaiThuoc1.Name = "cbLoaiThuoc1";
+            this.cbLoaiThuoc1.Size = new System.Drawing.Size(221, 37);
+            this.cbLoaiThuoc1.TabIndex = 89;
+            this.cbLoaiThuoc1.SelectedIndexChanged += new System.EventHandler(this.cbLoaiThuoc1_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -135,7 +140,7 @@ namespace DoAnSE104.GUI
             this.selectLoaiBenh.BackColor = System.Drawing.Color.LightGray;
             this.selectLoaiBenh.FormattingEnabled = true;
             this.selectLoaiBenh.ItemHeight = 29;
-            this.selectLoaiBenh.Location = new System.Drawing.Point(892, 153);
+            this.selectLoaiBenh.Location = new System.Drawing.Point(859, 152);
             this.selectLoaiBenh.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.selectLoaiBenh.MaxDropDownItems = 20;
             this.selectLoaiBenh.Name = "selectLoaiBenh";
@@ -207,263 +212,290 @@ namespace DoAnSE104.GUI
             this.label1.Size = new System.Drawing.Size(499, 62);
             this.label1.TabIndex = 67;
             this.label1.Text = "Lập phiếu khám bệnh";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // txtNgayKham
+            // txtNK
             // 
-            this.txtNgayKham.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtNgayKham.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtNgayKham.Enabled = false;
-            this.txtNgayKham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayKham.Location = new System.Drawing.Point(311, 145);
-            this.txtNgayKham.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNgayKham.Multiline = true;
-            this.txtNgayKham.Name = "txtNgayKham";
-            this.txtNgayKham.Size = new System.Drawing.Size(221, 45);
-            this.txtNgayKham.TabIndex = 96;
-            this.txtNgayKham.TabStop = false;
+            this.txtNK.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNK.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNK.Enabled = false;
+            this.txtNK.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK.Location = new System.Drawing.Point(302, 145);
+            this.txtNK.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNK.Multiline = true;
+            this.txtNK.Name = "txtNK";
+            this.txtNK.Size = new System.Drawing.Size(221, 45);
+            this.txtNK.TabIndex = 96;
+            this.txtNK.TabStop = false;
             // 
-            // txtTenBenhNhan
+            // txtTenBN
             // 
-            this.txtTenBenhNhan.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtTenBenhNhan.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtTenBenhNhan.Enabled = false;
-            this.txtTenBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenBenhNhan.Location = new System.Drawing.Point(571, 145);
-            this.txtTenBenhNhan.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenBenhNhan.Multiline = true;
-            this.txtTenBenhNhan.Name = "txtTenBenhNhan";
-            this.txtTenBenhNhan.Size = new System.Drawing.Size(268, 45);
-            this.txtTenBenhNhan.TabIndex = 96;
-            this.txtTenBenhNhan.TabStop = false;
+            this.txtTenBN.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtTenBN.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTenBN.Enabled = false;
+            this.txtTenBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenBN.Location = new System.Drawing.Point(550, 145);
+            this.txtTenBN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenBN.Multiline = true;
+            this.txtTenBN.Name = "txtTenBN";
+            this.txtTenBN.Size = new System.Drawing.Size(268, 45);
+            this.txtTenBN.TabIndex = 96;
+            this.txtTenBN.TabStop = false;
             // 
-            // txtMaKhamBenh
+            // txtMaKB
             // 
-            this.txtMaKhamBenh.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtMaKhamBenh.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtMaKhamBenh.Enabled = false;
-            this.txtMaKhamBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKhamBenh.Location = new System.Drawing.Point(35, 145);
-            this.txtMaKhamBenh.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaKhamBenh.Multiline = true;
-            this.txtMaKhamBenh.Name = "txtMaKhamBenh";
-            this.txtMaKhamBenh.Size = new System.Drawing.Size(238, 45);
-            this.txtMaKhamBenh.TabIndex = 96;
-            this.txtMaKhamBenh.TabStop = false;
+            this.txtMaKB.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtMaKB.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtMaKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKB.Location = new System.Drawing.Point(35, 145);
+            this.txtMaKB.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaKB.Multiline = true;
+            this.txtMaKB.Name = "txtMaKB";
+            this.txtMaKB.Size = new System.Drawing.Size(221, 45);
+            this.txtMaKB.TabIndex = 96;
+            this.txtMaKB.TabStop = false;
+            this.txtMaKB.TextChanged += new System.EventHandler(this.txtMaKB_TextChanged);
             // 
-            // txtDonVi
+            // txtDonVi1
             // 
-            this.txtDonVi.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtDonVi.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtDonVi.Enabled = false;
-            this.txtDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonVi.Location = new System.Drawing.Point(606, 373);
-            this.txtDonVi.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDonVi.Multiline = true;
-            this.txtDonVi.Name = "txtDonVi";
-            this.txtDonVi.Size = new System.Drawing.Size(132, 45);
-            this.txtDonVi.TabIndex = 96;
-            this.txtDonVi.TabStop = false;
+            this.txtDonVi1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtDonVi1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtDonVi1.Enabled = false;
+            this.txtDonVi1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonVi1.Location = new System.Drawing.Point(606, 373);
+            this.txtDonVi1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDonVi1.Multiline = true;
+            this.txtDonVi1.Name = "txtDonVi1";
+            this.txtDonVi1.Size = new System.Drawing.Size(132, 45);
+            this.txtDonVi1.TabIndex = 96;
+            this.txtDonVi1.TabStop = false;
             // 
-            // txtCachDung
+            // txtCachDung1
             // 
-            this.txtCachDung.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCachDung.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtCachDung.Enabled = false;
-            this.txtCachDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCachDung.Location = new System.Drawing.Point(784, 373);
-            this.txtCachDung.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCachDung.Multiline = true;
-            this.txtCachDung.Name = "txtCachDung";
-            this.txtCachDung.Size = new System.Drawing.Size(345, 45);
-            this.txtCachDung.TabIndex = 96;
-            this.txtCachDung.TabStop = false;
+            this.txtCachDung1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCachDung1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtCachDung1.Enabled = false;
+            this.txtCachDung1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCachDung1.Location = new System.Drawing.Point(784, 373);
+            this.txtCachDung1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCachDung1.Multiline = true;
+            this.txtCachDung1.Name = "txtCachDung1";
+            this.txtCachDung1.Size = new System.Drawing.Size(312, 45);
+            this.txtCachDung1.TabIndex = 96;
+            this.txtCachDung1.TabStop = false;
             // 
-            // txtSTT
+            // txtSTT1
             // 
-            this.txtSTT.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSTT.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtSTT.Enabled = false;
-            this.txtSTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSTT.Location = new System.Drawing.Point(35, 372);
-            this.txtSTT.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSTT.Multiline = true;
-            this.txtSTT.Name = "txtSTT";
-            this.txtSTT.Size = new System.Drawing.Size(107, 45);
-            this.txtSTT.TabIndex = 96;
-            this.txtSTT.TabStop = false;
+            this.txtSTT1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSTT1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSTT1.Enabled = false;
+            this.txtSTT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTT1.Location = new System.Drawing.Point(35, 372);
+            this.txtSTT1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSTT1.Multiline = true;
+            this.txtSTT1.Name = "txtSTT1";
+            this.txtSTT1.Size = new System.Drawing.Size(107, 45);
+            this.txtSTT1.TabIndex = 96;
+            this.txtSTT1.TabStop = false;
             // 
-            // txtSoLuong
+            // txtSLThuoc1
             // 
-            this.txtSoLuong.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSoLuong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtSoLuong.Enabled = false;
-            this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuong.Location = new System.Drawing.Point(434, 372);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSoLuong.Multiline = true;
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(138, 45);
-            this.txtSoLuong.TabIndex = 96;
-            this.txtSoLuong.TabStop = false;
+            this.txtSLThuoc1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSLThuoc1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSLThuoc1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSLThuoc1.Location = new System.Drawing.Point(434, 372);
+            this.txtSLThuoc1.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSLThuoc1.Multiline = true;
+            this.txtSLThuoc1.Name = "txtSLThuoc1";
+            this.txtSLThuoc1.Size = new System.Drawing.Size(107, 45);
+            this.txtSLThuoc1.TabIndex = 96;
+            this.txtSLThuoc1.TabStop = false;
+            this.txtSLThuoc1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSLThuoc1_KeyPress);
             // 
-            // comboBox1
+            // cbLoaiThuoc2
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.LightGray;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 29;
-            this.comboBox1.Location = new System.Drawing.Point(180, 443);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.comboBox1.MaxDropDownItems = 20;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(221, 37);
-            this.comboBox1.TabIndex = 89;
+            this.cbLoaiThuoc2.BackColor = System.Drawing.Color.LightGray;
+            this.cbLoaiThuoc2.FormattingEnabled = true;
+            this.cbLoaiThuoc2.ItemHeight = 29;
+            this.cbLoaiThuoc2.Location = new System.Drawing.Point(180, 443);
+            this.cbLoaiThuoc2.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.cbLoaiThuoc2.MaxDropDownItems = 20;
+            this.cbLoaiThuoc2.Name = "cbLoaiThuoc2";
+            this.cbLoaiThuoc2.Size = new System.Drawing.Size(221, 37);
+            this.cbLoaiThuoc2.TabIndex = 89;
+            this.cbLoaiThuoc2.SelectedIndexChanged += new System.EventHandler(this.cbLoaiThuoc2_SelectedIndexChanged);
             // 
-            // textBox7
+            // txtSTT2
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(35, 434);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(107, 45);
-            this.textBox7.TabIndex = 96;
-            this.textBox7.TabStop = false;
+            this.txtSTT2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSTT2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSTT2.Enabled = false;
+            this.txtSTT2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTT2.Location = new System.Drawing.Point(35, 434);
+            this.txtSTT2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSTT2.Multiline = true;
+            this.txtSTT2.Name = "txtSTT2";
+            this.txtSTT2.Size = new System.Drawing.Size(107, 45);
+            this.txtSTT2.TabIndex = 96;
+            this.txtSTT2.TabStop = false;
             // 
-            // textBox8
+            // txtSLThuoc2
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(434, 434);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(138, 45);
-            this.textBox8.TabIndex = 96;
-            this.textBox8.TabStop = false;
+            this.txtSLThuoc2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSLThuoc2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSLThuoc2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSLThuoc2.Location = new System.Drawing.Point(434, 434);
+            this.txtSLThuoc2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSLThuoc2.Multiline = true;
+            this.txtSLThuoc2.Name = "txtSLThuoc2";
+            this.txtSLThuoc2.Size = new System.Drawing.Size(107, 45);
+            this.txtSLThuoc2.TabIndex = 96;
+            this.txtSLThuoc2.TabStop = false;
+            this.txtSLThuoc2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSLThuoc2_KeyPress);
             // 
-            // textBox9
+            // txtDonVi2
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox9.Enabled = false;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(606, 435);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(132, 45);
-            this.textBox9.TabIndex = 96;
-            this.textBox9.TabStop = false;
+            this.txtDonVi2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtDonVi2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtDonVi2.Enabled = false;
+            this.txtDonVi2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonVi2.Location = new System.Drawing.Point(606, 435);
+            this.txtDonVi2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDonVi2.Multiline = true;
+            this.txtDonVi2.Name = "txtDonVi2";
+            this.txtDonVi2.Size = new System.Drawing.Size(132, 45);
+            this.txtDonVi2.TabIndex = 96;
+            this.txtDonVi2.TabStop = false;
             // 
-            // textBox10
+            // txtCachDung2
             // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox10.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox10.Enabled = false;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(784, 435);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(345, 45);
-            this.textBox10.TabIndex = 96;
-            this.textBox10.TabStop = false;
+            this.txtCachDung2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCachDung2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtCachDung2.Enabled = false;
+            this.txtCachDung2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCachDung2.Location = new System.Drawing.Point(784, 435);
+            this.txtCachDung2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCachDung2.Multiline = true;
+            this.txtCachDung2.Name = "txtCachDung2";
+            this.txtCachDung2.Size = new System.Drawing.Size(312, 45);
+            this.txtCachDung2.TabIndex = 96;
+            this.txtCachDung2.TabStop = false;
             // 
-            // comboBox3
+            // cbLoaiThuoc3
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.LightGray;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 29;
-            this.comboBox3.Location = new System.Drawing.Point(180, 511);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.comboBox3.MaxDropDownItems = 20;
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(221, 37);
-            this.comboBox3.TabIndex = 89;
+            this.cbLoaiThuoc3.BackColor = System.Drawing.Color.LightGray;
+            this.cbLoaiThuoc3.FormattingEnabled = true;
+            this.cbLoaiThuoc3.ItemHeight = 29;
+            this.cbLoaiThuoc3.Location = new System.Drawing.Point(180, 511);
+            this.cbLoaiThuoc3.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.cbLoaiThuoc3.MaxDropDownItems = 20;
+            this.cbLoaiThuoc3.Name = "cbLoaiThuoc3";
+            this.cbLoaiThuoc3.Size = new System.Drawing.Size(221, 37);
+            this.cbLoaiThuoc3.TabIndex = 89;
+            this.cbLoaiThuoc3.SelectedIndexChanged += new System.EventHandler(this.cbLoaiThuoc3_SelectedIndexChanged);
             // 
-            // textBox12
+            // txtSTT3
             // 
-            this.textBox12.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox12.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox12.Enabled = false;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(35, 502);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(107, 45);
-            this.textBox12.TabIndex = 96;
-            this.textBox12.TabStop = false;
+            this.txtSTT3.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSTT3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSTT3.Enabled = false;
+            this.txtSTT3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTT3.Location = new System.Drawing.Point(35, 502);
+            this.txtSTT3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSTT3.Multiline = true;
+            this.txtSTT3.Name = "txtSTT3";
+            this.txtSTT3.Size = new System.Drawing.Size(107, 45);
+            this.txtSTT3.TabIndex = 96;
+            this.txtSTT3.TabStop = false;
             // 
-            // textBox13
+            // txtSLThuoc3
             // 
-            this.textBox13.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox13.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox13.Enabled = false;
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(434, 502);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox13.Multiline = true;
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(138, 45);
-            this.textBox13.TabIndex = 96;
-            this.textBox13.TabStop = false;
+            this.txtSLThuoc3.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSLThuoc3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSLThuoc3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSLThuoc3.Location = new System.Drawing.Point(434, 502);
+            this.txtSLThuoc3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSLThuoc3.Multiline = true;
+            this.txtSLThuoc3.Name = "txtSLThuoc3";
+            this.txtSLThuoc3.Size = new System.Drawing.Size(107, 45);
+            this.txtSLThuoc3.TabIndex = 96;
+            this.txtSLThuoc3.TabStop = false;
+            this.txtSLThuoc3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSLThuoc3_KeyPress);
             // 
-            // textBox14
+            // txtDonVi3
             // 
-            this.textBox14.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox14.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox14.Enabled = false;
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(606, 503);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(132, 45);
-            this.textBox14.TabIndex = 96;
-            this.textBox14.TabStop = false;
+            this.txtDonVi3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtDonVi3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtDonVi3.Enabled = false;
+            this.txtDonVi3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonVi3.Location = new System.Drawing.Point(606, 503);
+            this.txtDonVi3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDonVi3.Multiline = true;
+            this.txtDonVi3.Name = "txtDonVi3";
+            this.txtDonVi3.Size = new System.Drawing.Size(132, 45);
+            this.txtDonVi3.TabIndex = 96;
+            this.txtDonVi3.TabStop = false;
             // 
-            // textBox15
+            // txtCachDung3
             // 
-            this.textBox15.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox15.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox15.Enabled = false;
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(784, 503);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(345, 45);
-            this.textBox15.TabIndex = 96;
-            this.textBox15.TabStop = false;
+            this.txtCachDung3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCachDung3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtCachDung3.Enabled = false;
+            this.txtCachDung3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCachDung3.Location = new System.Drawing.Point(784, 503);
+            this.txtCachDung3.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCachDung3.Multiline = true;
+            this.txtCachDung3.Name = "txtCachDung3";
+            this.txtCachDung3.Size = new System.Drawing.Size(312, 45);
+            this.txtCachDung3.TabIndex = 96;
+            this.txtCachDung3.TabStop = false;
+            // 
+            // btnLapPK
+            // 
+            this.btnLapPK.Location = new System.Drawing.Point(35, 581);
+            this.btnLapPK.Name = "btnLapPK";
+            this.btnLapPK.Size = new System.Drawing.Size(221, 44);
+            this.btnLapPK.TabIndex = 97;
+            this.btnLapPK.Text = "Lập phiếu khám";
+            this.btnLapPK.UseVisualStyleBackColor = true;
+            this.btnLapPK.Click += new System.EventHandler(this.btnLapPK_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(982, 581);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(114, 44);
+            this.btnExit.TabIndex = 98;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // GUI_LapPhieuKhamBenh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(1182, 635);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.txtCachDung);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.txtDonVi);
-            this.Controls.Add(this.txtTenBenhNhan);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.txtSoLuong);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.txtSTT);
-            this.Controls.Add(this.txtMaKhamBenh);
-            this.Controls.Add(this.txtNgayKham);
+            this.ClientSize = new System.Drawing.Size(1157, 649);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnLapPK);
+            this.Controls.Add(this.txtCachDung3);
+            this.Controls.Add(this.txtCachDung2);
+            this.Controls.Add(this.txtCachDung1);
+            this.Controls.Add(this.txtDonVi3);
+            this.Controls.Add(this.txtDonVi2);
+            this.Controls.Add(this.txtDonVi1);
+            this.Controls.Add(this.txtTenBN);
+            this.Controls.Add(this.txtSLThuoc3);
+            this.Controls.Add(this.txtSLThuoc2);
+            this.Controls.Add(this.txtSLThuoc1);
+            this.Controls.Add(this.txtSTT3);
+            this.Controls.Add(this.txtSTT2);
+            this.Controls.Add(this.txtSTT1);
+            this.Controls.Add(this.txtMaKB);
+            this.Controls.Add(this.txtNK);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -473,9 +505,9 @@ namespace DoAnSE104.GUI
             this.Controls.Add(this.label6);
             this.Controls.Add(this.selectLoaiBenh);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.selectTenLoaiThuoc);
+            this.Controls.Add(this.cbLoaiThuoc3);
+            this.Controls.Add(this.cbLoaiThuoc2);
+            this.Controls.Add(this.cbLoaiThuoc1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -485,6 +517,7 @@ namespace DoAnSE104.GUI
             this.Name = "GUI_LapPhieuKhamBenh";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.GUI_LapPhieuKhamBenh_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,7 +525,7 @@ namespace DoAnSE104.GUI
 
         #endregion
         private TextBox txtTrieuChung;
-        private ComboBox selectTenLoaiThuoc;
+        private ComboBox cbLoaiThuoc1;
         private Label label11;
         private Label label10;
         private Label label9;
@@ -505,23 +538,25 @@ namespace DoAnSE104.GUI
         private Label label3;
         private Label label2;
         private Label label1;
-        private SaveFileDialog saveFileDialog1;
-        private TextBox txtNgayKham;
-        private TextBox txtTenBenhNhan;
-        private TextBox txtMaKhamBenh;
-        private TextBox txtDonVi;
-        private TextBox txtCachDung;
-        private TextBox txtSTT;
-        private TextBox txtSoLuong;
-        private ComboBox comboBox1;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private ComboBox comboBox3;
-        private TextBox textBox12;
-        private TextBox textBox13;
-        private TextBox textBox14;
-        private TextBox textBox15;
+        private TextBox txtNK;
+        private TextBox txtTenBN;
+        private TextBox txtMaKB;
+        private TextBox txtDonVi1;
+        private TextBox txtCachDung1;
+        private TextBox txtSTT1;
+        private TextBox txtSLThuoc1;
+        private ComboBox cbLoaiThuoc2;
+        private TextBox txtSTT2;
+        private TextBox txtSLThuoc2;
+        private TextBox txtDonVi2;
+        private TextBox txtCachDung2;
+        private ComboBox cbLoaiThuoc3;
+        private TextBox txtSTT3;
+        private TextBox txtSLThuoc3;
+        private TextBox txtDonVi3;
+        private TextBox txtCachDung3;
+        private Button btnLapPK;
+        private Button btnExit;
+        private ErrorProvider errorProvider1;
     }
 }

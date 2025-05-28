@@ -25,7 +25,7 @@ namespace DoAnSE104.GUI
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            // Khi chọn ngày trên lịch, cập nhật giá trị vào textBox3 (ngày khám)
+            // Khi chọn ngày trên lịch, cập nhật giá trị vào textBox ngày khám
             txtNgayKham.Text = e.Start.ToString("dd/MM/yyyy");
             
         }

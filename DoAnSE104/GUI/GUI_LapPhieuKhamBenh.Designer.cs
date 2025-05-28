@@ -27,13 +27,9 @@ namespace DoAnSE104.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtTrieuChung = new System.Windows.Forms.TextBox();
-            this.cbLoaiThuoc1 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.selectLoaiBenh = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,24 +40,17 @@ namespace DoAnSE104.GUI
             this.txtNK = new System.Windows.Forms.TextBox();
             this.txtTenBN = new System.Windows.Forms.TextBox();
             this.txtMaKB = new System.Windows.Forms.TextBox();
-            this.txtDonVi1 = new System.Windows.Forms.TextBox();
-            this.txtCachDung1 = new System.Windows.Forms.TextBox();
-            this.txtSTT1 = new System.Windows.Forms.TextBox();
-            this.txtSLThuoc1 = new System.Windows.Forms.TextBox();
-            this.cbLoaiThuoc2 = new System.Windows.Forms.ComboBox();
-            this.txtSTT2 = new System.Windows.Forms.TextBox();
-            this.txtSLThuoc2 = new System.Windows.Forms.TextBox();
-            this.txtDonVi2 = new System.Windows.Forms.TextBox();
-            this.txtCachDung2 = new System.Windows.Forms.TextBox();
-            this.cbLoaiThuoc3 = new System.Windows.Forms.ComboBox();
-            this.txtSTT3 = new System.Windows.Forms.TextBox();
-            this.txtSLThuoc3 = new System.Windows.Forms.TextBox();
-            this.txtDonVi3 = new System.Windows.Forms.TextBox();
-            this.txtCachDung3 = new System.Windows.Forms.TextBox();
             this.btnLapPK = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiThuoc = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTrieuChung
@@ -69,71 +58,8 @@ namespace DoAnSE104.GUI
             this.txtTrieuChung.Location = new System.Drawing.Point(173, 245);
             this.txtTrieuChung.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.txtTrieuChung.Name = "txtTrieuChung";
-            this.txtTrieuChung.Size = new System.Drawing.Size(956, 34);
+            this.txtTrieuChung.Size = new System.Drawing.Size(944, 34);
             this.txtTrieuChung.TabIndex = 94;
-            // 
-            // cbLoaiThuoc1
-            // 
-            this.cbLoaiThuoc1.BackColor = System.Drawing.Color.LightGray;
-            this.cbLoaiThuoc1.FormattingEnabled = true;
-            this.cbLoaiThuoc1.ItemHeight = 29;
-            this.cbLoaiThuoc1.Location = new System.Drawing.Point(180, 381);
-            this.cbLoaiThuoc1.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.cbLoaiThuoc1.MaxDropDownItems = 20;
-            this.cbLoaiThuoc1.Name = "cbLoaiThuoc1";
-            this.cbLoaiThuoc1.Size = new System.Drawing.Size(221, 37);
-            this.cbLoaiThuoc1.TabIndex = 89;
-            this.cbLoaiThuoc1.SelectedIndexChanged += new System.EventHandler(this.cbLoaiThuoc1_SelectedIndexChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(432, 329);
-            this.label11.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 29);
-            this.label11.TabIndex = 79;
-            this.label11.Text = "Số lượng";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(779, 329);
-            this.label10.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(128, 29);
-            this.label10.TabIndex = 78;
-            this.label10.Text = "Cách dùng";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(601, 329);
-            this.label9.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 29);
-            this.label9.TabIndex = 77;
-            this.label9.Text = "Đơn vị";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(175, 329);
-            this.label8.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(165, 29);
-            this.label8.TabIndex = 76;
-            this.label8.Text = "Tên loại thuốc";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 329);
-            this.label7.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 29);
-            this.label7.TabIndex = 75;
-            this.label7.Text = "STT";
             // 
             // selectLoaiBenh
             // 
@@ -255,203 +181,9 @@ namespace DoAnSE104.GUI
             this.txtMaKB.TabStop = false;
             this.txtMaKB.TextChanged += new System.EventHandler(this.txtMaKB_TextChanged);
             // 
-            // txtDonVi1
-            // 
-            this.txtDonVi1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtDonVi1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtDonVi1.Enabled = false;
-            this.txtDonVi1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonVi1.Location = new System.Drawing.Point(606, 373);
-            this.txtDonVi1.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDonVi1.Multiline = true;
-            this.txtDonVi1.Name = "txtDonVi1";
-            this.txtDonVi1.Size = new System.Drawing.Size(132, 45);
-            this.txtDonVi1.TabIndex = 96;
-            this.txtDonVi1.TabStop = false;
-            // 
-            // txtCachDung1
-            // 
-            this.txtCachDung1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCachDung1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtCachDung1.Enabled = false;
-            this.txtCachDung1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCachDung1.Location = new System.Drawing.Point(784, 373);
-            this.txtCachDung1.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCachDung1.Multiline = true;
-            this.txtCachDung1.Name = "txtCachDung1";
-            this.txtCachDung1.Size = new System.Drawing.Size(312, 45);
-            this.txtCachDung1.TabIndex = 96;
-            this.txtCachDung1.TabStop = false;
-            // 
-            // txtSTT1
-            // 
-            this.txtSTT1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSTT1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtSTT1.Enabled = false;
-            this.txtSTT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSTT1.Location = new System.Drawing.Point(35, 372);
-            this.txtSTT1.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSTT1.Multiline = true;
-            this.txtSTT1.Name = "txtSTT1";
-            this.txtSTT1.Size = new System.Drawing.Size(107, 45);
-            this.txtSTT1.TabIndex = 96;
-            this.txtSTT1.TabStop = false;
-            // 
-            // txtSLThuoc1
-            // 
-            this.txtSLThuoc1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSLThuoc1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtSLThuoc1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSLThuoc1.Location = new System.Drawing.Point(434, 372);
-            this.txtSLThuoc1.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSLThuoc1.Multiline = true;
-            this.txtSLThuoc1.Name = "txtSLThuoc1";
-            this.txtSLThuoc1.Size = new System.Drawing.Size(107, 45);
-            this.txtSLThuoc1.TabIndex = 96;
-            this.txtSLThuoc1.TabStop = false;
-            this.txtSLThuoc1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSLThuoc1_KeyPress);
-            // 
-            // cbLoaiThuoc2
-            // 
-            this.cbLoaiThuoc2.BackColor = System.Drawing.Color.LightGray;
-            this.cbLoaiThuoc2.FormattingEnabled = true;
-            this.cbLoaiThuoc2.ItemHeight = 29;
-            this.cbLoaiThuoc2.Location = new System.Drawing.Point(180, 443);
-            this.cbLoaiThuoc2.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.cbLoaiThuoc2.MaxDropDownItems = 20;
-            this.cbLoaiThuoc2.Name = "cbLoaiThuoc2";
-            this.cbLoaiThuoc2.Size = new System.Drawing.Size(221, 37);
-            this.cbLoaiThuoc2.TabIndex = 89;
-            this.cbLoaiThuoc2.SelectedIndexChanged += new System.EventHandler(this.cbLoaiThuoc2_SelectedIndexChanged);
-            // 
-            // txtSTT2
-            // 
-            this.txtSTT2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSTT2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtSTT2.Enabled = false;
-            this.txtSTT2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSTT2.Location = new System.Drawing.Point(35, 434);
-            this.txtSTT2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSTT2.Multiline = true;
-            this.txtSTT2.Name = "txtSTT2";
-            this.txtSTT2.Size = new System.Drawing.Size(107, 45);
-            this.txtSTT2.TabIndex = 96;
-            this.txtSTT2.TabStop = false;
-            // 
-            // txtSLThuoc2
-            // 
-            this.txtSLThuoc2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSLThuoc2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtSLThuoc2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSLThuoc2.Location = new System.Drawing.Point(434, 434);
-            this.txtSLThuoc2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSLThuoc2.Multiline = true;
-            this.txtSLThuoc2.Name = "txtSLThuoc2";
-            this.txtSLThuoc2.Size = new System.Drawing.Size(107, 45);
-            this.txtSLThuoc2.TabIndex = 96;
-            this.txtSLThuoc2.TabStop = false;
-            this.txtSLThuoc2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSLThuoc2_KeyPress);
-            // 
-            // txtDonVi2
-            // 
-            this.txtDonVi2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtDonVi2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtDonVi2.Enabled = false;
-            this.txtDonVi2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonVi2.Location = new System.Drawing.Point(606, 435);
-            this.txtDonVi2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDonVi2.Multiline = true;
-            this.txtDonVi2.Name = "txtDonVi2";
-            this.txtDonVi2.Size = new System.Drawing.Size(132, 45);
-            this.txtDonVi2.TabIndex = 96;
-            this.txtDonVi2.TabStop = false;
-            // 
-            // txtCachDung2
-            // 
-            this.txtCachDung2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCachDung2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtCachDung2.Enabled = false;
-            this.txtCachDung2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCachDung2.Location = new System.Drawing.Point(784, 435);
-            this.txtCachDung2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCachDung2.Multiline = true;
-            this.txtCachDung2.Name = "txtCachDung2";
-            this.txtCachDung2.Size = new System.Drawing.Size(312, 45);
-            this.txtCachDung2.TabIndex = 96;
-            this.txtCachDung2.TabStop = false;
-            // 
-            // cbLoaiThuoc3
-            // 
-            this.cbLoaiThuoc3.BackColor = System.Drawing.Color.LightGray;
-            this.cbLoaiThuoc3.FormattingEnabled = true;
-            this.cbLoaiThuoc3.ItemHeight = 29;
-            this.cbLoaiThuoc3.Location = new System.Drawing.Point(180, 511);
-            this.cbLoaiThuoc3.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.cbLoaiThuoc3.MaxDropDownItems = 20;
-            this.cbLoaiThuoc3.Name = "cbLoaiThuoc3";
-            this.cbLoaiThuoc3.Size = new System.Drawing.Size(221, 37);
-            this.cbLoaiThuoc3.TabIndex = 89;
-            this.cbLoaiThuoc3.SelectedIndexChanged += new System.EventHandler(this.cbLoaiThuoc3_SelectedIndexChanged);
-            // 
-            // txtSTT3
-            // 
-            this.txtSTT3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSTT3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtSTT3.Enabled = false;
-            this.txtSTT3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSTT3.Location = new System.Drawing.Point(35, 502);
-            this.txtSTT3.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSTT3.Multiline = true;
-            this.txtSTT3.Name = "txtSTT3";
-            this.txtSTT3.Size = new System.Drawing.Size(107, 45);
-            this.txtSTT3.TabIndex = 96;
-            this.txtSTT3.TabStop = false;
-            // 
-            // txtSLThuoc3
-            // 
-            this.txtSLThuoc3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSLThuoc3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtSLThuoc3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSLThuoc3.Location = new System.Drawing.Point(434, 502);
-            this.txtSLThuoc3.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSLThuoc3.Multiline = true;
-            this.txtSLThuoc3.Name = "txtSLThuoc3";
-            this.txtSLThuoc3.Size = new System.Drawing.Size(107, 45);
-            this.txtSLThuoc3.TabIndex = 96;
-            this.txtSLThuoc3.TabStop = false;
-            this.txtSLThuoc3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSLThuoc3_KeyPress);
-            // 
-            // txtDonVi3
-            // 
-            this.txtDonVi3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtDonVi3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtDonVi3.Enabled = false;
-            this.txtDonVi3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonVi3.Location = new System.Drawing.Point(606, 503);
-            this.txtDonVi3.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDonVi3.Multiline = true;
-            this.txtDonVi3.Name = "txtDonVi3";
-            this.txtDonVi3.Size = new System.Drawing.Size(132, 45);
-            this.txtDonVi3.TabIndex = 96;
-            this.txtDonVi3.TabStop = false;
-            // 
-            // txtCachDung3
-            // 
-            this.txtCachDung3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCachDung3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtCachDung3.Enabled = false;
-            this.txtCachDung3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCachDung3.Location = new System.Drawing.Point(784, 503);
-            this.txtCachDung3.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCachDung3.Multiline = true;
-            this.txtCachDung3.Name = "txtCachDung3";
-            this.txtCachDung3.Size = new System.Drawing.Size(312, 45);
-            this.txtCachDung3.TabIndex = 96;
-            this.txtCachDung3.TabStop = false;
-            // 
             // btnLapPK
             // 
-            this.btnLapPK.Location = new System.Drawing.Point(35, 581);
+            this.btnLapPK.Location = new System.Drawing.Point(35, 470);
             this.btnLapPK.Name = "btnLapPK";
             this.btnLapPK.Size = new System.Drawing.Size(221, 44);
             this.btnLapPK.TabIndex = 97;
@@ -461,7 +193,7 @@ namespace DoAnSE104.GUI
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(982, 581);
+            this.btnExit.Location = new System.Drawing.Point(1003, 470);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(114, 44);
             this.btnExit.TabIndex = 98;
@@ -473,27 +205,85 @@ namespace DoAnSE104.GUI
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.TenLoaiThuoc,
+            this.SoLuong,
+            this.DonVi,
+            this.CachDung});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(35, 323);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1082, 86);
+            this.dataGridView1.TabIndex = 99;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 150;
+            // 
+            // TenLoaiThuoc
+            // 
+            this.TenLoaiThuoc.HeaderText = "TÊN LOẠI THUỐC";
+            this.TenLoaiThuoc.MinimumWidth = 6;
+            this.TenLoaiThuoc.Name = "TenLoaiThuoc";
+            this.TenLoaiThuoc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TenLoaiThuoc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TenLoaiThuoc.Width = 270;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "SỐ LƯỢNG";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Width = 150;
+            // 
+            // DonVi
+            // 
+            this.DonVi.HeaderText = "ĐƠN VỊ";
+            this.DonVi.MinimumWidth = 6;
+            this.DonVi.Name = "DonVi";
+            this.DonVi.Width = 150;
+            // 
+            // CachDung
+            // 
+            this.CachDung.HeaderText = "CÁCH DÙNG";
+            this.CachDung.MinimumWidth = 6;
+            this.CachDung.Name = "CachDung";
+            this.CachDung.Width = 320;
+            // 
             // GUI_LapPhieuKhamBenh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(1157, 649);
+            this.ClientSize = new System.Drawing.Size(1157, 543);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLapPK);
-            this.Controls.Add(this.txtCachDung3);
-            this.Controls.Add(this.txtCachDung2);
-            this.Controls.Add(this.txtCachDung1);
-            this.Controls.Add(this.txtDonVi3);
-            this.Controls.Add(this.txtDonVi2);
-            this.Controls.Add(this.txtDonVi1);
             this.Controls.Add(this.txtTenBN);
-            this.Controls.Add(this.txtSLThuoc3);
-            this.Controls.Add(this.txtSLThuoc2);
-            this.Controls.Add(this.txtSLThuoc1);
-            this.Controls.Add(this.txtSTT3);
-            this.Controls.Add(this.txtSTT2);
-            this.Controls.Add(this.txtSTT1);
             this.Controls.Add(this.txtMaKB);
             this.Controls.Add(this.txtNK);
             this.Controls.Add(this.label1);
@@ -504,20 +294,13 @@ namespace DoAnSE104.GUI
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.selectLoaiBenh);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbLoaiThuoc3);
-            this.Controls.Add(this.cbLoaiThuoc2);
-            this.Controls.Add(this.cbLoaiThuoc1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.Name = "GUI_LapPhieuKhamBenh";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.GUI_LapPhieuKhamBenh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,12 +308,6 @@ namespace DoAnSE104.GUI
 
         #endregion
         private TextBox txtTrieuChung;
-        private ComboBox cbLoaiThuoc1;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label7;
         private ComboBox selectLoaiBenh;
         private Label label6;
         private Label label5;
@@ -541,22 +318,14 @@ namespace DoAnSE104.GUI
         private TextBox txtNK;
         private TextBox txtTenBN;
         private TextBox txtMaKB;
-        private TextBox txtDonVi1;
-        private TextBox txtCachDung1;
-        private TextBox txtSTT1;
-        private TextBox txtSLThuoc1;
-        private ComboBox cbLoaiThuoc2;
-        private TextBox txtSTT2;
-        private TextBox txtSLThuoc2;
-        private TextBox txtDonVi2;
-        private TextBox txtCachDung2;
-        private ComboBox cbLoaiThuoc3;
-        private TextBox txtSTT3;
-        private TextBox txtSLThuoc3;
-        private TextBox txtDonVi3;
-        private TextBox txtCachDung3;
         private Button btnLapPK;
         private Button btnExit;
         private ErrorProvider errorProvider1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn STT;
+        private DataGridViewComboBoxColumn TenLoaiThuoc;
+        private DataGridViewTextBoxColumn SoLuong;
+        private DataGridViewTextBoxColumn DonVi;
+        private DataGridViewTextBoxColumn CachDung;
     }
 }

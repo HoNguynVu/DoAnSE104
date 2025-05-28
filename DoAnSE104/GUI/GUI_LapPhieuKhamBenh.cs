@@ -25,9 +25,6 @@ namespace DoAnSE104.GUI
         {
             InitializeComponent();
             // Thiết lập các giá trị mặc định cho các TextBox
-            this.txtSTT1.Text = "1";
-            this.txtSTT2.Text = "2";
-            this.txtSTT3.Text = "3";
         }
 
         private void GUI_LapPhieuKhamBenh_Load(object sender, EventArgs e)
@@ -38,9 +35,6 @@ namespace DoAnSE104.GUI
             
             // Reset tất cả ComboBox về trạng thái trống
             selectLoaiBenh.SelectedIndex = -1;
-            cbLoaiThuoc1.SelectedIndex = -1;
-            cbLoaiThuoc2.SelectedIndex = -1;
-            cbLoaiThuoc3.SelectedIndex = -1;
         }
 
         private void LoadDanhSachLoaiBenh()
@@ -53,17 +47,6 @@ namespace DoAnSE104.GUI
         private void LoadDanhSachLoaiThuoc()
         {
             List<DTO_LoaiThuoc> danhSachLoaiThuoc = BUS_LoaiThuoc.LayDanhSachLoaiThuoc();
-            cbLoaiThuoc1.DataSource = new List<DTO_LoaiThuoc>(danhSachLoaiThuoc);
-            cbLoaiThuoc1.DisplayMember = "tenLoaiThuoc";
-            cbLoaiThuoc1.ValueMember = "maLoaiThuoc";
-
-            cbLoaiThuoc2.DataSource = new List<DTO_LoaiThuoc>(danhSachLoaiThuoc);
-            cbLoaiThuoc2.DisplayMember = "tenLoaiThuoc";
-            cbLoaiThuoc2.ValueMember = "maLoaiThuoc";
-
-            cbLoaiThuoc3.DataSource = new List<DTO_LoaiThuoc>(danhSachLoaiThuoc);
-            cbLoaiThuoc3.DisplayMember = "tenLoaiThuoc";
-            cbLoaiThuoc3.ValueMember = "maLoaiThuoc";
         }
 
         private void btnLapPK_Click(object sender, EventArgs e)
@@ -83,24 +66,6 @@ namespace DoAnSE104.GUI
                 {
                     // Lưu chi tiết thuốc nếu có
                     bool success = true;
-
-                    // Thuốc 1
-                    if (cbLoaiThuoc1.SelectedValue != null && !string.IsNullOrEmpty(txtSLThuoc1.Text))
-                    {
-                        success &= ThemChiTietThuoc(txtMaKB.Text, cbLoaiThuoc1.SelectedValue.ToString(), txtSLThuoc1.Text);
-                    }
-
-                    // Thuốc 2
-                    if (cbLoaiThuoc2.SelectedValue != null && !string.IsNullOrEmpty(txtSLThuoc2.Text))
-                    {
-                        success &= ThemChiTietThuoc(txtMaKB.Text, cbLoaiThuoc2.SelectedValue.ToString(), txtSLThuoc2.Text);
-                    }
-
-                    // Thuốc 3
-                    if (cbLoaiThuoc3.SelectedValue != null && !string.IsNullOrEmpty(txtSLThuoc3.Text))
-                    {
-                        success &= ThemChiTietThuoc(txtMaKB.Text, cbLoaiThuoc3.SelectedValue.ToString(), txtSLThuoc3.Text);
-                    }
 
                     if (success)
                     {
@@ -146,106 +111,11 @@ namespace DoAnSE104.GUI
             txtTenBN.Clear();   
             txtTrieuChung.Clear();
             selectLoaiBenh.SelectedIndex = -1;
-
-            cbLoaiThuoc1.SelectedIndex = -1;
-            cbLoaiThuoc2.SelectedIndex = -1;
-            cbLoaiThuoc3.SelectedIndex = -1;
-
-            txtSLThuoc1.Clear();
-            txtSLThuoc2.Clear();
-            txtSLThuoc3.Clear();
-
-            txtDonVi1.Clear();
-            txtDonVi2.Clear();
-            txtDonVi3.Clear();
-
-            txtCachDung1.Clear();
-            txtCachDung2.Clear();
-            txtCachDung3.Clear();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void cbLoaiThuoc1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbLoaiThuoc1.SelectedItem != null)
-            {
-                DTO_LoaiThuoc loaiThuoc = cbLoaiThuoc1.SelectedItem as DTO_LoaiThuoc;
-                string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(loaiThuoc.maDonVi);
-                string tenCachDung = BUS_LoaiThuoc.LayTenCachDung(loaiThuoc.maCachDung);
-
-                txtDonVi1.Text = tenDonVi;
-                txtCachDung1.Text = tenCachDung;
-            }
-            else
-            {
-                txtDonVi1.Text = "";
-                txtCachDung1.Text = "";
-            }
-        }
-
-        private void cbLoaiThuoc2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbLoaiThuoc2.SelectedItem != null)
-            {
-                DTO_LoaiThuoc loaiThuoc = cbLoaiThuoc2.SelectedItem as DTO_LoaiThuoc;
-                string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(loaiThuoc.maDonVi);
-                string tenCachDung = BUS_LoaiThuoc.LayTenCachDung(loaiThuoc.maCachDung);
-
-                txtDonVi2.Text = tenDonVi;
-                txtCachDung2.Text = tenCachDung;
-            }
-            else
-            {
-                txtDonVi2.Text = "";
-                txtCachDung2.Text = "";
-            }
-        }
-
-        private void cbLoaiThuoc3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbLoaiThuoc3.SelectedItem != null)
-            {
-                DTO_LoaiThuoc loaiThuoc = cbLoaiThuoc3.SelectedItem as DTO_LoaiThuoc;
-                string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(loaiThuoc.maDonVi);
-                string tenCachDung = BUS_LoaiThuoc.LayTenCachDung(loaiThuoc.maCachDung);
-
-                txtDonVi3.Text = tenDonVi;
-                txtCachDung3.Text = tenCachDung;
-            }
-            else
-            {
-                txtDonVi3.Text = "";
-                txtCachDung3.Text = "";
-            }
-        }
-
-        // Validation chỉ cho phép nhập số cho số lượng thuốc
-        private void txtSLThuoc1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtSLThuoc2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtSLThuoc3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
 
         private void txtMaKB_TextChanged(object sender, EventArgs e)
@@ -300,6 +170,5 @@ namespace DoAnSE104.GUI
                 errorProvider1.SetError(txtMaKB, "Vui lòng nhập mã khám bệnh.");
             }
         }
-        
     }
 }

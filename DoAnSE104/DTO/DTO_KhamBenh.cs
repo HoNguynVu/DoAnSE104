@@ -38,5 +38,9 @@ namespace DoAnSE104.DTO
             this.TrieuChung = trieuChung;
             this.maLoaiBenh = maLoaiBenh;
         }
+        public DTO_KhamBenh()
+        {
+            
+        }
     }
 }

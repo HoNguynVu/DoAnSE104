@@ -17,5 +17,9 @@ namespace DoAnSE104.DTO
             this.MaLoaiBenh = maLoaiBenh;
             this.TenLoaiBenh = tenLoaiBenh;
         }
+        public DTO_LoaiBenh()
+        {
+        
+        }
     }
 }

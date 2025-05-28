@@ -72,7 +72,7 @@
             this.txtSoluongThuoc.Enabled = false;
             this.txtSoluongThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoluongThuoc.Location = new System.Drawing.Point(610, 406);
-            this.txtSoluongThuoc.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSoluongThuoc.Margin = new System.Windows.Forms.Padding(7);
             this.txtSoluongThuoc.Multiline = true;
             this.txtSoluongThuoc.Name = "txtSoluongThuoc";
             this.txtSoluongThuoc.Size = new System.Drawing.Size(168, 48);
@@ -86,7 +86,7 @@
             this.txtSTT.Enabled = false;
             this.txtSTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSTT.Location = new System.Drawing.Point(30, 406);
-            this.txtSTT.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSTT.Margin = new System.Windows.Forms.Padding(7);
             this.txtSTT.Multiline = true;
             this.txtSTT.Name = "txtSTT";
             this.txtSTT.Size = new System.Drawing.Size(99, 48);
@@ -100,10 +100,9 @@
             this.label7.Location = new System.Drawing.Point(25, 370);
             this.label7.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 29);
+            this.label7.Size = new System.Drawing.Size(46, 24);
             this.label7.TabIndex = 97;
             this.label7.Text = "STT";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -112,10 +111,9 @@
             this.label8.Location = new System.Drawing.Point(138, 370);
             this.label8.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(155, 29);
+            this.label8.Size = new System.Drawing.Size(122, 24);
             this.label8.TabIndex = 98;
             this.label8.Text = "Mã loại thuốc";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -124,10 +122,9 @@
             this.label9.Location = new System.Drawing.Point(605, 370);
             this.label9.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(173, 29);
+            this.label9.Size = new System.Drawing.Size(138, 24);
             this.label9.TabIndex = 99;
             this.label9.Text = "Số lượng thuốc";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -136,10 +133,9 @@
             this.label10.Location = new System.Drawing.Point(787, 370);
             this.label10.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 29);
+            this.label10.Size = new System.Drawing.Size(75, 24);
             this.label10.TabIndex = 100;
             this.label10.Text = "Đơn giá";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -148,10 +144,9 @@
             this.label11.Location = new System.Drawing.Point(339, 370);
             this.label11.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(165, 29);
+            this.label11.Size = new System.Drawing.Size(130, 24);
             this.label11.TabIndex = 101;
             this.label11.Text = "Tên loại thuốc";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label1
             // 
@@ -160,10 +155,9 @@
             this.label1.Location = new System.Drawing.Point(974, 370);
             this.label1.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 29);
+            this.label1.Size = new System.Drawing.Size(100, 24);
             this.label1.TabIndex = 100;
             this.label1.Text = "Thành tiền";
-            this.label1.Click += new System.EventHandler(this.label10_Click);
             // 
             // label2
             // 
@@ -172,10 +166,9 @@
             this.label2.Location = new System.Drawing.Point(35, 129);
             this.label2.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 29);
+            this.label2.Size = new System.Drawing.Size(136, 24);
             this.label2.TabIndex = 97;
             this.label2.Text = "Mã khám bệnh";
-            this.label2.Click += new System.EventHandler(this.label7_Click);
             // 
             // label3
             // 
@@ -184,10 +177,9 @@
             this.label3.Location = new System.Drawing.Point(456, 129);
             this.label3.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 29);
+            this.label3.Size = new System.Drawing.Size(141, 24);
             this.label3.TabIndex = 97;
             this.label3.Text = "Tên bệnh nhân";
-            this.label3.Click += new System.EventHandler(this.label7_Click);
             // 
             // label4
             // 
@@ -196,10 +188,9 @@
             this.label4.Location = new System.Drawing.Point(848, 129);
             this.label4.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 29);
+            this.label4.Size = new System.Drawing.Size(105, 24);
             this.label4.TabIndex = 97;
             this.label4.Text = "Ngày khám";
-            this.label4.Click += new System.EventHandler(this.label7_Click);
             // 
             // label5
             // 
@@ -208,10 +199,9 @@
             this.label5.Location = new System.Drawing.Point(35, 244);
             this.label5.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 29);
+            this.label5.Size = new System.Drawing.Size(99, 24);
             this.label5.TabIndex = 97;
             this.label5.Text = "Tiền khám";
-            this.label5.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -220,10 +210,9 @@
             this.label6.Location = new System.Drawing.Point(456, 244);
             this.label6.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 29);
+            this.label6.Size = new System.Drawing.Size(100, 24);
             this.label6.TabIndex = 97;
             this.label6.Text = "Tiền thuốc";
-            this.label6.Click += new System.EventHandler(this.label7_Click);
             // 
             // label13
             // 
@@ -232,10 +221,9 @@
             this.label13.Location = new System.Drawing.Point(29, 27);
             this.label13.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(554, 62);
+            this.label13.Size = new System.Drawing.Size(447, 51);
             this.label13.TabIndex = 116;
             this.label13.Text = "Lập hóa đơn thanh toán";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // txtMaLoaiThuoc
             // 
@@ -533,7 +521,7 @@
             // 
             // GUI_LapHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 635);
             this.Controls.Add(this.label13);
@@ -572,9 +560,10 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "GUI_LapHoaDon";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.GUI_LapHoaDon_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

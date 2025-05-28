@@ -95,8 +95,7 @@
             // 
             this.txtDiaChi.BackColor = System.Drawing.SystemColors.Window;
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(40, 338);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiaChi.Location = new System.Drawing.Point(30, 275);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(581, 37);
@@ -126,8 +125,7 @@
             // 
             this.txtNamSinh.BackColor = System.Drawing.SystemColors.Window;
             this.txtNamSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamSinh.Location = new System.Drawing.Point(483, 229);
-            this.txtNamSinh.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNamSinh.Location = new System.Drawing.Point(362, 186);
             this.txtNamSinh.Multiline = true;
             this.txtNamSinh.Name = "txtNamSinh";
             this.txtNamSinh.Size = new System.Drawing.Size(248, 37);
@@ -146,8 +144,7 @@
             // txtHoTen
             // 
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(484, 121);
-            this.txtHoTen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHoTen.Location = new System.Drawing.Point(363, 98);
             this.txtHoTen.Multiline = true;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(248, 37);
@@ -167,8 +164,7 @@
             // 
             this.txtGioiTinh.BackColor = System.Drawing.SystemColors.Window;
             this.txtGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioiTinh.Location = new System.Drawing.Point(40, 229);
-            this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGioiTinh.Location = new System.Drawing.Point(30, 186);
             this.txtGioiTinh.Multiline = true;
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Size = new System.Drawing.Size(248, 37);
@@ -186,17 +182,16 @@
             // 
             // maBenhNhan
             // 
-            this.maKhamBenh.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.maKhamBenh.Cursor = System.Windows.Forms.Cursors.Default;
-            this.maKhamBenh.Enabled = false;
-            this.maKhamBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maKhamBenh.Location = new System.Drawing.Point(40, 121);
-            this.maKhamBenh.Margin = new System.Windows.Forms.Padding(4);
-            this.maKhamBenh.Multiline = true;
-            this.maKhamBenh.Name = "maKhamBenh";
-            this.maKhamBenh.Size = new System.Drawing.Size(329, 45);
-            this.maKhamBenh.TabIndex = 20;
-            this.maKhamBenh.TabStop = false;
+            this.maBenhNhan.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.maBenhNhan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.maBenhNhan.Enabled = false;
+            this.maBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maBenhNhan.Location = new System.Drawing.Point(30, 98);
+            this.maBenhNhan.Multiline = true;
+            this.maBenhNhan.Name = "maBenhNhan";
+            this.maBenhNhan.Size = new System.Drawing.Size(248, 37);
+            this.maBenhNhan.TabIndex = 20;
+            this.maBenhNhan.TabStop = false;
             // 
             // GUI_TiepNhanBenhNhan
             // 

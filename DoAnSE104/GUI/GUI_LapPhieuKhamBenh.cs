@@ -15,6 +15,7 @@ namespace DoAnSE104.GUI
 {
     public partial class GUI_LapPhieuKhamBenh : Form
     {
+        private BUS_HoaDon BUS_HoaDon = new BUS_HoaDon();
         private BUS_KhamBenh BUS_KhamBenh = new BUS_KhamBenh();
         private BUS_LoaiThuoc BUS_LoaiThuoc = new BUS_LoaiThuoc();
         private BUS_LoaiBenh BUS_LoaiBenh = new BUS_LoaiBenh();

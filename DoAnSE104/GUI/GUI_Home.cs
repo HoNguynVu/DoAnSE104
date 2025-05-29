@@ -28,5 +28,11 @@ namespace DoAnSE104.GUI
             GUI_LapPhieuKhamBenh gui_LapPhieuKhamBenh = new GUI_LapPhieuKhamBenh();
             gui_LapPhieuKhamBenh.Show();
         }
+
+        private void BtnInvoicePayment_Click(object sender, EventArgs e)
+        {
+            GUI_LapHoaDon gui_LapHoaDon = new GUI_LapHoaDon();
+            gui_LapHoaDon.Show();
+        }
     }
 }

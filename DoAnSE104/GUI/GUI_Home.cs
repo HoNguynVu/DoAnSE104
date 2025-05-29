@@ -13,28 +13,46 @@ namespace DoAnSE104.GUI
             this.BackColor = Color.WhiteSmoke;
         }
 
-        private void BtnMedicalExamination_Click(object sender, EventArgs e)
+        private void ShowControlInMainPanel(UserControl control)
         {
-            GUI_TiepNhanBenhNhan gui_TiepNhanBenhNhan = new GUI_TiepNhanBenhNhan();
-            gui_TiepNhanBenhNhan.ShowDialog();
+            panelMain.Controls.Clear();
+            control.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(control);
         }
 
-        private void BtnCreateMedicalExamination_Click(object sender, EventArgs e)
+        private void ShowFormInMainPanel(Form form)
         {
-            GUI_LapPhieuKhamBenh gui_LapPhieuKhamBenh = new GUI_LapPhieuKhamBenh();
-            gui_LapPhieuKhamBenh.ShowDialog();
+            panelMain.Controls.Clear();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(form);
+            form.Show();
         }
 
-        private void BtnPatientLookup_Click(object sender, EventArgs e)
+        private void btnTiepNhanBenhNhan_Click(object sender, EventArgs e)
         {
-            GUI_TraCuuBenhNhan gui_TraCuuBenhNhan = new GUI_TraCuuBenhNhan();
-            gui_TraCuuBenhNhan.ShowDialog();
+            ShowFormInMainPanel(new GUI_TiepNhanBenhNhan());
+        }
+        private void btnTiepNhanKhamBenh_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_TiepNhanKhamBenh());
         }
 
-        private void BtnInvoicePayment_Click(object sender, EventArgs e)
+        private void btnLapPhieuKhamBenh_Click(object sender, EventArgs e)
         {
-            GUI_LapHoaDon gui_LapHoaDon = new GUI_LapHoaDon();
-            gui_LapHoaDon.ShowDialog();
+            ShowFormInMainPanel(new GUI_LapPhieuKhamBenh());
         }
+
+        private void btnTraCuuBenhNhan_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_TraCuuBenhNhan());
+        }
+
+        private void btnLapHoaDon_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_LapHoaDon());
+        }
+
     }
 }

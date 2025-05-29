@@ -23,12 +23,12 @@ namespace DoAnSE104.DAL
         {
             string query = @"
                 SELECT 
-                    BN.MaBenhNhan, BN.HoTen, BN.GioiTinh, BN.NamSinh, BN.DiaChi,
-                    KB.NgayKham, KB.TrieuChung,
-                    LB.TenLoaiBenh
+                BN.MaBenhNhan, BN.HoTen, BN.GioiTinh, BN.NamSinh, BN.DiaChi,
+                KB.NgayKham, KB.TrieuChung,
+                LB.TenLoaiBenh
                 FROM BENHNHAN BN
-                JOIN KHAMBENH KB ON BN.MaBenhNhan = KB.MaBenhNhan
-                JOIN LOAIBENH LB ON KB.MaLoaiBenh = LB.MaLoaiBenh
+                LEFT JOIN KHAMBENH KB ON BN.MaBenhNhan = KB.MaBenhNhan
+                LEFT JOIN LOAIBENH LB ON KB.MaLoaiBenh = LB.MaLoaiBenh
                 LEFT JOIN CTKHAMBENH CT ON KB.MaKhamBenh = CT.MaKhamBenh
                 LEFT JOIN LOAITHUOC LT ON CT.MaLoaiThuoc = LT.MaLoaiThuoc
                 LEFT JOIN DONVI DV ON LT.MaDonVi = DV.MaDonVi
@@ -135,9 +135,13 @@ namespace DoAnSE104.DAL
                     GioiTinh = row["GioiTinh"].ToString(),
                     NamSinh = Convert.ToInt32(row["NamSinh"]),
                     DiaChi = row["DiaChi"].ToString(),
-                    NgayKham = Convert.ToDateTime(row["NgayKham"]),
-                    TrieuChung = row["TrieuChung"].ToString(),
-                    TenLoaiBenh = row["TenLoaiBenh"].ToString()
+                    //NgayKham = Convert.ToDateTime(row["NgayKham"]),
+                    //TrieuChung = row["TrieuChung"].ToString(),
+                    //TenLoaiBenh = row["TenLoaiBenh"].ToString()
+                    NgayKham = row["NgayKham"] != DBNull.Value ? (DateTime?)Convert.ToDateTime(row["NgayKham"]) : null,
+                    TrieuChung = row["TrieuChung"] != DBNull.Value ? row["TrieuChung"].ToString() : "",
+                    TenLoaiBenh = row["TenLoaiBenh"] != DBNull.Value ? row["TenLoaiBenh"].ToString() : "",
+
                 });
             }
 

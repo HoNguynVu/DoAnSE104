@@ -14,9 +14,9 @@ namespace DoAnSE104.DTO
         public int NamSinh { get; set; }
         public string DiaChi { get; set; }
 
-        public DateTime NgayKham { get; set; }
+        // Các thuộc tính có thể null
+        public DateTime? NgayKham { get; set; }
         public string TrieuChung { get; set; }
-
         public string TenLoaiBenh { get; set; }
     }
 }

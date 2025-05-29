@@ -143,6 +143,12 @@
     <Compile Include="DTO\DTO_LoaiBenh.cs" />
     <Compile Include="DTO\DTO_LoaiThuoc.cs" />
     <Compile Include="DTO\DTO_ThamSo.cs" />
+    <EmbeddedResource Include="GUI\GUI_LapBaoCaoSuDungThuoc.resx">
+      <DependentUpon>GUI_LapBaoCaoSuDungThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_LapBaoCaoDoanhThu.resx">
+      <DependentUpon>GUI_LapBaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_Home.resx">
       <DependentUpon>GUI_Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +177,18 @@
     </Compile>
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_LapBaoCaoSuDungThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_LapBaoCaoSuDungThuoc.Designer.cs">
+      <DependentUpon>GUI_LapBaoCaoSuDungThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_LapBaoCaoDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_LapBaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>GUI_LapBaoCaoDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GUI_TraCuuBenhNhan.cs">
       <SubType>Form</SubType>

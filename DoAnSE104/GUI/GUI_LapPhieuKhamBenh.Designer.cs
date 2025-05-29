@@ -27,8 +27,6 @@ namespace DoAnSE104.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtTrieuChung = new System.Windows.Forms.TextBox();
             this.selectLoaiBenh = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -183,7 +181,7 @@ namespace DoAnSE104.GUI
             // 
             // btnLapPK
             // 
-            this.btnLapPK.Location = new System.Drawing.Point(35, 470);
+            this.btnLapPK.Location = new System.Drawing.Point(35, 582);
             this.btnLapPK.Name = "btnLapPK";
             this.btnLapPK.Size = new System.Drawing.Size(221, 44);
             this.btnLapPK.TabIndex = 97;
@@ -193,7 +191,7 @@ namespace DoAnSE104.GUI
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1003, 470);
+            this.btnExit.Location = new System.Drawing.Point(1003, 582);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(114, 44);
             this.btnExit.TabIndex = 98;
@@ -207,14 +205,6 @@ namespace DoAnSE104.GUI
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -222,19 +212,11 @@ namespace DoAnSE104.GUI
             this.SoLuong,
             this.DonVi,
             this.CachDung});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(35, 323);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1082, 86);
+            this.dataGridView1.Size = new System.Drawing.Size(1082, 253);
             this.dataGridView1.TabIndex = 99;
             // 
             // STT
@@ -279,7 +261,7 @@ namespace DoAnSE104.GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(1157, 543);
+            this.ClientSize = new System.Drawing.Size(1157, 638);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLapPK);

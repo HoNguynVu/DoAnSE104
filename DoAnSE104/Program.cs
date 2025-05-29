@@ -11,7 +11,7 @@ namespace DoAnSE104
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI_TraCuuBenhNhan());
+            Application.Run(new GUI_LapPhieuKhamBenh());
         }
     }
 }

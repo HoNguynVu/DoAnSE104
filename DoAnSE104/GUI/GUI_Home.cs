@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -52,6 +52,13 @@ namespace DoAnSE104.GUI
         private void btnLapHoaDon_Click(object sender, EventArgs e)
         {
             ShowFormInMainPanel(new GUI_LapHoaDon());
+        }
+
+
+        private void BtnInvoicePayment_Click(object sender, EventArgs e)
+        {
+            GUI_LapHoaDon gui_LapHoaDon = new GUI_LapHoaDon();
+            gui_LapHoaDon.Show();
         }
 
     }

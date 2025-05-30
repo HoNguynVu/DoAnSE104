@@ -87,5 +87,25 @@ namespace DoAnSE104.DAL
             };
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
         }
+
+        public DataTable LayChiTietThuocTheoMaKhamBenh(string maKhamBenh)
+        {
+            string query = @"
+        SELECT 
+            ct.MaLoaiThuoc, 
+            lt.TenLoaiThuoc, 
+            ct.SoLuongThuoc, 
+            lt.DonGia
+        FROM CTKHAMBENH ct
+        JOIN LOAITHUOC lt ON ct.MaLoaiThuoc = lt.MaLoaiThuoc
+        WHERE ct.MaKhamBenh = @MaKhamBenh";
+
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+        new MySqlParameter("@MaKhamBenh", maKhamBenh)
+            };
+
+            return DatabaseHelper.ExecuteQuery(query, parameters);
+        }
     }
 }

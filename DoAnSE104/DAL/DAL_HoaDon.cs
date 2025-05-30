@@ -107,5 +107,28 @@ namespace DoAnSE104.DAL
 
             return DatabaseHelper.ExecuteQuery(query, parameters);
         }
+
+        public DTO_HoaDon LayHoaDonTheoMaKhamBenh(string maKhamBenh)
+        {
+            string query = "SELECT * FROM HoaDon WHERE maKhamBenh = @maKhamBenh";
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+        new MySqlParameter("@maKhamBenh", maKhamBenh)
+            };
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query, parameters);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                string maHoaDon = row["maHoaDon"].ToString();
+                double tienKham = Convert.ToDouble(row["tienKham"]);
+                double tienThuoc = Convert.ToDouble(row["tienThuoc"]);
+
+                return new DTO_HoaDon(maHoaDon, tienKham, tienThuoc, maKhamBenh);
+            }
+
+            return null;
+        }
     }
 }

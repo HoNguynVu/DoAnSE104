@@ -70,6 +70,14 @@ namespace DoAnSE104.GUI
                 return;
             }
 
+            // ✅ Kiểm tra mã khám bệnh đã có hóa đơn chưa
+            var hoaDonDaCo = busHoaDon.LayHoaDonTheoMaKhamBenh(maKhamBenh);
+            if (hoaDonDaCo != null)
+            {
+                MessageBox.Show("Mã khám bệnh này đã có hóa đơn. Vui lòng kiểm tra lại.", "Trùng hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 double tienKham = 30000;
@@ -83,6 +91,11 @@ namespace DoAnSE104.GUI
                 {
                     txtTienThuoc.Text = tienThuoc.ToString("N0");
                     MessageBox.Show("Lập hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Gợi ý: Hiển thị mã hóa đơn mới
+                    txtMaHoaDon.Text = maHoaDon;
+                    txtMaHoaDon.Visible = true;
+                    label7.Visible = true;
                 }
                 else
                 {
@@ -99,10 +112,9 @@ namespace DoAnSE104.GUI
         {
             string maKhamBenh = txtMaKhamBenh.Text.Trim();
 
-            // Nếu không nhập gì thì xóa dữ liệu và hiện lỗi qua ErrorProvider
             if (string.IsNullOrEmpty(maKhamBenh))
             {
-                ClearThongTinHoaDon();
+                ClearThongTinHoaDon(clearMaHoaDon: true); // Vẫn xóa hết nếu textbox trống
                 errorProvider1.SetError(txtMaKhamBenh, "Vui lòng nhập mã khám bệnh.");
                 return;
             }
@@ -113,6 +125,9 @@ namespace DoAnSE104.GUI
 
                 if (khamBenh != null && !string.IsNullOrEmpty(khamBenh.maBenhNhan))
                 {
+                    // ko xóa mã hóa đơn ở đây
+                    ClearThongTinHoaDon(clearMaHoaDon: false);
+
                     var benhNhan = busBenhNhan.LayThongTinBenhNhan(khamBenh.maBenhNhan);
 
                     txtTenBenhNhan.Text = benhNhan?.hoTen ?? "Không rõ";
@@ -124,11 +139,11 @@ namespace DoAnSE104.GUI
 
                     HienThiChiTietThuoc(maKhamBenh);
 
-                    errorProvider1.SetError(txtMaKhamBenh, ""); // Xóa lỗi nếu có
+                    errorProvider1.SetError(txtMaKhamBenh, "");
                 }
                 else
                 {
-                    ClearThongTinHoaDon();
+                    ClearThongTinHoaDon(clearMaHoaDon: true);
                     errorProvider1.SetError(txtMaKhamBenh, "Mã khám bệnh không hợp lệ.");
                 }
             }
@@ -138,13 +153,22 @@ namespace DoAnSE104.GUI
             }
         }
 
-        private void ClearThongTinHoaDon()
+        private void ClearThongTinHoaDon(bool clearMaHoaDon = true)
         {
             txtTenBenhNhan.Text = "";
             txtNgayKham.Text = "";
             txtTienKham.Text = "";
             txtTienThuoc.Text = "";
             dataGridView1.DataSource = null;
+
+            if (clearMaHoaDon)
+            {
+                txtMaHoaDon.Text = "";
+                txtMaHoaDon.Visible = false;
+                label7.Visible = false;
+            }
+
+            errorProvider1.SetError(txtMaKhamBenh, "");
         }
         private void HienThiChiTietThuoc(string maKhamBenh)
         {
@@ -174,5 +198,60 @@ namespace DoAnSE104.GUI
             dataGridView1.DataSource = dt;
         }
 
+        private void btnHDMoi_Click(object sender, EventArgs e)
+        {
+            // Xóa toàn bộ dữ liệu, bao gồm cả mã hóa đơn
+            txtMaKhamBenh.Text = "";
+            ClearThongTinHoaDon(clearMaHoaDon: true);
+
+            txtMaKhamBenh.Enabled = true;
+            txtMaKhamBenh.Focus();
+        }
+
+        private void btnTimHD_Click(object sender, EventArgs e)
+        {
+            string maKhamBenh = txtMaKhamBenh.Text.Trim();
+            if (string.IsNullOrEmpty(maKhamBenh))
+            {
+                MessageBox.Show("Vui lòng nhập mã phiếu khám để tìm hóa đơn.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                var hoaDon = busHoaDon.LayHoaDonTheoMaKhamBenh(maKhamBenh);
+                if (hoaDon != null)
+                {
+                    // Hiển thị thông tin
+                    txtMaHoaDon.Text = hoaDon.maHoaDon;
+                    txtTienKham.Text = hoaDon.tienKham.ToString("N0");
+                    txtTienThuoc.Text = hoaDon.tienThuoc.ToString("N0");
+
+                    // Hiển thị thêm label + textbox Mã Hóa Đơn
+                    label7.Visible = true;
+                    txtMaHoaDon.Visible = true;
+
+                    // Hiển thị các thông tin bệnh nhân như khi lập hóa đơn
+                    var khamBenh = busKhamBenh.LayThongTinKhamBenh(maKhamBenh);
+                    if (khamBenh != null && !string.IsNullOrEmpty(khamBenh.maBenhNhan))
+                    {
+                        var benhNhan = busBenhNhan.LayThongTinBenhNhan(khamBenh.maBenhNhan);
+                        txtTenBenhNhan.Text = benhNhan?.hoTen ?? "Không rõ";
+                        txtNgayKham.Text = khamBenh.ngayKham.ToString("dd/MM/yyyy");
+                    }
+
+                    // Hiện chi tiết thuốc
+                    HienThiChiTietThuoc(maKhamBenh);
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy hóa đơn với mã khám bệnh này.", "Không tìm thấy", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

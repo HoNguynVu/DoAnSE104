@@ -47,5 +47,10 @@ namespace DoAnSE104.BUS
         {
             return DAL_HoaDon.LayChiTietThuocTheoMaKhamBenh(maKhamBenh);
         }
+
+        public DTO_HoaDon LayHoaDonTheoMaKhamBenh(string maKhamBenh)
+        {
+            return DAL_HoaDon.LayHoaDonTheoMaKhamBenh(maKhamBenh);
+        }
     }
 }

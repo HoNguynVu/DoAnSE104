@@ -12,14 +12,6 @@ namespace DoAnSE104.GUI
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.WhiteSmoke;
         }
-
-        private void ShowControlInMainPanel(UserControl control)
-        {
-            panelMain.Controls.Clear();
-            control.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(control);
-        }
-
         private void ShowFormInMainPanel(Form form)
         {
             panelMain.Controls.Clear();
@@ -29,7 +21,6 @@ namespace DoAnSE104.GUI
             panelMain.Controls.Add(form);
             form.Show();
         }
-
         private void btnTiepNhanBenhNhan_Click(object sender, EventArgs e)
         {
             ShowFormInMainPanel(new GUI_TiepNhanBenhNhan());
@@ -38,28 +29,17 @@ namespace DoAnSE104.GUI
         {
             ShowFormInMainPanel(new GUI_TiepNhanKhamBenh());
         }
-
         private void btnLapPhieuKhamBenh_Click(object sender, EventArgs e)
         {
             ShowFormInMainPanel(new GUI_LapPhieuKhamBenh());
         }
-
         private void btnTraCuuBenhNhan_Click(object sender, EventArgs e)
         {
             ShowFormInMainPanel(new GUI_TraCuuBenhNhan());
         }
-
         private void btnLapHoaDon_Click(object sender, EventArgs e)
         {
             ShowFormInMainPanel(new GUI_LapHoaDon());
         }
-
-
-        private void BtnInvoicePayment_Click(object sender, EventArgs e)
-        {
-            GUI_LapHoaDon gui_LapHoaDon = new GUI_LapHoaDon();
-            gui_LapHoaDon.Show();
-        }
-
     }
 }

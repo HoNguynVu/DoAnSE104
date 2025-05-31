@@ -17,7 +17,6 @@ namespace DoAnSE104.GUI
         private BUS_KhamBenh BUS_KhamBenh = new BUS_KhamBenh();
         private BUS_LoaiThuoc BUS_LoaiThuoc = new BUS_LoaiThuoc();
         private BUS_LoaiBenh BUS_LoaiBenh = new BUS_LoaiBenh();
-        private BUS_CTKhamBenh BUS_CTKhamBenh = new BUS_CTKhamBenh();
         private BUS_BenhNhan BUS_BenhNhan = new BUS_BenhNhan();
         private BUS_TraCuu BUS_TraCuu = new BUS_TraCuu();
         public GUI_TraCuuBenhNhan()

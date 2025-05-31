@@ -10,8 +10,10 @@ namespace DoAnSE104.DTO
     {
         private string MaDonVi;
         private string TenDonVi;
+
         public string maDonVi { get => MaDonVi; set => MaDonVi = value; }
         public string tenDonVi { get => TenDonVi; set => TenDonVi = value; }
+        public DTO_DonVi() { }
         public DTO_DonVi(string maDonVi, string tenDonVi)
         {
             this.MaDonVi = maDonVi;

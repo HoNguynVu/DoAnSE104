@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelThemLoaiThuoc = new System.Windows.Forms.Label();
@@ -37,12 +37,12 @@
             this.labelTenLoaiThuoc = new System.Windows.Forms.Label();
             this.txtTenLoaiThuoc = new System.Windows.Forms.TextBox();
             this.labelDonVi = new System.Windows.Forms.Label();
-            this.cbbDonVi = new System.Windows.Forms.ComboBox();
+            this.cmbDonVi = new System.Windows.Forms.ComboBox();
             this.labelCachDung = new System.Windows.Forms.Label();
-            this.cbbCachDung = new System.Windows.Forms.ComboBox();
+            this.cmbCachDung = new System.Windows.Forms.ComboBox();
             this.labelDonGia = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.btnThemDonVi = new System.Windows.Forms.Button();
+            this.btnThemLoaiThuoc = new System.Windows.Forms.Button();
             this.dgvDanhSachLoaiThuoc = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,12 +75,12 @@
             this.groupBox1.Controls.Add(this.labelTenLoaiThuoc);
             this.groupBox1.Controls.Add(this.txtTenLoaiThuoc);
             this.groupBox1.Controls.Add(this.labelDonVi);
-            this.groupBox1.Controls.Add(this.cbbDonVi);
+            this.groupBox1.Controls.Add(this.cmbDonVi);
             this.groupBox1.Controls.Add(this.labelCachDung);
-            this.groupBox1.Controls.Add(this.cbbCachDung);
+            this.groupBox1.Controls.Add(this.cmbCachDung);
             this.groupBox1.Controls.Add(this.labelDonGia);
             this.groupBox1.Controls.Add(this.txtDonGia);
-            this.groupBox1.Controls.Add(this.btnThemDonVi);
+            this.groupBox1.Controls.Add(this.btnThemLoaiThuoc);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(30, 110);
             this.groupBox1.Name = "groupBox1";
@@ -150,14 +150,14 @@
             this.labelDonVi.TabIndex = 5;
             this.labelDonVi.Text = "Đơn vị";
             // 
-            // cbbDonVi
+            // cmbDonVi
             // 
-            this.cbbDonVi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbbDonVi.Location = new System.Drawing.Point(524, 105);
-            this.cbbDonVi.Name = "cbbDonVi";
-            this.cbbDonVi.Size = new System.Drawing.Size(180, 36);
-            this.cbbDonVi.TabIndex = 6;
+            this.cmbDonVi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cmbDonVi.Location = new System.Drawing.Point(524, 105);
+            this.cmbDonVi.Name = "cmbDonVi";
+            this.cmbDonVi.Size = new System.Drawing.Size(180, 36);
+            this.cmbDonVi.TabIndex = 6;
             // 
             // labelCachDung
             // 
@@ -169,14 +169,14 @@
             this.labelCachDung.TabIndex = 7;
             this.labelCachDung.Text = "Cách dùng";
             // 
-            // cbbCachDung
+            // cmbCachDung
             // 
-            this.cbbCachDung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbCachDung.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbbCachDung.Location = new System.Drawing.Point(34, 180);
-            this.cbbCachDung.Name = "cbbCachDung";
-            this.cbbCachDung.Size = new System.Drawing.Size(350, 36);
-            this.cbbCachDung.TabIndex = 8;
+            this.cmbCachDung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCachDung.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cmbCachDung.Location = new System.Drawing.Point(34, 180);
+            this.cmbCachDung.Name = "cmbCachDung";
+            this.cmbCachDung.Size = new System.Drawing.Size(350, 36);
+            this.cmbCachDung.TabIndex = 8;
             // 
             // labelDonGia
             // 
@@ -197,34 +197,34 @@
             this.txtDonGia.Size = new System.Drawing.Size(180, 34);
             this.txtDonGia.TabIndex = 10;
             // 
-            // btnThemDonVi
+            // btnThemLoaiThuoc
             // 
-            this.btnThemDonVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnThemDonVi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemDonVi.FlatAppearance.BorderSize = 0;
-            this.btnThemDonVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemDonVi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnThemDonVi.ForeColor = System.Drawing.Color.White;
-            this.btnThemDonVi.Location = new System.Drawing.Point(892, 25);
-            this.btnThemDonVi.Name = "btnThemDonVi";
-            this.btnThemDonVi.Size = new System.Drawing.Size(185, 45);
-            this.btnThemDonVi.TabIndex = 5;
-            this.btnThemDonVi.Text = "Thêm loại thuốc";
-            this.btnThemDonVi.UseVisualStyleBackColor = false;
+            this.btnThemLoaiThuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnThemLoaiThuoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemLoaiThuoc.FlatAppearance.BorderSize = 0;
+            this.btnThemLoaiThuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemLoaiThuoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThemLoaiThuoc.ForeColor = System.Drawing.Color.White;
+            this.btnThemLoaiThuoc.Location = new System.Drawing.Point(892, 25);
+            this.btnThemLoaiThuoc.Name = "btnThemLoaiThuoc";
+            this.btnThemLoaiThuoc.Size = new System.Drawing.Size(185, 45);
+            this.btnThemLoaiThuoc.TabIndex = 5;
+            this.btnThemLoaiThuoc.Text = "Thêm loại thuốc";
+            this.btnThemLoaiThuoc.UseVisualStyleBackColor = false;
             // 
             // dgvDanhSachLoaiThuoc
             // 
             this.dgvDanhSachLoaiThuoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachLoaiThuoc.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSachLoaiThuoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachLoaiThuoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachLoaiThuoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachLoaiThuoc.ColumnHeadersHeight = 29;
             this.dgvDanhSachLoaiThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -317,12 +317,12 @@
         private System.Windows.Forms.Label labelTenLoaiThuoc;
         private System.Windows.Forms.TextBox txtTenLoaiThuoc;
         private System.Windows.Forms.Label labelDonVi;
-        private System.Windows.Forms.ComboBox cbbDonVi;
+        private System.Windows.Forms.ComboBox cmbDonVi;
         private System.Windows.Forms.Label labelCachDung;
-        private System.Windows.Forms.ComboBox cbbCachDung;
+        private System.Windows.Forms.ComboBox cmbCachDung;
         private System.Windows.Forms.Label labelDonGia;
         private System.Windows.Forms.TextBox txtDonGia;
-        private System.Windows.Forms.Button btnThemDonVi;
+        private System.Windows.Forms.Button btnThemLoaiThuoc;
         private System.Windows.Forms.DataGridView dgvDanhSachLoaiThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiThuoc;

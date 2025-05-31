@@ -113,6 +113,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BUS_BaoCaoDoanhThu.cs" />
+    <Compile Include="BUS\BUS_BaoCaoSuDungThuoc.cs" />
     <Compile Include="BUS\BUS_BenhNhan.cs" />
     <Compile Include="BUS\BUS_CachDung.cs" />
     <Compile Include="BUS\BUS_CTKhamBenh.cs" />
@@ -123,6 +125,8 @@
     <Compile Include="BUS\BUS_LoaiThuoc.cs" />
     <Compile Include="BUS\BUS_TraCuu.cs" />
     <Compile Include="BUS\BUS_ThamSo.cs" />
+    <Compile Include="DAL\DAL_BaoCaoDoanhThu.cs" />
+    <Compile Include="DAL\DAL_BaoCaoSuDungThuoc.cs" />
     <Compile Include="DAL\DAL_BenhNhan.cs" />
     <Compile Include="DAL\DAL_CachDung.cs" />
     <Compile Include="DAL\DAL_CTKhamBenh.cs" />
@@ -135,6 +139,8 @@
     <Compile Include="DAL\DAL_ThamSo.cs" />
     <Compile Include="DAL\DAL_TraCuu.cs" />
     <Compile Include="DAL\DatabaseHelper.cs" />
+    <Compile Include="DTO\DTO_BaoCaoDoanhThu.cs" />
+    <Compile Include="DTO\DTO_BaoCaoSuDungThuoc.cs" />
     <Compile Include="DTO\DTO_BenhNhan.cs" />
     <Compile Include="DTO\DTO_BenhNhanTraCuu.cs" />
     <Compile Include="DTO\DTO_CachDung.cs" />
@@ -160,6 +166,15 @@
     <EmbeddedResource Include="GUI\GUI_LapPhieuKhamBenh.resx">
       <DependentUpon>GUI_LapPhieuKhamBenh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_QuanLyCachDung.resx">
+      <DependentUpon>GUI_QuanLyCachDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_QuanLyDonViTinh.resx">
+      <DependentUpon>GUI_QuanLyDonViTinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_QuanLyLoaiThuoc.resx">
+      <DependentUpon>GUI_QuanLyLoaiThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_TiepNhanBenhNhan.resx">
       <DependentUpon>GUI_TiepNhanBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +194,24 @@
     </Compile>
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_QuanLyCachDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_QuanLyCachDung.Designer.cs">
+      <DependentUpon>GUI_QuanLyCachDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_QuanLyDonViTinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_QuanLyDonViTinh.Designer.cs">
+      <DependentUpon>GUI_QuanLyDonViTinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_QuanLyLoaiThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_QuanLyLoaiThuoc.Designer.cs">
+      <DependentUpon>GUI_QuanLyLoaiThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GUI_LapBaoCaoSuDungThuoc.cs">
       <SubType>Form</SubType>

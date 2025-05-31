@@ -12,6 +12,7 @@ namespace DoAnSE104
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new GUI_Home());
+
         }
     }
 }

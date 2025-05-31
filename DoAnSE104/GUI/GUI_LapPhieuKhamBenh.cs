@@ -15,26 +15,47 @@ namespace DoAnSE104.GUI
 {
     public partial class GUI_LapPhieuKhamBenh : Form
     {
+        private BUS_HoaDon BUS_HoaDon = new BUS_HoaDon();
         private BUS_KhamBenh BUS_KhamBenh = new BUS_KhamBenh();
         private BUS_LoaiThuoc BUS_LoaiThuoc = new BUS_LoaiThuoc();
         private BUS_LoaiBenh BUS_LoaiBenh = new BUS_LoaiBenh();
         private BUS_CTKhamBenh BUS_CTKhamBenh = new BUS_CTKhamBenh();
         private BUS_BenhNhan BUS_BenhNhan = new BUS_BenhNhan();
+        private List<DTO_LoaiThuoc> danhSachLoaiThuoc;
 
         public GUI_LapPhieuKhamBenh()
         {
             InitializeComponent();
-            // Thiết lập các giá trị mặc định cho các TextBox
+            // Set default values for the form elements
+            SetupDataGridView();
+        }
+
+        private void SetupDataGridView()
+        {
+            // Configure DataGridView
+            dataGridView1.AllowUserToAddRows = true;
+            dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+
+            // Configure STT column for auto-numbering
+            dataGridView1.RowPrePaint += (sender, e) =>
+            {
+                if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
+                }
+            };
         }
 
         private void GUI_LapPhieuKhamBenh_Load(object sender, EventArgs e)
         {
             LoadDanhSachLoaiBenh();
             LoadDanhSachLoaiThuoc();
-            
-            
-            // Reset tất cả ComboBox về trạng thái trống
+
+            // Reset all ComboBoxes to empty state
             selectLoaiBenh.SelectedIndex = -1;
+
+            // Configure ComboBox in DataGridView
+            SetupThuocComboBox();
         }
 
         private void LoadDanhSachLoaiBenh()
@@ -46,7 +67,16 @@ namespace DoAnSE104.GUI
 
         private void LoadDanhSachLoaiThuoc()
         {
-            List<DTO_LoaiThuoc> danhSachLoaiThuoc = BUS_LoaiThuoc.LayDanhSachLoaiThuoc();
+            danhSachLoaiThuoc = BUS_LoaiThuoc.LayDanhSachLoaiThuoc();
+        }
+
+        private void SetupThuocComboBox()
+        {
+            // Configure the ComboBox column for medications
+            DataGridViewComboBoxColumn thuocColumn = (DataGridViewComboBoxColumn)dataGridView1.Columns["TenLoaiThuoc"];
+            thuocColumn.DataSource = danhSachLoaiThuoc;
+            thuocColumn.DisplayMember = "tenLoaiThuoc";
+            thuocColumn.ValueMember = "maLoaiThuoc";
         }
 
         private void btnLapPK_Click(object sender, EventArgs e)
@@ -60,12 +90,30 @@ namespace DoAnSE104.GUI
                 return;
             }
             try
-            {  
-                // Thêm phiếu khám bệnh
+            {
+                // Add medical examination record
                 if (BUS_KhamBenh.CapNhatKhamBenh(txtMaKB.Text.Trim(), selectLoaiBenh.SelectedValue.ToString(), txtTrieuChung.Text.Trim()))
                 {
-                    // Lưu chi tiết thuốc nếu có
+                    // Save medication details if available
                     bool success = true;
+
+                    // Process each row in the DataGridView that has medication info
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        // Skip the last row (new row) or rows without medication selected
+                        if (row.IsNewRow || row.Cells["TenLoaiThuoc"].Value == null)
+                            continue;
+
+                        // Get medication info from the grid
+                        string maLoaiThuoc = row.Cells["TenLoaiThuoc"].Value.ToString();
+                        string soLuong = row.Cells["SoLuong"].Value?.ToString();
+
+                        // Add medication record
+                        if (!string.IsNullOrEmpty(soLuong) && !ThemChiTietThuoc(txtMaKB.Text.Trim(), maLoaiThuoc, soLuong))
+                        {
+                            success = false;
+                        }
+                    }
 
                     if (success)
                     {
@@ -108,9 +156,12 @@ namespace DoAnSE104.GUI
         {
             txtMaKB.Clear();
             txtNK.Clear();
-            txtTenBN.Clear();   
+            txtTenBN.Clear();
             txtTrieuChung.Clear();
             selectLoaiBenh.SelectedIndex = -1;
+
+            // Clear DataGridView
+            dataGridView1.Rows.Clear();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -129,10 +180,10 @@ namespace DoAnSE104.GUI
                     DTO_KhamBenh khamBenh = BUS_KhamBenh.LayThongTinKhamBenh(maKhamBenh);
                     if (khamBenh != null)
                     {
-                        // Hiển thị ngày khám
+                        // Display examination date
                         txtNK.Text = khamBenh.ngayKham.ToString("dd/MM/yyyy");
 
-                        // Lấy và hiển thị tên bệnh nhân
+                        // Get and display patient name
                         if (!string.IsNullOrEmpty(khamBenh.maBenhNhan))
                         {
                             DTO_BenhNhan benhNhan = BUS_BenhNhan.LayThongTinBenhNhan(khamBenh.maBenhNhan);
@@ -140,7 +191,6 @@ namespace DoAnSE104.GUI
                             {
                                 txtTenBN.Text = benhNhan.hoTen;
                             }
-
                             else
                             {
                                 txtTenBN.Text = "";
@@ -149,13 +199,19 @@ namespace DoAnSE104.GUI
                         }
                         else
                         {
-                            // Hiển thị lỗi bằng ErrorProvider
-                            errorProvider1.SetError(txtMaKB, "Mã khám bệnh không tồn tại");
-                            // Xóa các thông tin hiển thị
-                            txtNK.Text = "";
-                            txtTrieuChung.Text = "";
-                            selectLoaiBenh.SelectedIndex = -1;
+                            // Display error using ErrorProvider
+                            errorProvider1.SetError(txtMaKB, "Mã khám bệnh không có thông tin bệnh nhân");
                         }
+                    }
+                    else
+                    {
+
+                        errorProvider1.SetError(txtMaKB, "Mã khám bệnh không tồn tại");
+
+                        txtNK.Text = "";
+                        txtTenBN.Text = "";
+                        txtTrieuChung.Text = "";
+                        selectLoaiBenh.SelectedIndex = -1;
                     }
                 }
                 catch (Exception ex)
@@ -165,9 +221,45 @@ namespace DoAnSE104.GUI
             }
             else
             {
-                // Xóa thông tin hiển thị nếu mã khám bệnh trống
+
                 txtNK.Text = "";
+                txtTenBN.Text = "";
                 errorProvider1.SetError(txtMaKB, "Vui lòng nhập mã khám bệnh.");
+            }
+        }
+
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["TenLoaiThuoc"].Index)
+            {
+                var selectedValue = dataGridView1.Rows[e.RowIndex].Cells["TenLoaiThuoc"].Value;
+                if (selectedValue != null)
+                {
+                    string maLoaiThuoc = selectedValue.ToString();
+                    var thuoc = danhSachLoaiThuoc.FirstOrDefault(t => t.maLoaiThuoc == maLoaiThuoc);
+                    if (thuoc != null)
+                    {
+                        dataGridView1.Rows[e.RowIndex].Cells["DonVi"].Value = thuoc.maDonVi;
+                    }
+                }
+            }
+        }
+
+
+        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+
+            if (dataGridView1.Rows.Count == 1 && dataGridView1.Rows[0].Cells["TenLoaiThuoc"].Value == null)
+            {
+                return;
+            }
+
+            int lastNonNewRowIndex = dataGridView1.Rows.Count - 2; // Index of last non-new row
+            if (lastNonNewRowIndex >= 0 && dataGridView1.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
+            {
+                dataGridView1.AllowUserToAddRows = true;
             }
         }
     }

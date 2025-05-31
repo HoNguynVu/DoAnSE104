@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DoAnSE104.GUI
@@ -15,18 +9,37 @@ namespace DoAnSE104.GUI
         public GUI_Home()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.WhiteSmoke;
         }
-
-        private void BtnMedicalExamination_Click(object sender, EventArgs e)
+        private void ShowFormInMainPanel(Form form)
         {
-            GUI_TiepNhanBenhNhan gui_TiepNhanBenhNhan = new GUI_TiepNhanBenhNhan();
-            gui_TiepNhanBenhNhan.Show();
+            panelMain.Controls.Clear();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(form);
+            form.Show();
         }
-
-        private void BtnCreateMedicalExamination_Click(object sender, EventArgs e)
+        private void btnTiepNhanBenhNhan_Click(object sender, EventArgs e)
         {
-            GUI_LapPhieuKhamBenh gui_LapPhieuKhamBenh = new GUI_LapPhieuKhamBenh();
-            gui_LapPhieuKhamBenh.Show();
+            ShowFormInMainPanel(new GUI_TiepNhanBenhNhan());
+        }
+        private void btnTiepNhanKhamBenh_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_TiepNhanKhamBenh());
+        }
+        private void btnLapPhieuKhamBenh_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_LapPhieuKhamBenh());
+        }
+        private void btnTraCuuBenhNhan_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_TraCuuBenhNhan());
+        }
+        private void btnLapHoaDon_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_LapHoaDon());
         }
     }
 }

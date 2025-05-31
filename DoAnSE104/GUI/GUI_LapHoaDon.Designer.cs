@@ -184,7 +184,6 @@
             // 
             this.txtTienKham.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtTienKham.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtTienKham.Enabled = false;
             this.txtTienKham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienKham.Location = new System.Drawing.Point(41, 280);
             this.txtTienKham.Margin = new System.Windows.Forms.Padding(7);
@@ -193,6 +192,7 @@
             this.txtTienKham.Size = new System.Drawing.Size(252, 48);
             this.txtTienKham.TabIndex = 110;
             this.txtTienKham.TabStop = false;
+            this.txtTienKham.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTienKham_KeyPress);
             // 
             // dataGridView1
             // 

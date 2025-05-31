@@ -16,7 +16,7 @@ namespace DoAnSE104.DTO
         public int soLuongBenhNhanToiDaTrongNgay { get => SoLuongBenhNhanToiDaTrongNgay; set => SoLuongBenhNhanToiDaTrongNgay = value; }
         public Boolean quyDinhSoLuongBenhNhanToiDaTrongNgay { get => QuyDinhSoLuongBenhNhanToiDaTrongNgay; set => QuyDinhSoLuongBenhNhanToiDaTrongNgay = value; }
         public double tienKhamCoDinh { get => TienKhamCoDinh; set => TienKhamCoDinh = value; }
-        public Boolean quyDinhTienKhamCoDinh { get => QuyDinhTienKhamCoDinh; set => QuyDinhTienKhamCoDinh = value; }
+        public bool quyDinhTienKhamCoDinh { get => QuyDinhTienKhamCoDinh; set => QuyDinhTienKhamCoDinh = value; }
         public DTO_ThamSo(int soLuongBenhNhanToiDaTrongNgay, Boolean quyDinhSoLuongBenhNhanToiDaTrongNgay, double tienKhamCoDinh, bool quyDinhTienKhamCoDinh)
         {
             this.SoLuongBenhNhanToiDaTrongNgay = soLuongBenhNhanToiDaTrongNgay;
@@ -24,5 +24,6 @@ namespace DoAnSE104.DTO
             this.tienKhamCoDinh = tienKhamCoDinh;
             this.quyDinhTienKhamCoDinh = quyDinhTienKhamCoDinh;
         }
+
     }
 }

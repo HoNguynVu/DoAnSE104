@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DoAnSE104.BUS;
 using DoAnSE104.DTO;
-using DoAnSE104.DAL;
 
 namespace DoAnSE104.GUI
 {

@@ -56,6 +56,7 @@ namespace DoAnSE104.GUI
             LoadDanhSachLoaiBenh();
             LoadDanhSachLoaiThuoc();
             LoadDanhSachPhieuKham();
+            LoadDanhSachDonVi();
         }
         private void LoadDanhSachLoaiBenh()
         {
@@ -77,6 +78,16 @@ namespace DoAnSE104.GUI
             cmbTenLoaiThuoc.DisplayMember = "tenLoaiThuoc";
             cmbTenLoaiThuoc.ValueMember = "maLoaiThuoc";
             cmbTenLoaiThuoc.SelectedIndex = 0;
+        }
+        private void LoadDanhSachDonVi()
+        {
+            List<DTO_DonVi> danhSach = BUS_LoaiThuoc.LayDanhSachDonVi();
+            danhSach.Insert(0, new DTO_DonVi ("",""));
+
+            cmbDonVi.DataSource = danhSach;
+            cmbDonVi.DisplayMember = "tenDonVi";
+            cmbDonVi.ValueMember = "maDonVi";
+            cmbDonVi.SelectedIndex = 0;
         }
 
         private void LoadDanhSachPhieuKham()
@@ -163,6 +174,11 @@ namespace DoAnSE104.GUI
                 );
             MessageBox.Show($"Tìm thấy {ketQua.Count} kết quả");
             HienThiKetQua(ketQua);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\C#\\SE104\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\c#\\se104\\doanse104\\gui\\gui_tiepnhanbenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_tiepnhanbenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\C#\\SE104\\doanse104\\gui\\gui_tiepnhanbenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_tiepnhanbenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|D:\\C#\\SE104\\doanse104\\gui\\gui_tracuubenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_tracuubenhnhan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,6 +63,42 @@
             {
               "$type": "Bookmark",
               "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GUI_TiepNhanBenhNhan.cs",
+              "DocumentMoniker": "D:\\C#\\SE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
+              "ToolTip": "D:\\C#\\SE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
+              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAMwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T13:43:26.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GUI_TiepNhanBenhNhan.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\SE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs",
+              "ToolTip": "D:\\C#\\SE104\\DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs [Design]",
+              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_TiepNhanBenhNhan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T13:31:18.018Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GUI_TraCuuBenhNhan.cs [Design]",
+              "DocumentMoniker": "D:\\C#\\SE104\\DoAnSE104\\GUI\\GUI_TraCuuBenhNhan.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_TraCuuBenhNhan.cs",
+              "ToolTip": "D:\\C#\\SE104\\DoAnSE104\\GUI\\GUI_TraCuuBenhNhan.cs [Design]",
+              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_TraCuuBenhNhan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:06:45.149Z"
             }
           ]
         }

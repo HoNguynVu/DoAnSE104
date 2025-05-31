@@ -14,6 +14,7 @@ namespace DoAnSE104.GUI
 {
     public partial class GUI_LapHoaDon : Form
     {
+        private BUS_ThamSo busThamSo = new BUS_ThamSo();
         private BUS_HoaDon busHoaDon = new BUS_HoaDon();
         private BUS_KhamBenh busKhamBenh = new BUS_KhamBenh();
         private BUS_BenhNhan busBenhNhan = new BUS_BenhNhan();
@@ -42,7 +43,7 @@ namespace DoAnSE104.GUI
 
         private void GUI_LapHoaDon_Load(object sender, EventArgs e)
         {
-            txtTienKham.Text = "30000";
+            CauHinhTienKham();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -61,6 +62,14 @@ namespace DoAnSE104.GUI
                 return;
             }
 
+            //Kiểm tra tiền khám có bị bỏ trống
+            if (string.IsNullOrWhiteSpace(txtTienKham.Text))
+            {
+                MessageBox.Show("Không được để trống tiền khám.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTienKham.Focus();
+                return;
+            }
+
             var khamBenh = busKhamBenh.LayThongTinKhamBenh(maKhamBenh);
             if (khamBenh == null)
             {
@@ -70,7 +79,7 @@ namespace DoAnSE104.GUI
                 return;
             }
 
-            // ✅ Kiểm tra mã khám bệnh đã có hóa đơn chưa
+            //Kiểm tra mã khám bệnh đã có hóa đơn chưa
             var hoaDonDaCo = busHoaDon.LayHoaDonTheoMaKhamBenh(maKhamBenh);
             if (hoaDonDaCo != null)
             {
@@ -80,7 +89,7 @@ namespace DoAnSE104.GUI
 
             try
             {
-                double tienKham = 30000;
+                double tienKham = Convert.ToDouble(txtTienKham.Text);
                 double tienThuoc = busHoaDon.TinhTienThuoc(maKhamBenh);
                 double tongTien = tienKham + tienThuoc;
 
@@ -92,7 +101,7 @@ namespace DoAnSE104.GUI
                     txtTienThuoc.Text = tienThuoc.ToString("N0");
                     MessageBox.Show("Lập hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Gợi ý: Hiển thị mã hóa đơn mới
+                    // Hiển thị mã hóa đơn mới
                     txtMaHoaDon.Text = maHoaDon;
                     txtMaHoaDon.Visible = true;
                     label7.Visible = true;
@@ -132,7 +141,21 @@ namespace DoAnSE104.GUI
 
                     txtTenBenhNhan.Text = benhNhan?.hoTen ?? "Không rõ";
                     txtNgayKham.Text = khamBenh.ngayKham.ToString("dd/MM/yyyy");
-                    txtTienKham.Text = "30000";
+
+                    var thamSo = busThamSo.LayThamSo();
+
+                    if (thamSo != null && thamSo.quyDinhTienKhamCoDinh)
+                    {
+                        txtTienKham.ReadOnly = true;
+                        txtTienKham.BackColor = Color.LightGray;
+                        txtTienKham.Text = thamSo.tienKhamCoDinh.ToString("N0");
+                    }
+                    else
+                    {
+                        txtTienKham.ReadOnly = false;
+                        txtTienKham.BackColor = Color.White;
+                        txtTienKham.Text = "0";
+                    }
 
                     double tienThuoc = busHoaDon.TinhTienThuoc(maKhamBenh);
                     txtTienThuoc.Text = tienThuoc.ToString("N0");
@@ -251,6 +274,34 @@ namespace DoAnSE104.GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tìm hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CauHinhTienKham()
+        {
+            var thamSo = busThamSo.LayThamSo();
+            MessageBox.Show($"QuyDinhTienKhamCoDinh = {thamSo?.quyDinhTienKhamCoDinh}");
+
+            if (thamSo != null && thamSo.quyDinhTienKhamCoDinh)
+            {
+                txtTienKham.ReadOnly = true;
+                txtTienKham.BackColor = Color.LightGray;
+                txtTienKham.Text = thamSo.tienKhamCoDinh.ToString("N0");
+            }
+            else
+            {
+                txtTienKham.ReadOnly = false;
+                txtTienKham.BackColor = Color.White;
+                txtTienKham.Text = "0";
+            }
+        }
+
+        private void txtTienKham_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Chỉ cho nhập số và phím điều khiển (Backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // chặn ký tự không hợp lệ
             }
         }
     }

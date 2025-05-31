@@ -42,6 +42,8 @@
             this.MaDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThaoTac = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLoaiThuoc)).BeginInit();
             this.SuspendLayout();
@@ -166,7 +168,7 @@
             this.dgvDanhSachLoaiThuoc.RowHeadersVisible = false;
             this.dgvDanhSachLoaiThuoc.RowHeadersWidth = 51;
             this.dgvDanhSachLoaiThuoc.RowTemplate.Height = 32;
-            this.dgvDanhSachLoaiThuoc.Size = new System.Drawing.Size(1100, 300);
+            this.dgvDanhSachLoaiThuoc.Size = new System.Drawing.Size(1100, 277);
             this.dgvDanhSachLoaiThuoc.TabIndex = 2;
             // 
             // STT
@@ -195,12 +197,44 @@
             this.ThaoTac.Text = "Xóa";
             this.ThaoTac.UseColumnTextForButtonValue = true;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuu.FlatAppearance.BorderSize = 0;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(733, 643);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(187, 45);
+            this.btnLuu.TabIndex = 9;
+            this.btnLuu.Text = "Lưu thay đổi";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThoat.FlatAppearance.BorderSize = 0;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(943, 643);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(187, 45);
+            this.btnThoat.TabIndex = 8;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            // 
             // GUI_QuanLyDonViTinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1160, 700);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.dgvDanhSachLoaiThuoc);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelTitle);
@@ -229,5 +263,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDonVi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDonVi;
         private System.Windows.Forms.DataGridViewButtonColumn ThaoTac;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

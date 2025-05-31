@@ -14,6 +14,8 @@ namespace DoAnSE104.GUI
 {
     public partial class GUI_TraCuuBenhNhan : Form
     {
+        private GUI_Home homeForm;
+
         private BUS_KhamBenh BUS_KhamBenh = new BUS_KhamBenh();
         private BUS_LoaiThuoc BUS_LoaiThuoc = new BUS_LoaiThuoc();
         private BUS_LoaiBenh BUS_LoaiBenh = new BUS_LoaiBenh();
@@ -22,6 +24,11 @@ namespace DoAnSE104.GUI
         public GUI_TraCuuBenhNhan()
         {
             InitializeComponent();
+        }
+        public GUI_TraCuuBenhNhan(GUI_Home home)
+        {
+            InitializeComponent();
+            this.homeForm = home;
         }
 
         private void GUI_TraCuuBenhNhan_Load(object sender, EventArgs e)

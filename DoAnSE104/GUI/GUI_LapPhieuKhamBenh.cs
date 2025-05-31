@@ -1,176 +1,193 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 using DoAnSE104.BUS;
 using DoAnSE104.DTO;
-using DoAnSE104.DAL;
 
 namespace DoAnSE104.GUI
 {
     public partial class GUI_LapPhieuKhamBenh : Form
     {
-        private BUS_KhamBenh BUS_KhamBenh = new BUS_KhamBenh();
-        private BUS_LoaiThuoc BUS_LoaiThuoc = new BUS_LoaiThuoc();
-        private BUS_LoaiBenh BUS_LoaiBenh = new BUS_LoaiBenh();
-        private BUS_CTKhamBenh BUS_CTKhamBenh = new BUS_CTKhamBenh();
-        private BUS_BenhNhan BUS_BenhNhan = new BUS_BenhNhan();
+        private BUS_KhamBenh BUS_KhamBenh;
+        private BUS_BenhNhan BUS_BenhNhan;
+        private BUS_LoaiBenh BUS_LoaiBenh;
+        private BUS_LoaiThuoc BUS_LoaiThuoc;
+        private BUS_CTKhamBenh BUS_CTKhamBenh;
         private List<DTO_LoaiThuoc> danhSachLoaiThuoc;
 
         public GUI_LapPhieuKhamBenh()
         {
             InitializeComponent();
-            // Set default values for the form elements
-            SetupDataGridView();
+            BUS_KhamBenh = new BUS_KhamBenh();
+            BUS_BenhNhan = new BUS_BenhNhan();
+            BUS_LoaiBenh = new BUS_LoaiBenh();
+            BUS_LoaiThuoc = new BUS_LoaiThuoc();
+            BUS_CTKhamBenh = new BUS_CTKhamBenh();
+            InitializeDataGridView();
+            LoadLoaiBenh();
+            LoadDanhSachThuoc();
         }
 
-        private void SetupDataGridView()
+        private void LoadLoaiBenh()
         {
-            // Configure DataGridView
-            dataGridView1.AllowUserToAddRows = true;
-            dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
-
-            // Configure STT column for auto-numbering
-            dataGridView1.RowPrePaint += (sender, e) =>
-            {
-                if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
-                {
-                    dataGridView1.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
-                }
-            };
-        }
-
-        private void GUI_LapPhieuKhamBenh_Load(object sender, EventArgs e)
-        {
-            LoadDanhSachLoaiBenh();
-            LoadDanhSachLoaiThuoc();
-
-            // Reset all ComboBoxes to empty state
-            selectLoaiBenh.SelectedIndex = -1;
-
-            // Configure ComboBox in DataGridView
-            SetupThuocComboBox();
-        }
-
-        private void LoadDanhSachLoaiBenh()
-        {
-            selectLoaiBenh.DataSource = BUS_LoaiBenh.LayDanhSachLoaiBenh();
-            selectLoaiBenh.DisplayMember = "tenLoaiBenh";
-            selectLoaiBenh.ValueMember = "maLoaiBenh";
-        }
-
-        private void LoadDanhSachLoaiThuoc()
-        {
-            danhSachLoaiThuoc = BUS_LoaiThuoc.LayDanhSachLoaiThuoc();
-        }
-
-        private void SetupThuocComboBox()
-        {
-            // Configure the ComboBox column for medications
-            DataGridViewComboBoxColumn thuocColumn = (DataGridViewComboBoxColumn)dataGridView1.Columns["TenLoaiThuoc"];
-            thuocColumn.DataSource = danhSachLoaiThuoc;
-            thuocColumn.DisplayMember = "tenLoaiThuoc";
-            thuocColumn.ValueMember = "maLoaiThuoc";
-        }
-
-        private void btnLapPK_Click(object sender, EventArgs e)
-        {
-            // Validation
-            if (string.IsNullOrWhiteSpace(txtMaKB.Text) ||
-                string.IsNullOrWhiteSpace(txtTrieuChung.Text) ||
-                selectLoaiBenh.SelectedValue == null)
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin bắt buộc!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             try
             {
-                // Add medical examination record
-                if (BUS_KhamBenh.CapNhatKhamBenh(txtMaKB.Text.Trim(), selectLoaiBenh.SelectedValue.ToString(), txtTrieuChung.Text.Trim()))
+                List<DTO_LoaiBenh> danhSachLoaiBenh = BUS_LoaiBenh.LayDanhSachLoaiBenh();
+                cboLoaiBenh.DataSource = danhSachLoaiBenh;
+                cboLoaiBenh.DisplayMember = "tenLoaiBenh";
+                cboLoaiBenh.ValueMember = "maLoaiBenh";
+                cboLoaiBenh.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách loại bệnh: " + ex.Message, 
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void InitializeDataGridView()
+        {
+            DataGridViewTextBoxColumn colSTT = new DataGridViewTextBoxColumn();
+            colSTT.HeaderText = "STT";
+            colSTT.Name = "colSTT";
+            colSTT.ReadOnly = true;
+            colSTT.Width = 50;
+
+            DataGridViewComboBoxColumn colTenThuoc = new DataGridViewComboBoxColumn();
+            colTenThuoc.HeaderText = "Tên loại thuốc";
+            colTenThuoc.Name = "colTenThuoc";
+            colTenThuoc.Width = 200;
+
+            DataGridViewTextBoxColumn colSoLuong = new DataGridViewTextBoxColumn();
+            colSoLuong.HeaderText = "Số lượng";
+            colSoLuong.Name = "colSoLuong";
+            colSoLuong.Width = 80;
+
+            DataGridViewTextBoxColumn colDonVi = new DataGridViewTextBoxColumn();
+            colDonVi.HeaderText = "Đơn vị";
+            colDonVi.Name = "colDonVi";
+            colDonVi.ReadOnly = true;
+            colDonVi.Width = 100;
+            colDonVi.DefaultCellStyle.BackColor = Color.LightGray; // Màu nền để chỉ ra là readonly
+
+            DataGridViewTextBoxColumn colCachDung = new DataGridViewTextBoxColumn();
+            colCachDung.HeaderText = "Cách dùng";
+            colCachDung.Name = "colCachDung";
+            colCachDung.ReadOnly = true;
+            colCachDung.Width = 200;
+            colCachDung.DefaultCellStyle.BackColor = Color.LightGray; // Màu nền để chỉ ra là readonly
+
+            dataGridViewPhieuKham.Columns.AddRange(new DataGridViewColumn[] {
+                colSTT,
+                colTenThuoc,
+                colSoLuong,
+                colDonVi,
+                colCachDung
+            });
+
+            dataGridViewPhieuKham.RowsAdded += DgvChiTietThuoc_RowsAdded;
+            dataGridViewPhieuKham.CellValueChanged += DgvChiTietThuoc_CellValueChanged;
+            dataGridViewPhieuKham.EditingControlShowing += DgvChiTietThuoc_EditingControlShowing;
+        }
+
+        private void LoadDanhSachThuoc()
+        {
+            try
+            {
+                danhSachLoaiThuoc = BUS_LoaiThuoc.LayDanhSachLoaiThuoc();
+                DataGridViewComboBoxColumn colTenThuoc = dataGridViewPhieuKham.Columns["colTenThuoc"] as DataGridViewComboBoxColumn;
+                if (colTenThuoc != null)
                 {
-                    // Save medication details if available
-                    bool success = true;
-
-                    // Process each row in the DataGridView that has medication info
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
-                    {
-                        // Skip the last row (new row) or rows without medication selected
-                        if (row.IsNewRow || row.Cells["TenLoaiThuoc"].Value == null)
-                            continue;
-
-                        // Get medication info from the grid
-                        string maLoaiThuoc = row.Cells["TenLoaiThuoc"].Value.ToString();
-                        string soLuong = row.Cells["SoLuong"].Value?.ToString();
-
-                        // Add medication record
-                        if (!string.IsNullOrEmpty(soLuong) && !ThemChiTietThuoc(txtMaKB.Text.Trim(), maLoaiThuoc, soLuong))
-                        {
-                            success = false;
-                        }
-                    }
-
-                    if (success)
-                    {
-                        MessageBox.Show("Lập phiếu khám bệnh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ClearForm();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Lập phiếu thành công nhưng có lỗi khi lưu thông tin thuốc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Lập phiếu khám bệnh thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    colTenThuoc.DataSource = danhSachLoaiThuoc;
+                    colTenThuoc.DisplayMember = "tenLoaiThuoc";
+                    colTenThuoc.ValueMember = "maLoaiThuoc";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi tải danh sách thuốc: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private bool ThemChiTietThuoc(string maKhamBenh, string maLoaiThuoc, string soLuong)
+        private void DgvChiTietThuoc_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            try
+            for (int i = 0; i < dataGridViewPhieuKham.Rows.Count; i++)
             {
-                if (int.TryParse(soLuong, out int sl) && sl > 0)
+                if (dataGridViewPhieuKham.Rows[i].IsNewRow) continue;
+                dataGridViewPhieuKham.Rows[i].Cells["colSTT"].Value = (i + 1).ToString();
+            }
+        }
+
+        private void DgvChiTietThuoc_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+
+            var row = dataGridViewPhieuKham.Rows[e.RowIndex];
+            
+            if (e.ColumnIndex == dataGridViewPhieuKham.Columns["colTenThuoc"].Index)
+            {
+                row.Cells["colDonVi"].Value = "";
+                row.Cells["colCachDung"].Value = "";
+
+                string maLoaiThuoc = row.Cells["colTenThuoc"].Value?.ToString();
+                if (!string.IsNullOrEmpty(maLoaiThuoc))
                 {
-                    return BUS_CTKhamBenh.ThemChiTietThuoc(maKhamBenh, maLoaiThuoc, sl);
+                    try
+                    {
+                        var thuoc = danhSachLoaiThuoc.Find(t => t.maLoaiThuoc == maLoaiThuoc);
+                        if (thuoc != null)
+                        {
+                            try
+                            {
+                                string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(thuoc.maDonVi);
+                                if (!string.IsNullOrEmpty(tenDonVi))
+                                {
+                                    row.Cells["colDonVi"].Value = tenDonVi;
+                                }
+
+                                string cachDung = BUS_LoaiThuoc.LayTenCachDung(thuoc.maCachDung);
+                                if (!string.IsNullOrEmpty(cachDung))
+                                {
+                                    row.Cells["colCachDung"].Value = cachDung;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Lỗi khi lấy thông tin thuốc: " + ex.Message,
+                                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi tìm thông tin thuốc: " + ex.Message,
+                            "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                return false;
             }
-            catch
+        }
+
+        private void DgvChiTietThuoc_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dataGridViewPhieuKham.CurrentCell.ColumnIndex == dataGridViewPhieuKham.Columns["colSoLuong"].Index)
             {
-                return false;
+                if (e.Control is TextBox txt)
+                {
+                    txt.KeyPress += (s, evt) => {
+                        if (!char.IsControl(evt.KeyChar) && !char.IsDigit(evt.KeyChar))
+                        {
+                            evt.Handled = true;
+                        }
+                    };
+                }
             }
         }
 
-        private void ClearForm()
+        private void txtMaKhamBenh_TextChanged(object sender, EventArgs e)
         {
-            txtMaKB.Clear();
-            txtNK.Clear();
-            txtTenBN.Clear();
-            txtTrieuChung.Clear();
-            selectLoaiBenh.SelectedIndex = -1;
-
-            // Clear DataGridView
-            dataGridView1.Rows.Clear();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void txtMaKB_TextChanged(object sender, EventArgs e)
-        {
-            string maKhamBenh = txtMaKB.Text.Trim();
+            string maKhamBenh = txtMaKhamBenh.Text.Trim();
 
             if (!string.IsNullOrEmpty(maKhamBenh))
             {
@@ -179,51 +196,133 @@ namespace DoAnSE104.GUI
                     DTO_KhamBenh khamBenh = BUS_KhamBenh.LayThongTinKhamBenh(maKhamBenh);
                     if (khamBenh != null)
                     {
-                        // Display examination date
-                        txtNK.Text = khamBenh.ngayKham.ToString("dd/MM/yyyy");
+                        txtNgayKham.Text = khamBenh.ngayKham.ToString("dd/MM/yyyy");
 
-                        // Get and display patient name
-                        if (!string.IsNullOrEmpty(khamBenh.maBenhNhan))
+                        DTO_BenhNhan benhNhan = BUS_BenhNhan.LayThongTinBenhNhan(khamBenh.maBenhNhan);
+                        if (benhNhan != null)
                         {
-                            DTO_BenhNhan benhNhan = BUS_BenhNhan.LayThongTinBenhNhan(khamBenh.maBenhNhan);
-                            if (benhNhan != null)
-                            {
-                                txtTenBN.Text = benhNhan.hoTen;
-                            }
-                            else
-                            {
-                                txtTenBN.Text = "";
-                            }
-                            errorProvider1.SetError(txtMaKB, "");
-                        }
-                        else
-                        {
-                            // Display error using ErrorProvider
-                            errorProvider1.SetError(txtMaKB, "Mã khám bệnh không có thông tin bệnh nhân");
+                            txtTenBenhNhan.Text = benhNhan.hoTen;
+                            errorProvider1.SetError(txtMaKhamBenh, "");
                         }
                     }
                     else
                     {
-
-                        errorProvider1.SetError(txtMaKB, "Mã khám bệnh không tồn tại");
-
-                        txtNK.Text = "";
-                        txtTenBN.Text = "";
-                        txtTrieuChung.Text = "";
-                        selectLoaiBenh.SelectedIndex = -1;
+                        ClearDisplayInfo();
+                        errorProvider1.SetError(txtMaKhamBenh, "Mã khám bệnh không tồn tại.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ClearDisplayInfo();
+                    errorProvider1.SetError(txtMaKhamBenh, "Lỗi: " + ex.Message);
                 }
             }
             else
             {
+                ClearDisplayInfo();
+                errorProvider1.SetError(txtMaKhamBenh, "Vui lòng nhập mã khám bệnh.");
+            }
+        }
 
-                txtNK.Text = "";
-                txtTenBN.Text = "";
-                errorProvider1.SetError(txtMaKB, "Vui lòng nhập mã khám bệnh.");
+        private void ClearDisplayInfo()
+        {
+            txtNgayKham.Text = "";
+            txtTenBenhNhan.Text = "";
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnLapPhieu_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra thông tin bắt buộc
+            if (string.IsNullOrWhiteSpace(txtMaKhamBenh.Text) || 
+                string.IsNullOrWhiteSpace(cboLoaiBenh.Text) || 
+                string.IsNullOrWhiteSpace(txtTrieuChung.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh!", 
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra danh sách thuốc
+            if (dataGridViewPhieuKham.Rows.Count <= 1) // Chỉ có dòng new row
+            {
+                MessageBox.Show("Vui lòng thêm ít nhất một loại thuốc!", 
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // 1. Cập nhật thông tin khám bệnh (loại bệnh và triệu chứng)
+                string maKhamBenh = txtMaKhamBenh.Text.Trim();
+                string maLoaiBenh = cboLoaiBenh.SelectedValue?.ToString();
+                string trieuChung = txtTrieuChung.Text.Trim();
+
+                if (BUS_KhamBenh.CapNhatKhamBenh(maKhamBenh, maLoaiBenh, trieuChung))
+                {
+                    // 2. Lưu chi tiết thuốc
+                    bool success = true;
+                    string errorMessage = "";
+
+                    foreach (DataGridViewRow row in dataGridViewPhieuKham.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        string maThuoc = row.Cells["colTenThuoc"].Value?.ToString();
+                        if (string.IsNullOrEmpty(maThuoc)) continue;
+
+                        string soLuongStr = row.Cells["colSoLuong"].Value?.ToString();
+                        if (string.IsNullOrEmpty(soLuongStr) || !int.TryParse(soLuongStr, out int soLuong))
+                        {
+                            errorMessage = "Số lượng thuốc không hợp lệ";
+                            success = false;
+                            break;
+                        }
+
+
+                        try
+                        {
+                            if (!BUS_CTKhamBenh.ThemChiTietThuoc(maKhamBenh, maThuoc, soLuong)) {
+                                success = false;
+                                errorMessage = "Không thể thêm chi tiết thuốc";
+                                break;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            success = false;
+                            errorMessage = ex.Message;
+                            break;
+                        }
+                    }
+
+                    if (success)
+                    {
+                        MessageBox.Show("Lập phiếu khám bệnh thành công!", 
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi lưu chi tiết thuốc: " + errorMessage, 
+                            "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không thể cập nhật thông tin khám bệnh!", 
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, 
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

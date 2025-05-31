@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DoAnSE104.GUI
 {
-    public partial class Form1 : Form
+    public partial class GUI_DanhSachThamSo : Form
     {
-        public Form1()
+        public GUI_DanhSachThamSo()
         {
             InitializeComponent();
         }

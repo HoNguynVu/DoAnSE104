@@ -28,27 +28,22 @@ namespace DoAnSE104.GUI
         {
             this.components = new System.ComponentModel.Container();
             this.txtTrieuChung = new System.Windows.Forms.TextBox();
-            this.selectLoaiBenh = new System.Windows.Forms.ComboBox();
+            this.cboLoaiBenh = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNK = new System.Windows.Forms.TextBox();
-            this.txtTenBN = new System.Windows.Forms.TextBox();
-            this.txtMaKB = new System.Windows.Forms.TextBox();
-            this.btnLapPK = new System.Windows.Forms.Button();
+            this.txtNgayKham = new System.Windows.Forms.TextBox();
+            this.txtTenBenhNhan = new System.Windows.Forms.TextBox();
+            this.txtMaKhamBenh = new System.Windows.Forms.TextBox();
+            this.btnLapPhieuKham = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiThuoc = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewPhieuKham = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPhieuKham)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTrieuChung
@@ -59,17 +54,24 @@ namespace DoAnSE104.GUI
             this.txtTrieuChung.Size = new System.Drawing.Size(944, 34);
             this.txtTrieuChung.TabIndex = 94;
             // 
-            // selectLoaiBenh
+            // cboLoaiBenh
             // 
-            this.selectLoaiBenh.BackColor = System.Drawing.Color.LightGray;
-            this.selectLoaiBenh.FormattingEnabled = true;
-            this.selectLoaiBenh.ItemHeight = 29;
-            this.selectLoaiBenh.Location = new System.Drawing.Point(859, 152);
-            this.selectLoaiBenh.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.selectLoaiBenh.MaxDropDownItems = 20;
-            this.selectLoaiBenh.Name = "selectLoaiBenh";
-            this.selectLoaiBenh.Size = new System.Drawing.Size(237, 37);
-            this.selectLoaiBenh.TabIndex = 74;
+            this.cboLoaiBenh.BackColor = System.Drawing.Color.LightGray;
+            this.cboLoaiBenh.FormattingEnabled = true;
+            this.cboLoaiBenh.ItemHeight = 29;
+            this.cboLoaiBenh.Items.AddRange(new object[] {
+            "df",
+            "df",
+            "df",
+            "fed",
+            "bd",
+            "bfd"});
+            this.cboLoaiBenh.Location = new System.Drawing.Point(859, 152);
+            this.cboLoaiBenh.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.cboLoaiBenh.MaxDropDownItems = 20;
+            this.cboLoaiBenh.Name = "cboLoaiBenh";
+            this.cboLoaiBenh.Size = new System.Drawing.Size(237, 37);
+            this.cboLoaiBenh.TabIndex = 74;
             // 
             // label6
             // 
@@ -137,61 +139,61 @@ namespace DoAnSE104.GUI
             this.label1.TabIndex = 67;
             this.label1.Text = "Lập phiếu khám bệnh";
             // 
-            // txtNK
+            // txtNgayKham
             // 
-            this.txtNK.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtNK.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtNK.Enabled = false;
-            this.txtNK.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNK.Location = new System.Drawing.Point(302, 145);
-            this.txtNK.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNK.Multiline = true;
-            this.txtNK.Name = "txtNK";
-            this.txtNK.Size = new System.Drawing.Size(221, 45);
-            this.txtNK.TabIndex = 96;
-            this.txtNK.TabStop = false;
+            this.txtNgayKham.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNgayKham.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNgayKham.Enabled = false;
+            this.txtNgayKham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgayKham.Location = new System.Drawing.Point(302, 145);
+            this.txtNgayKham.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNgayKham.Multiline = true;
+            this.txtNgayKham.Name = "txtNgayKham";
+            this.txtNgayKham.Size = new System.Drawing.Size(221, 45);
+            this.txtNgayKham.TabIndex = 96;
+            this.txtNgayKham.TabStop = false;
             // 
-            // txtTenBN
+            // txtTenBenhNhan
             // 
-            this.txtTenBN.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtTenBN.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtTenBN.Enabled = false;
-            this.txtTenBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenBN.Location = new System.Drawing.Point(550, 145);
-            this.txtTenBN.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenBN.Multiline = true;
-            this.txtTenBN.Name = "txtTenBN";
-            this.txtTenBN.Size = new System.Drawing.Size(268, 45);
-            this.txtTenBN.TabIndex = 96;
-            this.txtTenBN.TabStop = false;
+            this.txtTenBenhNhan.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtTenBenhNhan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTenBenhNhan.Enabled = false;
+            this.txtTenBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenBenhNhan.Location = new System.Drawing.Point(550, 145);
+            this.txtTenBenhNhan.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenBenhNhan.Multiline = true;
+            this.txtTenBenhNhan.Name = "txtTenBenhNhan";
+            this.txtTenBenhNhan.Size = new System.Drawing.Size(268, 45);
+            this.txtTenBenhNhan.TabIndex = 96;
+            this.txtTenBenhNhan.TabStop = false;
             // 
-            // txtMaKB
+            // txtMaKhamBenh
             // 
-            this.txtMaKB.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtMaKB.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtMaKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKB.Location = new System.Drawing.Point(35, 145);
-            this.txtMaKB.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaKB.Multiline = true;
-            this.txtMaKB.Name = "txtMaKB";
-            this.txtMaKB.Size = new System.Drawing.Size(221, 45);
-            this.txtMaKB.TabIndex = 96;
-            this.txtMaKB.TabStop = false;
-            this.txtMaKB.TextChanged += new System.EventHandler(this.txtMaKB_TextChanged);
+            this.txtMaKhamBenh.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtMaKhamBenh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtMaKhamBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKhamBenh.Location = new System.Drawing.Point(35, 145);
+            this.txtMaKhamBenh.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaKhamBenh.Multiline = true;
+            this.txtMaKhamBenh.Name = "txtMaKhamBenh";
+            this.txtMaKhamBenh.Size = new System.Drawing.Size(221, 45);
+            this.txtMaKhamBenh.TabIndex = 96;
+            this.txtMaKhamBenh.TabStop = false;
+            this.txtMaKhamBenh.TextChanged += new System.EventHandler(this.txtMaKhamBenh_TextChanged);
             // 
-            // btnLapPK
+            // btnLapPhieuKham
             // 
-            this.btnLapPK.Location = new System.Drawing.Point(35, 582);
-            this.btnLapPK.Name = "btnLapPK";
-            this.btnLapPK.Size = new System.Drawing.Size(221, 44);
-            this.btnLapPK.TabIndex = 97;
-            this.btnLapPK.Text = "Lập phiếu khám";
-            this.btnLapPK.UseVisualStyleBackColor = true;
-            this.btnLapPK.Click += new System.EventHandler(this.btnLapPK_Click);
+            this.btnLapPhieuKham.Location = new System.Drawing.Point(35, 594);
+            this.btnLapPhieuKham.Name = "btnLapPhieuKham";
+            this.btnLapPhieuKham.Size = new System.Drawing.Size(221, 44);
+            this.btnLapPhieuKham.TabIndex = 97;
+            this.btnLapPhieuKham.Text = "Lập phiếu khám";
+            this.btnLapPhieuKham.UseVisualStyleBackColor = true;
+            this.btnLapPhieuKham.Click += new System.EventHandler(this.btnLapPhieu_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1003, 582);
+            this.btnExit.Location = new System.Drawing.Point(1003, 594);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(114, 44);
             this.btnExit.TabIndex = 98;
@@ -203,71 +205,29 @@ namespace DoAnSE104.GUI
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dataGridView1
+            // dataGridViewPhieuKham
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.TenLoaiThuoc,
-            this.SoLuong,
-            this.DonVi,
-            this.CachDung});
-            this.dataGridView1.Location = new System.Drawing.Point(35, 323);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1082, 253);
-            this.dataGridView1.TabIndex = 99;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 150;
-            // 
-            // TenLoaiThuoc
-            // 
-            this.TenLoaiThuoc.HeaderText = "TÊN LOẠI THUỐC";
-            this.TenLoaiThuoc.MinimumWidth = 6;
-            this.TenLoaiThuoc.Name = "TenLoaiThuoc";
-            this.TenLoaiThuoc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TenLoaiThuoc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TenLoaiThuoc.Width = 270;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "SỐ LƯỢNG";
-            this.SoLuong.MinimumWidth = 6;
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Width = 150;
-            // 
-            // DonVi
-            // 
-            this.DonVi.HeaderText = "ĐƠN VỊ";
-            this.DonVi.MinimumWidth = 6;
-            this.DonVi.Name = "DonVi";
-            this.DonVi.Width = 150;
-            // 
-            // CachDung
-            // 
-            this.CachDung.HeaderText = "CÁCH DÙNG";
-            this.CachDung.MinimumWidth = 6;
-            this.CachDung.Name = "CachDung";
-            this.CachDung.Width = 320;
+            this.dataGridViewPhieuKham.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dataGridViewPhieuKham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPhieuKham.Location = new System.Drawing.Point(35, 323);
+            this.dataGridViewPhieuKham.Name = "dataGridViewPhieuKham";
+            this.dataGridViewPhieuKham.RowHeadersWidth = 51;
+            this.dataGridViewPhieuKham.RowTemplate.Height = 24;
+            this.dataGridViewPhieuKham.Size = new System.Drawing.Size(1082, 252);
+            this.dataGridViewPhieuKham.TabIndex = 99;
             // 
             // GUI_LapPhieuKhamBenh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(1157, 638);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1157, 700);
+            this.Controls.Add(this.dataGridViewPhieuKham);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnLapPK);
-            this.Controls.Add(this.txtTenBN);
-            this.Controls.Add(this.txtMaKB);
-            this.Controls.Add(this.txtNK);
+            this.Controls.Add(this.btnLapPhieuKham);
+            this.Controls.Add(this.txtTenBenhNhan);
+            this.Controls.Add(this.txtMaKhamBenh);
+            this.Controls.Add(this.txtNgayKham);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
@@ -275,14 +235,13 @@ namespace DoAnSE104.GUI
             this.Controls.Add(this.txtTrieuChung);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.selectLoaiBenh);
+            this.Controls.Add(this.cboLoaiBenh);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.Name = "GUI_LapPhieuKhamBenh";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.GUI_LapPhieuKhamBenh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPhieuKham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,24 +249,19 @@ namespace DoAnSE104.GUI
 
         #endregion
         private TextBox txtTrieuChung;
-        private ComboBox selectLoaiBenh;
+        private ComboBox cboLoaiBenh;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox txtNK;
-        private TextBox txtTenBN;
-        private TextBox txtMaKB;
-        private Button btnLapPK;
+        private TextBox txtNgayKham;
+        private TextBox txtTenBenhNhan;
+        private TextBox txtMaKhamBenh;
+        private Button btnLapPhieuKham;
         private Button btnExit;
         private ErrorProvider errorProvider1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn STT;
-        private DataGridViewComboBoxColumn TenLoaiThuoc;
-        private DataGridViewTextBoxColumn SoLuong;
-        private DataGridViewTextBoxColumn DonVi;
-        private DataGridViewTextBoxColumn CachDung;
+        private DataGridView dataGridViewPhieuKham;
     }
 }

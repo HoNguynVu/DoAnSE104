@@ -1,26 +1,24 @@
-﻿using DoAnSE104.DAL;
-using DoAnSE104.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DoAnSE104.DTO;
+using DoAnSE104.DAL;
 
 namespace DoAnSE104.BUS
 {
     public class BUS_BaoCaoSuDungThuoc
     {
-        DAL_BaoCaoSoLuongThuoc dal = new DAL_BaoCaoSoLuongThuoc();
+        private DAL_BaoCaoSuDungThuoc dal = new DAL_BaoCaoSuDungThuoc();
 
-        public List<DTO_BaoCaoSuDungThuoc> LayBaoCaoSuDungThuoc(int month, int year)
+        public int LayTongSoLanSuDungThuoc(int year, int month)
         {
-            if (month < 1 || month > 12)
-                throw new ArgumentException("Tháng không hợp lệ.");
-
-            if (year < 2000 || year > DateTime.Now.Year)
-                throw new ArgumentException("Năm không hợp lệ.");
-
-            return dal.LayBaoCaoSuDungThuoc(month, year);
+            return dal.LayTongSoLanSuDungThuoc(year, month);
+        }
+        public List<DTO_BaoCaoSuDungThuoc> LayBaoCaoSuDungThuoc(int year, int month)
+        {
+            return dal.LayBaoCaoSuDungThuoc(year, month);
         }
     }
 }

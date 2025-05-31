@@ -1,26 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DoAnSE104.DTO
 {
     public class DTO_BaoCaoSuDungThuoc
     {
-        public int soLuong {  get; set; }
-        public string donViTinh {  get; set; }
-        public string tenThuoc {  get; set; }
-        public int soLanDung {  get; set; }
+        public string TenThuoc { get; set; }
+        public int SoLuong { get; set; }
+        public string DonVi { get; set; }
+        public int SoLanDung { get; set; }
+
         public DTO_BaoCaoSuDungThuoc() { }
 
-        public DTO_BaoCaoSuDungThuoc(int sl, string dvt, string ten, int sld)
+        public DTO_BaoCaoSuDungThuoc(string tenThuoc, int soLuong, string donVi, int soLanDung)
         {
-            soLuong = sl;
-            donViTinh = dvt;
-            tenThuoc = ten;
-            soLanDung = sld;
+            TenThuoc = tenThuoc;
+            SoLuong = soLuong;
+            DonVi = donVi;
+            SoLanDung = soLanDung;
         }
     }
-
 }

@@ -22,7 +22,7 @@ namespace DoAnSE104.DAL
             string maLoaiThuoc, string maDonVi)
         {
             string query = @"
-                SELECT 
+                SELECT DISTINCT
                 BN.MaBenhNhan, BN.HoTen, BN.GioiTinh, BN.NamSinh, BN.DiaChi,
                 KB.NgayKham, KB.TrieuChung,
                 LB.TenLoaiBenh

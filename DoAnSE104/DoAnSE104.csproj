@@ -119,10 +119,12 @@
     <Compile Include="BUS\BUS_CachDung.cs" />
     <Compile Include="BUS\BUS_CTKhamBenh.cs" />
     <Compile Include="BUS\BUS_DonVi.cs" />
+    <Compile Include="BUS\BUS_HoaDon.cs" />
     <Compile Include="BUS\BUS_KhamBenh.cs" />
     <Compile Include="BUS\BUS_LoaiBenh.cs" />
     <Compile Include="BUS\BUS_LoaiThuoc.cs" />
     <Compile Include="BUS\BUS_TraCuu.cs" />
+    <Compile Include="BUS\BUS_ThamSo.cs" />
     <Compile Include="DAL\DAL_BaoCaoDoanhThu.cs" />
     <Compile Include="DAL\DAL_BaoCaoSuDungThuoc.cs" />
     <Compile Include="DAL\DAL_BenhNhan.cs" />

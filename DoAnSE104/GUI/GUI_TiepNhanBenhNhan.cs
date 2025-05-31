@@ -8,10 +8,18 @@ namespace DoAnSE104.GUI
     public partial class GUI_TiepNhanBenhNhan : Form
     {
         BUS_BenhNhan BUS_BenhNhan = new BUS_BenhNhan();
+        private GUI_Home homeForm;
 
+        public GUI_TiepNhanBenhNhan(GUI_Home home)
+        {
+            InitializeComponent();
+            this.homeForm = home;
+        }
         public GUI_TiepNhanBenhNhan()
         {
             InitializeComponent();
+           
+
         }
 
         private void LayMaBenhNhanMoi()
@@ -71,6 +79,14 @@ namespace DoAnSE104.GUI
                 MessageBox.Show(err.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            // Đảm bảo bạn đã có form GUI_TraCuuBenhNhan
+            GUI_TraCuuBenhNhan traCuuForm = new GUI_TraCuuBenhNhan(homeForm);
+            homeForm.ShowFormInMainPanel(traCuuForm);
+            this.Close(); // Đóng form hiện tại nếu muốn
         }
     }
 }

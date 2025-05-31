@@ -157,6 +157,9 @@
     <EmbeddedResource Include="GUI\GUI_LapBaoCaoDoanhThu.resx">
       <DependentUpon>GUI_LapBaoCaoDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_DanhSachThamSo.resx">
+      <DependentUpon>GUI_DanhSachThamSo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_Home.resx">
       <DependentUpon>GUI_Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,15 +168,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_LapPhieuKhamBenh.resx">
       <DependentUpon>GUI_LapPhieuKhamBenh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GUI_QuanLyCachDung.resx">
-      <DependentUpon>GUI_QuanLyCachDung.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GUI_QuanLyDonViTinh.resx">
-      <DependentUpon>GUI_QuanLyDonViTinh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GUI_QuanLyLoaiThuoc.resx">
-      <DependentUpon>GUI_QuanLyLoaiThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_TiepNhanBenhNhan.resx">
       <DependentUpon>GUI_TiepNhanBenhNhan.cs</DependentUpon>
@@ -189,11 +183,20 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="GUI\Form1.cs">
+    <Compile Include="GUI\Class1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_QuanLyLoaiBenh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\GUI_QuanLyLoaiBenh.Designer.cs">
+      <DependentUpon>GUI_QuanLyLoaiBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_DanhSachThamSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_DanhSachThamSo.Designer.cs">
+      <DependentUpon>GUI_DanhSachThamSo.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GUI_QuanLyCachDung.cs">
       <SubType>Form</SubType>

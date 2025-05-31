@@ -65,7 +65,7 @@
             this.label2.Location = new System.Drawing.Point(35, 129);
             this.label2.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 29);
+            this.label2.Size = new System.Drawing.Size(136, 24);
             this.label2.TabIndex = 97;
             this.label2.Text = "Mã khám bệnh";
             // 
@@ -76,7 +76,7 @@
             this.label3.Location = new System.Drawing.Point(456, 129);
             this.label3.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 29);
+            this.label3.Size = new System.Drawing.Size(141, 24);
             this.label3.TabIndex = 97;
             this.label3.Text = "Tên bệnh nhân";
             // 
@@ -87,7 +87,7 @@
             this.label4.Location = new System.Drawing.Point(848, 129);
             this.label4.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 29);
+            this.label4.Size = new System.Drawing.Size(105, 24);
             this.label4.TabIndex = 97;
             this.label4.Text = "Ngày khám";
             // 
@@ -98,7 +98,7 @@
             this.label5.Location = new System.Drawing.Point(35, 244);
             this.label5.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 29);
+            this.label5.Size = new System.Drawing.Size(99, 24);
             this.label5.TabIndex = 97;
             this.label5.Text = "Tiền khám";
             // 
@@ -109,7 +109,7 @@
             this.label6.Location = new System.Drawing.Point(456, 244);
             this.label6.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 29);
+            this.label6.Size = new System.Drawing.Size(100, 24);
             this.label6.TabIndex = 97;
             this.label6.Text = "Tiền thuốc";
             // 
@@ -120,7 +120,7 @@
             this.label13.Location = new System.Drawing.Point(29, 27);
             this.label13.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(554, 62);
+            this.label13.Size = new System.Drawing.Size(447, 51);
             this.label13.TabIndex = 116;
             this.label13.Text = "Lập hóa đơn thanh toán";
             // 
@@ -330,14 +330,14 @@
             this.label7.Location = new System.Drawing.Point(848, 244);
             this.label7.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 29);
+            this.label7.Size = new System.Drawing.Size(112, 24);
             this.label7.TabIndex = 122;
             this.label7.Text = "Mã hóa đơn";
             this.label7.Visible = false;
             // 
             // GUI_LapHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 638);
             this.Controls.Add(this.txtMaHoaDon);

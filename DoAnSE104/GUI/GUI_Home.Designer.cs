@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Home));
             this.btnTiepNhanKhamBenh = new System.Windows.Forms.Button();
             this.btnLapPhieuKhamBenh = new System.Windows.Forms.Button();
             this.btnTraCuuBenhNhan = new System.Windows.Forms.Button();
@@ -39,7 +38,6 @@
             this.panelSideBar.SuspendLayout();
             this.SuspendLayout();
             // 
-
             // btnTiepNhanKhamBenh
             // 
             this.btnTiepNhanKhamBenh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
@@ -137,7 +135,7 @@
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
             this.panelSideBar.Name = "panelSideBar";
-            this.panelSideBar.Size = new System.Drawing.Size(303, 600);
+            this.panelSideBar.Size = new System.Drawing.Size(303, 666);
             this.panelSideBar.TabIndex = 1;
             // 
             // panelMain
@@ -147,38 +145,24 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(303, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(597, 600);
+            this.panelMain.Size = new System.Drawing.Size(801, 666);
             this.panelMain.TabIndex = 0;
-
-            // label1
-            // 
-          
-            // 
-            // BtnCreateMedicalExamination
-            // 
-    
-            // 
-            // BtnPatientLookup
-            // 
-
-            
-            // 
-           
 
             // 
             // GUI_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(900, 600);
+            this.ClientSize = new System.Drawing.Size(1104, 666);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSideBar);
+
 
             this.ClientSize = new System.Drawing.Size(723, 442);
             
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GUI_Home";
             this.Text = "Trang chủ";

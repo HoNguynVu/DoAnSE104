@@ -44,6 +44,14 @@ namespace DoAnSE104.GUI
         {
             ShowFormInMainPanel(new GUI_LapHoaDon());
         }
+        private void btnBaoCaoDoanhThu_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_LapBaoCaoDoanhThu());
+        }
+        private void btnBaoCaoSuDungThuoc_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_LapBaoCaoSuDungThuoc());
+        }
         private void bthSearch_Click(object sender, EventArgs e)
         {
             homeForm.Invoke(new Action(() =>
@@ -62,7 +70,5 @@ namespace DoAnSE104.GUI
                     .Invoke(homeForm, new object[] { new GUI_TiepNhanBenhNhan() });
             }));
         }
-
-
-    }
+    }  
 }

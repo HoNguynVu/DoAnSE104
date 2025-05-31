@@ -34,6 +34,8 @@
             this.btnLapHoaDon = new System.Windows.Forms.Button();
             this.btnTiepNhanBenhNhan = new System.Windows.Forms.Button();
             this.panelSideBar = new System.Windows.Forms.Panel();
+            this.btnBaoCaoSuDungThuoc = new System.Windows.Forms.Button();
+            this.btnBaoCaoDoanhThu = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelSideBar.SuspendLayout();
             this.SuspendLayout();
@@ -127,6 +129,8 @@
             // 
             this.panelSideBar.AutoSize = true;
             this.panelSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.panelSideBar.Controls.Add(this.btnBaoCaoSuDungThuoc);
+            this.panelSideBar.Controls.Add(this.btnBaoCaoDoanhThu);
             this.panelSideBar.Controls.Add(this.btnTiepNhanKhamBenh);
             this.panelSideBar.Controls.Add(this.btnLapPhieuKhamBenh);
             this.panelSideBar.Controls.Add(this.btnTraCuuBenhNhan);
@@ -135,8 +139,42 @@
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
             this.panelSideBar.Name = "panelSideBar";
-            this.panelSideBar.Size = new System.Drawing.Size(303, 666);
+            this.panelSideBar.Size = new System.Drawing.Size(303, 632);
             this.panelSideBar.TabIndex = 1;
+            // 
+            // btnBaoCaoSuDungThuoc
+            // 
+            this.btnBaoCaoSuDungThuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnBaoCaoSuDungThuoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBaoCaoSuDungThuoc.FlatAppearance.BorderSize = 0;
+            this.btnBaoCaoSuDungThuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoCaoSuDungThuoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCaoSuDungThuoc.ForeColor = System.Drawing.Color.White;
+            this.btnBaoCaoSuDungThuoc.Location = new System.Drawing.Point(0, 502);
+            this.btnBaoCaoSuDungThuoc.Name = "btnBaoCaoSuDungThuoc";
+            this.btnBaoCaoSuDungThuoc.Size = new System.Drawing.Size(300, 65);
+            this.btnBaoCaoSuDungThuoc.TabIndex = 7;
+            this.btnBaoCaoSuDungThuoc.Text = "Báo cáo sử dụng thuốc";
+            this.btnBaoCaoSuDungThuoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaoCaoSuDungThuoc.UseVisualStyleBackColor = false;
+            this.btnBaoCaoSuDungThuoc.Click += new System.EventHandler(this.btnBaoCaoSuDungThuoc_Click);
+            // 
+            // btnBaoCaoDoanhThu
+            // 
+            this.btnBaoCaoDoanhThu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnBaoCaoDoanhThu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBaoCaoDoanhThu.FlatAppearance.BorderSize = 0;
+            this.btnBaoCaoDoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoCaoDoanhThu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCaoDoanhThu.ForeColor = System.Drawing.Color.White;
+            this.btnBaoCaoDoanhThu.Location = new System.Drawing.Point(0, 431);
+            this.btnBaoCaoDoanhThu.Name = "btnBaoCaoDoanhThu";
+            this.btnBaoCaoDoanhThu.Size = new System.Drawing.Size(300, 65);
+            this.btnBaoCaoDoanhThu.TabIndex = 6;
+            this.btnBaoCaoDoanhThu.Text = "Báo cáo doanh thu";
+            this.btnBaoCaoDoanhThu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaoCaoDoanhThu.UseVisualStyleBackColor = false;
+            this.btnBaoCaoDoanhThu.Click += new System.EventHandler(this.btnBaoCaoDoanhThu_Click);
             // 
             // panelMain
             // 
@@ -145,22 +183,22 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(303, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(801, 666);
+            this.panelMain.Size = new System.Drawing.Size(646, 632);
             this.panelMain.TabIndex = 0;
-
             // 
             // GUI_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1104, 666);
+            this.ClientSize = new System.Drawing.Size(949, 632);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSideBar);
-            this.ClientSize = new System.Drawing.Size(723, 442);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GUI_Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelSideBar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,5 +213,7 @@
         private System.Windows.Forms.Button btnTiepNhanBenhNhan;
         private System.Windows.Forms.Panel panelSideBar;
         private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Button btnBaoCaoDoanhThu;
+        private System.Windows.Forms.Button btnBaoCaoSuDungThuoc;
     }
 }

@@ -122,6 +122,7 @@
     <Compile Include="BUS\BUS_LoaiBenh.cs" />
     <Compile Include="BUS\BUS_LoaiThuoc.cs" />
     <Compile Include="BUS\BUS_TraCuu.cs" />
+    <Compile Include="BUS\BUS_ThamSo.cs" />
     <Compile Include="DAL\DAL_BenhNhan.cs" />
     <Compile Include="DAL\DAL_CachDung.cs" />
     <Compile Include="DAL\DAL_CTKhamBenh.cs" />

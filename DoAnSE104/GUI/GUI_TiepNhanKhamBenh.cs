@@ -17,15 +17,21 @@ namespace DoAnSE104.GUI
     {
         BUS_KhamBenh BUS_KhamBenh = new BUS_KhamBenh();
         BUS_BenhNhan BUS_BenhNhan = new BUS_BenhNhan();
+        private GUI_Home homeForm;
         public GUI_TiepNhanKhamBenh()
         {
             InitializeComponent();
                         
         }
+        public GUI_TiepNhanKhamBenh(GUI_Home home)
+        {
+            InitializeComponent();
+            this.homeForm = home;
 
+        }
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            // Khi chọn ngày trên lịch, cập nhật giá trị vào textBox3 (ngày khám)
+            // Khi chọn ngày trên lịch, cập nhật giá trị vào textBox ngày khám
             txtNgayKham.Text = e.Start.ToString("dd/MM/yyyy");
             
         }
@@ -64,8 +70,9 @@ namespace DoAnSE104.GUI
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            GUI_TiepNhanBenhNhan GUI_TiepNhanBenhNhan = new GUI_TiepNhanBenhNhan();
-            GUI_TiepNhanBenhNhan.ShowDialog();
+            GUI_TiepNhanBenhNhan guiTiepNhanBenhNhan = new GUI_TiepNhanBenhNhan(homeForm);
+            homeForm.ShowFormInMainPanel(guiTiepNhanBenhNhan);
+            this.Close();
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {

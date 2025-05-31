@@ -26,5 +26,9 @@ namespace DoAnSE104.DTO
             this.MaCachDung = maCachDung;
             this.DonGia = donGia;
         }
+        public DTO_LoaiThuoc()
+        {
+            
+        }
     }
 }

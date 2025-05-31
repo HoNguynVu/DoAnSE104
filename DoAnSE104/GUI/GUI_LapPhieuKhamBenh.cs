@@ -325,5 +325,40 @@ namespace DoAnSE104.GUI
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["TenLoaiThuoc"].Index)
+            {
+                var selectedValue = dataGridView1.Rows[e.RowIndex].Cells["TenLoaiThuoc"].Value;
+                if (selectedValue != null)
+                {
+                    string maLoaiThuoc = selectedValue.ToString();
+                    var thuoc = danhSachLoaiThuoc.FirstOrDefault(t => t.maLoaiThuoc == maLoaiThuoc);
+                    if (thuoc != null)
+                    {
+                        dataGridView1.Rows[e.RowIndex].Cells["DonVi"].Value = thuoc.maDonVi;
+                    }
+                }
+            }
+        }
+
+
+        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+
+            if (dataGridView1.Rows.Count == 1 && dataGridView1.Rows[0].Cells["TenLoaiThuoc"].Value == null)
+            {
+                return;
+            }
+
+            int lastNonNewRowIndex = dataGridView1.Rows.Count - 2; // Index of last non-new row
+            if (lastNonNewRowIndex >= 0 && dataGridView1.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
+            {
+                dataGridView1.AllowUserToAddRows = true;
+            }
+        }
     }
 }

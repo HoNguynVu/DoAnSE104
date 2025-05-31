@@ -1,42 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DoAnSE104.BUS;
 using DoAnSE104.DTO;
-using DoAnSE104.DAL;
 
 namespace DoAnSE104.GUI
 {
     public partial class GUI_TiepNhanBenhNhan : Form
     {
         BUS_BenhNhan BUS_BenhNhan = new BUS_BenhNhan();
+        private GUI_Home homeForm;
+
+        public GUI_TiepNhanBenhNhan(GUI_Home home)
+        {
+            InitializeComponent();
+            this.homeForm = home;
+        }
         public GUI_TiepNhanBenhNhan()
         {
             InitializeComponent();
+           
+
         }
+
         private void LayMaBenhNhanMoi()
         {
-            maKhamBenh.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
+            maBenhNhan.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
         }
 
         private void GUI_TiepNhanBenhNhan_Load(object sender, EventArgs e)
         {
             LayMaBenhNhanMoi();
         }
+
         private void btnNew_Click(object sender, EventArgs e)
         {
             txtHoTen.Clear();
             txtDiaChi.Clear();
             txtGioiTinh.Clear();
             txtNamSinh.Clear();
-            maKhamBenh.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
+            maBenhNhan.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -53,7 +57,7 @@ namespace DoAnSE104.GUI
                 return;
             }
             DTO_BenhNhan newBenhNhan = new DTO_BenhNhan(
-                maKhamBenh.Text,
+                maBenhNhan.Text,
                 txtHoTen.Text.Trim(),
                 txtGioiTinh.Text.Trim(),
                 int.Parse(txtNamSinh.Text.Trim()),
@@ -75,6 +79,14 @@ namespace DoAnSE104.GUI
                 MessageBox.Show(err.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            // Đảm bảo bạn đã có form GUI_TraCuuBenhNhan
+            GUI_TraCuuBenhNhan traCuuForm = new GUI_TraCuuBenhNhan(homeForm);
+            homeForm.ShowFormInMainPanel(traCuuForm);
+            this.Close(); // Đóng form hiện tại nếu muốn
         }
     }
 }

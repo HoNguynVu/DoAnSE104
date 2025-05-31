@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\WorkSpace\\DoAnSE104\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\gui\\gui_lapphieukhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_lapphieukhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\dal\\dal_ctkhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_ctkhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\bus\\bus_ctkhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\bus\\bus_ctkhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\gui\\gui_lapphieukhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_lapphieukhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\dto\\dto_ctkhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dto\\dto_ctkhambenh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,70 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DAL_CTKhamBenh.cs",
-              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\DAL\\DAL_CTKhamBenh.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_CTKhamBenh.cs",
-              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\DAL\\DAL_CTKhamBenh.cs*",
-              "RelativeToolTip": "DoAnSE104\\DAL\\DAL_CTKhamBenh.cs*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAewBoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T16:56:21.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DTO_CTKhamBenh.cs",
-              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\DTO\\DTO_CTKhamBenh.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\DTO\\DTO_CTKhamBenh.cs",
-              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\DTO\\DTO_CTKhamBenh.cs",
-              "RelativeToolTip": "DoAnSE104\\DTO\\DTO_CTKhamBenh.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T16:58:31.194Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BUS_CTKhamBenh.cs",
-              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\BUS\\BUS_CTKhamBenh.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\BUS\\BUS_CTKhamBenh.cs",
-              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\BUS\\BUS_CTKhamBenh.cs",
-              "RelativeToolTip": "DoAnSE104\\BUS\\BUS_CTKhamBenh.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBEAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T16:50:54.14Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GUI_LapPhieuKhamBenh.cs",
-              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs",
-              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs",
-              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs",
-              "ViewState": "AgIAABsBAAAAAAAAAAAkwCYBAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T16:08:12.6Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GUI_LapPhieuKhamBenh.cs [Design]",
-              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs",
-              "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs",
-              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs [Design]",
-              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_LapPhieuKhamBenh.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T15:59:20.296Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

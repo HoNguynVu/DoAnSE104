@@ -23,6 +23,10 @@ namespace DoAnSE104.BUS
             DTO_DonVi donVi = danhSachDonVi.FirstOrDefault(dv => dv.maDonVi == maDonVi);
             return donVi != null ? donVi.tenDonVi : maDonVi;
         }
+        public List<DTO_DonVi> LayDanhSachDonVi()
+        {
+            return BUS_DonVi.LayDanhSachDonVi();
+        }
 
         public string LayTenCachDung(string maCachDung)
         {

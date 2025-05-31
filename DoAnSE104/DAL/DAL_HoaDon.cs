@@ -87,5 +87,48 @@ namespace DoAnSE104.DAL
             };
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
         }
+
+        public DataTable LayChiTietThuocTheoMaKhamBenh(string maKhamBenh)
+        {
+            string query = @"
+        SELECT 
+            ct.MaLoaiThuoc, 
+            lt.TenLoaiThuoc, 
+            ct.SoLuongThuoc, 
+            lt.DonGia
+        FROM CTKHAMBENH ct
+        JOIN LOAITHUOC lt ON ct.MaLoaiThuoc = lt.MaLoaiThuoc
+        WHERE ct.MaKhamBenh = @MaKhamBenh";
+
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+        new MySqlParameter("@MaKhamBenh", maKhamBenh)
+            };
+
+            return DatabaseHelper.ExecuteQuery(query, parameters);
+        }
+
+        public DTO_HoaDon LayHoaDonTheoMaKhamBenh(string maKhamBenh)
+        {
+            string query = "SELECT * FROM HoaDon WHERE maKhamBenh = @maKhamBenh";
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+        new MySqlParameter("@maKhamBenh", maKhamBenh)
+            };
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query, parameters);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                string maHoaDon = row["maHoaDon"].ToString();
+                double tienKham = Convert.ToDouble(row["tienKham"]);
+                double tienThuoc = Convert.ToDouble(row["tienThuoc"]);
+
+                return new DTO_HoaDon(maHoaDon, tienKham, tienThuoc, maKhamBenh);
+            }
+
+            return null;
+        }
     }
 }

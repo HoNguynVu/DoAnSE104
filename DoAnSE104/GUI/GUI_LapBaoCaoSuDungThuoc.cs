@@ -21,50 +21,51 @@ namespace DoAnSE104.GUI
         public GUI_LapBaoCaoSuDungThuoc()
         {
             InitializeComponent();
-            //SetupDataGridView();
+            SetupDataGridView();
         }
 
-        //private void SetupDataGridView()
-        //{
-        //    dataGridViewReport.AutoGenerateColumns = false;
-        //    dataGridViewReport.Columns.Clear();
+        private void SetupDataGridView()
+        {
+            dataGridViewReport.AutoGenerateColumns = false;
+            dataGridViewReport.Columns.Clear();
 
-        //    dataGridViewReport.Columns.Add(new DataGridViewTextBoxColumn
-        //    {
-        //        Name = "STT",
-        //        HeaderText = "STT",
-        //        Width = 50,
-        //        ReadOnly = true
-        //    });
-        //    dataGridViewReport.Columns.Add(new DataGridViewTextBoxColumn
-        //    {
-        //        Name = "TenThuoc",
-        //        HeaderText = "Tên thuốc",
-        //        DataPropertyName = "TenThuoc",
-        //        Width = 150
-        //    });
-        //    dataGridViewReport.Columns.Add(new DataGridViewTextBoxColumn
-        //    {
-        //        Name = "SoLuong",
-        //        HeaderText = "Số lượng sử dụng",
-        //        DataPropertyName = "SoLuong",
-        //        Width = 120
-        //    });
-        //    dataGridViewReport.Columns.Add(new DataGridViewTextBoxColumn
-        //    {
-        //        Name = "DonVi",
-        //        HeaderText = "Đơn vị",
-        //        DataPropertyName = "DonVi",
-        //        Width = 100
-        //    });
-        //    dataGridViewReport.Columns.Add(new DataGridViewTextBoxColumn
-        //    {
-        //        Name = "Số lần dùng",
-        //        HeaderText = "Tỷ lệ (%)",
-        //        DataPropertyName = "TyLe",
-        //        Width = 100
-        //    });
-        //}
+            dataGridViewReport.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "STT",
+                HeaderText = "STT",
+                Width = 50,
+                ReadOnly = true
+            });
+            dataGridViewReport.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TenThuoc",
+                HeaderText = "Tên thuốc",
+                DataPropertyName = "TenThuoc",
+                Width = 150
+            });
+            dataGridViewReport.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "DonVi",
+                HeaderText = "Đơn vị",
+                DataPropertyName = "DonVi",
+                Width = 100
+            });
+            dataGridViewReport.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "SoLuong",
+                HeaderText = "Số lượng sử dụng",
+                DataPropertyName = "SoLuong",
+                Width = 120
+            });
+
+            dataGridViewReport.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Số lần dùng",
+                HeaderText = "Số lần dùng",
+                DataPropertyName = "SoLanDung",
+                Width = 100
+            });
+        }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {

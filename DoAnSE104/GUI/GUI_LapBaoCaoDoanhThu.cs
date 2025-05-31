@@ -97,11 +97,11 @@ namespace DoAnSE104.GUI {
                         row.Ngay.ToString("dd/MM/yyyy"),
                         row.SoLuongHoaDon,
                         row.TongDoanhThu.ToString("N0"),
-                        row.TyLe.ToString("N2")
+                        row.TyLe.ToString("F2")
                     );
                     total += (long)row.TongDoanhThu;
                 }
-                dataGridViewReport.DataSource = reportData;
+
                 textBoxTotal.Text = total.ToString("N0");
 
                 if (reportData.Count == 0) {

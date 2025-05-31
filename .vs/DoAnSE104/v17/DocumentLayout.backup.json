@@ -1,0 +1,83 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\WorkSpace\\DoAnSE104\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\bus\\bus_baocaodoanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\bus\\bus_baocaodoanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\dal\\dal_doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dal\\dal_doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\dto\\dto_donvi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\dto\\dto_donvi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BUS_BaoCaoDoanhThu.cs",
+              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\BUS\\BUS_BaoCaoDoanhThu.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\BUS\\BUS_BaoCaoDoanhThu.cs",
+              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\BUS\\BUS_BaoCaoDoanhThu.cs",
+              "RelativeToolTip": "DoAnSE104\\BUS\\BUS_BaoCaoDoanhThu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T10:29:07.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DAL_DoanhThu.cs",
+              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\DAL\\DAL_DoanhThu.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DAL\\DAL_DoanhThu.cs",
+              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\DAL\\DAL_DoanhThu.cs",
+              "RelativeToolTip": "DoAnSE104\\DAL\\DAL_DoanhThu.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T10:28:59.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DTO_DonVi.cs",
+              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\DTO\\DTO_DonVi.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\DTO\\DTO_DonVi.cs",
+              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\DTO\\DTO_DonVi.cs",
+              "RelativeToolTip": "DoAnSE104\\DTO\\DTO_DonVi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T10:24:04.208Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

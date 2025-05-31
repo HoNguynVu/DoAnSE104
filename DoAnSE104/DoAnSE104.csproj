@@ -160,6 +160,9 @@
     <EmbeddedResource Include="GUI\GUI_LapPhieuKhamBenh.resx">
       <DependentUpon>GUI_LapPhieuKhamBenh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_QuanLyDonViTinh.resx">
+      <DependentUpon>GUI_QuanLyDonViTinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_QuanLyLoaiThuoc.resx">
       <DependentUpon>GUI_QuanLyLoaiThuoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +185,12 @@
     </Compile>
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI_QuanLyDonViTinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI_QuanLyDonViTinh.Designer.cs">
+      <DependentUpon>GUI_QuanLyDonViTinh.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GUI_QuanLyLoaiThuoc.cs">
       <SubType>Form</SubType>

@@ -62,8 +62,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.btnCancel);
+            //this.groupBox1.Controls.Add(this.btnSave);
+            //this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.labelThemCachDung);
             this.groupBox1.Controls.Add(this.labelMaCachDung);
             this.groupBox1.Controls.Add(this.txtMaCachDung);

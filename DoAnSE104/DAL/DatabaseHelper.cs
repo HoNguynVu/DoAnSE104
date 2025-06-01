@@ -13,9 +13,6 @@ namespace DoAnSE104.DAL
 
         private string connectionString = "server=localhost;database=PhongKham;user=root;password=vudz1234;";
 
-
-
-
         public MySqlConnection GetConnection()
         {
             return new MySqlConnection(connectionString);

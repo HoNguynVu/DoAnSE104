@@ -1,0 +1,116 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\WorkSpace\\DoAnSE104\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\gui\\gui_quanlyloaithuoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_quanlyloaithuoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\gui\\gui_quanlyloaithuoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\gui\\gui_quanlyloaithuoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\bus\\bus_loaithuoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\bus\\bus_loaithuoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\bus\\bus_cachdung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\bus\\bus_cachdung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|d:\\workspace\\doanse104\\doanse104\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BADEC105-C121-4E27-ADE2-625AD692C5AC}|DoAnSE104\\DoAnSE104.csproj|solutionrelative:doanse104\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BUS_CachDung.cs",
+              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\BUS\\BUS_CachDung.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\BUS\\BUS_CachDung.cs",
+              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\BUS\\BUS_CachDung.cs",
+              "RelativeToolTip": "DoAnSE104\\BUS\\BUS_CachDung.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T03:29:04.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BUS_LoaiThuoc.cs",
+              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\BUS\\BUS_LoaiThuoc.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\BUS\\BUS_LoaiThuoc.cs",
+              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\BUS\\BUS_LoaiThuoc.cs",
+              "RelativeToolTip": "DoAnSE104\\BUS\\BUS_LoaiThuoc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T03:16:57.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GUI_QuanLyLoaiThuoc.cs",
+              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\GUI\\GUI_QuanLyLoaiThuoc.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_QuanLyLoaiThuoc.cs",
+              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\GUI\\GUI_QuanLyLoaiThuoc.cs",
+              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_QuanLyLoaiThuoc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T03:12:02.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GUI_QuanLyLoaiThuoc.cs [Design]",
+              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\GUI\\GUI_QuanLyLoaiThuoc.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\GUI\\GUI_QuanLyLoaiThuoc.cs",
+              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\GUI\\GUI_QuanLyLoaiThuoc.cs [Design]",
+              "RelativeToolTip": "DoAnSE104\\GUI\\GUI_QuanLyLoaiThuoc.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T03:10:11.915Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\Program.cs",
+              "RelativeDocumentMoniker": "DoAnSE104\\Program.cs",
+              "ToolTip": "D:\\WorkSpace\\DoAnSE104\\DoAnSE104\\Program.cs",
+              "RelativeToolTip": "DoAnSE104\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T03:09:46.038Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

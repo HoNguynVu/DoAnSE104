@@ -14,7 +14,7 @@
 -   [ Giảng viên hướng dẫn](#giangvien)
 -   [ Thành viên nhóm](#thanhvien)
 -   [ Đồ án môn học](#doan)
--   [ Mô tả ](#description)
+-   [ Mô tả tổng quát](#description)
 
 ## GIỚI THIỆU MÔN HỌC
 
@@ -114,8 +114,12 @@
   </tr>
 </table>
 
-## MÔ TẢ
+## ĐỒ ÁN MÔN HỌC: Quản lý Phòng Mạch Tư
+<a name="doan"></a>
+Tải ứng dụng tại website: <a href="Đường link file">Link</a>
 
+## MÔ TẢ TỔNG QUÁT
+<a name="description"></a>
 -   Ứng dụng của nhóm cung cấp một cách giải thích trực quan và dễ hiểu về phần mềm quản lý Phòng mạch tư, với các yêu cầu phần mềm như:
     + Sprint 01: Lập danh sách khám bệnh (Tiếp nhận khám bệnh và Tiếp nhận bệnh nhân)
     + Sprint 02: Lập phiếu khám bệnh
@@ -128,5 +132,4 @@
 -   Ứng dụng mô phỏng cách hoạt động của màn hình và tối ưu hóa các xử lý logic thông qua các tương tác trực quan.
 -   Với giao diện thân thiện và ví dụ minh họa rõ ràng, ứng dụng giúp người dùng, dù là người mới bắt đầu, dễ dàng tiếp cận các thuật toán phức tạp và ứng dụng chúng vào thực tiễn.
 
-## ĐỒ ÁN MÔN HỌC: String-Matching(Đối sánh chuỗi)
-Tải ứng dụng tại website: <a href="Đường link file">Link</a>
+

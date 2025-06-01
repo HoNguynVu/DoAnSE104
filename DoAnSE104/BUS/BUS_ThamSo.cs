@@ -22,6 +22,28 @@ namespace DoAnSE104.BUS
         {
             return dalThamSo.TienKhamCoDinh();
         }
+        public void updateSoLuongBenhNhanToiDaTrongNgay(int soLuongBenhNhanToiDaTrongNgay)
+        {
+            if (dalThamSo.CapNhatQuyDinhSoLuongBenhNhan(soLuongBenhNhanToiDaTrongNgay))
+            {
+                MessageBox.Show("Cập nhật số lượng bệnh nhân tối đa trong ngày thành công.");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật số lượng bệnh nhân tối đa trong ngày thất bại.");
+            }
+        }
+        public void updateTienKhamCoDinh(double tienKhamCoDinh)
+        {
+            if (dalThamSo.CapNhatQuyDinhTienKham(tienKhamCoDinh))
+            {
+                MessageBox.Show("Cập nhật tiền khám cố định thành công.");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật tiền khám cố định thất bại.");
+            }
+        }
         public bool QuyDinhSoLuongBenhNhanToiDaTrongNgay()
         {
             return dalThamSo.QuyDinhSoLuongBenhNhanToiDaTrongNgay();

@@ -11,6 +11,15 @@ namespace DoAnSE104.BUS
     public class BUS_LoaiBenh
     {
         DAL_LoaiBenh DAL_LoaiBenh = new DAL_LoaiBenh();
+
+        public bool ThemLoaiBenh(DTO_LoaiBenh lt)
+        {
+            return DAL_LoaiBenh.ThemLoaiBenh(lt);
+        }
+        public bool XoaLoaiBenh(string maLoaiBenh)
+        {
+            return DAL_LoaiBenh.XoaLoaiBenh(maLoaiBenh);
+        }
         public List<DTO_LoaiBenh> LayDanhSachLoaiBenh()
         {
             return DAL_LoaiBenh.LayDanhSachLoaiBenh();

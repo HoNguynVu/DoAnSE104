@@ -28,15 +28,15 @@ namespace DoAnSE104.GUI
         private void SetupDataGridView()
         {
             // Configure DataGridView
-            dataGridView1.AllowUserToAddRows = true;
-            dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+            dgvDanhSachThuoc.AllowUserToAddRows = true;
+            dgvDanhSachThuoc.EditMode = DataGridViewEditMode.EditOnEnter;
 
             // Configure STT column for auto-numbering
-            dataGridView1.RowPrePaint += (sender, e) =>
+            dgvDanhSachThuoc.RowPrePaint += (sender, e) =>
             {
-                if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+                if (e.RowIndex >= 0 && e.RowIndex < dgvDanhSachThuoc.Rows.Count)
                 {
-                    dataGridView1.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
+                    dgvDanhSachThuoc.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
                 }
             };
         }
@@ -104,7 +104,7 @@ namespace DoAnSE104.GUI
                     // Hiển thị mã hóa đơn mới
                     txtMaHoaDon.Text = maHoaDon;
                     txtMaHoaDon.Visible = true;
-                    label7.Visible = true;
+                    labelMaHoaDon.Visible = true;
                 }
                 else
                 {
@@ -182,20 +182,20 @@ namespace DoAnSE104.GUI
             txtNgayKham.Text = "";
             txtTienKham.Text = "";
             txtTienThuoc.Text = "";
-            dataGridView1.DataSource = null;
+            dgvDanhSachThuoc.DataSource = null;
 
             if (clearMaHoaDon)
             {
                 txtMaHoaDon.Text = "";
                 txtMaHoaDon.Visible = false;
-                label7.Visible = false;
+                labelMaHoaDon.Visible = false;
             }
 
             errorProvider1.SetError(txtMaKhamBenh, "");
         }
         private void HienThiChiTietThuoc(string maKhamBenh)
         {
-            dataGridView1.AutoGenerateColumns = false;
+            dgvDanhSachThuoc.AutoGenerateColumns = false;
 
             DataTable dt = busHoaDon.LayChiTietThuocTheoMaKhamBenh(maKhamBenh);
 
@@ -218,7 +218,7 @@ namespace DoAnSE104.GUI
                 }
             }
 
-            dataGridView1.DataSource = dt;
+            dgvDanhSachThuoc.DataSource = dt;
         }
 
         private void btnHDMoi_Click(object sender, EventArgs e)
@@ -251,7 +251,7 @@ namespace DoAnSE104.GUI
                     txtTienThuoc.Text = hoaDon.tienThuoc.ToString("N0");
 
                     // Hiển thị thêm label + textbox Mã Hóa Đơn
-                    label7.Visible = true;
+                    labelMaHoaDon.Visible = true;
                     txtMaHoaDon.Visible = true;
 
                     // Hiển thị các thông tin bệnh nhân như khi lập hóa đơn

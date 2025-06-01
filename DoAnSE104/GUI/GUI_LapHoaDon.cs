@@ -142,13 +142,13 @@ namespace DoAnSE104.GUI
                     txtTenBenhNhan.Text = benhNhan?.hoTen ?? "Không rõ";
                     txtNgayKham.Text = khamBenh.ngayKham.ToString("dd/MM/yyyy");
 
-                    var thamSo = busThamSo.LayThamSo();
+                    
 
-                    if (thamSo != null && thamSo.quyDinhTienKhamCoDinh)
+                    if (busThamSo.QuyDinhTienKhamCoDinh())
                     {
                         txtTienKham.ReadOnly = true;
                         txtTienKham.BackColor = Color.LightGray;
-                        txtTienKham.Text = thamSo.tienKhamCoDinh.ToString("N0");
+                        txtTienKham.Text = busThamSo.TienKhamCoDinh().ToString("N0");
                     }
                     else
                     {
@@ -279,14 +279,14 @@ namespace DoAnSE104.GUI
 
         private void CauHinhTienKham()
         {
-            var thamSo = busThamSo.LayThamSo();
-            MessageBox.Show($"QuyDinhTienKhamCoDinh = {thamSo?.quyDinhTienKhamCoDinh}");
 
-            if (thamSo != null && thamSo.quyDinhTienKhamCoDinh)
+            MessageBox.Show($"QuyDinhTienKhamCoDinh = {busThamSo?.QuyDinhTienKhamCoDinh()}");
+
+            if (busThamSo.QuyDinhTienKhamCoDinh())
             {
                 txtTienKham.ReadOnly = true;
                 txtTienKham.BackColor = Color.LightGray;
-                txtTienKham.Text = thamSo.tienKhamCoDinh.ToString("N0");
+                txtTienKham.Text = busThamSo.TienKhamCoDinh().ToString("N0");
             }
             else
             {

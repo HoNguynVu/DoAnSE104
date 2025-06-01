@@ -70,25 +70,5 @@ namespace DoAnSE104.DAL
             }
             return false;
         }
-
-        public DTO_ThamSo LayThamSo()
-        {
-            string query = "SELECT * FROM THAMSO";
-            DataTable dt = DatabaseHelper.ExecuteQuery(query); 
-
-            if (dt.Rows.Count > 0)
-            {
-                DataRow row = dt.Rows[0];
-
-                int soLuong = Convert.ToInt32(row["SoLuongBenhNhanToiDaTrongNgay"]);
-                bool qdSoLuong = Convert.ToInt32(row["QuyDinhSoLuongBenhNhanToiDaTrongNgay"]) == 1;
-                double tienKham = Convert.ToDouble(row["TienKhamCoDinh"]);
-                bool qdTienKham = Convert.ToInt32(row["QuyDinhTienKhamCoDinh"]) == 1;
-
-                return new DTO_ThamSo(soLuong, qdSoLuong, tienKham, qdTienKham);
-            }
-
-            return null;
-        }
     }
 }

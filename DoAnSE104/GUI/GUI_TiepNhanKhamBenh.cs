@@ -17,6 +17,7 @@ namespace DoAnSE104.GUI
     {
         BUS_KhamBenh BUS_KhamBenh = new BUS_KhamBenh();
         BUS_BenhNhan BUS_BenhNhan = new BUS_BenhNhan();
+        BUS_ThamSo BUS_ThamSo = new BUS_ThamSo();
         private GUI_Home homeForm;
         public GUI_TiepNhanKhamBenh()
         {
@@ -66,6 +67,9 @@ namespace DoAnSE104.GUI
         private void GUI_TiepNhanKhamBenh_Load(object sender, EventArgs e)
         {
             LayMaKhamBenhMoi();
+            DateTime today = DateTime.Today;
+            monthCalendar1.SelectionStart = today;
+            txtNgayKham.Text = today.ToString("dd/MM/yyyy");
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -86,12 +90,33 @@ namespace DoAnSE104.GUI
                 monthCalendar1.SelectionStart,
                 txtMaBenhNhan.Text.Trim()
             );
+            DateTime ngayKham = monthCalendar1.SelectionStart;
+
+            if (BUS_ThamSo.QuyDinhSoLuongBenhNhanToiDaTrongNgay())
+            {
+                int soLuongHienTai = BUS_KhamBenh.LaySoLuongBenhNhanHienTaiTrongNgay(ngayKham);
+                int gioiHanToiDa = BUS_ThamSo.SoLuongBenhNhanToiDaTrongNgay();
+                MessageBox.Show("số lượng bệnh nhân hiện tại trong ngày: " + soLuongHienTai, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Giới hạn số lượng bệnh nhân trong ngày: " + gioiHanToiDa, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (soLuongHienTai >= gioiHanToiDa)
+                {
+                    MessageBox.Show(
+                        $"Đã đạt giới hạn {gioiHanToiDa} bệnh nhân trong ngày {ngayKham:dd/MM/yyyy}. Vui lòng thử lại sau.",
+                        "Thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+            }
+
             try
             {
                 if (BUS_KhamBenh.ThemKhamBenh(newKhamBenh))
                 {
                     MessageBox.Show("Tiếp nhận khám bệnh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
+                    ResetForm();
                 }
                 else
                 {
@@ -135,6 +160,34 @@ namespace DoAnSE104.GUI
             {
                 errorProvider1.SetError(txtMaBenhNhan, "Vui lòng nhập mã bệnh nhân.");
             }
+        }
+        private void ResetForm()
+        {
+            // Reset các TextBox về rỗng hoặc mặc định
+            LayMaKhamBenhMoi();
+            // Nếu có mã tự sinh
+            txtMaBenhNhan.Clear();
+            txtHoTen.Clear();
+            txtGioiTinh.Clear();
+            txtNamSinh.Clear();
+            txtDiaChi.Clear();
+
+            // Đặt ngày khám là hôm nay
+            DateTime today = DateTime.Today;
+            txtNgayKham.Text = today.ToString("dd/MM/yyyy");
+            monthCalendar1.SelectionStart = today;
+
+            // Ẩn lịch
+            monthCalendar1.Visible = false;
+
+            // Reset lỗi nếu có
+            errorProvider1.Clear();
+
+            // Có thể khóa các TextBox nếu muốn
+            txtHoTen.Enabled = false;
+            txtGioiTinh.Enabled = false;
+            txtNamSinh.Enabled = false;
+            txtDiaChi.Enabled = false;
         }
 
     }

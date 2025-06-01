@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using DoAnSE104.BUS;
 using DoAnSE104.DTO;
+using System.Linq;
 
 namespace DoAnSE104.GUI
 {
@@ -327,37 +328,39 @@ namespace DoAnSE104.GUI
         }
 
 
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewPhieuKham_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["TenLoaiThuoc"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridViewPhieuKham.Columns["TenLoaiThuoc"].Index)
             {
-                var selectedValue = dataGridView1.Rows[e.RowIndex].Cells["TenLoaiThuoc"].Value;
+                var selectedValue = dataGridViewPhieuKham.Rows[e.RowIndex].Cells["TenLoaiThuoc"].Value;
                 if (selectedValue != null)
                 {
                     string maLoaiThuoc = selectedValue.ToString();
+                    // Existing code where the error occurs
                     var thuoc = danhSachLoaiThuoc.FirstOrDefault(t => t.maLoaiThuoc == maLoaiThuoc);
+                    
                     if (thuoc != null)
                     {
-                        dataGridView1.Rows[e.RowIndex].Cells["DonVi"].Value = thuoc.maDonVi;
+                        dataGridViewPhieuKham.Rows[e.RowIndex].Cells["DonVi"].Value = thuoc.maDonVi;
                     }
                 }
             }
         }
 
 
-        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        private void dataGridViewPhieuKham_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
 
-            if (dataGridView1.Rows.Count == 1 && dataGridView1.Rows[0].Cells["TenLoaiThuoc"].Value == null)
+            if (dataGridViewPhieuKham.Rows.Count == 1 && dataGridViewPhieuKham.Rows[0].Cells["TenLoaiThuoc"].Value == null)
             {
                 return;
             }
 
-            int lastNonNewRowIndex = dataGridView1.Rows.Count - 2; // Index of last non-new row
-            if (lastNonNewRowIndex >= 0 && dataGridView1.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
+            int lastNonNewRowIndex = dataGridViewPhieuKham.Rows.Count - 2; // Index of last non-new row
+            if (lastNonNewRowIndex >= 0 && dataGridViewPhieuKham.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
             {
-                dataGridView1.AllowUserToAddRows = true;
+                dataGridViewPhieuKham.AllowUserToAddRows = true;
             }
         }
     }

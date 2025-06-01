@@ -24,13 +24,17 @@ namespace DoAnSE104.GUI
         List<DTO_LoaiThuoc> danhSachLoaiThuoc;
         List<DTO_LoaiThuoc> danhSachLoaiThuocMoi = new List<DTO_LoaiThuoc>();
 
-        public GUI_QuanLyLoaiThuoc() {
+        public GUI_QuanLyLoaiThuoc()
+        {
             InitializeComponent();
             dgvDanhSachLoaiThuoc.CellPainting += dgvDanhSachLoaiThuoc_CellPainting;
             LoadDataToGridView();
             LoadDataDonVi();
             LoadDataCachDung();
-            
+
+            txtMaLoaiThuoc.Text = BUS_LoaiThuoc.LayMaLoaiThuocMoi(danhSachLoaiThuocMoi);
+            txtMaLoaiThuoc.Enabled = false;
+
             // Thêm event handler cho CellClick
             dgvDanhSachLoaiThuoc.CellClick += dgvDanhSachLoaiThuoc_CellClick;
         }
@@ -75,7 +79,21 @@ namespace DoAnSE104.GUI
                 btnXoa.UseColumnTextForButtonValue = true;
                 btnXoa.DefaultCellStyle.BackColor = Color.Red;
                 btnXoa.DefaultCellStyle.ForeColor = Color.White;
+                btnXoa.DefaultCellStyle.SelectionBackColor = Color.Red;  // Keep red even when selected
+                btnXoa.DefaultCellStyle.SelectionForeColor = Color.White; // Keep text white when selected
+                // Make the button look clickable
+                btnXoa.FlatStyle = FlatStyle.Flat;
                 dgvDanhSachLoaiThuoc.Columns.Add(btnXoa);
+
+                // Set cursor for the whole DataGridView
+                dgvDanhSachLoaiThuoc.CellMouseEnter += (sender, e) => {
+                    if (e.ColumnIndex == dgvDanhSachLoaiThuoc.Columns["btnXoa"].Index && e.RowIndex >= 0)
+                        dgvDanhSachLoaiThuoc.Cursor = Cursors.Hand;
+                };
+
+                dgvDanhSachLoaiThuoc.CellMouseLeave += (sender, e) => {
+                    dgvDanhSachLoaiThuoc.Cursor = Cursors.Default;
+                };
             }
 
             dgvDanhSachLoaiThuoc.Rows.Clear();
@@ -193,6 +211,9 @@ namespace DoAnSE104.GUI
 
         private void btnThemLoaiThuoc_Click(object sender, EventArgs e) {
             try {
+                // Generate new medication code
+                string maLoaiThuocMoi = BUS_LoaiThuoc.LayMaLoaiThuocMoi(danhSachLoaiThuocMoi);
+
                 // Validate inputs
                 if (string.IsNullOrWhiteSpace(tenLoaiThuoc) ||
                     string.IsNullOrWhiteSpace(tenDonVi) ||
@@ -222,9 +243,7 @@ namespace DoAnSE104.GUI
                     return;
                 }
 
-                // Generate new medication code
-                string maLoaiThuocMoi = BUS_LoaiThuoc.LayMaLoaiThuocMoi(danhSachLoaiThuocMoi);
-
+                
                 // Create new drug type with the generated code
                 DTO_LoaiThuoc newLoaiThuoc = new DTO_LoaiThuoc {
                     maLoaiThuoc = maLoaiThuocMoi,
@@ -311,18 +330,17 @@ namespace DoAnSE104.GUI
         {
             try
             {
-
                 if (e.RowIndex >= 0 && dgvDanhSachLoaiThuoc.Columns[e.ColumnIndex].Name == "btnXoa")
                 {
                     e.PaintBackground(e.ClipBounds, true);
 
-                    // Check if the mouse is hovering over the cell
+                    // Check if mouse is hovering over the cell
                     bool isHovered = dgvDanhSachLoaiThuoc.CurrentCell != null &&
-                                     dgvDanhSachLoaiThuoc.CurrentCell.RowIndex == e.RowIndex &&
-                                     dgvDanhSachLoaiThuoc.CurrentCell.ColumnIndex == e.ColumnIndex;
+                                   dgvDanhSachLoaiThuoc.CurrentCell.RowIndex == e.RowIndex &&
+                                   dgvDanhSachLoaiThuoc.CurrentCell.ColumnIndex == e.ColumnIndex;
 
                     // Change background color based on hover state
-                    Color backColor = isHovered ? Color.Orange : Color.Red;
+                    Color backColor = isHovered ? Color.DarkRed : Color.Red;
 
                     using (Brush backColorBrush = new SolidBrush(backColor))
                     {
@@ -330,7 +348,8 @@ namespace DoAnSE104.GUI
                     }
 
                     // Draw the text in the cell
-                    TextRenderer.DrawText(e.Graphics, "Xóa", dgvDanhSachLoaiThuoc.Font, e.CellBounds, Color.White,
+                    TextRenderer.DrawText(e.Graphics, "Xóa", dgvDanhSachLoaiThuoc.Font,
+                        e.CellBounds, Color.White,
                         TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
 
                     e.Handled = true;

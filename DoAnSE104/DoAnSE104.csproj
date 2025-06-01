@@ -117,6 +117,7 @@
     <Compile Include="BUS\BUS_BaoCaoSuDungThuoc.cs" />
     <Compile Include="BUS\BUS_BenhNhan.cs" />
     <Compile Include="BUS\BUS_CachDung.cs" />
+    <Compile Include="BUS\BUS_ChiTietPhieuKham.cs" />
     <Compile Include="BUS\BUS_CTKhamBenh.cs" />
     <Compile Include="BUS\BUS_DonVi.cs" />
     <Compile Include="BUS\BUS_HoaDon.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="DAL\DAL_BaoCaoSuDungThuoc.cs" />
     <Compile Include="DAL\DAL_BenhNhan.cs" />
     <Compile Include="DAL\DAL_CachDung.cs" />
+    <Compile Include="DAL\DAL_ChiTietPhieuKham.cs" />
     <Compile Include="DAL\DAL_CTKhamBenh.cs" />
     <Compile Include="DAL\DAL_DoanhThu.cs" />
     <Compile Include="DAL\DAL_DonVi.cs" />
@@ -144,6 +146,7 @@
     <Compile Include="DTO\DTO_BenhNhan.cs" />
     <Compile Include="DTO\DTO_BenhNhanTraCuu.cs" />
     <Compile Include="DTO\DTO_CachDung.cs" />
+    <Compile Include="DTO\DTO_ChiTietPhieuKham.cs" />
     <Compile Include="DTO\DTO_CTKhamBenh.cs" />
     <Compile Include="DTO\DTO_DonVi.cs" />
     <Compile Include="DTO\DTO_HoaDon.cs" />

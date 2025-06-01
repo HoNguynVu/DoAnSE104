@@ -1,4 +1,5 @@
 ﻿using DoAnSE104.BUS;
+using DoAnSE104.DAL;
 using DoAnSE104.DTO;
 using System;
 using System.Collections.Generic;
@@ -56,47 +57,50 @@ namespace DoAnSE104.GUI
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void LoadData() {
+            if (dgvDanhSachLoaiThuoc.Columns.Count == 0) {
+                dgvDanhSachLoaiThuoc.Columns.Add("STT", "STT");
+                dgvDanhSachLoaiThuoc.Columns.Add("MaLoaiThuoc", "Mã loại thuốc");
+                dgvDanhSachLoaiThuoc.Columns.Add("TenLoaiThuoc", "Tên loại thuốc");
+                dgvDanhSachLoaiThuoc.Columns.Add("DonVi", "Đơn vị");
+                dgvDanhSachLoaiThuoc.Columns.Add("CachDung", "Cách dùng");
+                dgvDanhSachLoaiThuoc.Columns.Add("DonGia", "Đơn giá");
+
+                // Thêm cột button xóa
+                DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
+                btnXoa.HeaderText = "Xóa";
+                btnXoa.Text = "Xóa";
+                btnXoa.Name = "btnXoa";
+                btnXoa.UseColumnTextForButtonValue = true;
+                dgvDanhSachLoaiThuoc.Columns.Add(btnXoa);
+            }
+
+            dgvDanhSachLoaiThuoc.Rows.Clear();
+            int stt = 0;
+            foreach (DTO_LoaiThuoc loaiThuoc in danhSachLoaiThuoc) {
+                string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(loaiThuoc.maDonVi);
+                string cachDung = BUS_LoaiThuoc.LayTenCachDung(loaiThuoc.maCachDung);
+
+                dgvDanhSachLoaiThuoc.Rows.Add(
+                    ++stt,
+                    loaiThuoc.maLoaiThuoc,
+                    loaiThuoc.tenLoaiThuoc,
+                    tenDonVi,
+                    cachDung,
+                    loaiThuoc.donGia.ToString("N0")
+                );
+            }
+
+            dgvDanhSachLoaiThuoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDanhSachLoaiThuoc.AllowUserToAddRows = false;
+            dgvDanhSachLoaiThuoc.ReadOnly = true;
+            dgvDanhSachLoaiThuoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
         private void LoadDataToGridView() {
             try {
                 danhSachLoaiThuoc = BUS_LoaiThuoc.LayDanhSachLoaiThuoc();
+                LoadData();
 
-                if (dgvDanhSachLoaiThuoc.Columns.Count == 0) {
-                    dgvDanhSachLoaiThuoc.Columns.Add("STT", "STT");
-                    dgvDanhSachLoaiThuoc.Columns.Add("MaLoaiThuoc", "Mã loại thuốc");
-                    dgvDanhSachLoaiThuoc.Columns.Add("TenLoaiThuoc", "Tên loại thuốc");
-                    dgvDanhSachLoaiThuoc.Columns.Add("DonVi", "Đơn vị");
-                    dgvDanhSachLoaiThuoc.Columns.Add("CachDung", "Cách dùng");
-                    dgvDanhSachLoaiThuoc.Columns.Add("DonGia", "Đơn giá");
-
-                    // Thêm cột button xóa
-                    DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
-                    btnXoa.HeaderText = "Xóa";
-                    btnXoa.Text = "Xóa";
-                    btnXoa.Name = "btnXoa";
-                    btnXoa.UseColumnTextForButtonValue = true;
-                    dgvDanhSachLoaiThuoc.Columns.Add(btnXoa);
-                }
-
-                dgvDanhSachLoaiThuoc.Rows.Clear();
-
-                foreach (DTO_LoaiThuoc loaiThuoc in danhSachLoaiThuoc) {
-                    string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(loaiThuoc.maDonVi);
-                    string cachDung = BUS_LoaiThuoc.LayTenCachDung(loaiThuoc.maCachDung);
-
-                    dgvDanhSachLoaiThuoc.Rows.Add(
-                        dgvDanhSachLoaiThuoc.Rows.Count + 1, 
-                        loaiThuoc.maLoaiThuoc,
-                        loaiThuoc.tenLoaiThuoc,
-                        tenDonVi,
-                        cachDung,
-                        loaiThuoc.donGia.ToString("N0") 
-                    );
-                }
-
-                dgvDanhSachLoaiThuoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgvDanhSachLoaiThuoc.AllowUserToAddRows = false;
-                dgvDanhSachLoaiThuoc.ReadOnly = true;
-                dgvDanhSachLoaiThuoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             }
             catch (Exception ex) {
                 MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}", 
@@ -118,7 +122,7 @@ namespace DoAnSE104.GUI
 
                     if (thuocMoi != null)
                     {
-                        // Nếu là thuốc mới chưa lưu - xóa trực tiếp
+                        // Nếu là thuốc mới chưa lưu - xóa trực tiếp 
                         danhSachLoaiThuocMoi.Remove(thuocMoi);
                         danhSachLoaiThuoc.RemoveAll(t => t.maLoaiThuoc == maLoaiThuoc);
                         ReloadDataToGridView();
@@ -127,7 +131,15 @@ namespace DoAnSE104.GUI
                     }
                     else
                     {
-                        // Nếu là thuốc đã có trong DB - hỏi xác nhận
+                        // Kiểm tra xem loại thuốc đã được sử dụng chưa
+                        if (BUS_LoaiThuoc.KiemTraLoaiThuocDangDuocSuDung(maLoaiThuoc))
+                        {
+                            MessageBox.Show("Không thể xóa loại thuốc này vì đang được sử dụng trong đơn thuốc!", 
+                                "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        // Nếu chưa được sử dụng, hỏi xác nhận xóa
                         var result = MessageBox.Show(
                             "Bạn có chắc muốn xóa loại thuốc này khỏi cơ sở dữ liệu?",
                             "Xác nhận xóa",
@@ -146,7 +158,7 @@ namespace DoAnSE104.GUI
                             }
                             else
                             {
-                                MessageBox.Show("Không thể xóa loại thuốc này! Có thể thuốc đã được sử dụng trong đơn thuốc.", 
+                                MessageBox.Show("Không thể xóa loại thuốc này!", 
                                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
@@ -240,35 +252,7 @@ namespace DoAnSE104.GUI
         }
         public void ReloadDataToGridView() {
             try {
-                if (dgvDanhSachLoaiThuoc.Columns.Count == 0) {
-                    dgvDanhSachLoaiThuoc.Columns.Add("STT", "STT");
-                    dgvDanhSachLoaiThuoc.Columns.Add("MaLoaiThuoc", "Mã loại thuốc");
-                    dgvDanhSachLoaiThuoc.Columns.Add("TenLoaiThuoc", "Tên loại thuốc");
-                    dgvDanhSachLoaiThuoc.Columns.Add("DonVi", "Đơn vị");
-                    dgvDanhSachLoaiThuoc.Columns.Add("CachDung", "Cách dùng");
-                    dgvDanhSachLoaiThuoc.Columns.Add("DonGia", "Đơn giá");
-                }
-
-                dgvDanhSachLoaiThuoc.Rows.Clear();
-
-                foreach (DTO_LoaiThuoc loaiThuoc in danhSachLoaiThuoc) {
-                    string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(loaiThuoc.maDonVi);
-                    string cachDung = BUS_LoaiThuoc.LayTenCachDung(loaiThuoc.maCachDung);
-
-                    dgvDanhSachLoaiThuoc.Rows.Add(
-                        dgvDanhSachLoaiThuoc.Rows.Count + 1,
-                        loaiThuoc.maLoaiThuoc,
-                        loaiThuoc.tenLoaiThuoc,
-                        tenDonVi,
-                        cachDung,
-                        loaiThuoc.donGia.ToString("N0")
-                    );
-                }
-
-                dgvDanhSachLoaiThuoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgvDanhSachLoaiThuoc.AllowUserToAddRows = false;
-                dgvDanhSachLoaiThuoc.ReadOnly = true;
-                dgvDanhSachLoaiThuoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                LoadData();
             }
             catch (Exception ex) {
                 MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}",
@@ -295,10 +279,8 @@ namespace DoAnSE104.GUI
                         MessageBox.Show("Đã lưu thành công tất cả loại thuốc mới vào cơ sở dữ liệu!", 
                             "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         
-                        // Clear the new medications list since they're now saved
                         danhSachLoaiThuocMoi.Clear();
                         
-                        // Reload data from database to refresh the view
                         LoadDataToGridView();
                     }
                     else {
@@ -316,5 +298,6 @@ namespace DoAnSE104.GUI
         private void btnThoat_Click(object sender, EventArgs e) {
             this.Close();
         }
+
     }
 }

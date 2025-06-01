@@ -13,9 +13,22 @@ namespace DoAnSE104.BUS
     {
         private DAL_ThamSo dalThamSo = new DAL_ThamSo();
 
-        public DTO_ThamSo LayThamSo()
+       
+        public int SoLuongBenhNhanToiDaTrongNgay()
         {
-            return dalThamSo.LayThamSo();
+            return dalThamSo.SoLuongBenhNhanToiDaTrongNgay();
+        }
+        public double TienKhamCoDinh()
+        {
+            return dalThamSo.TienKhamCoDinh();
+        }
+        public bool QuyDinhSoLuongBenhNhanToiDaTrongNgay()
+        {
+            return dalThamSo.QuyDinhSoLuongBenhNhanToiDaTrongNgay();
+        }
+        public bool QuyDinhTienKhamCoDinh()
+        {
+            return dalThamSo.QuyDinhTienKhamCoDinh();
         }
     }
 }

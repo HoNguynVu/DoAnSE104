@@ -38,7 +38,7 @@ namespace DoAnSE104.DAL
                 return "KB001";
             string maCuoi = result.ToString();
             int soMoi;
-            if(int.TryParse(maCuoi.Substring(2), out soMoi))
+            if (int.TryParse(maCuoi.Substring(2), out soMoi))
             {
                 soMoi++;
                 return "KB" + soMoi.ToString("D3");
@@ -105,5 +105,19 @@ namespace DoAnSE104.DAL
             }
             return null;
         }
+        public int LaySoLuongBenhNhanHienTaiTrongNgay(DateTime ngayKham)
+        {
+            string query = "SELECT COUNT(*) FROM KHAMBENH WHERE NgayKham = @NgayKham";
+
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                new MySqlParameter("@NgayKham", ngayKham.Date) // đảm bảo chỉ lấy phần ngày
+            };
+
+            object result = DatabaseHelper.ExcuteScalar(query, parameters);
+
+            return (result != null && result != DBNull.Value) ? Convert.ToInt32(result) : 0;
+        }
+
     }
 }

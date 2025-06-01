@@ -37,5 +37,9 @@ namespace DoAnSE104.BUS
                 throw new Exception("Mã khám bệnh không được để trống.");
             return DAL_KhamBenh.LayThongTinKhamBenh(maKhamBenh);
         }
+        public int LaySoLuongBenhNhanHienTaiTrongNgay(DateTime ngayKham)
+        {
+            return DAL_KhamBenh.LaySoLuongBenhNhanHienTaiTrongNgay(ngayKham);
+        }
     }
 }

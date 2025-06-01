@@ -37,6 +37,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.sButton1 = new Styling_Toggle_Button.SButton();
             this.sButton2 = new Styling_Toggle_Button.SButton();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label13
@@ -66,11 +68,10 @@
             this.txtSoLuongToiDa.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtSoLuongToiDa.Enabled = false;
             this.txtSoLuongToiDa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuongToiDa.Location = new System.Drawing.Point(983, 142);
+            this.txtSoLuongToiDa.Location = new System.Drawing.Point(973, 161);
             this.txtSoLuongToiDa.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.txtSoLuongToiDa.Multiline = true;
             this.txtSoLuongToiDa.Name = "txtSoLuongToiDa";
-            this.txtSoLuongToiDa.Size = new System.Drawing.Size(283, 83);
+            this.txtSoLuongToiDa.Size = new System.Drawing.Size(283, 39);
             this.txtSoLuongToiDa.TabIndex = 118;
             this.txtSoLuongToiDa.TabStop = false;
             // 
@@ -110,11 +111,10 @@
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(983, 388);
+            this.textBox1.Location = new System.Drawing.Point(973, 417);
             this.textBox1.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(283, 83);
+            this.textBox1.Size = new System.Drawing.Size(283, 39);
             this.textBox1.TabIndex = 118;
             this.textBox1.TabStop = false;
             // 
@@ -144,11 +144,45 @@
             this.sButton2.TabIndex = 120;
             this.sButton2.UseVisualStyleBackColor = true;
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(903, 533);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(180, 56);
+            this.btnSave.TabIndex = 122;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Gray;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(1101, 533);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(165, 56);
+            this.btnCancel.TabIndex = 121;
+            this.btnCancel.Text = "Thoát";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
             // GUI_DanhSachThamSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1318, 751);
+            this.ClientSize = new System.Drawing.Size(1318, 612);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.sButton2);
             this.Controls.Add(this.sButton1);
             this.Controls.Add(this.textBox1);
@@ -177,5 +211,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private Styling_Toggle_Button.SButton sButton1;
         private Styling_Toggle_Button.SButton sButton2;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

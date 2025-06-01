@@ -62,8 +62,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.btnCancel);
+            //this.groupBox1.Controls.Add(this.btnSave);
+            //this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.labelThemDonViTinh);
             this.groupBox1.Controls.Add(this.labelMaDonVi);
             this.groupBox1.Controls.Add(this.txtMaDonVi);

@@ -46,43 +46,71 @@
     <td>1</td>
     <td>22520087</td>
     <td>Nguyễn Công Bá</td>
-    <td><a href="Đường link của Nguyễn Công Bá">Tên Git của Nguyễn Công Bá</a></td>
-    <td><a href="https://mail.google.com/mail/?view=cm&fs=1&to=22520087@gm.uit.edu.vn" target="_blank">22520087@gm.uit.edu.vn</a></td>
+    <td><a href="Đường link Git của Nguyễn Công Bá">Tên Git của Nguyễn Công Bá</a></td>
+    <td><a href="mailto:22520087@gm.uit.edu.vn">22520087@gm.uit.edu.vn</a></td>
   </tr>
   <tr>
     <td>2</td>
     <td>22520191</td>
     <td>Nguyễn Quang Đăng</td>
-    <td><a href="Đường link của Nguyễn Quang Đăng">Tên Git của Nguyễn Quang Đăng</a></td>
-    <td><a href="22520191@gm.uit.edu.vn">22520191@gm.uit.edu.vn</a></td>
+    <td><a href="Đường link Git của Nguyễn Quang Đăng">Tên Git của Nguyễn Quang Đăng</a></td>
+    <td><a href="mailto:22520191@gm.uit.edu.vn">22520191@gm.uit.edu.vn</a></td>
   </tr>
   <tr>
     <td>3</td>
-    <td>22520087</td>
-    <td>Nguyễn Công Bá</td>
-    <td><a href="Đường link của Nguyễn Công Bá">Tên Git của Nguyễn Công Bá</a></td>
-    <td><a href="22520087@gm.uit.edu.vn">22520087@gm.uit.edu.vn</a></td>
+    <td>22520698</td>
+    <td>Lê Minh Khôi</td>
+    <td><a href="Đường link Git của Lê Minh Khôi">Tên Git của Lê Minh Khôi</a></td>
+    <td><a href="mailto:22520698@gm.uit.edu.vn">22520698@gm.uit.edu.vn</a></td>
   </tr>
   <tr>
     <td>4</td>
-    <td>22520087</td>
-    <td>Nguyễn Công Bá</td>
-    <td><a href="Đường link của Nguyễn Công Bá">Tên Git của Nguyễn Công Bá</a></td>
-    <td><a href="22520087@gm.uit.edu.vn">22520087@gm.uit.edu.vn</a></td>
+    <td>23520777</td>
+    <td>Nguyễn Minh Khôi</td>
+    <td><a href="https://github.com/Kirito110405">Kirito110405</a></td>
+    <td><a href="mailto:23520777@gm.uit.edu.vn">23520777@gm.uit.edu.vn</a></td>
   </tr>
   <tr>
     <td>5</td>
-    <td>22520087</td>
-    <td>Nguyễn Công Bá</td>
-    <td><a href="Đường link của Nguyễn Công Bá">Tên Git của Nguyễn Công Bá</a></td>
-    <td><a href="22520087@gm.uit.edu.vn">22520087@gm.uit.edu.vn</a></td>
+    <td>23520802</td>
+    <td>Nguyễn Trung Kiên</td>
+    <td><a href="Đường link Git của Nguyễn Trung Kiên">Tên Git của Nguyễn Trung Kiên</a></td>
+    <td><a href="mailto:23520802@gm.uit.edu.vn">23520802@gm.uit.edu.vn</a></td>
   </tr>
   <tr>
     <td>6</td>
-    <td>22520087</td>
-    <td>Nguyễn Công Bá</td>
-    <td><a href="Đường link của Nguyễn Công Bá">Tên Git của Nguyễn Công Bá</a></td>
-    <td><a href="22520087@gm.uit.edu.vn">22520087@gm.uit.edu.vn</a></td>
+    <td>23520869</td>
+    <td>Hồ Nguyễn Tài Lợi</td>
+    <td><a href="Đường link Git của Hồ Nguyễn Tài Lợi">Tên Git của Hồ Nguyễn Tài Lợi</a></td>
+    <td><a href="mailto:23520869@gm.uit.edu.vn">23520869@gm.uit.edu.vn</a></td>
+  </tr>
+    <tr>
+    <td>7</td>
+    <td>23521019</td>
+    <td>Đào Lê Bảo Ngọc</td>
+    <td><a href="Đường link Git của Đào Lê Bảo Ngọc">Tên Git của Đào Lê Bảo Ngọc</a></td>
+    <td><a href="mailto:23521019@gm.uit.edu.vn">23521019@gm.uit.edu.vn</a></td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>23521136</td>
+    <td>Nguyễn Văn Phẩm</td>
+    <td><a href="Đường link Git của Nguyễn Văn Phẩm">Tên Git của Nguyễn Văn Phẩm</a></td>
+    <td><a href="mailto:23521136@gm.uit.edu.vn">23521136@gm.uit.edu.vn</a></td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>23521792</td>
+    <td>Nguyễn Quang Vinh</td>
+    <td><a href="Đường link Git của Nguyễn Quang Vinh">Tên Git của Nguyễn Quang Vinh</a></td>
+    <td><a href="mailto:23521792@gm.uit.edu.vn">23521792@gm.uit.edu.vn</a></td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>23521805</td>
+    <td>Hồ Nguyên Vũ</td>
+    <td><a href="Đường link Git của Hồ Nguyên Vũ">Tên Git của Hồ Nguyên Vũ</a></td>
+    <td><a href="mailto:23521805@gm.uit.edu.vn">23521805@gm.uit.edu.vn</a></td>
   </tr>
 </table>
 

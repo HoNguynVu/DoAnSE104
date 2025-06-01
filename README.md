@@ -114,8 +114,6 @@
   </tr>
 </table>
 
-</body>
-</html>
 ## MÔ TẢ
 
 -   Ứng dụng của chúng tôi cung cấp một cách giải thích trực quan và dễ hiểu về ba thuật toán tìm kiếm chuỗi quan trọng: Knuth-Morris-Pratt (KMP), Boyer-Moore (BM) và Rabin-Karp (RK).

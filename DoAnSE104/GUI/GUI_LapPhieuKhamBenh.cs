@@ -35,10 +35,10 @@ namespace DoAnSE104.GUI
             try
             {
                 List<DTO_LoaiBenh> danhSachLoaiBenh = BUS_LoaiBenh.LayDanhSachLoaiBenh();
-                cboLoaiBenh.DataSource = danhSachLoaiBenh;
-                cboLoaiBenh.DisplayMember = "tenLoaiBenh";
-                cboLoaiBenh.ValueMember = "maLoaiBenh";
-                cboLoaiBenh.SelectedIndex = -1;
+                cbbLoaiBenh.DataSource = danhSachLoaiBenh;
+                cbbLoaiBenh.DisplayMember = "tenLoaiBenh";
+                cbbLoaiBenh.ValueMember = "maLoaiBenh";
+                cbbLoaiBenh.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace DoAnSE104.GUI
             colCachDung.Width = 200;
             colCachDung.DefaultCellStyle.BackColor = Color.LightGray; // Màu nền để chỉ ra là readonly
 
-            dataGridViewPhieuKham.Columns.AddRange(new DataGridViewColumn[] {
+            dgvPhieuKham.Columns.AddRange(new DataGridViewColumn[] {
                 colSTT,
                 colTenThuoc,
                 colSoLuong,
@@ -87,9 +87,9 @@ namespace DoAnSE104.GUI
                 colCachDung
             });
 
-            dataGridViewPhieuKham.RowsAdded += DgvChiTietThuoc_RowsAdded;
-            dataGridViewPhieuKham.CellValueChanged += DgvChiTietThuoc_CellValueChanged;
-            dataGridViewPhieuKham.EditingControlShowing += DgvChiTietThuoc_EditingControlShowing;
+            dgvPhieuKham.RowsAdded += DgvChiTietThuoc_RowsAdded;
+            dgvPhieuKham.CellValueChanged += DgvChiTietThuoc_CellValueChanged;
+            dgvPhieuKham.EditingControlShowing += DgvChiTietThuoc_EditingControlShowing;
         }
 
         private void LoadDanhSachThuoc()
@@ -97,7 +97,7 @@ namespace DoAnSE104.GUI
             try
             {
                 danhSachLoaiThuoc = BUS_LoaiThuoc.LayDanhSachLoaiThuoc();
-                DataGridViewComboBoxColumn colTenThuoc = dataGridViewPhieuKham.Columns["colTenThuoc"] as DataGridViewComboBoxColumn;
+                DataGridViewComboBoxColumn colTenThuoc = dgvPhieuKham.Columns["colTenThuoc"] as DataGridViewComboBoxColumn;
                 if (colTenThuoc != null)
                 {
                     colTenThuoc.DataSource = danhSachLoaiThuoc;
@@ -114,10 +114,10 @@ namespace DoAnSE104.GUI
 
         private void DgvChiTietThuoc_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            for (int i = 0; i < dataGridViewPhieuKham.Rows.Count; i++)
+            for (int i = 0; i < dgvPhieuKham.Rows.Count; i++)
             {
-                if (dataGridViewPhieuKham.Rows[i].IsNewRow) continue;
-                dataGridViewPhieuKham.Rows[i].Cells["colSTT"].Value = (i + 1).ToString();
+                if (dgvPhieuKham.Rows[i].IsNewRow) continue;
+                dgvPhieuKham.Rows[i].Cells["colSTT"].Value = (i + 1).ToString();
             }
         }
 
@@ -125,9 +125,9 @@ namespace DoAnSE104.GUI
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
 
-            var row = dataGridViewPhieuKham.Rows[e.RowIndex];
+            var row = dgvPhieuKham.Rows[e.RowIndex];
             
-            if (e.ColumnIndex == dataGridViewPhieuKham.Columns["colTenThuoc"].Index)
+            if (e.ColumnIndex == dgvPhieuKham.Columns["colTenThuoc"].Index)
             {
                 row.Cells["colDonVi"].Value = "";
                 row.Cells["colCachDung"].Value = "";
@@ -172,7 +172,7 @@ namespace DoAnSE104.GUI
 
         private void DgvChiTietThuoc_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            if (dataGridViewPhieuKham.CurrentCell.ColumnIndex == dataGridViewPhieuKham.Columns["colSoLuong"].Index)
+            if (dgvPhieuKham.CurrentCell.ColumnIndex == dgvPhieuKham.Columns["colSoLuong"].Index)
             {
                 if (e.Control is TextBox txt)
                 {
@@ -240,7 +240,7 @@ namespace DoAnSE104.GUI
         {
             // Kiểm tra thông tin bắt buộc
             if (string.IsNullOrWhiteSpace(txtMaKhamBenh.Text) || 
-                string.IsNullOrWhiteSpace(cboLoaiBenh.Text) || 
+                string.IsNullOrWhiteSpace(cbbLoaiBenh.Text) || 
                 string.IsNullOrWhiteSpace(txtTrieuChung.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh!", 
@@ -249,7 +249,7 @@ namespace DoAnSE104.GUI
             }
 
             // Kiểm tra danh sách thuốc
-            if (dataGridViewPhieuKham.Rows.Count <= 1) // Chỉ có dòng new row
+            if (dgvPhieuKham.Rows.Count <= 1) // Chỉ có dòng new row
             {
                 MessageBox.Show("Vui lòng thêm ít nhất một loại thuốc!", 
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -260,7 +260,7 @@ namespace DoAnSE104.GUI
             {
                 // 1. Cập nhật thông tin khám bệnh (loại bệnh và triệu chứng)
                 string maKhamBenh = txtMaKhamBenh.Text.Trim();
-                string maLoaiBenh = cboLoaiBenh.SelectedValue?.ToString();
+                string maLoaiBenh = cbbLoaiBenh.SelectedValue?.ToString();
                 string trieuChung = txtTrieuChung.Text.Trim();
 
                 if (BUS_KhamBenh.CapNhatKhamBenh(maKhamBenh, maLoaiBenh, trieuChung))
@@ -269,7 +269,7 @@ namespace DoAnSE104.GUI
                     bool success = true;
                     string errorMessage = "";
 
-                    foreach (DataGridViewRow row in dataGridViewPhieuKham.Rows)
+                    foreach (DataGridViewRow row in dgvPhieuKham.Rows)
                     {
                         if (row.IsNewRow) continue;
 
@@ -331,9 +331,9 @@ namespace DoAnSE104.GUI
         private void dataGridViewPhieuKham_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridViewPhieuKham.Columns["TenLoaiThuoc"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvPhieuKham.Columns["TenLoaiThuoc"].Index)
             {
-                var selectedValue = dataGridViewPhieuKham.Rows[e.RowIndex].Cells["TenLoaiThuoc"].Value;
+                var selectedValue = dgvPhieuKham.Rows[e.RowIndex].Cells["TenLoaiThuoc"].Value;
                 if (selectedValue != null)
                 {
                     string maLoaiThuoc = selectedValue.ToString();
@@ -342,7 +342,7 @@ namespace DoAnSE104.GUI
                     
                     if (thuoc != null)
                     {
-                        dataGridViewPhieuKham.Rows[e.RowIndex].Cells["DonVi"].Value = thuoc.maDonVi;
+                        dgvPhieuKham.Rows[e.RowIndex].Cells["DonVi"].Value = thuoc.maDonVi;
                     }
                 }
             }
@@ -352,15 +352,15 @@ namespace DoAnSE104.GUI
         private void dataGridViewPhieuKham_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
 
-            if (dataGridViewPhieuKham.Rows.Count == 1 && dataGridViewPhieuKham.Rows[0].Cells["TenLoaiThuoc"].Value == null)
+            if (dgvPhieuKham.Rows.Count == 1 && dgvPhieuKham.Rows[0].Cells["TenLoaiThuoc"].Value == null)
             {
                 return;
             }
 
-            int lastNonNewRowIndex = dataGridViewPhieuKham.Rows.Count - 2; // Index of last non-new row
-            if (lastNonNewRowIndex >= 0 && dataGridViewPhieuKham.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
+            int lastNonNewRowIndex = dgvPhieuKham.Rows.Count - 2; // Index of last non-new row
+            if (lastNonNewRowIndex >= 0 && dgvPhieuKham.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
             {
-                dataGridViewPhieuKham.AllowUserToAddRows = true;
+                dgvPhieuKham.AllowUserToAddRows = true;
             }
         }
     }

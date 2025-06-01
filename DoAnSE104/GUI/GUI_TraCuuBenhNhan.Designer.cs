@@ -42,14 +42,13 @@
             this.numericNamSinhDen = new System.Windows.Forms.NumericUpDown();
             this.labelMaPhieuKhamTu = new System.Windows.Forms.Label();
             this.cbbMaPhieuKhamTu = new System.Windows.Forms.ComboBox();
+            this.labelMaPhieuKhamDen = new System.Windows.Forms.Label();
             this.cbbMaPhieuKhamDen = new System.Windows.Forms.ComboBox();
             this.labelTenLoaiThuoc = new System.Windows.Forms.Label();
             this.cbbTenLoaiThuoc = new System.Windows.Forms.ComboBox();
             this.labelDonVi = new System.Windows.Forms.Label();
             this.cbbDonVi = new System.Windows.Forms.ComboBox();
             this.dgvKetQua = new System.Windows.Forms.DataGridView();
-            this.btnTraCuuBenhNhan = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaBenhNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenBenhNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +58,8 @@
             this.NgayKham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrieuChung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenLoaiBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelMaPhieuKhamDen = new System.Windows.Forms.Label();
+            this.btnTraCuuBenhNhan = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBoxInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericNamSinhTu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericNamSinhDen)).BeginInit();
@@ -338,6 +338,16 @@
             this.cbbMaPhieuKhamTu.Size = new System.Drawing.Size(120, 36);
             this.cbbMaPhieuKhamTu.TabIndex = 23;
             // 
+            // labelMaPhieuKhamDen
+            // 
+            this.labelMaPhieuKhamDen.AutoSize = true;
+            this.labelMaPhieuKhamDen.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelMaPhieuKhamDen.Location = new System.Drawing.Point(981, 160);
+            this.labelMaPhieuKhamDen.Name = "labelMaPhieuKhamDen";
+            this.labelMaPhieuKhamDen.Size = new System.Drawing.Size(45, 28);
+            this.labelMaPhieuKhamDen.TabIndex = 20;
+            this.labelMaPhieuKhamDen.Text = "đến";
+            // 
             // cbbMaPhieuKhamDen
             // 
             this.cbbMaPhieuKhamDen.BackColor = System.Drawing.Color.Gainsboro;
@@ -427,40 +437,6 @@
             this.dgvKetQua.Size = new System.Drawing.Size(1200, 230);
             this.dgvKetQua.TabIndex = 29;
             // 
-            // btnTraCuuBenhNhan
-            // 
-            this.btnTraCuuBenhNhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnTraCuuBenhNhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTraCuuBenhNhan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTraCuuBenhNhan.FlatAppearance.BorderSize = 0;
-            this.btnTraCuuBenhNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraCuuBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTraCuuBenhNhan.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuBenhNhan.Location = new System.Drawing.Point(30, 652);
-            this.btnTraCuuBenhNhan.Name = "btnTraCuuBenhNhan";
-            this.btnTraCuuBenhNhan.Size = new System.Drawing.Size(252, 44);
-            this.btnTraCuuBenhNhan.TabIndex = 30;
-            this.btnTraCuuBenhNhan.Text = "Tra cứu bệnh nhân";
-            this.btnTraCuuBenhNhan.UseVisualStyleBackColor = false;
-            this.btnTraCuuBenhNhan.Click += new System.EventHandler(this.btnTraCuuBenhNhan_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(1030, 652);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(200, 44);
-            this.btnCancel.TabIndex = 31;
-            this.btnCancel.Text = "Thoát";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -515,15 +491,39 @@
             this.TenLoaiBenh.MinimumWidth = 6;
             this.TenLoaiBenh.Name = "TenLoaiBenh";
             // 
-            // labelMaPhieuKhamDen
+            // btnTraCuuBenhNhan
             // 
-            this.labelMaPhieuKhamDen.AutoSize = true;
-            this.labelMaPhieuKhamDen.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelMaPhieuKhamDen.Location = new System.Drawing.Point(981, 160);
-            this.labelMaPhieuKhamDen.Name = "labelMaPhieuKhamDen";
-            this.labelMaPhieuKhamDen.Size = new System.Drawing.Size(45, 28);
-            this.labelMaPhieuKhamDen.TabIndex = 20;
-            this.labelMaPhieuKhamDen.Text = "đến";
+            this.btnTraCuuBenhNhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnTraCuuBenhNhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTraCuuBenhNhan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTraCuuBenhNhan.FlatAppearance.BorderSize = 0;
+            this.btnTraCuuBenhNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTraCuuBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnTraCuuBenhNhan.ForeColor = System.Drawing.Color.White;
+            this.btnTraCuuBenhNhan.Location = new System.Drawing.Point(30, 652);
+            this.btnTraCuuBenhNhan.Name = "btnTraCuuBenhNhan";
+            this.btnTraCuuBenhNhan.Size = new System.Drawing.Size(252, 44);
+            this.btnTraCuuBenhNhan.TabIndex = 30;
+            this.btnTraCuuBenhNhan.Text = "Tra cứu bệnh nhân";
+            this.btnTraCuuBenhNhan.UseVisualStyleBackColor = false;
+            this.btnTraCuuBenhNhan.Click += new System.EventHandler(this.btnTraCuuBenhNhan_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(1030, 652);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(200, 44);
+            this.btnCancel.TabIndex = 31;
+            this.btnCancel.Text = "Thoát";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // GUI_TraCuuBenhNhan
             // 

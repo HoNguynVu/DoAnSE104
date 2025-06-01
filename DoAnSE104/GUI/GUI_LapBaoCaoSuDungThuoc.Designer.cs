@@ -131,7 +131,7 @@
             this.BtnCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCreateReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.BtnCreateReport.ForeColor = System.Drawing.Color.White;
-            this.BtnCreateReport.Location = new System.Drawing.Point(731, 60);
+            this.BtnCreateReport.Location = new System.Drawing.Point(651, 60);
             this.BtnCreateReport.Name = "BtnCreateReport";
             this.BtnCreateReport.Size = new System.Drawing.Size(220, 44);
             this.BtnCreateReport.TabIndex = 4;
@@ -142,15 +142,15 @@
             // BtnCancel
             // 
             this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.BtnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.BtnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCancel.FlatAppearance.BorderSize = 0;
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.BtnCancel.ForeColor = System.Drawing.Color.White;
-            this.BtnCancel.Location = new System.Drawing.Point(957, 60);
+            this.BtnCancel.Location = new System.Drawing.Point(877, 60);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(120, 44);
+            this.BtnCancel.Size = new System.Drawing.Size(200, 44);
             this.BtnCancel.TabIndex = 5;
             this.BtnCancel.Text = "Thoát";
             this.BtnCancel.UseVisualStyleBackColor = false;

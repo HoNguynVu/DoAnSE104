@@ -25,7 +25,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelTitle = new System.Windows.Forms.Label();
             this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.labelMaKhamBenh = new System.Windows.Forms.Label();
@@ -234,14 +234,14 @@
             this.dgvDanhSachThuoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachThuoc.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSachThuoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachThuoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachThuoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachThuoc.ColumnHeadersHeight = 32;
             this.dgvDanhSachThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -316,7 +316,7 @@
             this.btnLapHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLapHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLapHD.ForeColor = System.Drawing.Color.White;
-            this.btnLapHD.Location = new System.Drawing.Point(30, 570);
+            this.btnLapHD.Location = new System.Drawing.Point(30, 587);
             this.btnLapHD.Name = "btnLapHD";
             this.btnLapHD.Size = new System.Drawing.Size(200, 44);
             this.btnLapHD.TabIndex = 13;
@@ -333,7 +333,7 @@
             this.btnHDMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHDMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnHDMoi.ForeColor = System.Drawing.Color.White;
-            this.btnHDMoi.Location = new System.Drawing.Point(250, 570);
+            this.btnHDMoi.Location = new System.Drawing.Point(236, 587);
             this.btnHDMoi.Name = "btnHDMoi";
             this.btnHDMoi.Size = new System.Drawing.Size(200, 44);
             this.btnHDMoi.TabIndex = 14;
@@ -350,7 +350,7 @@
             this.btnTimHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnTimHD.ForeColor = System.Drawing.Color.White;
-            this.btnTimHD.Location = new System.Drawing.Point(470, 570);
+            this.btnTimHD.Location = new System.Drawing.Point(442, 587);
             this.btnTimHD.Name = "btnTimHD";
             this.btnTimHD.Size = new System.Drawing.Size(200, 44);
             this.btnTimHD.TabIndex = 15;
@@ -361,13 +361,13 @@
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(930, 570);
+            this.btnExit.Location = new System.Drawing.Point(930, 587);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(200, 44);
             this.btnExit.TabIndex = 16;

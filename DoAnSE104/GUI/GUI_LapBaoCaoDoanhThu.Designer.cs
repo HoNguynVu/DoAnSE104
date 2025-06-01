@@ -55,16 +55,16 @@ namespace DoAnSE104.GUI
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(33, 150, 243);
+            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.labelTitle.Location = new System.Drawing.Point(30, 20);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(670, 72);
+            this.labelTitle.Size = new System.Drawing.Size(777, 72);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Báo cáo doanh thu theo ngày";
             // 
             // groupBoxInfo
             // 
-            this.groupBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.groupBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxInfo.BackColor = System.Drawing.Color.White;
             this.groupBoxInfo.Controls.Add(this.LabelYear);
@@ -130,13 +130,13 @@ namespace DoAnSE104.GUI
             // BtnCreateReport
             // 
             this.BtnCreateReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnCreateReport.BackColor = System.Drawing.Color.FromArgb(33, 150, 243);
+            this.BtnCreateReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.BtnCreateReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCreateReport.FlatAppearance.BorderSize = 0;
             this.BtnCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCreateReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.BtnCreateReport.ForeColor = System.Drawing.Color.White;
-            this.BtnCreateReport.Location = new System.Drawing.Point(731, 60);
+            this.BtnCreateReport.Location = new System.Drawing.Point(651, 60);
             this.BtnCreateReport.Name = "BtnCreateReport";
             this.BtnCreateReport.Size = new System.Drawing.Size(220, 44);
             this.BtnCreateReport.TabIndex = 4;
@@ -147,15 +147,15 @@ namespace DoAnSE104.GUI
             // BtnCancel
             // 
             this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnCancel.BackColor = System.Drawing.Color.FromArgb(33, 150, 243);
+            this.BtnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.BtnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCancel.FlatAppearance.BorderSize = 0;
             this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.BtnCancel.ForeColor = System.Drawing.Color.White;
-            this.BtnCancel.Location = new System.Drawing.Point(957, 60);
+            this.BtnCancel.Location = new System.Drawing.Point(877, 60);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(120, 44);
+            this.BtnCancel.Size = new System.Drawing.Size(200, 44);
             this.BtnCancel.TabIndex = 5;
             this.BtnCancel.Text = "Thoát";
             this.BtnCancel.UseVisualStyleBackColor = false;
@@ -167,7 +167,7 @@ namespace DoAnSE104.GUI
             this.LabelTotal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.LabelTotal.Location = new System.Drawing.Point(34, 240);
             this.LabelTotal.Name = "LabelTotal";
-            this.LabelTotal.Size = new System.Drawing.Size(223, 28);
+            this.LabelTotal.Size = new System.Drawing.Size(212, 28);
             this.LabelTotal.TabIndex = 6;
             this.LabelTotal.Text = "Tổng doanh thu tháng:";
             // 
@@ -183,13 +183,13 @@ namespace DoAnSE104.GUI
             // 
             // dataGridViewReport
             // 
-            this.dataGridViewReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridViewReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewReport.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(33, 150, 243);
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -198,11 +198,11 @@ namespace DoAnSE104.GUI
             this.dataGridViewReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewReport.ColumnHeadersHeight = 32;
             this.dataGridViewReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-                this.STT,
-                this.Ngay,
-                this.SoBenhNhan,
-                this.DoanhThu,
-                this.TyLe});
+            this.STT,
+            this.Ngay,
+            this.SoBenhNhan,
+            this.DoanhThu,
+            this.TyLe});
             this.dataGridViewReport.EnableHeadersVisualStyles = false;
             this.dataGridViewReport.GridColor = System.Drawing.Color.LightGray;
             this.dataGridViewReport.Location = new System.Drawing.Point(30, 290);

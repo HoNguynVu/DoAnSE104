@@ -20,8 +20,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_TiepNhanKhamBenh));
             this.labelTitle = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelNhapThongTin = new System.Windows.Forms.Label();
+            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.labelMaKhamBenh = new System.Windows.Forms.Label();
             this.txtMaKhamBenh = new System.Windows.Forms.TextBox();
             this.labelMaBenhNhan = new System.Windows.Forms.Label();
@@ -42,7 +41,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox1.SuspendLayout();
+            this.groupBoxInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToggleCalendar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -58,50 +57,41 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Tiếp nhận khám bệnh";
             // 
-            // groupBox1
+            // groupBoxInfo
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.labelNhapThongTin);
-            this.groupBox1.Controls.Add(this.labelMaKhamBenh);
-            this.groupBox1.Controls.Add(this.txtMaKhamBenh);
-            this.groupBox1.Controls.Add(this.labelMaBenhNhan);
-            this.groupBox1.Controls.Add(this.txtMaBenhNhan);
-            this.groupBox1.Controls.Add(this.labelHoTen);
-            this.groupBox1.Controls.Add(this.txtHoTen);
-            this.groupBox1.Controls.Add(this.labelGioiTinh);
-            this.groupBox1.Controls.Add(this.txtGioiTinh);
-            this.groupBox1.Controls.Add(this.labelNamSinh);
-            this.groupBox1.Controls.Add(this.txtNamSinh);
-            this.groupBox1.Controls.Add(this.labelDiaChi);
-            this.groupBox1.Controls.Add(this.txtDiaChi);
-            this.groupBox1.Controls.Add(this.labelNgayKham);
-            this.groupBox1.Controls.Add(this.txtNgayKham);
-            this.groupBox1.Controls.Add(this.pictureBoxToggleCalendar);
-            this.groupBox1.Controls.Add(this.monthCalendar1);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(30, 110);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(20);
-            this.groupBox1.Size = new System.Drawing.Size(900, 436);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            // 
-            // labelNhapThongTin
-            // 
-            this.labelNhapThongTin.AutoSize = true;
-            this.labelNhapThongTin.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.labelNhapThongTin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.labelNhapThongTin.Location = new System.Drawing.Point(25, 25);
-            this.labelNhapThongTin.Name = "labelNhapThongTin";
-            this.labelNhapThongTin.Size = new System.Drawing.Size(361, 37);
-            this.labelNhapThongTin.TabIndex = 0;
-            this.labelNhapThongTin.Text = "Nhập thông tin khám bệnh";
+            this.groupBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxInfo.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfo.Controls.Add(this.labelMaKhamBenh);
+            this.groupBoxInfo.Controls.Add(this.txtMaKhamBenh);
+            this.groupBoxInfo.Controls.Add(this.labelMaBenhNhan);
+            this.groupBoxInfo.Controls.Add(this.txtMaBenhNhan);
+            this.groupBoxInfo.Controls.Add(this.labelHoTen);
+            this.groupBoxInfo.Controls.Add(this.txtHoTen);
+            this.groupBoxInfo.Controls.Add(this.labelGioiTinh);
+            this.groupBoxInfo.Controls.Add(this.txtGioiTinh);
+            this.groupBoxInfo.Controls.Add(this.labelNamSinh);
+            this.groupBoxInfo.Controls.Add(this.txtNamSinh);
+            this.groupBoxInfo.Controls.Add(this.labelDiaChi);
+            this.groupBoxInfo.Controls.Add(this.txtDiaChi);
+            this.groupBoxInfo.Controls.Add(this.labelNgayKham);
+            this.groupBoxInfo.Controls.Add(this.txtNgayKham);
+            this.groupBoxInfo.Controls.Add(this.pictureBoxToggleCalendar);
+            this.groupBoxInfo.Controls.Add(this.monthCalendar1);
+            this.groupBoxInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBoxInfo.Location = new System.Drawing.Point(30, 110);
+            this.groupBoxInfo.Name = "groupBoxInfo";
+            this.groupBoxInfo.Padding = new System.Windows.Forms.Padding(20);
+            this.groupBoxInfo.Size = new System.Drawing.Size(900, 436);
+            this.groupBoxInfo.TabIndex = 1;
+            this.groupBoxInfo.TabStop = false;
+            this.groupBoxInfo.Text = "Thông tin khám bệnh";
             // 
             // labelMaKhamBenh
             // 
             this.labelMaKhamBenh.AutoSize = true;
             this.labelMaKhamBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelMaKhamBenh.Location = new System.Drawing.Point(30, 75);
+            this.labelMaKhamBenh.Location = new System.Drawing.Point(30, 40);
             this.labelMaKhamBenh.Name = "labelMaKhamBenh";
             this.labelMaKhamBenh.Size = new System.Drawing.Size(142, 28);
             this.labelMaKhamBenh.TabIndex = 1;
@@ -113,7 +103,7 @@
             this.txtMaKhamBenh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaKhamBenh.Enabled = false;
             this.txtMaKhamBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtMaKhamBenh.Location = new System.Drawing.Point(34, 105);
+            this.txtMaKhamBenh.Location = new System.Drawing.Point(34, 70);
             this.txtMaKhamBenh.Name = "txtMaKhamBenh";
             this.txtMaKhamBenh.ReadOnly = true;
             this.txtMaKhamBenh.Size = new System.Drawing.Size(220, 34);
@@ -123,7 +113,7 @@
             // 
             this.labelMaBenhNhan.AutoSize = true;
             this.labelMaBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelMaBenhNhan.Location = new System.Drawing.Point(270, 75);
+            this.labelMaBenhNhan.Location = new System.Drawing.Point(270, 40);
             this.labelMaBenhNhan.Name = "labelMaBenhNhan";
             this.labelMaBenhNhan.Size = new System.Drawing.Size(137, 28);
             this.labelMaBenhNhan.TabIndex = 3;
@@ -133,7 +123,7 @@
             // 
             this.txtMaBenhNhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtMaBenhNhan.Location = new System.Drawing.Point(274, 105);
+            this.txtMaBenhNhan.Location = new System.Drawing.Point(274, 70);
             this.txtMaBenhNhan.Name = "txtMaBenhNhan";
             this.txtMaBenhNhan.Size = new System.Drawing.Size(220, 34);
             this.txtMaBenhNhan.TabIndex = 4;
@@ -143,7 +133,7 @@
             // 
             this.labelHoTen.AutoSize = true;
             this.labelHoTen.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelHoTen.Location = new System.Drawing.Point(520, 75);
+            this.labelHoTen.Location = new System.Drawing.Point(520, 40);
             this.labelHoTen.Name = "labelHoTen";
             this.labelHoTen.Size = new System.Drawing.Size(96, 28);
             this.labelHoTen.TabIndex = 5;
@@ -155,7 +145,7 @@
             this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHoTen.Enabled = false;
             this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtHoTen.Location = new System.Drawing.Point(524, 105);
+            this.txtHoTen.Location = new System.Drawing.Point(524, 70);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.ReadOnly = true;
             this.txtHoTen.Size = new System.Drawing.Size(340, 34);
@@ -165,7 +155,7 @@
             // 
             this.labelGioiTinh.AutoSize = true;
             this.labelGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelGioiTinh.Location = new System.Drawing.Point(30, 150);
+            this.labelGioiTinh.Location = new System.Drawing.Point(30, 115);
             this.labelGioiTinh.Name = "labelGioiTinh";
             this.labelGioiTinh.Size = new System.Drawing.Size(87, 28);
             this.labelGioiTinh.TabIndex = 7;
@@ -177,7 +167,7 @@
             this.txtGioiTinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtGioiTinh.Enabled = false;
             this.txtGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtGioiTinh.Location = new System.Drawing.Point(34, 180);
+            this.txtGioiTinh.Location = new System.Drawing.Point(34, 145);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.ReadOnly = true;
             this.txtGioiTinh.Size = new System.Drawing.Size(140, 34);
@@ -187,7 +177,7 @@
             // 
             this.labelNamSinh.AutoSize = true;
             this.labelNamSinh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelNamSinh.Location = new System.Drawing.Point(200, 150);
+            this.labelNamSinh.Location = new System.Drawing.Point(200, 115);
             this.labelNamSinh.Name = "labelNamSinh";
             this.labelNamSinh.Size = new System.Drawing.Size(94, 28);
             this.labelNamSinh.TabIndex = 9;
@@ -199,7 +189,7 @@
             this.txtNamSinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNamSinh.Enabled = false;
             this.txtNamSinh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtNamSinh.Location = new System.Drawing.Point(204, 180);
+            this.txtNamSinh.Location = new System.Drawing.Point(204, 145);
             this.txtNamSinh.Name = "txtNamSinh";
             this.txtNamSinh.ReadOnly = true;
             this.txtNamSinh.Size = new System.Drawing.Size(140, 34);
@@ -209,7 +199,7 @@
             // 
             this.labelDiaChi.AutoSize = true;
             this.labelDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelDiaChi.Location = new System.Drawing.Point(370, 150);
+            this.labelDiaChi.Location = new System.Drawing.Point(370, 115);
             this.labelDiaChi.Name = "labelDiaChi";
             this.labelDiaChi.Size = new System.Drawing.Size(71, 28);
             this.labelDiaChi.TabIndex = 11;
@@ -221,7 +211,7 @@
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtDiaChi.Location = new System.Drawing.Point(374, 180);
+            this.txtDiaChi.Location = new System.Drawing.Point(374, 145);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.ReadOnly = true;
             this.txtDiaChi.Size = new System.Drawing.Size(490, 34);
@@ -231,7 +221,7 @@
             // 
             this.labelNgayKham.AutoSize = true;
             this.labelNgayKham.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelNgayKham.Location = new System.Drawing.Point(30, 235);
+            this.labelNgayKham.Location = new System.Drawing.Point(30, 200);
             this.labelNgayKham.Name = "labelNgayKham";
             this.labelNgayKham.Size = new System.Drawing.Size(112, 28);
             this.labelNgayKham.TabIndex = 13;
@@ -243,7 +233,7 @@
             this.txtNgayKham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNgayKham.Enabled = false;
             this.txtNgayKham.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtNgayKham.Location = new System.Drawing.Point(34, 265);
+            this.txtNgayKham.Location = new System.Drawing.Point(34, 230);
             this.txtNgayKham.Name = "txtNgayKham";
             this.txtNgayKham.Size = new System.Drawing.Size(180, 34);
             this.txtNgayKham.TabIndex = 14;
@@ -252,7 +242,7 @@
             // 
             this.pictureBoxToggleCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxToggleCalendar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxToggleCalendar.Image")));
-            this.pictureBoxToggleCalendar.Location = new System.Drawing.Point(220, 265);
+            this.pictureBoxToggleCalendar.Location = new System.Drawing.Point(220, 230);
             this.pictureBoxToggleCalendar.Name = "pictureBoxToggleCalendar";
             this.pictureBoxToggleCalendar.Size = new System.Drawing.Size(32, 32);
             this.pictureBoxToggleCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -262,7 +252,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(264, 226);
+            this.monthCalendar1.Location = new System.Drawing.Point(264, 191);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 16;
             this.monthCalendar1.Visible = false;
@@ -277,9 +267,9 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(120, 556);
+            this.btnAdd.Location = new System.Drawing.Point(30, 557);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(160, 45);
+            this.btnAdd.Size = new System.Drawing.Size(200, 44);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Tiếp nhận";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -288,14 +278,14 @@
             // btnNew
             // 
             this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnNew.FlatAppearance.BorderSize = 0;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnNew.ForeColor = System.Drawing.Color.White;
-            this.btnNew.Location = new System.Drawing.Point(320, 556);
+            this.btnNew.Location = new System.Drawing.Point(236, 557);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(200, 45);
+            this.btnNew.Size = new System.Drawing.Size(200, 44);
             this.btnNew.TabIndex = 18;
             this.btnNew.Text = "Bệnh nhân mới";
             this.btnNew.UseVisualStyleBackColor = false;
@@ -309,9 +299,9 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(560, 556);
+            this.btnCancel.Location = new System.Drawing.Point(730, 557);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(160, 45);
+            this.btnCancel.Size = new System.Drawing.Size(200, 44);
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Thoát";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -326,19 +316,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(960, 636);
+            this.ClientSize = new System.Drawing.Size(960, 613);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxInfo);
             this.Controls.Add(this.labelTitle);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.MinimumSize = new System.Drawing.Size(960, 620);
             this.Name = "GUI_TiepNhanKhamBenh";
             this.Text = "Tiếp nhận khám bệnh";
             this.Load += new System.EventHandler(this.GUI_TiepNhanKhamBenh_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxInfo.ResumeLayout(false);
+            this.groupBoxInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxToggleCalendar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -349,8 +339,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label labelNhapThongTin;
+        private System.Windows.Forms.GroupBox groupBoxInfo;
         private System.Windows.Forms.Label labelMaKhamBenh;
         private System.Windows.Forms.TextBox txtMaKhamBenh;
         private System.Windows.Forms.Label labelMaBenhNhan;

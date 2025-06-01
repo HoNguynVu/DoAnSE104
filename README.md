@@ -116,8 +116,16 @@
 
 ## MÔ TẢ
 
--   Ứng dụng của chúng tôi cung cấp một cách giải thích trực quan và dễ hiểu về ba thuật toán tìm kiếm chuỗi quan trọng: Knuth-Morris-Pratt (KMP), Boyer-Moore (BM) và Rabin-Karp (RK).
--   Ứng dụng mô phỏng cách hoạt động của các thuật toán này và tối ưu hóa việc tìm kiếm chuỗi thông qua các tương tác trực quan.
+-   Ứng dụng của nhóm cung cấp một cách giải thích trực quan và dễ hiểu về phần mềm quản lý Phòng mạch tư, với các yêu cầu phần mềm như:
+    + Sprint 01: Lập danh sách khám bệnh (Tiếp nhận khám bệnh và Tiếp nhận bệnh nhân)
+    + Sprint 02: Lập phiếu khám bệnh
+    + Sprint 03: Tra cứu bệnh nhân
+    + Sprint 04: Lập hóa đơn thanh toán
+    + Sprint 05.1: Lập báo cáo doanh thu theo ngày
+    + Sprint 05.2: Lập báo cáo sử dụng thuốc
+    + Sprint 06.1: Thay đổi Số lượng bệnh nhân tối đa trong ngày, Tiền khám cố định
+    + Sprint 06.2: Thay đổi Số lượng thuốc và đơn giá thuốc
+-   Ứng dụng mô phỏng cách hoạt động của màn hình và tối ưu hóa các xử lý logic thông qua các tương tác trực quan.
 -   Với giao diện thân thiện và ví dụ minh họa rõ ràng, ứng dụng giúp người dùng, dù là người mới bắt đầu, dễ dàng tiếp cận các thuật toán phức tạp và ứng dụng chúng vào thực tiễn.
 
 ## ĐỒ ÁN MÔN HỌC: String-Matching(Đối sánh chuỗi)

@@ -15,7 +15,7 @@
 -   [ Thành viên nhóm](#thanhvien)
 -   [ Sản phẩm môn học](#sanpham)
 -   [ Mô tả tổng quát](#description)
--   [ Mô tả tổng quát](#specific)
+-   [ Mô tả chi tiết](#specific)
 
 
 ## GIỚI THIỆU MÔN HỌC

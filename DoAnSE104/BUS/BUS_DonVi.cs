@@ -15,5 +15,22 @@ namespace DoAnSE104.BUS
         {
             return DAL_DonVi.LayDanhSachDonVi();
         }
+
+        public bool Them(DTO_DonVi dvt)
+        {
+            return DAL_DonVi.ThemDonVi(dvt);
+        }
+
+
+        public bool Xoa(string ma)
+        {
+            return DAL_DonVi.XoaDonVi(ma);
+        }
+
+        public string TaoMaDonViMoi()
+        {
+            return DAL_DonVi.LayMaDonViMoi();
+        }
+
     }
 }

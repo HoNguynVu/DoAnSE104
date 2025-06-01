@@ -12,7 +12,7 @@ namespace DoAnSE104.GUI
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true if managed resources should be disposed.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -31,111 +31,187 @@ namespace DoAnSE104.GUI
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxYear = new System.Windows.Forms.TextBox();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.LabelYear = new System.Windows.Forms.Label();
+            this.textBoxYear = new System.Windows.Forms.TextBox();
             this.LableMonth = new System.Windows.Forms.Label();
             this.textBoxMonth = new System.Windows.Forms.TextBox();
+            this.BtnCreateReport = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
+            this.LabelTotal = new System.Windows.Forms.Label();
+            this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.dataGridViewReport = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoBenhNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DoanhThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TyLe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LabelTotal = new System.Windows.Forms.Label();
-            this.textBoxTotal = new System.Windows.Forms.TextBox();
-            this.BtnCreateReport = new System.Windows.Forms.Button();
-            this.BtnCancel = new System.Windows.Forms.Button();
+            this.groupBoxInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReport)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(657, 54);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Báo cáo doanh thu theo ngày";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold);
+            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(33, 150, 243);
+            this.labelTitle.Location = new System.Drawing.Point(30, 20);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(670, 72);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Báo cáo doanh thu theo ngày";
             // 
-            // textBoxYear
+            // groupBoxInfo
             // 
-            this.textBoxYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxYear.Location = new System.Drawing.Point(43, 144);
-            this.textBoxYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxYear.Name = "textBoxYear";
-            this.textBoxYear.Size = new System.Drawing.Size(313, 34);
-            this.textBoxYear.TabIndex = 1;
-            this.textBoxYear.TextChanged += new System.EventHandler(this.TextBoxYear_TextChanged);
-            this.textBoxYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumber_KeyPress);
+            this.groupBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxInfo.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfo.Controls.Add(this.LabelYear);
+            this.groupBoxInfo.Controls.Add(this.textBoxYear);
+            this.groupBoxInfo.Controls.Add(this.LableMonth);
+            this.groupBoxInfo.Controls.Add(this.textBoxMonth);
+            this.groupBoxInfo.Controls.Add(this.BtnCreateReport);
+            this.groupBoxInfo.Controls.Add(this.BtnCancel);
+            this.groupBoxInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBoxInfo.Location = new System.Drawing.Point(30, 110);
+            this.groupBoxInfo.Name = "groupBoxInfo";
+            this.groupBoxInfo.Padding = new System.Windows.Forms.Padding(20);
+            this.groupBoxInfo.Size = new System.Drawing.Size(1100, 110);
+            this.groupBoxInfo.TabIndex = 1;
+            this.groupBoxInfo.TabStop = false;
+            this.groupBoxInfo.Text = "Thông tin báo cáo";
             // 
             // LabelYear
             // 
             this.LabelYear.AutoSize = true;
-            this.LabelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelYear.Location = new System.Drawing.Point(37, 106);
+            this.LabelYear.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LabelYear.Location = new System.Drawing.Point(30, 40);
             this.LabelYear.Name = "LabelYear";
-            this.LabelYear.Size = new System.Drawing.Size(195, 29);
-            this.LabelYear.TabIndex = 2;
-            this.LabelYear.Text = "Năm lập báo cáo";
+            this.LabelYear.Size = new System.Drawing.Size(129, 28);
+            this.LabelYear.TabIndex = 0;
+            this.LabelYear.Text = "Năm báo cáo";
+            // 
+            // textBoxYear
+            // 
+            this.textBoxYear.BackColor = System.Drawing.Color.White;
+            this.textBoxYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxYear.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxYear.Location = new System.Drawing.Point(34, 70);
+            this.textBoxYear.Name = "textBoxYear";
+            this.textBoxYear.Size = new System.Drawing.Size(180, 34);
+            this.textBoxYear.TabIndex = 1;
+            this.textBoxYear.TextChanged += new System.EventHandler(this.TextBoxYear_TextChanged);
+            this.textBoxYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumber_KeyPress);
             // 
             // LableMonth
             // 
             this.LableMonth.AutoSize = true;
-            this.LableMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LableMonth.Location = new System.Drawing.Point(395, 106);
+            this.LableMonth.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LableMonth.Location = new System.Drawing.Point(240, 40);
             this.LableMonth.Name = "LableMonth";
-            this.LableMonth.Size = new System.Drawing.Size(213, 29);
-            this.LableMonth.TabIndex = 4;
-            this.LableMonth.Text = "Tháng lập báo cáo";
+            this.LableMonth.Size = new System.Drawing.Size(141, 28);
+            this.LableMonth.TabIndex = 2;
+            this.LableMonth.Text = "Tháng báo cáo";
             // 
             // textBoxMonth
             // 
-            this.textBoxMonth.AcceptsReturn = true;
-            this.textBoxMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMonth.Location = new System.Drawing.Point(400, 144);
-            this.textBoxMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxMonth.BackColor = System.Drawing.Color.White;
+            this.textBoxMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMonth.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxMonth.Location = new System.Drawing.Point(244, 70);
             this.textBoxMonth.Name = "textBoxMonth";
-            this.textBoxMonth.Size = new System.Drawing.Size(313, 34);
+            this.textBoxMonth.Size = new System.Drawing.Size(180, 34);
             this.textBoxMonth.TabIndex = 3;
             this.textBoxMonth.TextChanged += new System.EventHandler(this.TextBoxMonth_TextChanged);
             this.textBoxMonth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumber_KeyPress);
             // 
+            // BtnCreateReport
+            // 
+            this.BtnCreateReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCreateReport.BackColor = System.Drawing.Color.FromArgb(33, 150, 243);
+            this.BtnCreateReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCreateReport.FlatAppearance.BorderSize = 0;
+            this.BtnCreateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCreateReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnCreateReport.ForeColor = System.Drawing.Color.White;
+            this.BtnCreateReport.Location = new System.Drawing.Point(731, 60);
+            this.BtnCreateReport.Name = "BtnCreateReport";
+            this.BtnCreateReport.Size = new System.Drawing.Size(220, 44);
+            this.BtnCreateReport.TabIndex = 4;
+            this.BtnCreateReport.Text = "Lập báo cáo";
+            this.BtnCreateReport.UseVisualStyleBackColor = false;
+            this.BtnCreateReport.Click += new System.EventHandler(this.BtnCreateReport_Click);
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCancel.BackColor = System.Drawing.Color.FromArgb(33, 150, 243);
+            this.BtnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCancel.FlatAppearance.BorderSize = 0;
+            this.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnCancel.ForeColor = System.Drawing.Color.White;
+            this.BtnCancel.Location = new System.Drawing.Point(957, 60);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(120, 44);
+            this.BtnCancel.TabIndex = 5;
+            this.BtnCancel.Text = "Thoát";
+            this.BtnCancel.UseVisualStyleBackColor = false;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // LabelTotal
+            // 
+            this.LabelTotal.AutoSize = true;
+            this.LabelTotal.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LabelTotal.Location = new System.Drawing.Point(34, 240);
+            this.LabelTotal.Name = "LabelTotal";
+            this.LabelTotal.Size = new System.Drawing.Size(223, 28);
+            this.LabelTotal.TabIndex = 6;
+            this.LabelTotal.Text = "Tổng doanh thu tháng:";
+            // 
+            // textBoxTotal
+            // 
+            this.textBoxTotal.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxTotal.Enabled = false;
+            this.textBoxTotal.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxTotal.Location = new System.Drawing.Point(260, 237);
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.Size = new System.Drawing.Size(220, 34);
+            this.textBoxTotal.TabIndex = 7;
+            // 
             // dataGridViewReport
             // 
+            this.dataGridViewReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.dataGridViewReport.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(33, 150, 243);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReport.ColumnHeadersHeight = 32;
             this.dataGridViewReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.Ngay,
-            this.SoBenhNhan,
-            this.DoanhThu,
-            this.TyLe});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewReport.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewReport.Location = new System.Drawing.Point(43, 338);
-            this.dataGridViewReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+                this.STT,
+                this.Ngay,
+                this.SoBenhNhan,
+                this.DoanhThu,
+                this.TyLe});
+            this.dataGridViewReport.EnableHeadersVisualStyles = false;
+            this.dataGridViewReport.GridColor = System.Drawing.Color.LightGray;
+            this.dataGridViewReport.Location = new System.Drawing.Point(30, 290);
             this.dataGridViewReport.Name = "dataGridViewReport";
+            this.dataGridViewReport.RowHeadersVisible = false;
             this.dataGridViewReport.RowHeadersWidth = 51;
-            this.dataGridViewReport.RowTemplate.Height = 24;
-            this.dataGridViewReport.Size = new System.Drawing.Size(962, 202);
-            this.dataGridViewReport.TabIndex = 100;
+            this.dataGridViewReport.RowTemplate.Height = 32;
+            this.dataGridViewReport.Size = new System.Drawing.Size(1100, 230);
+            this.dataGridViewReport.TabIndex = 8;
             // 
             // STT
             // 
@@ -148,7 +224,6 @@ namespace DoAnSE104.GUI
             this.Ngay.HeaderText = "NGÀY";
             this.Ngay.MinimumWidth = 6;
             this.Ngay.Name = "Ngay";
-            this.Ngay.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // SoBenhNhan
             // 
@@ -168,70 +243,22 @@ namespace DoAnSE104.GUI
             this.TyLe.MinimumWidth = 6;
             this.TyLe.Name = "TyLe";
             // 
-            // LabelTotal
-            // 
-            this.LabelTotal.AutoSize = true;
-            this.LabelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTotal.Location = new System.Drawing.Point(46, 289);
-            this.LabelTotal.Name = "LabelTotal";
-            this.LabelTotal.Size = new System.Drawing.Size(246, 29);
-            this.LabelTotal.TabIndex = 102;
-            this.LabelTotal.Text = "Tổng doanh thu tháng";
-            // 
-            // textBoxTotal
-            // 
-            this.textBoxTotal.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBoxTotal.Enabled = false;
-            this.textBoxTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTotal.Location = new System.Drawing.Point(328, 286);
-            this.textBoxTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxTotal.Name = "textBoxTotal";
-            this.textBoxTotal.Size = new System.Drawing.Size(345, 34);
-            this.textBoxTotal.TabIndex = 101;
-            // 
-            // BtnCreateReport
-            // 
-            this.BtnCreateReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCreateReport.Location = new System.Drawing.Point(528, 202);
-            this.BtnCreateReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnCreateReport.Name = "BtnCreateReport";
-            this.BtnCreateReport.Size = new System.Drawing.Size(333, 44);
-            this.BtnCreateReport.TabIndex = 103;
-            this.BtnCreateReport.Text = "Lập báo cáo doanh thu";
-            this.BtnCreateReport.UseVisualStyleBackColor = true;
-            this.BtnCreateReport.Click += new System.EventHandler(this.BtnCreateReport_Click);
-            // 
-            // BtnCancel
-            // 
-            this.BtnCancel.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Location = new System.Drawing.Point(876, 202);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(128, 44);
-            this.BtnCancel.TabIndex = 104;
-            this.BtnCancel.Text = "Thoát";
-            this.BtnCancel.UseVisualStyleBackColor = false;
-            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
             // GUI_LapBaoCaoDoanhThu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 562);
-            this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.BtnCreateReport);
-            this.Controls.Add(this.LabelTotal);
-            this.Controls.Add(this.textBoxTotal);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1160, 550);
             this.Controls.Add(this.dataGridViewReport);
-            this.Controls.Add(this.LableMonth);
-            this.Controls.Add(this.textBoxMonth);
-            this.Controls.Add(this.LabelYear);
-            this.Controls.Add(this.textBoxYear);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Controls.Add(this.textBoxTotal);
+            this.Controls.Add(this.LabelTotal);
+            this.Controls.Add(this.groupBoxInfo);
+            this.Controls.Add(this.labelTitle);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Name = "GUI_LapBaoCaoDoanhThu";
             this.Text = "Báo cáo doanh thu theo ngày";
+            this.groupBoxInfo.ResumeLayout(false);
+            this.groupBoxInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -240,20 +267,21 @@ namespace DoAnSE104.GUI
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxYear;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.GroupBox groupBoxInfo;
         private System.Windows.Forms.Label LabelYear;
+        private System.Windows.Forms.TextBox textBoxYear;
         private System.Windows.Forms.Label LableMonth;
         private System.Windows.Forms.TextBox textBoxMonth;
+        private System.Windows.Forms.Button BtnCreateReport;
+        private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Label LabelTotal;
+        private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.DataGridView dataGridViewReport;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngay;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoBenhNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn DoanhThu;
         private System.Windows.Forms.DataGridViewTextBoxColumn TyLe;
-        private System.Windows.Forms.Label LabelTotal;
-        private System.Windows.Forms.TextBox textBoxTotal;
-        private System.Windows.Forms.Button BtnCreateReport;
-        private System.Windows.Forms.Button BtnCancel;
     }
 }

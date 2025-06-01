@@ -26,6 +26,7 @@ namespace DoAnSE104.GUI
 
         public GUI_QuanLyLoaiThuoc() {
             InitializeComponent();
+            dgvDanhSachLoaiThuoc.CellPainting += dgvDanhSachLoaiThuoc_CellPainting;
             LoadDataToGridView();
             LoadDataDonVi();
             LoadDataCachDung();
@@ -72,6 +73,8 @@ namespace DoAnSE104.GUI
                 btnXoa.Text = "Xóa";
                 btnXoa.Name = "btnXoa";
                 btnXoa.UseColumnTextForButtonValue = true;
+                btnXoa.DefaultCellStyle.BackColor = Color.Red;
+                btnXoa.DefaultCellStyle.ForeColor = Color.White;
                 dgvDanhSachLoaiThuoc.Columns.Add(btnXoa);
             }
 
@@ -299,5 +302,45 @@ namespace DoAnSE104.GUI
             this.Close();
         }
 
+        private void GUI_QuanLyLoaiThuoc_Load(object sender, EventArgs e)
+        {
+            txtMaLoaiThuoc.Text = BUS_LoaiThuoc.LayMaLoaiThuocMoi(danhSachLoaiThuocMoi);
+            txtMaLoaiThuoc.Enabled = false; // Không cho phép chỉnh sửa mã loại thuốc mới
+        }
+        private void dgvDanhSachLoaiThuoc_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            try
+            {
+
+                if (e.RowIndex >= 0 && dgvDanhSachLoaiThuoc.Columns[e.ColumnIndex].Name == "btnXoa")
+                {
+                    e.PaintBackground(e.ClipBounds, true);
+
+                    // Check if the mouse is hovering over the cell
+                    bool isHovered = dgvDanhSachLoaiThuoc.CurrentCell != null &&
+                                     dgvDanhSachLoaiThuoc.CurrentCell.RowIndex == e.RowIndex &&
+                                     dgvDanhSachLoaiThuoc.CurrentCell.ColumnIndex == e.ColumnIndex;
+
+                    // Change background color based on hover state
+                    Color backColor = isHovered ? Color.Orange : Color.Red;
+
+                    using (Brush backColorBrush = new SolidBrush(backColor))
+                    {
+                        e.Graphics.FillRectangle(backColorBrush, e.CellBounds);
+                    }
+
+                    // Draw the text in the cell
+                    TextRenderer.DrawText(e.Graphics, "Xóa", dgvDanhSachLoaiThuoc.Font, e.CellBounds, Color.White,
+                        TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi vẽ ô: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
+
 }

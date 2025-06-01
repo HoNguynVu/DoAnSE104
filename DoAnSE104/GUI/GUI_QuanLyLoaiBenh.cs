@@ -22,6 +22,7 @@ namespace DoAnSE104.GUI
         {
             InitializeComponent();
             LoadDataToDataGridView();
+            //dataGridView1.CellPainting += dataGridView1_CellPainting;
 
         }
         private void LoadDataToDataGridView()
@@ -33,9 +34,11 @@ namespace DoAnSE104.GUI
 
                 // Always clear and add columns
                 dataGridView1.Columns.Clear();
-                dataGridView1.Columns.Add("STT", "STT");
-                dataGridView1.Columns.Add("MaLoaiBenh", "Mã Loại Bệnh");
-                dataGridView1.Columns.Add("TenLoaiBenh", "Tên Loại Bệnh");
+                if (dataGridView1.Columns.Count == 0)
+                {
+                    dataGridView1.Columns.Add("MaLoaiBenh", "Mã Loại Bệnh");
+                    dataGridView1.Columns.Add("TenLoaiBenh", "Tên Loại Bệnh");
+                }
 
                 // Add the button column
                 DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
@@ -43,6 +46,8 @@ namespace DoAnSE104.GUI
                 btnXoa.Text = "Xóa";
                 btnXoa.Name = "btnXoa";
                 btnXoa.UseColumnTextForButtonValue = true;
+                btnXoa.DefaultCellStyle.BackColor = Color.Red;
+                btnXoa.DefaultCellStyle.ForeColor = Color.White;
                 dataGridView1.Columns.Add(btnXoa);
 
                 // Populate rows
@@ -50,7 +55,7 @@ namespace DoAnSE104.GUI
                 foreach (DTO_LoaiBenh lb in dtLoaiBenhGoc)
                 {
                     dataGridView1.Rows.Add(
-                        dataGridView1.Rows.Count + 1,
+                        //dataGridView1.Rows.Count + 1,
                         lb.maLoaiBenh,
                         lb.tenLoaiBenh
                     );
@@ -174,7 +179,7 @@ namespace DoAnSE104.GUI
                 if (!dataGridView1.Columns.Contains("btnXoa"))
                 {
                     dataGridView1.Columns.Clear();
-                    dataGridView1.Columns.Add("STT", "STT");
+                    //dataGridView1.Columns.Add("STT", "STT");
                     dataGridView1.Columns.Add("MaLoaiBenh", "Mã Loại Bệnh");
                     dataGridView1.Columns.Add("TenLoaiBenh", "Tên Loại Bệnh");
 
@@ -190,7 +195,7 @@ namespace DoAnSE104.GUI
                 foreach (DTO_LoaiBenh lb in dtLoaiBenh)
                 {
                     dataGridView1.Rows.Add(
-                        dataGridView1.Rows.Count + 1,
+                        //dataGridView1.Rows.Count + 1,
                         lb.maLoaiBenh,
                         lb.tenLoaiBenh);
                 }
@@ -211,6 +216,39 @@ namespace DoAnSE104.GUI
             {
                 MessageBox.Show($"Lỗi khi tải lại dữ liệu: {ex.Message}",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "btnXoa")
+                {
+                    e.PaintBackground(e.ClipBounds, true);
+
+                    // Check if the mouse is hovering over the cell
+                    bool isHovered = dataGridView1.CurrentCell != null &&
+                                     dataGridView1.CurrentCell.RowIndex == e.RowIndex &&
+                                     dataGridView1.CurrentCell.ColumnIndex == e.ColumnIndex;
+
+                    // Change background color based on hover state
+                    Color backColor = isHovered ? Color.Orange : Color.Red;
+
+                    using (Brush backColorBrush = new SolidBrush(backColor))
+                    {
+                        e.Graphics.FillRectangle(backColorBrush, e.CellBounds);
+                    }
+
+                    // Draw the text in the cell
+                    TextRenderer.DrawText(e.Graphics, "Xóa", dataGridView1.Font, e.CellBounds, Color.White,
+                        TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi vẽ ô: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

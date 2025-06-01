@@ -129,4 +129,4 @@
 -   Với giao diện thân thiện và ví dụ minh họa rõ ràng, ứng dụng giúp người dùng, dù là người mới bắt đầu, dễ dàng tiếp cận các thuật toán phức tạp và ứng dụng chúng vào thực tiễn.
 
 ## ĐỒ ÁN MÔN HỌC: String-Matching(Đối sánh chuỗi)
-Tải ứng dụng tại website: <a href="https://drive.google.com/drive/u/0/folders/1fY5v830vhxOetjW3tnCvogEHLWJhp1N9">String-Matching</a>
+Tải ứng dụng tại website: <a href="Đường link file">Link</a>

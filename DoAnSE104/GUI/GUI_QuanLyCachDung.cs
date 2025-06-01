@@ -11,9 +11,14 @@ namespace DoAnSE104.GUI {
         private List<DTO_CachDung> listCachDung = new List<DTO_CachDung>();
         private List<DTO_CachDung> listCachDungMoi = new List<DTO_CachDung>();
         private string tenCachDung = string.Empty;
+
         public GUI_QuanLyCachDung() {
             InitializeComponent();
             LoadDataToGridView();
+            
+            // Display initial new code
+            txtMaCachDung.Text = busCachDung.LayMaCachDungMoi(listCachDungMoi);
+            txtMaCachDung.Enabled = false; // Make it read-only
             
             // Add CellClick event handler
             dgvDanhSachCachDung.CellClick += dgvDanhSachCachDung_CellClick;
@@ -62,17 +67,20 @@ namespace DoAnSE104.GUI {
 
         private void btnThemCachDung_Click(object sender, EventArgs e) {
             try {
+                // Generate new usage code first
+                string maCachDungMoi = busCachDung.LayMaCachDungMoi(listCachDungMoi);
+                
                 // Validate inputs
                 if (string.IsNullOrWhiteSpace(tenCachDung)) {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin loại thuốc!",
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin cách dùng!",
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Generate new medication code
-                string maCachDungMoi = busCachDung.LayMaCachDungMoi(listCachDungMoi);
+                // Display new code
+                txtMaCachDung.Text = maCachDungMoi;
 
-                // Create new drug type with the generated code
+                // Create new usage type with the generated code
                 DTO_CachDung newCachDung = new DTO_CachDung(maCachDungMoi, tenCachDung);
 
                 // Add to the lists and refresh DataGridView
@@ -83,11 +91,11 @@ namespace DoAnSE104.GUI {
                 // Clear input fields
                 txtCachDung.Clear();
 
-                MessageBox.Show($"Thêm loại thuốc thành công! Mã loại thuốc mới: {maCachDungMoi}",
+                MessageBox.Show($"Thêm cách dùng thành công! Mã cách dùng mới: {maCachDungMoi}",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex) {
-                MessageBox.Show($"Lỗi khi thêm loại thuốc: {ex.Message}",
+                MessageBox.Show($"Lỗi khi thêm cách dùng: {ex.Message}",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

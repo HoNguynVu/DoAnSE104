@@ -53,15 +53,17 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold);
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.labelTitle.Location = new System.Drawing.Point(30, 20);
+            this.labelTitle.Location = new System.Drawing.Point(34, 25);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(517, 72);
+            this.labelTitle.Size = new System.Drawing.Size(615, 86);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Quản lý đơn vị tính";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.btnSave);
+            this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.labelThemDonViTinh);
             this.groupBox1.Controls.Add(this.labelMaDonVi);
             this.groupBox1.Controls.Add(this.txtMaDonVi);
@@ -69,10 +71,11 @@
             this.groupBox1.Controls.Add(this.txtTenDonVi);
             this.groupBox1.Controls.Add(this.btnThemDonVi);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(30, 110);
+            this.groupBox1.Location = new System.Drawing.Point(34, 138);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(20);
-            this.groupBox1.Size = new System.Drawing.Size(1100, 230);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(22, 25, 22, 25);
+            this.groupBox1.Size = new System.Drawing.Size(1238, 288);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -81,9 +84,9 @@
             this.labelThemDonViTinh.AutoSize = true;
             this.labelThemDonViTinh.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.labelThemDonViTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.labelThemDonViTinh.Location = new System.Drawing.Point(25, 25);
+            this.labelThemDonViTinh.Location = new System.Drawing.Point(28, 31);
             this.labelThemDonViTinh.Name = "labelThemDonViTinh";
-            this.labelThemDonViTinh.Size = new System.Drawing.Size(234, 37);
+            this.labelThemDonViTinh.Size = new System.Drawing.Size(275, 45);
             this.labelThemDonViTinh.TabIndex = 0;
             this.labelThemDonViTinh.Text = "Thêm đơn vị tính";
             // 
@@ -91,9 +94,9 @@
             // 
             this.labelMaDonVi.AutoSize = true;
             this.labelMaDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelMaDonVi.Location = new System.Drawing.Point(30, 75);
+            this.labelMaDonVi.Location = new System.Drawing.Point(34, 94);
             this.labelMaDonVi.Name = "labelMaDonVi";
-            this.labelMaDonVi.Size = new System.Drawing.Size(100, 28);
+            this.labelMaDonVi.Size = new System.Drawing.Size(122, 32);
             this.labelMaDonVi.TabIndex = 1;
             this.labelMaDonVi.Text = "Mã đơn vị";
             // 
@@ -102,19 +105,20 @@
             this.txtMaDonVi.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMaDonVi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtMaDonVi.Location = new System.Drawing.Point(34, 105);
+            this.txtMaDonVi.Location = new System.Drawing.Point(38, 131);
+            this.txtMaDonVi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaDonVi.Name = "txtMaDonVi";
             this.txtMaDonVi.ReadOnly = true;
-            this.txtMaDonVi.Size = new System.Drawing.Size(220, 34);
+            this.txtMaDonVi.Size = new System.Drawing.Size(247, 39);
             this.txtMaDonVi.TabIndex = 2;
             // 
             // labelTenDonVi
             // 
             this.labelTenDonVi.AutoSize = true;
             this.labelTenDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelTenDonVi.Location = new System.Drawing.Point(270, 75);
+            this.labelTenDonVi.Location = new System.Drawing.Point(304, 94);
             this.labelTenDonVi.Name = "labelTenDonVi";
-            this.labelTenDonVi.Size = new System.Drawing.Size(101, 28);
+            this.labelTenDonVi.Size = new System.Drawing.Size(126, 32);
             this.labelTenDonVi.TabIndex = 3;
             this.labelTenDonVi.Text = "Tên đơn vị";
             // 
@@ -122,9 +126,10 @@
             // 
             this.txtTenDonVi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTenDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtTenDonVi.Location = new System.Drawing.Point(274, 105);
+            this.txtTenDonVi.Location = new System.Drawing.Point(308, 131);
+            this.txtTenDonVi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenDonVi.Name = "txtTenDonVi";
-            this.txtTenDonVi.Size = new System.Drawing.Size(220, 34);
+            this.txtTenDonVi.Size = new System.Drawing.Size(247, 39);
             this.txtTenDonVi.TabIndex = 4;
             // 
             // btnThemDonVi
@@ -135,9 +140,10 @@
             this.btnThemDonVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemDonVi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnThemDonVi.ForeColor = System.Drawing.Color.White;
-            this.btnThemDonVi.Location = new System.Drawing.Point(927, 25);
+            this.btnThemDonVi.Location = new System.Drawing.Point(1043, 31);
+            this.btnThemDonVi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThemDonVi.Name = "btnThemDonVi";
-            this.btnThemDonVi.Size = new System.Drawing.Size(150, 45);
+            this.btnThemDonVi.Size = new System.Drawing.Size(169, 56);
             this.btnThemDonVi.TabIndex = 5;
             this.btnThemDonVi.Text = "Thêm đơn vị";
             this.btnThemDonVi.UseVisualStyleBackColor = false;
@@ -163,7 +169,8 @@
             this.ThaoTac});
             this.dgvDanhSachLoaiThuoc.EnableHeadersVisualStyles = false;
             this.dgvDanhSachLoaiThuoc.GridColor = System.Drawing.Color.LightGray;
-            this.dgvDanhSachLoaiThuoc.Location = new System.Drawing.Point(30, 360);
+            this.dgvDanhSachLoaiThuoc.Location = new System.Drawing.Point(34, 450);
+            this.dgvDanhSachLoaiThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvDanhSachLoaiThuoc.Name = "dgvDanhSachLoaiThuoc";
             this.dgvDanhSachLoaiThuoc.RowHeadersVisible = false;
             this.dgvDanhSachLoaiThuoc.RowHeadersWidth = 51;
@@ -229,7 +236,7 @@
             // 
             // GUI_QuanLyDonViTinh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1160, 700);
@@ -238,6 +245,7 @@
             this.Controls.Add(this.dgvDanhSachLoaiThuoc);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelTitle);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "GUI_QuanLyDonViTinh";
             this.Text = "Quản lý loại thuốc";
             this.groupBox1.ResumeLayout(false);

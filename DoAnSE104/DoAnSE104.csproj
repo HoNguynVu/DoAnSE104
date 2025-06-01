@@ -172,6 +172,18 @@
     <EmbeddedResource Include="GUI\GUI_LapPhieuKhamBenh.resx">
       <DependentUpon>GUI_LapPhieuKhamBenh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_QuanLyCachDung.resx">
+      <DependentUpon>GUI_QuanLyCachDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_QuanLyDonViTinh.resx">
+      <DependentUpon>GUI_QuanLyDonViTinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_QuanLyLoaiBenh.resx">
+      <DependentUpon>GUI_QuanLyLoaiBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI_QuanLyLoaiThuoc.resx">
+      <DependentUpon>GUI_QuanLyLoaiThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUI_TiepNhanBenhNhan.resx">
       <DependentUpon>GUI_TiepNhanBenhNhan.cs</DependentUpon>
     </EmbeddedResource>

@@ -13,8 +13,10 @@
 -   [ Giới thiệu môn học](#gioithieumonhoc)
 -   [ Giảng viên hướng dẫn](#giangvien)
 -   [ Thành viên nhóm](#thanhvien)
--   [ Đồ án môn học](#doan)
+-   [ Sản phẩm môn học](#sanpham)
 -   [ Mô tả tổng quát](#description)
+-   [ Mô tả tổng quát](#specific)
+
 
 ## GIỚI THIỆU MÔN HỌC
 
@@ -114,8 +116,8 @@
   </tr>
 </table>
 
-## ĐỒ ÁN MÔN HỌC: Quản lý Phòng Mạch Tư
-<a name="doan"></a>
+## SẢN PHẨM MÔN HỌC: Quản lý Phòng Mạch Tư
+<a name="sanpham"></a>
 Tải ứng dụng tại website: <a href="Đường link file">Link</a>
 
 ## MÔ TẢ TỔNG QUÁT
@@ -132,4 +134,6 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
 -   Ứng dụng mô phỏng cách hoạt động của màn hình và tối ưu hóa các xử lý logic thông qua các tương tác trực quan.
 -   Với giao diện thân thiện và ví dụ minh họa rõ ràng, ứng dụng giúp người dùng, dù là người mới bắt đầu, dễ dàng tiếp cận các thuật toán phức tạp và ứng dụng chúng vào thực tiễn.
 
+## MÔ TẢ CHI TIẾT
+<a name="specific"></a>
 

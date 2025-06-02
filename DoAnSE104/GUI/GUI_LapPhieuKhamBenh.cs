@@ -247,6 +247,25 @@ namespace DoAnSE104.GUI
                 return;
             }
 
+            string maKhamBenh = txtMaKhamBenh.Text.Trim();
+
+            try 
+            {
+                DTO_KhamBenh khamBenh = BUS_KhamBenh.LayThongTinKhamBenh(maKhamBenh);
+                if (khamBenh != null && !string.IsNullOrEmpty(khamBenh.maLoaiBenh))
+                {
+                    MessageBox.Show("Phiếu khám bệnh này đã được lập trước đó!", 
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi kiểm tra thông tin khám bệnh: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (dataGridViewPhieuKham.Rows.Count <= 1) 
             {
                 MessageBox.Show("Vui lòng thêm ít nhất một loại thuốc!", 
@@ -256,7 +275,6 @@ namespace DoAnSE104.GUI
 
             try
             {
-                string maKhamBenh = txtMaKhamBenh.Text.Trim();
                 string maLoaiBenh = cboLoaiBenh.SelectedValue?.ToString();
                 string trieuChung = txtTrieuChung.Text.Trim();
 
@@ -323,7 +341,6 @@ namespace DoAnSE104.GUI
             }
         }
 
-
         private void dataGridViewPhieuKham_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -352,7 +369,7 @@ namespace DoAnSE104.GUI
                 return;
             }
 
-            int lastNonNewRowIndex = dataGridViewPhieuKham.Rows.Count - 2; // Index of last non-new row
+            int lastNonNewRowIndex = dataGridViewPhieuKham.Rows.Count - 2;  
             if (lastNonNewRowIndex >= 0 && dataGridViewPhieuKham.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
             {
                 dataGridViewPhieuKham.AllowUserToAddRows = true;

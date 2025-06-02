@@ -1,14 +1,9 @@
 ﻿using DoAnSE104.BUS;
-using DoAnSE104.DAL;
 using DoAnSE104.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DoAnSE104.GUI
@@ -200,7 +195,7 @@ namespace DoAnSE104.GUI
         }
 
         private void txtDonGia_TextChanged(object sender, EventArgs e) {
-            tenCachDung = txtDonGia.Text.Trim();
+            donGia = txtDonGia.Text.Trim();
         }
 
         private void cbDonVi_SelectedIndexChanged(object sender, EventArgs e) {
@@ -217,57 +212,58 @@ namespace DoAnSE104.GUI
                 string maLoaiThuocMoi = BUS_LoaiThuoc.LayMaLoaiThuocMoi(danhSachLoaiThuocMoi);
 
                 // Validate inputs
-                if (string.IsNullOrWhiteSpace(tenLoaiThuoc) ||
-                    string.IsNullOrWhiteSpace(tenDonVi) ||
-                    string.IsNullOrWhiteSpace(tenCachDung) ||
-                    string.IsNullOrWhiteSpace(txtDonGia.Text)) {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin loại thuốc!", 
+                if (!string.IsNullOrWhiteSpace(tenLoaiThuoc) &&
+                    !string.IsNullOrWhiteSpace(tenDonVi) &&
+                    !string.IsNullOrWhiteSpace(tenCachDung) &&
+                    !string.IsNullOrWhiteSpace(donGia)) {
+                    // Convert price to double
+                    if (!double.TryParse(txtDonGia.Text.Trim(), out double donGia) || donGia <= 0) {
+                        MessageBox.Show("Đơn giá không hợp lệ!",
+                            "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    // Find selected DonVi and CachDung objects
+                    DTO_DonVi selectedDonVi = BUS_DonVi.LayDanhSachDonVi()
+                        .FirstOrDefault(d => d.tenDonVi == tenDonVi);
+                    DTO_CachDung selectedCachDung = BUS_CachDung.LayDanhSachCachDung()
+                        .FirstOrDefault(c => c.tenCachDung == tenCachDung);
+
+                    if (selectedDonVi == null || selectedCachDung == null) {
+                        MessageBox.Show("Đơn vị hoặc cách dùng không hợp lệ!",
+                            "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+
+                    // Create new drug type with the generated code
+                    DTO_LoaiThuoc newLoaiThuoc = new DTO_LoaiThuoc {
+                        maLoaiThuoc = maLoaiThuocMoi,
+                        tenLoaiThuoc = tenLoaiThuoc,
+                        maDonVi = selectedDonVi.maDonVi,
+                        maCachDung = selectedCachDung.maCachDung,
+                        donGia = donGia
+                    };
+
+                    // Add to the lists and refresh DataGridView
+                    danhSachLoaiThuoc.Add(newLoaiThuoc);
+                    danhSachLoaiThuocMoi.Add(newLoaiThuoc);
+                    ReloadDataToGridView();
+
+                    // Clear input fields
+                    txtTenLoaiThuoc.Clear();
+                    txtDonGia.Clear();
+                    cbDonVi.SelectedIndex = -1;
+                    cbCachDung.SelectedIndex = -1;
+
+                    MessageBox.Show($"Thêm loại thuốc thành công! Mã loại thuốc mới: {maLoaiThuocMoi}",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin loại thuốc!",
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
-                // Convert price to double
-                if (!double.TryParse(txtDonGia.Text.Trim(), out double donGia) || donGia <= 0) {
-                    MessageBox.Show("Đơn giá không hợp lệ!", 
-                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // Find selected DonVi and CachDung objects
-                DTO_DonVi selectedDonVi = BUS_DonVi.LayDanhSachDonVi()
-                    .FirstOrDefault(d => d.tenDonVi == tenDonVi);
-                DTO_CachDung selectedCachDung = BUS_CachDung.LayDanhSachCachDung()
-                    .FirstOrDefault(c => c.tenCachDung == tenCachDung);
-
-                if (selectedDonVi == null || selectedCachDung == null) {
-                    MessageBox.Show("Đơn vị hoặc cách dùng không hợp lệ!", 
-                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                
-                // Create new drug type with the generated code
-                DTO_LoaiThuoc newLoaiThuoc = new DTO_LoaiThuoc {
-                    maLoaiThuoc = maLoaiThuocMoi,
-                    tenLoaiThuoc = tenLoaiThuoc,
-                    maDonVi = selectedDonVi.maDonVi,
-                    maCachDung = selectedCachDung.maCachDung,
-                    donGia = donGia
-                };
-
-                // Add to the lists and refresh DataGridView
-                danhSachLoaiThuoc.Add(newLoaiThuoc);
-                danhSachLoaiThuocMoi.Add(newLoaiThuoc);
-                ReloadDataToGridView();
-
-                // Clear input fields
-                txtTenLoaiThuoc.Clear();
-                txtDonGia.Clear();
-                cbDonVi.SelectedIndex = -1;
-                cbCachDung.SelectedIndex = -1;
-
-                MessageBox.Show($"Thêm loại thuốc thành công! Mã loại thuốc mới: {maLoaiThuocMoi}", 
-                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex) {
                 MessageBox.Show($"Lỗi khi thêm loại thuốc: {ex.Message}", 

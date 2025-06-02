@@ -24,7 +24,7 @@ namespace DoAnSE104.GUI
 
         private void LayMaBenhNhanMoi()
         {
-            maBenhNhan.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
+            txtMaBenhNhan.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
         }
 
         private void GUI_TiepNhanBenhNhan_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace DoAnSE104.GUI
             txtDiaChi.Clear();
             txtGioiTinh.Clear();
             txtNamSinh.Clear();
-            maBenhNhan.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
+            txtMaBenhNhan.Text = BUS_BenhNhan.LayMaBenhNhanMoi();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace DoAnSE104.GUI
                 return;
             }
             DTO_BenhNhan newBenhNhan = new DTO_BenhNhan(
-                maBenhNhan.Text,
+                txtMaBenhNhan.Text,
                 txtHoTen.Text.Trim(),
                 txtGioiTinh.Text.Trim(),
                 int.Parse(txtNamSinh.Text.Trim()),

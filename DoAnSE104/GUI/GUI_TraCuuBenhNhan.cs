@@ -63,10 +63,10 @@ namespace DoAnSE104.GUI
             List<DTO_LoaiBenh> danhSach = BUS_LoaiBenh.LayDanhSachLoaiBenh();
             danhSach.Insert(0, new DTO_LoaiBenh { maLoaiBenh ="", tenLoaiBenh = ""});
 
-            cmbTenLoaiBenh.DataSource = danhSach;
-            cmbTenLoaiBenh.DisplayMember = "tenLoaiBenh";
-            cmbTenLoaiBenh.ValueMember = "maLoaiBenh";
-            cmbTenLoaiBenh.SelectedIndex = 0;
+            cbbTenLoaiBenh.DataSource = danhSach;
+            cbbTenLoaiBenh.DisplayMember = "tenLoaiBenh";
+            cbbTenLoaiBenh.ValueMember = "maLoaiBenh";
+            cbbTenLoaiBenh.SelectedIndex = 0;
         }
 
         private void LoadDanhSachLoaiThuoc()
@@ -74,20 +74,20 @@ namespace DoAnSE104.GUI
             List<DTO_LoaiThuoc> danhSach = BUS_LoaiThuoc.LayDanhSachLoaiThuoc();
             danhSach.Insert(0, new DTO_LoaiThuoc { maLoaiThuoc = "", tenLoaiThuoc = "" });
 
-            cmbTenLoaiThuoc.DataSource = danhSach;
-            cmbTenLoaiThuoc.DisplayMember = "tenLoaiThuoc";
-            cmbTenLoaiThuoc.ValueMember = "maLoaiThuoc";
-            cmbTenLoaiThuoc.SelectedIndex = 0;
+            cbbTenLoaiThuoc.DataSource = danhSach;
+            cbbTenLoaiThuoc.DisplayMember = "tenLoaiThuoc";
+            cbbTenLoaiThuoc.ValueMember = "maLoaiThuoc";
+            cbbTenLoaiThuoc.SelectedIndex = 0;
         }
         private void LoadDanhSachDonVi()
         {
             List<DTO_DonVi> danhSach = BUS_LoaiThuoc.LayDanhSachDonVi();
             danhSach.Insert(0, new DTO_DonVi ("",""));
 
-            cmbDonVi.DataSource = danhSach;
-            cmbDonVi.DisplayMember = "tenDonVi";
-            cmbDonVi.ValueMember = "maDonVi";
-            cmbDonVi.SelectedIndex = 0;
+            cbbDonVi.DataSource = danhSach;
+            cbbDonVi.DisplayMember = "tenDonVi";
+            cbbDonVi.ValueMember = "maDonVi";
+            cbbDonVi.SelectedIndex = 0;
         }
 
         private void LoadDanhSachPhieuKham()
@@ -95,10 +95,10 @@ namespace DoAnSE104.GUI
             List<DTO_KhamBenh> danhSach = BUS_KhamBenh.LayDanhSachKhamBenh();
             danhSach.Insert(0, new DTO_KhamBenh { maKhamBenh = "" });
 
-            cmbMaPhieuKhamTu.DataSource = danhSach;
-            cmbMaPhieuKhamTu.DisplayMember = "maKhamBenh";
-            cmbMaPhieuKhamTu.ValueMember = "maKhamBenh";
-            cmbMaPhieuKhamTu.SelectedIndex = 0;
+            cbbMaPhieuKhamTu.DataSource = danhSach;
+            cbbMaPhieuKhamTu.DisplayMember = "maKhamBenh";
+            cbbMaPhieuKhamTu.ValueMember = "maKhamBenh";
+            cbbMaPhieuKhamTu.SelectedIndex = 0;
         }
 
         private void HienThiKetQua(List<DTO_BenhNhanTraCuu> danhSach)
@@ -163,14 +163,14 @@ namespace DoAnSE104.GUI
             int? namSinhTu = (numericNamSinhTu.Value > 0) ? (int?)numericNamSinhTu.Value : null;
             int? namSinhDen = (numericNamSinhDen.Value > 0) ? (int?)numericNamSinhDen.Value : null;
             List<DTO_BenhNhanTraCuu> ketQua = BUS_TraCuu.LayDanhSachBenhNhanTraCuu(txtMaBenhNhan.Text, txtHoTen.Text,
-                txtGioiTinh.Text, txtDiaChi.Text, txtTrieuChung.Text, cmbTenLoaiBenh.SelectedValue?.ToString() ?? "",
+                txtGioiTinh.Text, txtDiaChi.Text, txtTrieuChung.Text, cbbTenLoaiBenh.SelectedValue?.ToString() ?? "",
                 dtpNgayKhamTu.Checked ? dtpNgayKhamTu.Value : (DateTime?)null,
                 dtpNgayKhamDen.Checked ? dtpNgayKhamDen.Value : (DateTime?)null,
                 namSinhTu, namSinhDen,
-                cmbMaPhieuKhamTu.SelectedValue?.ToString() ?? "",
-                cmbMaPhieuKhamDen.SelectedValue?.ToString() ?? "",
-                cmbTenLoaiThuoc.SelectedValue?.ToString() ?? "",
-                cmbDonVi.SelectedValue?.ToString() ?? ""
+                cbbMaPhieuKhamTu.SelectedValue?.ToString() ?? "",
+                cbbMaPhieuKhamDen.SelectedValue?.ToString() ?? "",
+                cbbTenLoaiThuoc.SelectedValue?.ToString() ?? "",
+                cbbDonVi.SelectedValue?.ToString() ?? ""
                 );
             MessageBox.Show($"Tìm thấy {ketQua.Count} kết quả");
             HienThiKetQua(ketQua);

@@ -28,171 +28,235 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label13 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTenLoaiBenh = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
+            this.labelThemLoaiBenh = new System.Windows.Forms.Label();
+            this.labelMaLoaiBenh = new System.Windows.Forms.Label();
             this.txtMaLoaiBenh = new System.Windows.Forms.TextBox();
-            this.btnNewLoaiBenh = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.labelTenLoaiBenh = new System.Windows.Forms.Label();
+            this.txtTenLoaiBenh = new System.Windows.Forms.TextBox();
+            this.btnThemLoaiBenh = new System.Windows.Forms.Button();
+            this.dgvDanhSachLoaiBenh = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLoaiBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThaoTac = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.groupBoxInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLoaiBenh)).BeginInit();
             this.SuspendLayout();
             // 
-            // label13
+            // labelTitle
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(16, 19);
-            this.label13.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(411, 62);
-            this.label13.TabIndex = 117;
-            this.label13.Text = "Quản lý loại bệnh";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold);
+            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.labelTitle.Location = new System.Drawing.Point(30, 20);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(475, 72);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Quản lý loại bệnh";
             // 
-            // label1
+            // groupBoxInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(25, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 32);
-            this.label1.TabIndex = 117;
-            this.label1.Text = "Thêm loại bệnh";
+            this.groupBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxInfo.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfo.Controls.Add(this.labelThemLoaiBenh);
+            this.groupBoxInfo.Controls.Add(this.labelMaLoaiBenh);
+            this.groupBoxInfo.Controls.Add(this.txtMaLoaiBenh);
+            this.groupBoxInfo.Controls.Add(this.labelTenLoaiBenh);
+            this.groupBoxInfo.Controls.Add(this.txtTenLoaiBenh);
+            this.groupBoxInfo.Controls.Add(this.btnThemLoaiBenh);
+            this.groupBoxInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBoxInfo.Location = new System.Drawing.Point(30, 110);
+            this.groupBoxInfo.Name = "groupBoxInfo";
+            this.groupBoxInfo.Padding = new System.Windows.Forms.Padding(20);
+            this.groupBoxInfo.Size = new System.Drawing.Size(1100, 230);
+            this.groupBoxInfo.TabIndex = 1;
+            this.groupBoxInfo.TabStop = false;
             // 
-            // txtTenLoaiBenh
+            // labelThemLoaiBenh
             // 
-            this.txtTenLoaiBenh.BackColor = System.Drawing.SystemColors.Window;
-            this.txtTenLoaiBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenLoaiBenh.Location = new System.Drawing.Point(589, 147);
-            this.txtTenLoaiBenh.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenLoaiBenh.Name = "txtTenLoaiBenh";
-            this.txtTenLoaiBenh.Size = new System.Drawing.Size(472, 34);
-            this.txtTenLoaiBenh.TabIndex = 118;
-            this.txtTenLoaiBenh.TextChanged += new System.EventHandler(this.txtTenLoaiBenh_TextChanged);
+            this.labelThemLoaiBenh.AutoSize = true;
+            this.labelThemLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.labelThemLoaiBenh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.labelThemLoaiBenh.Location = new System.Drawing.Point(25, 35);
+            this.labelThemLoaiBenh.Name = "labelThemLoaiBenh";
+            this.labelThemLoaiBenh.Size = new System.Drawing.Size(215, 37);
+            this.labelThemLoaiBenh.TabIndex = 0;
+            this.labelThemLoaiBenh.Text = "Thêm loại bệnh";
             // 
-            // label2
+            // labelMaLoaiBenh
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 104);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 29);
-            this.label2.TabIndex = 119;
-            this.label2.Text = "Mã loại bệnh";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(584, 104);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 29);
-            this.label3.TabIndex = 119;
-            this.label3.Text = "Tên loại bệnh";
+            this.labelMaLoaiBenh.AutoSize = true;
+            this.labelMaLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelMaLoaiBenh.Location = new System.Drawing.Point(30, 90);
+            this.labelMaLoaiBenh.Name = "labelMaLoaiBenh";
+            this.labelMaLoaiBenh.Size = new System.Drawing.Size(126, 28);
+            this.labelMaLoaiBenh.TabIndex = 1;
+            this.labelMaLoaiBenh.Text = "Mã loại bệnh";
             // 
             // txtMaLoaiBenh
             // 
-            this.txtMaLoaiBenh.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtMaLoaiBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaLoaiBenh.Location = new System.Drawing.Point(31, 147);
-            this.txtMaLoaiBenh.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaLoaiBenh.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtMaLoaiBenh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtMaLoaiBenh.Location = new System.Drawing.Point(34, 120);
             this.txtMaLoaiBenh.Name = "txtMaLoaiBenh";
-            this.txtMaLoaiBenh.Size = new System.Drawing.Size(472, 34);
-            this.txtMaLoaiBenh.TabIndex = 118;
+            this.txtMaLoaiBenh.ReadOnly = true;
+            this.txtMaLoaiBenh.Size = new System.Drawing.Size(220, 34);
+            this.txtMaLoaiBenh.TabIndex = 2;
             // 
-            // btnNewLoaiBenh
+            // labelTenLoaiBenh
             // 
-            this.btnNewLoaiBenh.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnNewLoaiBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewLoaiBenh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNewLoaiBenh.Location = new System.Drawing.Point(861, 20);
-            this.btnNewLoaiBenh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNewLoaiBenh.Name = "btnNewLoaiBenh";
-            this.btnNewLoaiBenh.Size = new System.Drawing.Size(200, 50);
-            this.btnNewLoaiBenh.TabIndex = 120;
-            this.btnNewLoaiBenh.Text = "Thêm loại bệnh";
-            this.btnNewLoaiBenh.UseVisualStyleBackColor = false;
-            this.btnNewLoaiBenh.Click += new System.EventHandler(this.btnNewLoaiBenh_Click);
+            this.labelTenLoaiBenh.AutoSize = true;
+            this.labelTenLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelTenLoaiBenh.Location = new System.Drawing.Point(270, 90);
+            this.labelTenLoaiBenh.Name = "labelTenLoaiBenh";
+            this.labelTenLoaiBenh.Size = new System.Drawing.Size(127, 28);
+            this.labelTenLoaiBenh.TabIndex = 3;
+            this.labelTenLoaiBenh.Text = "Tên loại bệnh";
             // 
-            // groupBox1
+            // txtTenLoaiBenh
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.btnCancel);
-            this.groupBox1.Controls.Add(this.txtMaLoaiBenh);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnNewLoaiBenh);
-            this.groupBox1.Controls.Add(this.txtTenLoaiBenh);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(27, 111);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1098, 278);
-            this.groupBox1.TabIndex = 122;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.txtTenLoaiBenh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtTenLoaiBenh.Location = new System.Drawing.Point(274, 120);
+            this.txtTenLoaiBenh.Name = "txtTenLoaiBenh";
+            this.txtTenLoaiBenh.Size = new System.Drawing.Size(220, 34);
+            this.txtTenLoaiBenh.TabIndex = 4;
             // 
-            // btnSave
+            // btnThemLoaiBenh
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(814, 214);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 50);
-            this.btnSave.TabIndex = 122;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnLuu_Click);
+            this.btnThemLoaiBenh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemLoaiBenh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnThemLoaiBenh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemLoaiBenh.FlatAppearance.BorderSize = 0;
+            this.btnThemLoaiBenh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThemLoaiBenh.ForeColor = System.Drawing.Color.White;
+            this.btnThemLoaiBenh.Location = new System.Drawing.Point(877, 34);
+            this.btnThemLoaiBenh.Name = "btnThemLoaiBenh";
+            this.btnThemLoaiBenh.Size = new System.Drawing.Size(200, 44);
+            this.btnThemLoaiBenh.TabIndex = 5;
+            this.btnThemLoaiBenh.Text = "Thêm loại bệnh";
+            this.btnThemLoaiBenh.UseVisualStyleBackColor = false;
+            this.btnThemLoaiBenh.Click += new System.EventHandler(this.btnNewLoaiBenh_Click);
             // 
-            // btnCancel
+            // dgvDanhSachLoaiBenh
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancel.Location = new System.Drawing.Point(937, 214);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(124, 50);
-            this.btnCancel.TabIndex = 121;
-            this.btnCancel.Text = "Thoát";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.dgvDanhSachLoaiBenh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDanhSachLoaiBenh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDanhSachLoaiBenh.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDanhSachLoaiBenh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachLoaiBenh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDanhSachLoaiBenh.ColumnHeadersHeight = 32;
+            this.dgvDanhSachLoaiBenh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.MaLoaiBenh,
+            this.TenLoaiBenh,
+            this.ThaoTac});
+            this.dgvDanhSachLoaiBenh.EnableHeadersVisualStyles = false;
+            this.dgvDanhSachLoaiBenh.GridColor = System.Drawing.Color.LightGray;
+            this.dgvDanhSachLoaiBenh.Location = new System.Drawing.Point(30, 360);
+            this.dgvDanhSachLoaiBenh.Name = "dgvDanhSachLoaiBenh";
+            this.dgvDanhSachLoaiBenh.RowHeadersVisible = false;
+            this.dgvDanhSachLoaiBenh.RowHeadersWidth = 51;
+            this.dgvDanhSachLoaiBenh.RowTemplate.Height = 32;
+            this.dgvDanhSachLoaiBenh.Size = new System.Drawing.Size(1100, 230);
+            this.dgvDanhSachLoaiBenh.TabIndex = 2;
+            this.dgvDanhSachLoaiBenh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // dataGridView1
+            // STT
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 408);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1098, 150);
-            this.dataGridView1.TabIndex = 123;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            // 
+            // MaLoaiBenh
+            // 
+            this.MaLoaiBenh.HeaderText = "MÃ LOẠI BỆNH";
+            this.MaLoaiBenh.MinimumWidth = 6;
+            this.MaLoaiBenh.Name = "MaLoaiBenh";
+            // 
+            // TenLoaiBenh
+            // 
+            this.TenLoaiBenh.HeaderText = "TÊN LOẠI BỆNH";
+            this.TenLoaiBenh.MinimumWidth = 6;
+            this.TenLoaiBenh.Name = "TenLoaiBenh";
+            // 
+            // ThaoTac
+            // 
+            this.ThaoTac.HeaderText = "THAO TÁC";
+            this.ThaoTac.MinimumWidth = 6;
+            this.ThaoTac.Name = "ThaoTac";
+            this.ThaoTac.Text = "Xóa";
+            this.ThaoTac.UseColumnTextForButtonValue = true;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuu.FlatAppearance.BorderSize = 0;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(30, 605);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(200, 44);
+            this.btnLuu.TabIndex = 9;
+            this.btnLuu.Text = "Lưu thay đổi";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThoat.FlatAppearance.BorderSize = 0;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(930, 605);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(200, 44);
+            this.btnThoat.TabIndex = 8;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // GUI_QuanLyLoaiBenh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 703);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label13);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1160, 670);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.dgvDanhSachLoaiBenh);
+            this.Controls.Add(this.groupBoxInfo);
+            this.Controls.Add(this.labelTitle);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Name = "GUI_QuanLyLoaiBenh";
-            this.Text = "Form1";
+            this.Text = "Quản lý loại bệnh";
             this.Load += new System.EventHandler(this.GUI_QuanLyLoaiBenh_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBoxInfo.ResumeLayout(false);
+            this.groupBoxInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLoaiBenh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,16 +264,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTenLoaiBenh;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.GroupBox groupBoxInfo;
+        private System.Windows.Forms.Label labelThemLoaiBenh;
+        private System.Windows.Forms.Label labelMaLoaiBenh;
         private System.Windows.Forms.TextBox txtMaLoaiBenh;
-        private System.Windows.Forms.Button btnNewLoaiBenh;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelTenLoaiBenh;
+        private System.Windows.Forms.TextBox txtTenLoaiBenh;
+        private System.Windows.Forms.Button btnThemLoaiBenh;
+        private System.Windows.Forms.DataGridView dgvDanhSachLoaiBenh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiBenh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiBenh;
+        private System.Windows.Forms.DataGridViewButtonColumn ThaoTac;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

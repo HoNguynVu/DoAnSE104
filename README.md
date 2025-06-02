@@ -137,3 +137,164 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
 ## MÔ TẢ CHI TIẾT
 <a name="specific"></a>
 
+<h3> 1. Database </h3>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Relation</th>
+      <th>Meaning</th>
+      <th>Attributes</th>
+      <th>Data Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>BENHNHAN</td>
+      <td>Store patient information</td>
+      <td>
+        <b>MaBenhNhan</b> - <span style="color:red">Primary key</span><br>
+        HoTen<br>
+        GioiTinh<br>
+        NamSinh<br>
+        DiaChi
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(100)<br>
+        VARCHAR(10)<br>
+        YEAR<br>
+        VARCHAR(255)
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>LOAIBENH</td>
+      <td>Store disease categories</td>
+      <td>
+        <b>MaLoaiBenh</b> - <span style="color:red">Primary key</span><br>
+        TenLoaiBenh
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(100)
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>KHAMBENH</td>
+      <td>Store medical examination records</td>
+      <td>
+        <b>MaKhamBenh</b> - <span style="color:red">Primary key</span><br>
+        NgayKham<br>
+        MaBenhNhan - <span style="color:blue">Foreign key</span><br>
+        TrieuChung<br>
+        MaLoaiBenh - <span style="color:blue">Foreign key</span>
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        DATE<br>
+        VARCHAR(10)<br>
+        TEXT<br>
+        VARCHAR(10)
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>THAMSO</td>
+      <td>System parameters</td>
+      <td>
+        SoLuongBenhNhanToiDaTrongNgay<br>
+        QuyDinhSoLuongBenhNhanToiDaTrongNgay<br>
+        TienKhamCoDinh<br>
+        QuyDinhTienKhamCoDinh
+      </td>
+      <td>
+        INT<br>
+        BOOLEAN<br>
+        DECIMAL(10,2)<br>
+        BOOLEAN
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>HOADON</td>
+      <td>Store invoice information</td>
+      <td>
+        <b>MaHoaDon</b> - <span style="color:red">Primary key</span><br>
+        TienKham<br>
+        TienThuoc<br>
+        MaKhamBenh - <span style="color:blue">Foreign key</span>
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        DECIMAL(10,2)<br>
+        DECIMAL(10,2)<br>
+        VARCHAR(10)
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>DONVI</td>
+      <td>Store unit types</td>
+      <td>
+        <b>MaDonVi</b> - <span style="color:red">Primary key</span><br>
+        TenDonVi
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(50)
+      </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>CACHDUNG</td>
+      <td>Store drug usage methods</td>
+      <td>
+        <b>MaCachDung</b> - <span style="color:red">Primary key</span><br>
+        TenCachDung
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(100)
+      </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>LOAITHUOC</td>
+      <td>Store types of drugs</td>
+      <td>
+        <b>MaLoaiThuoc</b> - <span style="color:red">Primary key</span><br>
+        TenLoaiThuoc<br>
+        MaDonVi - <span style="color:blue">Foreign key</span><br>
+        MaCachDung - <span style="color:blue">Foreign key</span><br>
+        DonGia
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(100)<br>
+        VARCHAR(10)<br>
+        VARCHAR(10)<br>
+        DECIMAL(10,2)
+      </td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>CTKHAMBENH</td>
+      <td>Store medication for each medical exam</td>
+      <td>
+        <b>MaKhamBenh</b> - <span style="color:red">Primary key</span>, <span style="color:blue">Foreign key</span><br>
+        <b>MaLoaiThuoc</b> - <span style="color:red">Primary key</span>, <span style="color:blue">Foreign key</span><br>
+        SoLuongThuoc
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(10)<br>
+        INT
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

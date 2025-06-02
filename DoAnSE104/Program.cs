@@ -13,8 +13,8 @@ namespace DoAnSE104
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new GUI_QuanLyDonViTinh());
             //Application.Run(new GUI_QuanLyCachDung());
-            //Application.Run(new GUI_QuanLyLoaiBenh());
-            Application.Run(new GUI_QuanLyLoaiThuoc());
+            Application.Run(new GUI_QuanLyLoaiBenh());
+            //Application.Run(new GUI_QuanLyLoaiThuoc());
 
         }
     }

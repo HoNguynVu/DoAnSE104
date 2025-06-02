@@ -1,13 +1,5 @@
 ﻿using DoAnSE104.BUS;
-using DoAnSE104.DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DoAnSE104.GUI
@@ -15,7 +7,6 @@ namespace DoAnSE104.GUI
     public partial class GUI_DanhSachThamSo : Form
     {
         BUS_ThamSo BUS_ThamSo = new BUS_ThamSo();
-        DAL_ThamSo dalThamSo = new DAL_ThamSo();
         public GUI_DanhSachThamSo()
         {
             InitializeComponent();
@@ -26,8 +17,8 @@ namespace DoAnSE104.GUI
         {
             try
             {
-                txtSoLuongBenhNhanToiDaTrongNgay.Text = dalThamSo.SoLuongBenhNhanToiDaTrongNgay().ToString();
-                txtTienKhamCoDinh.Text = dalThamSo.TienKhamCoDinh().ToString("F4");
+                txtSoLuongBenhNhanToiDaTrongNgay.Text = BUS_ThamSo.SoLuongBenhNhanToiDaTrongNgay().ToString();
+                txtTienKhamCoDinh.Text = BUS_ThamSo.TienKhamCoDinh().ToString("F4");
             }
             catch (Exception ex)
             {
@@ -42,14 +33,14 @@ namespace DoAnSE104.GUI
                 {
                     // Enable the text box and load the old value
                     txtSoLuongBenhNhanToiDaTrongNgay.Enabled = true;
-                    int oldValue = dalThamSo.SoLuongBenhNhanToiDaTrongNgay();
+                    int oldValue = BUS_ThamSo.SoLuongBenhNhanToiDaTrongNgay();
                     txtSoLuongBenhNhanToiDaTrongNgay.Text = oldValue.ToString();
                 }
                 else
                 {
                     // Disable the text box and clear its value
                     txtSoLuongBenhNhanToiDaTrongNgay.Enabled = false;
-                    txtSoLuongBenhNhanToiDaTrongNgay.Text = dalThamSo.SoLuongBenhNhanToiDaTrongNgay().ToString();
+                    txtSoLuongBenhNhanToiDaTrongNgay.Text = BUS_ThamSo.SoLuongBenhNhanToiDaTrongNgay().ToString();
                 }
             }
             catch (Exception ex)
@@ -66,14 +57,14 @@ namespace DoAnSE104.GUI
                 {
                     // Enable the text box and load the old value
                     txtTienKhamCoDinh.Enabled = true;
-                    double oldValue = dalThamSo.TienKhamCoDinh();
+                    double oldValue = BUS_ThamSo.TienKhamCoDinh();
                     txtTienKhamCoDinh.Text = oldValue.ToString("F4");
                 }
                 else
                 {
                     // Disable the text box and clear its value
                     txtTienKhamCoDinh.Enabled = false;
-                    txtTienKhamCoDinh.Text = dalThamSo.TienKhamCoDinh().ToString("F4");
+                    txtTienKhamCoDinh.Text = BUS_ThamSo.TienKhamCoDinh().ToString("F4");
                 }
             }
             catch (Exception ex)
@@ -101,7 +92,7 @@ namespace DoAnSE104.GUI
                         MessageBox.Show("Số lượng bệnh nhân phải lớn hơn 0");
                         return;
                     }
-                    dalThamSo.CapNhatQuyDinhSoLuongBenhNhan(soLuongBenhNhan);
+                    BUS_ThamSo.updateSoLuongBenhNhanToiDaTrongNgay(soLuongBenhNhan);
                 }
                 if (QuyDinhTienKhamCoDinh.Checked)
                 {
@@ -115,7 +106,7 @@ namespace DoAnSE104.GUI
                         MessageBox.Show("Tiền khám cố định phải lớn hơn 1000");
                         return;
                     }
-                    dalThamSo.CapNhatQuyDinhTienKham(tienKhamCoDinh);
+                    BUS_ThamSo.updateTienKhamCoDinh(tienKhamCoDinh);
                 }
 
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

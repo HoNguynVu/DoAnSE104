@@ -44,8 +44,13 @@ namespace DoAnSE104.GUI
             this.btnExit = new System.Windows.Forms.Button();
             this.dgvPhieuKham = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+
+            this.dataGridViewPhieuKham = new System.Windows.Forms.DataGridView();
+            this.btnTimPhieuKham = new System.Windows.Forms.Button();
+
             this.groupBoxInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuKham)).BeginInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,13 +257,43 @@ namespace DoAnSE104.GUI
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+
+            // dataGridViewPhieuKham
+            // 
+            this.dataGridViewPhieuKham.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dataGridViewPhieuKham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPhieuKham.Location = new System.Drawing.Point(35, 323);
+            this.dataGridViewPhieuKham.Name = "dataGridViewPhieuKham";
+            this.dataGridViewPhieuKham.RowHeadersWidth = 51;
+            this.dataGridViewPhieuKham.RowTemplate.Height = 24;
+            this.dataGridViewPhieuKham.Size = new System.Drawing.Size(1082, 252);
+            this.dataGridViewPhieuKham.TabIndex = 99;
+            // 
+            // btnTimPhieuKham
+            // 
+            this.btnTimPhieuKham.Location = new System.Drawing.Point(696, 594);
+            this.btnTimPhieuKham.Name = "btnTimPhieuKham";
+            this.btnTimPhieuKham.Size = new System.Drawing.Size(221, 44);
+            this.btnTimPhieuKham.TabIndex = 100;
+            this.btnTimPhieuKham.Text = "Tìm phiếu khám";
+            this.btnTimPhieuKham.UseVisualStyleBackColor = true;
+            this.btnTimPhieuKham.Click += new System.EventHandler(this.btnTimPhieuKham_Click);
+            // 
+
             // GUI_LapPhieuKhamBenh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
+            this.ClientSize = new System.Drawing.Size(1157, 700);
+            this.Controls.Add(this.btnTimPhieuKham);
+            this.Controls.Add(this.dataGridViewPhieuKham);
+
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1160, 643);
             this.Controls.Add(this.dgvPhieuKham);
+
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLapPhieuKham);
             this.Controls.Add(this.groupBoxInfo);
@@ -292,5 +327,9 @@ namespace DoAnSE104.GUI
         private Button btnExit;
         private DataGridView dgvPhieuKham;
         private ErrorProvider errorProvider1;
+
+        private DataGridView dataGridViewPhieuKham;
+        private Button btnTimPhieuKham;
+
     }
 }

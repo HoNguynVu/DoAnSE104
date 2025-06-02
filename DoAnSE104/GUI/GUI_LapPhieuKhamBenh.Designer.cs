@@ -42,6 +42,7 @@ namespace DoAnSE104.GUI
             this.btnExit = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewPhieuKham = new System.Windows.Forms.DataGridView();
+            this.btnTimPhieuKham = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPhieuKham)).BeginInit();
             this.SuspendLayout();
@@ -216,12 +217,23 @@ namespace DoAnSE104.GUI
             this.dataGridViewPhieuKham.Size = new System.Drawing.Size(1082, 252);
             this.dataGridViewPhieuKham.TabIndex = 99;
             // 
+            // btnTimPhieuKham
+            // 
+            this.btnTimPhieuKham.Location = new System.Drawing.Point(696, 594);
+            this.btnTimPhieuKham.Name = "btnTimPhieuKham";
+            this.btnTimPhieuKham.Size = new System.Drawing.Size(221, 44);
+            this.btnTimPhieuKham.TabIndex = 100;
+            this.btnTimPhieuKham.Text = "Tìm phiếu khám";
+            this.btnTimPhieuKham.UseVisualStyleBackColor = true;
+            this.btnTimPhieuKham.Click += new System.EventHandler(this.btnTimPhieuKham_Click);
+            // 
             // GUI_LapPhieuKhamBenh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(1157, 700);
+            this.Controls.Add(this.btnTimPhieuKham);
             this.Controls.Add(this.dataGridViewPhieuKham);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLapPhieuKham);
@@ -263,5 +275,6 @@ namespace DoAnSE104.GUI
         private Button btnExit;
         private ErrorProvider errorProvider1;
         private DataGridView dataGridViewPhieuKham;
+        private Button btnTimPhieuKham;
     }
 }

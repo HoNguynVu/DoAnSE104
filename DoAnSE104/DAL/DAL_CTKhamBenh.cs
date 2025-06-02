@@ -29,7 +29,7 @@ namespace DoAnSE104.DAL
 
         public List<DTO_CTKhamBenh> LayDanhSachChiTietKhamBenh(string maKhamBenh)
         {
-            string query = "SELECT * FROM CTKhamBenh WHERE MaKhamBenh = @maKham";
+            string query = "SELECT * FROM CTKHAMBENH WHERE MaKhamBenh = @maKham";
             MySqlParameter[] parameters = new MySqlParameter[]
             {
                 new MySqlParameter("@maKham", maKhamBenh)

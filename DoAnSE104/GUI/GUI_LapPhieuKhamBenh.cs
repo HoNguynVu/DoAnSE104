@@ -70,14 +70,14 @@ namespace DoAnSE104.GUI
             colDonVi.Name = "colDonVi";
             colDonVi.ReadOnly = true;
             colDonVi.Width = 100;
-            colDonVi.DefaultCellStyle.BackColor = Color.LightGray; // Màu nền để chỉ ra là readonly
+            colDonVi.DefaultCellStyle.BackColor = Color.LightGray; 
 
             DataGridViewTextBoxColumn colCachDung = new DataGridViewTextBoxColumn();
             colCachDung.HeaderText = "Cách dùng";
             colCachDung.Name = "colCachDung";
             colCachDung.ReadOnly = true;
             colCachDung.Width = 200;
-            colCachDung.DefaultCellStyle.BackColor = Color.LightGray; // Màu nền để chỉ ra là readonly
+            colCachDung.DefaultCellStyle.BackColor = Color.LightGray; 
 
             dataGridViewPhieuKham.Columns.AddRange(new DataGridViewColumn[] {
                 colSTT,
@@ -238,7 +238,6 @@ namespace DoAnSE104.GUI
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
         {
-            // Kiểm tra thông tin bắt buộc
             if (string.IsNullOrWhiteSpace(txtMaKhamBenh.Text) || 
                 string.IsNullOrWhiteSpace(cboLoaiBenh.Text) || 
                 string.IsNullOrWhiteSpace(txtTrieuChung.Text))
@@ -248,8 +247,7 @@ namespace DoAnSE104.GUI
                 return;
             }
 
-            // Kiểm tra danh sách thuốc
-            if (dataGridViewPhieuKham.Rows.Count <= 1) // Chỉ có dòng new row
+            if (dataGridViewPhieuKham.Rows.Count <= 1) 
             {
                 MessageBox.Show("Vui lòng thêm ít nhất một loại thuốc!", 
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -258,14 +256,12 @@ namespace DoAnSE104.GUI
 
             try
             {
-                // 1. Cập nhật thông tin khám bệnh (loại bệnh và triệu chứng)
                 string maKhamBenh = txtMaKhamBenh.Text.Trim();
                 string maLoaiBenh = cboLoaiBenh.SelectedValue?.ToString();
                 string trieuChung = txtTrieuChung.Text.Trim();
 
                 if (BUS_KhamBenh.CapNhatKhamBenh(maKhamBenh, maLoaiBenh, trieuChung))
                 {
-                    // 2. Lưu chi tiết thuốc
                     bool success = true;
                     string errorMessage = "";
 
@@ -337,7 +333,6 @@ namespace DoAnSE104.GUI
                 if (selectedValue != null)
                 {
                     string maLoaiThuoc = selectedValue.ToString();
-                    // Existing code where the error occurs
                     var thuoc = danhSachLoaiThuoc.FirstOrDefault(t => t.maLoaiThuoc == maLoaiThuoc);
                     
                     if (thuoc != null)
@@ -361,6 +356,82 @@ namespace DoAnSE104.GUI
             if (lastNonNewRowIndex >= 0 && dataGridViewPhieuKham.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
             {
                 dataGridViewPhieuKham.AllowUserToAddRows = true;
+            }
+        }
+
+        private void btnTimPhieuKham_Click(object sender, EventArgs e)
+        {
+            string maKhamBenh = txtMaKhamBenh.Text.Trim();
+
+            if (string.IsNullOrEmpty(maKhamBenh))
+            {
+                MessageBox.Show("Vui lòng nhập mã khám bệnh!", 
+                    "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaKhamBenh.Focus();
+                return;
+            }
+
+            try
+            {
+                DTO_KhamBenh khamBenh = BUS_KhamBenh.LayThongTinKhamBenh(maKhamBenh);
+                if (khamBenh == null)
+                {
+                    MessageBox.Show("Không tìm thấy thông tin khám bệnh!", 
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                txtNgayKham.Text = khamBenh.ngayKham.ToString("dd/MM/yyyy");
+                
+                if (!string.IsNullOrEmpty(khamBenh.maLoaiBenh))
+                {
+                    for (int i = 0; i < cboLoaiBenh.Items.Count; i++)
+                    {
+                        var item = (DTO_LoaiBenh)cboLoaiBenh.Items[i];
+                        if (item.maLoaiBenh == khamBenh.maLoaiBenh)
+                        {
+                            cboLoaiBenh.SelectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+
+                txtTrieuChung.Text = khamBenh.trieuChung;
+
+                DTO_BenhNhan benhNhan = BUS_BenhNhan.LayThongTinBenhNhan(khamBenh.maBenhNhan);
+                if (benhNhan != null)
+                {
+                    txtTenBenhNhan.Text = benhNhan.hoTen;
+                }
+
+                List<DTO_CTKhamBenh> danhSachThuoc = BUS_CTKhamBenh.LayDanhSachChiTietKhamBenh(maKhamBenh);
+                dataGridViewPhieuKham.Rows.Clear();
+
+                foreach (var chiTiet in danhSachThuoc)
+                {
+                    var thuoc = danhSachLoaiThuoc.Find(t => t.maLoaiThuoc == chiTiet.maLoaiThuoc);
+                    if (thuoc != null)
+                    {
+                        string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(thuoc.maDonVi);
+                        string cachDung = BUS_LoaiThuoc.LayTenCachDung(thuoc.maCachDung);
+
+                        var index = dataGridViewPhieuKham.Rows.Add();
+                        var row = dataGridViewPhieuKham.Rows[index];
+                        
+                        row.Cells["colSTT"].Value = (index + 1).ToString();
+                        row.Cells["colTenThuoc"].Value = thuoc.maLoaiThuoc;
+                        row.Cells["colSoLuong"].Value = chiTiet.soLuongThuoc;
+                        row.Cells["colDonVi"].Value = tenDonVi;
+                        row.Cells["colCachDung"].Value = cachDung;
+                    }
+                }
+
+                errorProvider1.SetError(txtMaKhamBenh, "");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm thông tin khám bệnh: " + ex.Message, 
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

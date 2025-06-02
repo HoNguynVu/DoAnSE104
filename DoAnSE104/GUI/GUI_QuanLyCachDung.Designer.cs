@@ -1,7 +1,5 @@
-﻿namespace DoAnSE104.GUI
-{
-    partial class Form2
-    {
+﻿namespace DoAnSE104.GUI {
+    partial class GUI_QuanLyCachDung {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,8 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -38,12 +33,12 @@
             this.txtCachDung = new System.Windows.Forms.TextBox();
             this.btnThemCachDung = new System.Windows.Forms.Button();
             this.dgvDanhSachCachDung = new System.Windows.Forms.DataGridView();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThaoTac = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachCachDung)).BeginInit();
             this.SuspendLayout();
@@ -126,6 +121,7 @@
             this.txtCachDung.Name = "txtCachDung";
             this.txtCachDung.Size = new System.Drawing.Size(220, 34);
             this.txtCachDung.TabIndex = 4;
+            this.txtCachDung.TextChanged += new System.EventHandler(this.txtCachDung_TextChanged);
             // 
             // btnThemCachDung
             // 
@@ -141,6 +137,7 @@
             this.btnThemCachDung.TabIndex = 5;
             this.btnThemCachDung.Text = "Thêm cách dùng";
             this.btnThemCachDung.UseVisualStyleBackColor = false;
+            this.btnThemCachDung.Click += new System.EventHandler(this.btnThemCachDung_Click);
             // 
             // dgvDanhSachCachDung
             // 
@@ -160,7 +157,7 @@
             this.STT,
             this.MaCachDung,
             this.CachDung,
-            this.ThaoTac});
+            this.btnXoa});
             this.dgvDanhSachCachDung.EnableHeadersVisualStyles = false;
             this.dgvDanhSachCachDung.GridColor = System.Drawing.Color.LightGray;
             this.dgvDanhSachCachDung.Location = new System.Drawing.Point(30, 360);
@@ -168,8 +165,42 @@
             this.dgvDanhSachCachDung.RowHeadersVisible = false;
             this.dgvDanhSachCachDung.RowHeadersWidth = 51;
             this.dgvDanhSachCachDung.RowTemplate.Height = 32;
-            this.dgvDanhSachCachDung.Size = new System.Drawing.Size(1100, 277);
+            this.dgvDanhSachCachDung.Size = new System.Drawing.Size(978, 222);
             this.dgvDanhSachCachDung.TabIndex = 2;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThoat.FlatAppearance.BorderSize = 0;
+            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(838, 514);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(166, 36);
+            this.btnThoat.TabIndex = 6;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuu.FlatAppearance.BorderSize = 0;
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(652, 514);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(166, 36);
+            this.btnLuu.TabIndex = 7;
+            this.btnLuu.Text = "Lưu thay đổi";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // STT
             // 
@@ -189,56 +220,26 @@
             this.CachDung.MinimumWidth = 6;
             this.CachDung.Name = "CachDung";
             // 
-            // ThaoTac
+            // btnXoa
             // 
-            this.ThaoTac.HeaderText = "THAO TÁC";
-            this.ThaoTac.MinimumWidth = 6;
-            this.ThaoTac.Name = "ThaoTac";
-            this.ThaoTac.Text = "Xóa";
-            this.ThaoTac.UseColumnTextForButtonValue = true;
+            this.btnXoa.HeaderText = "THAO TÁC";
+            this.btnXoa.MinimumWidth = 6;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseColumnTextForButtonValue = true;
             // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoat.FlatAppearance.BorderSize = 0;
-            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(943, 643);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(187, 45);
-            this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = false;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLuu.FlatAppearance.BorderSize = 0;
-            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(733, 643);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(187, 45);
-            this.btnLuu.TabIndex = 7;
-            this.btnLuu.Text = "Lưu thay đổi";
-            this.btnLuu.UseVisualStyleBackColor = false;
-            // 
-            // Form2
+            // GUI_QuanLyCachDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1160, 700);
+            this.ClientSize = new System.Drawing.Size(1031, 560);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.dgvDanhSachCachDung);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelTitle);
-            this.Name = "Form2";
+            this.Name = "GUI_QuanLyCachDung";
             this.Text = "Quản lý loại thuốc";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -259,11 +260,11 @@
         private System.Windows.Forms.TextBox txtCachDung;
         private System.Windows.Forms.Button btnThemCachDung;
         private System.Windows.Forms.DataGridView dgvDanhSachCachDung;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCachDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn CachDung;
-        private System.Windows.Forms.DataGridViewButtonColumn ThaoTac;
-        private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
     }
 }

@@ -34,5 +34,53 @@ namespace DoAnSE104.BUS
             DTO_CachDung cachDung = danhSachCachDung.FirstOrDefault(cd => cd.maCachDung == maCachDung);
             return cachDung != null ? cachDung.tenCachDung : maCachDung;
         }
+
+        public string LayMaLoaiThuocMoi(List<DTO_LoaiThuoc> danhSachThuocmoi = null)
+        {
+            var danhSach = (danhSachThuocmoi != null && danhSachThuocmoi.Count > 0)
+                ? danhSachThuocmoi
+                : LayDanhSachLoaiThuoc();
+
+            var maxNumber = danhSach
+                .Select(lt => lt.maLoaiThuoc)
+                .Where(m => !string.IsNullOrEmpty(m) && m.StartsWith("LT") && m.Length >= 3 && int.TryParse(m.Substring(2), out _))
+                .Select(m => int.Parse(m.Substring(2)))
+                .DefaultIfEmpty(0)
+                .Max();
+
+            return $"LT{(maxNumber + 1):D3}";
+        }
+
+        public bool ThemNhieuLoaiThuoc(List<DTO_LoaiThuoc> danhSachThuoc)
+        {
+            try
+            {
+                foreach (var loaiThuoc in danhSachThuoc)
+                {
+                    if (!DAL_LoaiThuoc.ThemLoaiThuoc(loaiThuoc))
+                        return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool ThemLoaiThuoc(DTO_LoaiThuoc loaiThuoc)
+        {
+            return DAL_LoaiThuoc.ThemLoaiThuoc(loaiThuoc);
+        }
+
+        public bool XoaLoaiThuoc(string maLoaiThuoc)
+        {
+            return DAL_LoaiThuoc.XoaLoaiThuoc(maLoaiThuoc);
+        }
+
+        public bool KiemTraLoaiThuocDangDuocSuDung(string maLoaiThuoc)
+        {
+            return DAL_LoaiThuoc.KiemTraLoaiThuocDangDuocSuDung(maLoaiThuoc);
+        }
     }
 }

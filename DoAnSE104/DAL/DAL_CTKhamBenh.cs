@@ -14,7 +14,7 @@ namespace DoAnSE104.DAL
         DatabaseHelper DatabaseHelper = new DatabaseHelper();
         public bool ThemChiTietThuoc(string maKhamBenh, string maLoaiThuoc, int soLuong)
         {
-            string query = "INSERT INTO CTKhamBenh (MaKhamBenh, MaLoaiThuoc, SoLuongThuoc) " +
+            string query = "INSERT INTO CTKHAMBENH (MaKhamBenh, MaLoaiThuoc, SoLuongThuoc) " +
                            "VALUES (@maKham, @maThuoc, @soLuong)";
 
             MySqlParameter[] parameters = new MySqlParameter[]

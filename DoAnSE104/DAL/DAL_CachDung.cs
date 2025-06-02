@@ -26,5 +26,52 @@ namespace DoAnSE104.DAL
             }
             return danhSachCachDung;
         }
+        public bool ThemCachDung(DTO_CachDung cachDung) {
+            try {
+                string query = "INSERT INTO CACHDUNG (MaCachDung, TenCachDung) VALUES (@MaCachDung, @TenCachDung)";
+                
+                MySqlParameter[] parameters = new MySqlParameter[] {
+                    new MySqlParameter("@MaCachDung", cachDung.maCachDung),
+                    new MySqlParameter("@TenCachDung", cachDung.tenCachDung)
+                };
+
+                return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
+            }
+            catch {
+                return false;
+            }
+        }
+
+        public bool XoaCachDung(string maCachDung) {
+            try {
+                string query = "DELETE FROM CACHDUNG WHERE MaCachDung = @MaCachDung";
+                MySqlParameter[] parameters = new MySqlParameter[] {
+                    new MySqlParameter("@MaCachDung", maCachDung)
+                };
+                return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
+            }
+            catch {
+                return false;
+            }
+        }
+
+        public bool KiemTraCachDungDangDuocSuDung(string maCachDung) {
+            try {
+                // Kiểm tra trong bảng LOAITHUOC
+                string query = @"SELECT COUNT(*) 
+                                FROM LOAITHUOC 
+                                WHERE MaCachDung = @MaCachDung";
+
+                MySqlParameter[] parameters = new MySqlParameter[] {
+                    new MySqlParameter("@MaCachDung", maCachDung)
+                };
+
+                int count = Convert.ToInt32(DatabaseHelper.ExcuteScalar(query, parameters));
+                return count > 0;
+            }
+            catch {
+                return false; // Nếu có lỗi, trả về false để đảm bảo an toàn
+            }
+        }
     }
 }

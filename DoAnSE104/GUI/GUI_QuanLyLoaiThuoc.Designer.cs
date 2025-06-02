@@ -37,20 +37,20 @@
             this.labelTenLoaiThuoc = new System.Windows.Forms.Label();
             this.txtTenLoaiThuoc = new System.Windows.Forms.TextBox();
             this.labelDonVi = new System.Windows.Forms.Label();
-            this.cmbDonVi = new System.Windows.Forms.ComboBox();
+            this.cbDonVi = new System.Windows.Forms.ComboBox();
             this.labelCachDung = new System.Windows.Forms.Label();
-            this.cmbCachDung = new System.Windows.Forms.ComboBox();
+            this.cbCachDung = new System.Windows.Forms.ComboBox();
             this.labelDonGia = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.btnThemLoaiThuoc = new System.Windows.Forms.Button();
             this.dgvDanhSachLoaiThuoc = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThaoTac = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.maLoaiThuocItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiThuocItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donViItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cachDungItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGiaItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -77,9 +77,9 @@
             this.groupBox1.Controls.Add(this.labelTenLoaiThuoc);
             this.groupBox1.Controls.Add(this.txtTenLoaiThuoc);
             this.groupBox1.Controls.Add(this.labelDonVi);
-            this.groupBox1.Controls.Add(this.cmbDonVi);
+            this.groupBox1.Controls.Add(this.cbDonVi);
             this.groupBox1.Controls.Add(this.labelCachDung);
-            this.groupBox1.Controls.Add(this.cmbCachDung);
+            this.groupBox1.Controls.Add(this.cbCachDung);
             this.groupBox1.Controls.Add(this.labelDonGia);
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.btnThemLoaiThuoc);
@@ -141,6 +141,7 @@
             this.txtTenLoaiThuoc.Name = "txtTenLoaiThuoc";
             this.txtTenLoaiThuoc.Size = new System.Drawing.Size(220, 34);
             this.txtTenLoaiThuoc.TabIndex = 4;
+            this.txtTenLoaiThuoc.TextChanged += new System.EventHandler(this.txtTenLoaiThuoc_TextChanged);
             // 
             // labelDonVi
             // 
@@ -152,14 +153,15 @@
             this.labelDonVi.TabIndex = 5;
             this.labelDonVi.Text = "Đơn vị";
             // 
-            // cmbDonVi
+            // cbDonVi
             // 
-            this.cmbDonVi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmbDonVi.Location = new System.Drawing.Point(524, 105);
-            this.cmbDonVi.Name = "cmbDonVi";
-            this.cmbDonVi.Size = new System.Drawing.Size(180, 36);
-            this.cmbDonVi.TabIndex = 6;
+            this.cbDonVi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbDonVi.Location = new System.Drawing.Point(524, 105);
+            this.cbDonVi.Name = "cbDonVi";
+            this.cbDonVi.Size = new System.Drawing.Size(180, 36);
+            this.cbDonVi.TabIndex = 6;
+            this.cbDonVi.SelectedIndexChanged += new System.EventHandler(this.cbDonVi_SelectedIndexChanged);
             // 
             // labelCachDung
             // 
@@ -171,14 +173,15 @@
             this.labelCachDung.TabIndex = 7;
             this.labelCachDung.Text = "Cách dùng";
             // 
-            // cmbCachDung
+            // cbCachDung
             // 
-            this.cmbCachDung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCachDung.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmbCachDung.Location = new System.Drawing.Point(34, 180);
-            this.cmbCachDung.Name = "cmbCachDung";
-            this.cmbCachDung.Size = new System.Drawing.Size(350, 36);
-            this.cmbCachDung.TabIndex = 8;
+            this.cbCachDung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCachDung.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbCachDung.Location = new System.Drawing.Point(34, 180);
+            this.cbCachDung.Name = "cbCachDung";
+            this.cbCachDung.Size = new System.Drawing.Size(350, 36);
+            this.cbCachDung.TabIndex = 8;
+            this.cbCachDung.SelectedIndexChanged += new System.EventHandler(this.cbCachDung_SelectedIndexChanged);
             // 
             // labelDonGia
             // 
@@ -198,6 +201,7 @@
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(180, 34);
             this.txtDonGia.TabIndex = 10;
+            this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
             // 
             // btnThemLoaiThuoc
             // 
@@ -213,6 +217,7 @@
             this.btnThemLoaiThuoc.TabIndex = 5;
             this.btnThemLoaiThuoc.Text = "Thêm loại thuốc";
             this.btnThemLoaiThuoc.UseVisualStyleBackColor = false;
+            this.btnThemLoaiThuoc.Click += new System.EventHandler(this.btnThemLoaiThuoc_Click);
             // 
             // dgvDanhSachLoaiThuoc
             // 
@@ -230,21 +235,23 @@
             this.dgvDanhSachLoaiThuoc.ColumnHeadersHeight = 29;
             this.dgvDanhSachLoaiThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.MaLoaiThuoc,
-            this.TenLoaiThuoc,
-            this.DonVi,
-            this.CachDung,
-            this.DonGia,
-            this.ThaoTac});
+            this.maLoaiThuocItem,
+            this.tenLoaiThuocItem,
+            this.donViItem,
+            this.cachDungItem,
+            this.donGiaItem,
+            this.btnXoa});
             this.dgvDanhSachLoaiThuoc.EnableHeadersVisualStyles = false;
             this.dgvDanhSachLoaiThuoc.GridColor = System.Drawing.Color.LightGray;
             this.dgvDanhSachLoaiThuoc.Location = new System.Drawing.Point(30, 360);
+            this.dgvDanhSachLoaiThuoc.MultiSelect = false;
             this.dgvDanhSachLoaiThuoc.Name = "dgvDanhSachLoaiThuoc";
             this.dgvDanhSachLoaiThuoc.RowHeadersVisible = false;
             this.dgvDanhSachLoaiThuoc.RowHeadersWidth = 51;
             this.dgvDanhSachLoaiThuoc.RowTemplate.Height = 32;
-            this.dgvDanhSachLoaiThuoc.Size = new System.Drawing.Size(1100, 277);
+            this.dgvDanhSachLoaiThuoc.Size = new System.Drawing.Size(978, 222);
             this.dgvDanhSachLoaiThuoc.TabIndex = 2;
+            this.dgvDanhSachLoaiThuoc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDanhSachLoaiThuoc_CellPainting);
             // 
             // STT
             // 
@@ -252,43 +259,43 @@
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
             // 
-            // MaLoaiThuoc
+            // maLoaiThuocItem
             // 
-            this.MaLoaiThuoc.HeaderText = "MÃ LOẠI THUỐC";
-            this.MaLoaiThuoc.MinimumWidth = 6;
-            this.MaLoaiThuoc.Name = "MaLoaiThuoc";
+            this.maLoaiThuocItem.HeaderText = "MÃ LOẠI THUỐC";
+            this.maLoaiThuocItem.MinimumWidth = 6;
+            this.maLoaiThuocItem.Name = "maLoaiThuocItem";
             // 
-            // TenLoaiThuoc
+            // tenLoaiThuocItem
             // 
-            this.TenLoaiThuoc.HeaderText = "TÊN LOẠI THUỐC";
-            this.TenLoaiThuoc.MinimumWidth = 6;
-            this.TenLoaiThuoc.Name = "TenLoaiThuoc";
+            this.tenLoaiThuocItem.HeaderText = "TÊN LOẠI THUỐC";
+            this.tenLoaiThuocItem.MinimumWidth = 6;
+            this.tenLoaiThuocItem.Name = "tenLoaiThuocItem";
             // 
-            // DonVi
+            // donViItem
             // 
-            this.DonVi.HeaderText = "ĐƠN VỊ";
-            this.DonVi.MinimumWidth = 6;
-            this.DonVi.Name = "DonVi";
+            this.donViItem.HeaderText = "ĐƠN VỊ";
+            this.donViItem.MinimumWidth = 6;
+            this.donViItem.Name = "donViItem";
             // 
-            // CachDung
+            // cachDungItem
             // 
-            this.CachDung.HeaderText = "CÁCH DÙNG";
-            this.CachDung.MinimumWidth = 6;
-            this.CachDung.Name = "CachDung";
+            this.cachDungItem.HeaderText = "CÁCH DÙNG";
+            this.cachDungItem.MinimumWidth = 6;
+            this.cachDungItem.Name = "cachDungItem";
             // 
-            // DonGia
+            // donGiaItem
             // 
-            this.DonGia.HeaderText = "ĐƠN GIÁ";
-            this.DonGia.MinimumWidth = 6;
-            this.DonGia.Name = "DonGia";
+            this.donGiaItem.HeaderText = "ĐƠN GIÁ";
+            this.donGiaItem.MinimumWidth = 6;
+            this.donGiaItem.Name = "donGiaItem";
             // 
-            // ThaoTac
+            // btnXoa
             // 
-            this.ThaoTac.HeaderText = "THAO TÁC";
-            this.ThaoTac.MinimumWidth = 6;
-            this.ThaoTac.Name = "ThaoTac";
-            this.ThaoTac.Text = "Xóa";
-            this.ThaoTac.UseColumnTextForButtonValue = true;
+            this.btnXoa.HeaderText = "THAO TÁC";
+            this.btnXoa.MinimumWidth = 6;
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseColumnTextForButtonValue = true;
             // 
             // btnLuu
             // 
@@ -298,12 +305,14 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(733, 643);
+            this.btnLuu.Location = new System.Drawing.Point(652, 514);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(187, 45);
+            this.btnLuu.Size = new System.Drawing.Size(166, 36);
             this.btnLuu.TabIndex = 9;
             this.btnLuu.Text = "Lưu thay đổi";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThoat
             // 
@@ -313,19 +322,21 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(943, 643);
+            this.btnThoat.Location = new System.Drawing.Point(838, 514);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(187, 45);
+            this.btnThoat.Size = new System.Drawing.Size(166, 36);
             this.btnThoat.TabIndex = 8;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // GUI_QuanLyLoaiThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1160, 700);
+            this.ClientSize = new System.Drawing.Size(1031, 560);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.dgvDanhSachLoaiThuoc);
@@ -333,6 +344,7 @@
             this.Controls.Add(this.labelTitle);
             this.Name = "GUI_QuanLyLoaiThuoc";
             this.Text = "Quản lý loại thuốc";
+            this.Load += new System.EventHandler(this.GUI_QuanLyLoaiThuoc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLoaiThuoc)).EndInit();
@@ -351,21 +363,21 @@
         private System.Windows.Forms.Label labelTenLoaiThuoc;
         private System.Windows.Forms.TextBox txtTenLoaiThuoc;
         private System.Windows.Forms.Label labelDonVi;
-        private System.Windows.Forms.ComboBox cmbDonVi;
+        private System.Windows.Forms.ComboBox cbDonVi;
         private System.Windows.Forms.Label labelCachDung;
-        private System.Windows.Forms.ComboBox cmbCachDung;
+        private System.Windows.Forms.ComboBox cbCachDung;
         private System.Windows.Forms.Label labelDonGia;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Button btnThemLoaiThuoc;
         private System.Windows.Forms.DataGridView dgvDanhSachLoaiThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonVi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CachDung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private System.Windows.Forms.DataGridViewButtonColumn ThaoTac;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maLoaiThuocItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiThuocItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donViItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cachDungItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donGiaItem;
+        private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
     }
 }

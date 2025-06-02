@@ -1,10 +1,9 @@
 ﻿using DoAnSE104.DTO;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace DoAnSE104.DAL
 {
@@ -27,6 +26,60 @@ namespace DoAnSE104.DAL
                 DanhSachLoaiThuoc.Add(loaiThuocDTO);
             }
             return DanhSachLoaiThuoc;
+        }
+
+        public bool ThemLoaiThuoc(DTO_LoaiThuoc loaiThuoc)
+        {
+            try
+            {
+                string query = @"INSERT INTO LOAITHUOC (MaLoaiThuoc, TenLoaiThuoc, MaDonVi, MaCachDung, DonGia) 
+                               VALUES (@MaLoaiThuoc, @TenLoaiThuoc, @MaDonVi, @MaCachDung, @DonGia)";
+
+                MySqlParameter[] parameters = new MySqlParameter[]
+                {
+                    new MySqlParameter("@MaLoaiThuoc", loaiThuoc.maLoaiThuoc),
+                    new MySqlParameter("@TenLoaiThuoc", loaiThuoc.tenLoaiThuoc),
+                    new MySqlParameter("@MaDonVi", loaiThuoc.maDonVi),
+                    new MySqlParameter("@MaCachDung", loaiThuoc.maCachDung),
+                    new MySqlParameter("@DonGia", loaiThuoc.donGia)
+                };
+
+                int result = DatabaseHelper.ExecuteNonQuery(query, parameters);
+                return result > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool XoaLoaiThuoc(string maLoaiThuoc)
+        {
+            try
+            {
+                string query = "DELETE FROM LOAITHUOC WHERE MaLoaiThuoc = @MaLoaiThuoc";
+                MySqlParameter[] parameters = new MySqlParameter[]
+                {
+                    new MySqlParameter("@MaLoaiThuoc", maLoaiThuoc)
+                };
+                return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool KiemTraLoaiThuocDangDuocSuDung(string maLoaiThuoc)
+        {
+            string query = "SELECT COUNT(*) FROM CT_KHAMBENH WHERE MaLoaiThuoc = @MaLoaiThuoc";
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                 new MySqlParameter("@MaLoaiThuoc", maLoaiThuoc)
+            };
+            
+            int count = (int)DatabaseHelper.ExecuteNonQuery(query, parameters);
+            return count > 0;
         }
     }
 }

@@ -159,6 +159,7 @@ namespace DoAnSE104.GUI
             dgvDanhSachDonVi.ClearSelection();
 
             txtMaDonVi.Text = BUS_DonVi.TaoMaDonViMoi();
+            txtMaDonVi.Enabled = false; // Không cho phép sửa mã đơn vị
             txtTenDonVi.Clear();
         }
 

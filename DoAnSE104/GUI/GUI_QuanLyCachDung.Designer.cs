@@ -50,7 +50,7 @@
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.labelTitle.Location = new System.Drawing.Point(30, 20);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(501, 72);
+            this.labelTitle.Size = new System.Drawing.Size(401, 59);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Quản lý cách dùng";
             // 
@@ -81,7 +81,7 @@
             this.labelThemCachDung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.labelThemCachDung.Location = new System.Drawing.Point(25, 35);
             this.labelThemCachDung.Name = "labelThemCachDung";
-            this.labelThemCachDung.Size = new System.Drawing.Size(226, 37);
+            this.labelThemCachDung.Size = new System.Drawing.Size(184, 30);
             this.labelThemCachDung.TabIndex = 0;
             this.labelThemCachDung.Text = "Thêm cách dùng";
             // 
@@ -91,7 +91,7 @@
             this.labelMaCachDung.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelMaCachDung.Location = new System.Drawing.Point(30, 90);
             this.labelMaCachDung.Name = "labelMaCachDung";
-            this.labelMaCachDung.Size = new System.Drawing.Size(135, 28);
+            this.labelMaCachDung.Size = new System.Drawing.Size(107, 21);
             this.labelMaCachDung.TabIndex = 1;
             this.labelMaCachDung.Text = "Mã cách dùng";
             // 
@@ -103,7 +103,7 @@
             this.txtMaCachDung.Location = new System.Drawing.Point(34, 120);
             this.txtMaCachDung.Name = "txtMaCachDung";
             this.txtMaCachDung.ReadOnly = true;
-            this.txtMaCachDung.Size = new System.Drawing.Size(220, 34);
+            this.txtMaCachDung.Size = new System.Drawing.Size(220, 29);
             this.txtMaCachDung.TabIndex = 2;
             // 
             // labelCachDung
@@ -112,7 +112,7 @@
             this.labelCachDung.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelCachDung.Location = new System.Drawing.Point(270, 90);
             this.labelCachDung.Name = "labelCachDung";
-            this.labelCachDung.Size = new System.Drawing.Size(105, 28);
+            this.labelCachDung.Size = new System.Drawing.Size(84, 21);
             this.labelCachDung.TabIndex = 3;
             this.labelCachDung.Text = "Cách dùng";
             // 
@@ -122,7 +122,7 @@
             this.txtCachDung.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtCachDung.Location = new System.Drawing.Point(274, 120);
             this.txtCachDung.Name = "txtCachDung";
-            this.txtCachDung.Size = new System.Drawing.Size(220, 34);
+            this.txtCachDung.Size = new System.Drawing.Size(220, 29);
             this.txtCachDung.TabIndex = 4;
             this.txtCachDung.TextChanged += new System.EventHandler(this.txtCachDung_TextChanged);
             // 
@@ -236,7 +236,7 @@
             // 
             // GUI_QuanLyCachDung
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1160, 670);

@@ -55,7 +55,7 @@
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.labelTitle.Location = new System.Drawing.Point(30, 20);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(517, 72);
+            this.labelTitle.Size = new System.Drawing.Size(412, 59);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Quản lý đơn vị tính";
             // 
@@ -86,7 +86,7 @@
             this.labelThemDonViTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.labelThemDonViTinh.Location = new System.Drawing.Point(25, 35);
             this.labelThemDonViTinh.Name = "labelThemDonViTinh";
-            this.labelThemDonViTinh.Size = new System.Drawing.Size(234, 37);
+            this.labelThemDonViTinh.Size = new System.Drawing.Size(189, 30);
             this.labelThemDonViTinh.TabIndex = 0;
             this.labelThemDonViTinh.Text = "Thêm đơn vị tính";
             // 
@@ -96,7 +96,7 @@
             this.labelMaDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelMaDonVi.Location = new System.Drawing.Point(30, 90);
             this.labelMaDonVi.Name = "labelMaDonVi";
-            this.labelMaDonVi.Size = new System.Drawing.Size(100, 28);
+            this.labelMaDonVi.Size = new System.Drawing.Size(80, 21);
             this.labelMaDonVi.TabIndex = 1;
             this.labelMaDonVi.Text = "Mã đơn vị";
             // 
@@ -108,7 +108,7 @@
             this.txtMaDonVi.Location = new System.Drawing.Point(34, 120);
             this.txtMaDonVi.Name = "txtMaDonVi";
             this.txtMaDonVi.ReadOnly = true;
-            this.txtMaDonVi.Size = new System.Drawing.Size(220, 34);
+            this.txtMaDonVi.Size = new System.Drawing.Size(220, 29);
             this.txtMaDonVi.TabIndex = 2;
             // 
             // labelTenDonVi
@@ -117,7 +117,7 @@
             this.labelTenDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelTenDonVi.Location = new System.Drawing.Point(270, 90);
             this.labelTenDonVi.Name = "labelTenDonVi";
-            this.labelTenDonVi.Size = new System.Drawing.Size(101, 28);
+            this.labelTenDonVi.Size = new System.Drawing.Size(81, 21);
             this.labelTenDonVi.TabIndex = 3;
             this.labelTenDonVi.Text = "Tên đơn vị";
             // 
@@ -127,7 +127,7 @@
             this.txtTenDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtTenDonVi.Location = new System.Drawing.Point(274, 120);
             this.txtTenDonVi.Name = "txtTenDonVi";
-            this.txtTenDonVi.Size = new System.Drawing.Size(220, 34);
+            this.txtTenDonVi.Size = new System.Drawing.Size(220, 29);
             this.txtTenDonVi.TabIndex = 4;
             // 
             // btnThemDonVi
@@ -241,7 +241,7 @@
             // 
             // GUI_QuanLyDonViTinh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1160, 670);

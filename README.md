@@ -141,18 +141,18 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
 <table border="1" cellpadding="8" cellspacing="0">
   <thead>
     <tr>
-      <th>No</th>
-      <th>Relation</th>
-      <th>Meaning</th>
-      <th>Attributes</th>
-      <th>Data Type</th>
+      <th>STT</th>
+      <th>Tên Bảng</th>
+      <th>Ý Nghĩa</th>
+      <th>Các Thuộc Tính</th>
+      <th>Kiểu Dữ Liệu</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>1</td>
       <td>BENHNHAN</td>
-      <td>Store patient information</td>
+      <td>Lưu trữ thông tin bệnh nhân</td>
       <td>
         <b>MaBenhNhan</b> - <span style="color:red">Primary key</span><br>
         HoTen<br>
@@ -171,7 +171,7 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
     <tr>
       <td>2</td>
       <td>LOAIBENH</td>
-      <td>Store disease categories</td>
+      <td>Lưu trữ các loại bệnh</td>
       <td>
         <b>MaLoaiBenh</b> - <span style="color:red">Primary key</span><br>
         TenLoaiBenh
@@ -184,7 +184,7 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
     <tr>
       <td>3</td>
       <td>KHAMBENH</td>
-      <td>Store medical examination records</td>
+      <td>Lưu trữ thông tin khám bệnh</td>
       <td>
         <b>MaKhamBenh</b> - <span style="color:red">Primary key</span><br>
         NgayKham<br>
@@ -203,7 +203,7 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
     <tr>
       <td>4</td>
       <td>THAMSO</td>
-      <td>System parameters</td>
+      <td>Các tham số cấu hình hệ thống</td>
       <td>
         SoLuongBenhNhanToiDaTrongNgay<br>
         QuyDinhSoLuongBenhNhanToiDaTrongNgay<br>
@@ -220,7 +220,7 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
     <tr>
       <td>5</td>
       <td>HOADON</td>
-      <td>Store invoice information</td>
+      <td>Lưu trữ thông tin hóa đơn</td>
       <td>
         <b>MaHoaDon</b> - <span style="color:red">Primary key</span><br>
         TienKham<br>
@@ -237,7 +237,7 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
     <tr>
       <td>6</td>
       <td>DONVI</td>
-      <td>Store unit types</td>
+      <td>Lưu trữ các đơn vị tính</td>
       <td>
         <b>MaDonVi</b> - <span style="color:red">Primary key</span><br>
         TenDonVi
@@ -250,7 +250,7 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
     <tr>
       <td>7</td>
       <td>CACHDUNG</td>
-      <td>Store drug usage methods</td>
+      <td>Lưu trữ cách dùng thuốc</td>
       <td>
         <b>MaCachDung</b> - <span style="color:red">Primary key</span><br>
         TenCachDung
@@ -263,7 +263,7 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
     <tr>
       <td>8</td>
       <td>LOAITHUOC</td>
-      <td>Store types of drugs</td>
+      <td>Lưu trữ các loại thuốc</td>
       <td>
         <b>MaLoaiThuoc</b> - <span style="color:red">Primary key</span><br>
         TenLoaiThuoc<br>
@@ -282,7 +282,7 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
     <tr>
       <td>9</td>
       <td>CTKHAMBENH</td>
-      <td>Store medication for each medical exam</td>
+      <td>Lưu trữ chi tiết thuốc theo từng lần khám bệnh</td>
       <td>
         <b>MaKhamBenh</b> - <span style="color:red">Primary key</span>, <span style="color:blue">Foreign key</span><br>
         <b>MaLoaiThuoc</b> - <span style="color:red">Primary key</span>, <span style="color:blue">Foreign key</span><br>

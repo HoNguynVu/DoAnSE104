@@ -92,7 +92,7 @@ namespace DoAnSE104.DAL
                 string maCuoi = dt.Rows[0]["MaDonVi"].ToString(); // VD: DV09
                 int so = int.Parse(maCuoi.Substring(2));          // Lấy số: 9
                 so++;                                              // +1 → 10
-                return "DV" + so.ToString("D2");                   // "DV10"
+                return "DV" + so.ToString("D3");                   // "DV10"
             }
             else
             {

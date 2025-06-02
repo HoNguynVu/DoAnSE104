@@ -13,6 +13,7 @@ namespace DoAnSE104.GUI
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.WhiteSmoke;
+            panelCaiDat.Visible = false;
         }
         public void ShowFormInMainPanel(Form form)
         {
@@ -74,6 +75,36 @@ namespace DoAnSE104.GUI
         private void btnTiepNhanKhamBenh_Click_1(object sender, EventArgs e)
         {
             ShowFormInMainPanel(new GUI_TiepNhanKhamBenh());
+        }
+
+        private void btnCaiDat_Click(object sender, EventArgs e)
+        {
+            panelCaiDat.Visible = !panelCaiDat.Visible;
+        }
+
+        private void btnThamSo_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_DanhSachThamSo());
+        }
+
+        private void btnLoaiThuoc_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_QuanLyLoaiThuoc());
+        }
+
+        private void btnLoaiBenh_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_QuanLyLoaiBenh());
+        }
+
+        private void btnDonViTinh_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_QuanLyDonViTinh());
+        }
+
+        private void btnCachDung_Click(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_QuanLyCachDung());
         }
     }  
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace DoAnSE104.GUI
 {
@@ -16,6 +17,8 @@ namespace DoAnSE104.GUI
         private string tenDonVi = string.Empty;
         private string tenCachDung = string.Empty;
         private string donGia = string.Empty;
+        private int hoverRowIndex = -1;
+        private int hoverColIndex = -1;
         List<DTO_LoaiThuoc> danhSachLoaiThuoc;
         List<DTO_LoaiThuoc> danhSachLoaiThuocMoi = new List<DTO_LoaiThuoc>();
 
@@ -23,6 +26,8 @@ namespace DoAnSE104.GUI
         {
             InitializeComponent();
             dgvDanhSachLoaiThuoc.CellPainting += dgvDanhSachLoaiThuoc_CellPainting;
+            dgvDanhSachLoaiThuoc.CellMouseMove += dgvDanhSachLoaiThuoc_CellMouseMove;
+            dgvDanhSachLoaiThuoc.CellMouseLeave += dgvDanhSachLoaiThuoc_CellMouseLeave;
             LoadDataToGridView();
             LoadDataDonVi();
             LoadDataCachDung();
@@ -30,7 +35,6 @@ namespace DoAnSE104.GUI
             txtMaLoaiThuoc.Text = BUS_LoaiThuoc.LayMaLoaiThuocMoi(danhSachLoaiThuocMoi);
             txtMaLoaiThuoc.Enabled = false;
 
-            // Thêm event handler cho CellClick
             dgvDanhSachLoaiThuoc.CellClick += dgvDanhSachLoaiThuoc_CellClick;
         }
         private void LoadDataDonVi() {
@@ -332,20 +336,21 @@ namespace DoAnSE104.GUI
                 {
                     e.PaintBackground(e.ClipBounds, true);
 
-                    // Check if mouse is hovering over the cell
-                    bool isHovered = dgvDanhSachLoaiThuoc.CurrentCell != null &&
-                                   dgvDanhSachLoaiThuoc.CurrentCell.RowIndex == e.RowIndex &&
-                                   dgvDanhSachLoaiThuoc.CurrentCell.ColumnIndex == e.ColumnIndex;
-
-                    // Change background color based on hover state
-                    Color backColor = isHovered ? Color.DarkRed : Color.Red;
+                    Color backColor = (e.RowIndex == hoverRowIndex && e.ColumnIndex == hoverColIndex)
+                        ? Color.FromArgb(211, 47, 47) // Màu hover (đỏ đậm hơn)
+                        : Color.FromArgb(244, 67, 54); // Màu mặc định giống nút Thoát
 
                     using (Brush backColorBrush = new SolidBrush(backColor))
                     {
                         e.Graphics.FillRectangle(backColorBrush, e.CellBounds);
                     }
 
-                    // Draw the text in the cell
+                    // Vẽ viền nếu muốn
+                    using (Pen pen = new Pen(dgvDanhSachLoaiThuoc.GridColor))
+                    {
+                        e.Graphics.DrawRectangle(pen, e.CellBounds.X, e.CellBounds.Y, e.CellBounds.Width - 1, e.CellBounds.Height - 1);
+                    }
+
                     TextRenderer.DrawText(e.Graphics, "Xóa", dgvDanhSachLoaiThuoc.Font,
                         e.CellBounds, Color.White,
                         TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
@@ -358,6 +363,36 @@ namespace DoAnSE104.GUI
                 MessageBox.Show($"Lỗi khi vẽ ô: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
 
+        private void dgvDanhSachLoaiThuoc_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvDanhSachLoaiThuoc.Columns[e.ColumnIndex].Name == "btnXoa")
+            {
+                if (hoverRowIndex != e.RowIndex || hoverColIndex != e.ColumnIndex)
+                {
+                    hoverRowIndex = e.RowIndex;
+                    hoverColIndex = e.ColumnIndex;
+                    dgvDanhSachLoaiThuoc.InvalidateCell(e.ColumnIndex, e.RowIndex);
+                }
+            }
+            else if (hoverRowIndex != -1 || hoverColIndex != -1)
+            {
+                int oldRow = hoverRowIndex, oldCol = hoverColIndex;
+                hoverRowIndex = -1;
+                hoverColIndex = -1;
+                dgvDanhSachLoaiThuoc.InvalidateCell(oldCol, oldRow);
+            }
+        }
+
+        private void dgvDanhSachLoaiThuoc_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (hoverRowIndex != -1 || hoverColIndex != -1)
+            {
+                int oldRow = hoverRowIndex, oldCol = hoverColIndex;
+                hoverRowIndex = -1;
+                hoverColIndex = -1;
+                dgvDanhSachLoaiThuoc.InvalidateCell(oldCol, oldRow);
+            }
+        }
+    }
 }

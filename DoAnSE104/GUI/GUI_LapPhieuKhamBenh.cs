@@ -267,7 +267,7 @@ namespace DoAnSE104.GUI
                 return;
             }
 
-            if (dataGridViewPhieuKham.Rows.Count <= 1) 
+            if (dgvPhieuKham.Rows.Count <= 1) 
 
             // Kiểm tra danh sách thuốc
             if (dgvPhieuKham.Rows.Count <= 1) // Chỉ có dòng new row
@@ -281,15 +281,15 @@ namespace DoAnSE104.GUI
             try
             {
 
-                string maLoaiBenh = cboLoaiBenh.SelectedValue?.ToString();
+                string MaLoaiBenh = cbbLoaiBenh.SelectedValue?.ToString();
 
                 // 1. Cập nhật thông tin khám bệnh (loại bệnh và triệu chứng)
-                string maKhamBenh = txtMaKhamBenh.Text.Trim();
+                string MaKhamBenh = txtMaKhamBenh.Text.Trim();
                 string maLoaiBenh = cbbLoaiBenh.SelectedValue?.ToString();
 
                 string trieuChung = txtTrieuChung.Text.Trim();
 
-                if (BUS_KhamBenh.CapNhatKhamBenh(maKhamBenh, maLoaiBenh, trieuChung))
+                if (BUS_KhamBenh.CapNhatKhamBenh(MaKhamBenh, maLoaiBenh, trieuChung))
                 {
                     bool success = true;
                     string errorMessage = "";
@@ -312,7 +312,7 @@ namespace DoAnSE104.GUI
 
                         try
                         {
-                            if (!BUS_CTKhamBenh.ThemChiTietThuoc(maKhamBenh, maThuoc, soLuong)) {
+                            if (!BUS_CTKhamBenh.ThemChiTietThuoc(MaKhamBenh, maThuoc, soLuong)) {
                                 success = false;
                                 errorMessage = "Không thể thêm chi tiết thuốc";
                                 break;
@@ -352,7 +352,7 @@ namespace DoAnSE104.GUI
             }
         }
 
-        private void dataGridViewPhieuKham_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void dgvPhieuKham_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
             if (e.RowIndex >= 0 && e.ColumnIndex == dgvPhieuKham.Columns["TenLoaiThuoc"].Index)
@@ -372,7 +372,7 @@ namespace DoAnSE104.GUI
         }
 
 
-        private void dataGridViewPhieuKham_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        private void dgvPhieuKham_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
 
             if (dgvPhieuKham.Rows.Count == 1 && dgvPhieuKham.Rows[0].Cells["TenLoaiThuoc"].Value == null)
@@ -380,10 +380,8 @@ namespace DoAnSE104.GUI
                 return;
             }
 
-            int lastNonNewRowIndex = dataGridViewPhieuKham.Rows.Count - 2;  
-            if (lastNonNewRowIndex >= 0 && dataGridViewPhieuKham.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
-
-            int lastNonNewRowIndex = dgvPhieuKham.Rows.Count - 2; // Index of last non-new row
+            int lastNonNewRowIndex = dgvPhieuKham.Rows.Count - 2;  
+            
             if (lastNonNewRowIndex >= 0 && dgvPhieuKham.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
 
             {
@@ -417,12 +415,12 @@ namespace DoAnSE104.GUI
                 
                 if (!string.IsNullOrEmpty(khamBenh.maLoaiBenh))
                 {
-                    for (int i = 0; i < cboLoaiBenh.Items.Count; i++)
+                    for (int i = 0; i < cbbLoaiBenh.Items.Count; i++)
                     {
-                        var item = (DTO_LoaiBenh)cboLoaiBenh.Items[i];
+                        var item = (DTO_LoaiBenh)cbbLoaiBenh.Items[i];
                         if (item.maLoaiBenh == khamBenh.maLoaiBenh)
                         {
-                            cboLoaiBenh.SelectedIndex = i;
+                            cbbLoaiBenh.SelectedIndex = i;
                             break;
                         }
                     }
@@ -437,7 +435,7 @@ namespace DoAnSE104.GUI
                 }
 
                 List<DTO_CTKhamBenh> danhSachThuoc = BUS_CTKhamBenh.LayDanhSachChiTietKhamBenh(maKhamBenh);
-                dataGridViewPhieuKham.Rows.Clear();
+                dgvPhieuKham.Rows.Clear();
 
                 foreach (var chiTiet in danhSachThuoc)
                 {
@@ -447,8 +445,8 @@ namespace DoAnSE104.GUI
                         string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(thuoc.maDonVi);
                         string cachDung = BUS_LoaiThuoc.LayTenCachDung(thuoc.maCachDung);
 
-                        var index = dataGridViewPhieuKham.Rows.Add();
-                        var row = dataGridViewPhieuKham.Rows[index];
+                        var index = dgvPhieuKham.Rows.Add();
+                        var row = dgvPhieuKham.Rows[index];
                         
                         row.Cells["colSTT"].Value = (index + 1).ToString();
                         row.Cells["colTenThuoc"].Value = thuoc.maLoaiThuoc;

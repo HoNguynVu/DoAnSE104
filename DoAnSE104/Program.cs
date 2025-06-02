@@ -15,7 +15,7 @@ namespace DoAnSE104
             //Application.Run(new GUI_QuanLyCachDung());
             //Application.Run(new GUI_QuanLyLoaiBenh());
             //Application.Run(new GUI_QuanLyLoaiThuoc());
-            Application.Run(new GUI_LapPhieuKhamBenh());
+            Application.Run(new GUI_Home());
 
 
         }

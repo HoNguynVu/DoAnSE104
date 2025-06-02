@@ -96,8 +96,6 @@ namespace DoAnSE104.GUI
             {
                 int soLuongHienTai = BUS_KhamBenh.LaySoLuongBenhNhanHienTaiTrongNgay(ngayKham);
                 int gioiHanToiDa = BUS_ThamSo.SoLuongBenhNhanToiDaTrongNgay();
-                MessageBox.Show("số lượng bệnh nhân hiện tại trong ngày: " + soLuongHienTai, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MessageBox.Show("Giới hạn số lượng bệnh nhân trong ngày: " + gioiHanToiDa, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (soLuongHienTai >= gioiHanToiDa)
                 {
                     MessageBox.Show(

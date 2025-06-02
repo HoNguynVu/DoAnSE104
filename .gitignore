@@ -1,10 +1,62 @@
+# Build results
 bin/
 obj/
-*.user
+Debug/
+Release/
+
+# Visual Studio cache files
 .vs/
-/.vs/DoAnSE104/v17/.suo
-/.vs/DoAnSE104/v17/DocumentLayout.backup.json
-/.vs/DoAnSE104/v17/DocumentLayout.json
-/.vs/DoAnSE104/v17/.suo
-/.vs/DoAnSE104/v17/DocumentLayout.backup.json
-/.vs/DoAnSE104/v17/DocumentLayout.json
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.designer.cs
+*.resharper
+_ReSharper*/
+
+# NuGet packages
+*.nupkg
+packages/
+*.snupkg
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider
+.idea/
+
+# DotCover
+*.dotCover
+
+# Temporary files
+*.tmp
+*.log
+*.vspscc
+*.vssscc
+
+# Others
+*.cache
+*.ilk
+*.pdb
+*.idb
+*.sdf
+*.dbmdl
+*.bak
+*.backup
+*.swp
+
+# Publish output folder
+publish/
+
+# Rider caches
+.idea/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini

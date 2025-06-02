@@ -1,8 +1,9 @@
 ﻿using DoAnSE104.DTO;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace DoAnSE104.DAL
 {
@@ -68,5 +69,24 @@ namespace DoAnSE104.DAL
                 return false;
             }
         }
+
+        public bool KiemTraLoaiThuocDangDuocSuDung(string maLoaiThuoc)
+        {
+            string query = "SELECT COUNT(*) FROM CTKHAMBENH WHERE MaLoaiThuoc = @MaLoaiThuoc";
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                new MySqlParameter("@MaLoaiThuoc", maLoaiThuoc)
+            };
+
+            object result = DatabaseHelper.ExcuteScalar(query, parameters);
+            if (result != null && result != DBNull.Value)
+            {
+                int count = Convert.ToInt32(result);
+                return count > 0;
+            }
+
+            return false;
+        }
+
     }
 }

@@ -223,7 +223,7 @@ namespace DoAnSE104.GUI
 
         private void btnHDMoi_Click(object sender, EventArgs e)
         {
-            // Xóa toàn bộ dữ liệu, bao gồm cả mã hóa đơn
+            // Xóa toàn bộ dữ liệu, cả mã hóa đơn
             txtMaKhamBenh.Text = "";
             ClearThongTinHoaDon(clearMaHoaDon: true);
 
@@ -254,7 +254,7 @@ namespace DoAnSE104.GUI
                     label7.Visible = true;
                     txtMaHoaDon.Visible = true;
 
-                    // Hiển thị các thông tin bệnh nhân như khi lập hóa đơn
+                    // Hiển thị các thông tin bệnh nhân
                     var khamBenh = busKhamBenh.LayThongTinKhamBenh(maKhamBenh);
                     if (khamBenh != null && !string.IsNullOrEmpty(khamBenh.maBenhNhan))
                     {
@@ -298,10 +298,10 @@ namespace DoAnSE104.GUI
 
         private void txtTienKham_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Chỉ cho nhập số và phím điều khiển (Backspace)
+            // Chỉ cho nhập số
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // chặn ký tự không hợp lệ
+                e.Handled = true; 
             }
         }
     }

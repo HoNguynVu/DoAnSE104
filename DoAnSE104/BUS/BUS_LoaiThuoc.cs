@@ -77,5 +77,10 @@ namespace DoAnSE104.BUS
         {
             return DAL_LoaiThuoc.XoaLoaiThuoc(maLoaiThuoc);
         }
+
+        public bool KiemTraLoaiThuocDangDuocSuDung(string maLoaiThuoc)
+        {
+            return DAL_LoaiThuoc.KiemTraLoaiThuocDangDuocSuDung(maLoaiThuoc);
+        }
     }
 }

@@ -75,7 +75,7 @@ namespace DoAnSE104.GUI {
 
         private void BtnCreateReport_Click(object sender, EventArgs e) {
             long total = 0;
-            if (!int.TryParse(year, out int yearValue) || yearValue < 1900 || yearValue > DateTime.Now.Year) {
+            if (!int.TryParse(year, out int yearValue) || yearValue < 1900 || yearValue > 2050) {
                 MessageBox.Show("Vui lòng nhập năm hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBoxYear.Focus();
                 return;

@@ -24,11 +24,30 @@ namespace DoAnSE104.GUI
         public GUI_TraCuuBenhNhan()
         {
             InitializeComponent();
+            KhoiTaoDtp();
         }
         public GUI_TraCuuBenhNhan(GUI_Home home)
         {
             InitializeComponent();
             this.homeForm = home;
+        }
+
+        private void KhoiTaoDtp()
+        {
+            dtpNgayKhamTu.Format = DateTimePickerFormat.Custom;
+            dtpNgayKhamTu.CustomFormat = "dd/MM/yyyy";
+            dtpNgayKhamTu.MaxDate = DateTime.Now;
+            dtpNgayKhamTu.MinDate = new DateTime(1900, 1, 1);
+
+            dtpNgayKhamTu.KeyPress += (s, e) => e.Handled = true; // chặn gõ bàn phím
+
+            dtpNgayKhamDen.Format = DateTimePickerFormat.Custom;
+            dtpNgayKhamDen.CustomFormat = "dd/MM/yyyy";
+            dtpNgayKhamDen.MaxDate = DateTime.Now;
+            dtpNgayKhamDen.MinDate = new DateTime(1900, 1, 1);
+
+            dtpNgayKhamDen.KeyPress += (s, e) => e.Handled = true;
+
         }
 
         private void GUI_TraCuuBenhNhan_Load(object sender, EventArgs e)

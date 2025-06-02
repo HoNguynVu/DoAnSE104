@@ -37,7 +37,15 @@
             this.btnBaoCaoDoanhThu = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.btnTiepNhanKhamBenh = new System.Windows.Forms.Button();
+            this.btnCaiDat = new System.Windows.Forms.Button();
+            this.panelCaiDat = new System.Windows.Forms.Panel();
+            this.btnThamSo = new System.Windows.Forms.Button();
+            this.btnLoaiThuoc = new System.Windows.Forms.Button();
+            this.btnLoaiBenh = new System.Windows.Forms.Button();
+            this.btnDonViTinh = new System.Windows.Forms.Button();
+            this.btnCachDung = new System.Windows.Forms.Button();
             this.panelSideBar.SuspendLayout();
+            this.panelCaiDat.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLapPhieuKhamBenh
@@ -119,6 +127,8 @@
             this.panelSideBar.Controls.Add(this.btnBaoCaoSuDungThuoc);
             this.panelSideBar.Controls.Add(this.btnBaoCaoDoanhThu);
             this.panelSideBar.Controls.Add(this.btnTiepNhanBenhNhan);
+            this.panelSideBar.Controls.Add(this.btnCaiDat);
+            this.panelSideBar.Controls.Add(this.panelCaiDat);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
             this.panelSideBar.Name = "panelSideBar";
@@ -186,6 +196,122 @@
             this.btnTiepNhanKhamBenh.UseVisualStyleBackColor = false;
             this.btnTiepNhanKhamBenh.Click += new System.EventHandler(this.btnTiepNhanKhamBenh_Click_1);
             // 
+            // btnCaiDat
+            // 
+            this.btnCaiDat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnCaiDat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCaiDat.FlatAppearance.BorderSize = 0;
+            this.btnCaiDat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCaiDat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaiDat.ForeColor = System.Drawing.Color.White;
+            this.btnCaiDat.Location = new System.Drawing.Point(0, 555);
+            this.btnCaiDat.Name = "btnCaiDat";
+            this.btnCaiDat.Size = new System.Drawing.Size(300, 65);
+            this.btnCaiDat.TabIndex = 9;
+            this.btnCaiDat.Text = "⚙️ Cài đặt";
+            this.btnCaiDat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCaiDat.UseVisualStyleBackColor = false;
+            this.btnCaiDat.Click += new System.EventHandler(this.btnCaiDat_Click);
+            // 
+            // panelCaiDat
+            // 
+            this.panelCaiDat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.panelCaiDat.Controls.Add(this.btnThamSo);
+            this.panelCaiDat.Controls.Add(this.btnLoaiThuoc);
+            this.panelCaiDat.Controls.Add(this.btnLoaiBenh);
+            this.panelCaiDat.Controls.Add(this.btnDonViTinh);
+            this.panelCaiDat.Controls.Add(this.btnCachDung);
+            this.panelCaiDat.Location = new System.Drawing.Point(0, 620);
+            this.panelCaiDat.Name = "panelCaiDat";
+            this.panelCaiDat.Size = new System.Drawing.Size(300, 325);
+            this.panelCaiDat.TabIndex = 10;
+            this.panelCaiDat.Visible = false;
+            // 
+            // btnThamSo
+            // 
+            this.btnThamSo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnThamSo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThamSo.FlatAppearance.BorderSize = 0;
+            this.btnThamSo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThamSo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThamSo.ForeColor = System.Drawing.Color.White;
+            this.btnThamSo.Location = new System.Drawing.Point(0, 0);
+            this.btnThamSo.Name = "btnThamSo";
+            this.btnThamSo.Size = new System.Drawing.Size(300, 65);
+            this.btnThamSo.TabIndex = 0;
+            this.btnThamSo.Text = "🔧 Tham số";
+            this.btnThamSo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThamSo.UseVisualStyleBackColor = false;
+            this.btnThamSo.Click += new System.EventHandler(this.btnThamSo_Click);
+            // 
+            // btnLoaiThuoc
+            // 
+            this.btnLoaiThuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnLoaiThuoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoaiThuoc.FlatAppearance.BorderSize = 0;
+            this.btnLoaiThuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoaiThuoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoaiThuoc.ForeColor = System.Drawing.Color.White;
+            this.btnLoaiThuoc.Location = new System.Drawing.Point(0, 65);
+            this.btnLoaiThuoc.Name = "btnLoaiThuoc";
+            this.btnLoaiThuoc.Size = new System.Drawing.Size(300, 65);
+            this.btnLoaiThuoc.TabIndex = 1;
+            this.btnLoaiThuoc.Text = "💊 Loại thuốc";
+            this.btnLoaiThuoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoaiThuoc.UseVisualStyleBackColor = false;
+            this.btnLoaiThuoc.Click += new System.EventHandler(this.btnLoaiThuoc_Click);
+            // 
+            // btnLoaiBenh
+            // 
+            this.btnLoaiBenh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnLoaiBenh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoaiBenh.FlatAppearance.BorderSize = 0;
+            this.btnLoaiBenh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoaiBenh.ForeColor = System.Drawing.Color.White;
+            this.btnLoaiBenh.Location = new System.Drawing.Point(0, 130);
+            this.btnLoaiBenh.Name = "btnLoaiBenh";
+            this.btnLoaiBenh.Size = new System.Drawing.Size(300, 65);
+            this.btnLoaiBenh.TabIndex = 2;
+            this.btnLoaiBenh.Text = "🩺 Loại bệnh";
+            this.btnLoaiBenh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoaiBenh.UseVisualStyleBackColor = false;
+            this.btnLoaiBenh.Click += new System.EventHandler(this.btnLoaiBenh_Click);
+            // 
+            // btnDonViTinh
+            // 
+            this.btnDonViTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnDonViTinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDonViTinh.FlatAppearance.BorderSize = 0;
+            this.btnDonViTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDonViTinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDonViTinh.ForeColor = System.Drawing.Color.White;
+            this.btnDonViTinh.Location = new System.Drawing.Point(0, 195);
+            this.btnDonViTinh.Name = "btnDonViTinh";
+            this.btnDonViTinh.Size = new System.Drawing.Size(300, 65);
+            this.btnDonViTinh.TabIndex = 3;
+            this.btnDonViTinh.Text = "📏 Đơn vị tính";
+            this.btnDonViTinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDonViTinh.UseVisualStyleBackColor = false;
+            this.btnDonViTinh.Click += new System.EventHandler(this.btnDonViTinh_Click);
+            // 
+            // btnCachDung
+            // 
+            this.btnCachDung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnCachDung.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCachDung.FlatAppearance.BorderSize = 0;
+            this.btnCachDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCachDung.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCachDung.ForeColor = System.Drawing.Color.White;
+            this.btnCachDung.Location = new System.Drawing.Point(0, 260);
+            this.btnCachDung.Name = "btnCachDung";
+            this.btnCachDung.Size = new System.Drawing.Size(300, 65);
+            this.btnCachDung.TabIndex = 4;
+            this.btnCachDung.Text = "📖 Cách dùng";
+            this.btnCachDung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCachDung.UseVisualStyleBackColor = false;
+            this.btnCachDung.Click += new System.EventHandler(this.btnCachDung_Click);
+            // 
             // GUI_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -200,6 +326,7 @@
             this.Text = "Trang chủ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelSideBar.ResumeLayout(false);
+            this.panelCaiDat.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +342,12 @@
         private System.Windows.Forms.Button btnBaoCaoDoanhThu;
         private System.Windows.Forms.Button btnBaoCaoSuDungThuoc;
         private System.Windows.Forms.Button btnTiepNhanKhamBenh;
+        private System.Windows.Forms.Button btnCaiDat;
+        private System.Windows.Forms.Panel panelCaiDat;
+        private System.Windows.Forms.Button btnThamSo;
+        private System.Windows.Forms.Button btnLoaiThuoc;
+        private System.Windows.Forms.Button btnLoaiBenh;
+        private System.Windows.Forms.Button btnDonViTinh;
+        private System.Windows.Forms.Button btnCachDung;
     }
 }

@@ -18,14 +18,19 @@ namespace DoAnSE104.GUI
         private List<DTO_LoaiBenh> dtLoaiBenh = new List<DTO_LoaiBenh>();
         private List<DTO_LoaiBenh> dtLoaiBenhGoc = new List<DTO_LoaiBenh>();
         private BUS_LoaiBenh busLoaiBenh = new BUS_LoaiBenh();
+        private int hoverRowIndex = -1;
+        private int hoverColIndex = -1;
+
         public GUI_QuanLyLoaiBenh()
         {
             InitializeComponent();
             LoadDataToDataGridView();
 
-            //dataGridView1.CellPainting += dataGridView1_CellPainting;
-
+            dgvDanhSachLoaiBenh.CellPainting += dataGridView1_CellPainting;
+            dgvDanhSachLoaiBenh.CellMouseMove += dgvDanhSachLoaiBenh_CellMouseMove;
+            dgvDanhSachLoaiBenh.CellMouseLeave += dgvDanhSachLoaiBenh_CellMouseLeave;
         }
+
         private void LoadDataToDataGridView()
         {
             try
@@ -56,7 +61,6 @@ namespace DoAnSE104.GUI
                 foreach (DTO_LoaiBenh lb in dtLoaiBenhGoc)
                 {
                     dgvDanhSachLoaiBenh.Rows.Add(
-                        //dataGridView1.Rows.Count + 1,
                         lb.maLoaiBenh,
                         lb.tenLoaiBenh
                     );
@@ -79,6 +83,7 @@ namespace DoAnSE104.GUI
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void GUI_QuanLyLoaiBenh_Load(object sender, EventArgs e)
         {
             string newMa = busLoaiBenh.NextMaLoaiBenh();
@@ -136,6 +141,7 @@ namespace DoAnSE104.GUI
                 }
             }
         }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
             try
@@ -173,6 +179,7 @@ namespace DoAnSE104.GUI
                 MessageBox.Show("Lỗi khi lưu: " + ex.Message);
             }
         }
+
         private void ReloadDataGridView()
         {
             try
@@ -180,7 +187,6 @@ namespace DoAnSE104.GUI
                 if (!dgvDanhSachLoaiBenh.Columns.Contains("btnXoa"))
                 {
                     dgvDanhSachLoaiBenh.Columns.Clear();
-                    //dataGridView1.Columns.Add("STT", "STT");
                     dgvDanhSachLoaiBenh.Columns.Add("MaLoaiBenh", "Mã Loại Bệnh");
                     dgvDanhSachLoaiBenh.Columns.Add("TenLoaiBenh", "Tên Loại Bệnh");
 
@@ -196,7 +202,6 @@ namespace DoAnSE104.GUI
                 foreach (DTO_LoaiBenh lb in dtLoaiBenh)
                 {
                     dgvDanhSachLoaiBenh.Rows.Add(
-                        //dataGridView1.Rows.Count + 1,
                         lb.maLoaiBenh,
                         lb.tenLoaiBenh);
                 }
@@ -219,6 +224,38 @@ namespace DoAnSE104.GUI
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dgvDanhSachLoaiBenh_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvDanhSachLoaiBenh.Columns[e.ColumnIndex].Name == "btnXoa")
+            {
+                if (hoverRowIndex != e.RowIndex || hoverColIndex != e.ColumnIndex)
+                {
+                    hoverRowIndex = e.RowIndex;
+                    hoverColIndex = e.ColumnIndex;
+                    dgvDanhSachLoaiBenh.InvalidateCell(e.ColumnIndex, e.RowIndex);
+                }
+            }
+            else if (hoverRowIndex != -1 || hoverColIndex != -1)
+            {
+                int oldRow = hoverRowIndex, oldCol = hoverColIndex;
+                hoverRowIndex = -1;
+                hoverColIndex = -1;
+                dgvDanhSachLoaiBenh.InvalidateCell(oldCol, oldRow);
+            }
+        }
+
+        private void dgvDanhSachLoaiBenh_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (hoverRowIndex != -1 || hoverColIndex != -1)
+            {
+                int oldRow = hoverRowIndex, oldCol = hoverColIndex;
+                hoverRowIndex = -1;
+                hoverColIndex = -1;
+                dgvDanhSachLoaiBenh.InvalidateCell(oldCol, oldRow);
+            }
+        }
+
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             try
@@ -227,20 +264,21 @@ namespace DoAnSE104.GUI
                 {
                     e.PaintBackground(e.ClipBounds, true);
 
-                    // Check if the mouse is hovering over the cell
-                    bool isHovered = dgvDanhSachLoaiBenh.CurrentCell != null &&
-                                     dgvDanhSachLoaiBenh.CurrentCell.RowIndex == e.RowIndex &&
-                                     dgvDanhSachLoaiBenh.CurrentCell.ColumnIndex == e.ColumnIndex;
-
-                    // Change background color based on hover state
-                    Color backColor = isHovered ? Color.Orange : Color.Red;
+                    Color backColor = (e.RowIndex == hoverRowIndex && e.ColumnIndex == hoverColIndex)
+                        ? Color.FromArgb(211, 47, 47) // Màu hover (đỏ đậm hơn)
+                        : Color.FromArgb(244, 67, 54); // Màu mặc định giống nút Thoát
 
                     using (Brush backColorBrush = new SolidBrush(backColor))
                     {
                         e.Graphics.FillRectangle(backColorBrush, e.CellBounds);
                     }
 
-                    // Draw the text in the cell
+                    // Vẽ viền nếu muốn
+                    using (Pen pen = new Pen(dgvDanhSachLoaiBenh.GridColor))
+                    {
+                        e.Graphics.DrawRectangle(pen, e.CellBounds.X, e.CellBounds.Y, e.CellBounds.Width - 1, e.CellBounds.Height - 1);
+                    }
+
                     TextRenderer.DrawText(e.Graphics, "Xóa", dgvDanhSachLoaiBenh.Font, e.CellBounds, Color.White,
                         TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
 

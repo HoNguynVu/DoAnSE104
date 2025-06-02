@@ -68,7 +68,7 @@ namespace DoAnSE104.GUI
             this.groupBoxInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxInfo.Name = "groupBoxInfo";
             this.groupBoxInfo.Padding = new System.Windows.Forms.Padding(22, 29, 22, 29);
-            this.groupBoxInfo.Size = new System.Drawing.Size(900, 298);
+            this.groupBoxInfo.Size = new System.Drawing.Size(900, 198);
             this.groupBoxInfo.TabIndex = 1;
             this.groupBoxInfo.TabStop = false;
             this.groupBoxInfo.Text = "Thông tin bệnh nhân";
@@ -77,7 +77,7 @@ namespace DoAnSE104.GUI
             // 
             this.labelMaBenhNhan.AutoSize = true;
             this.labelMaBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelMaBenhNhan.Location = new System.Drawing.Point(34, 58);
+            this.labelMaBenhNhan.Location = new System.Drawing.Point(30, 40);
             this.labelMaBenhNhan.Name = "labelMaBenhNhan";
             this.labelMaBenhNhan.Size = new System.Drawing.Size(137, 28);
             this.labelMaBenhNhan.TabIndex = 1;
@@ -89,7 +89,7 @@ namespace DoAnSE104.GUI
             this.txtMaBenhNhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaBenhNhan.Enabled = false;
             this.txtMaBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtMaBenhNhan.Location = new System.Drawing.Point(38, 101);
+            this.txtMaBenhNhan.Location = new System.Drawing.Point(34, 70);
             this.txtMaBenhNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaBenhNhan.Name = "txtMaBenhNhan";
             this.txtMaBenhNhan.ReadOnly = true;
@@ -100,7 +100,7 @@ namespace DoAnSE104.GUI
             // 
             this.labelHoTen.AutoSize = true;
             this.labelHoTen.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelHoTen.Location = new System.Drawing.Point(304, 58);
+            this.labelHoTen.Location = new System.Drawing.Point(304, 40);
             this.labelHoTen.Name = "labelHoTen";
             this.labelHoTen.Size = new System.Drawing.Size(96, 28);
             this.labelHoTen.TabIndex = 3;
@@ -110,7 +110,7 @@ namespace DoAnSE104.GUI
             // 
             this.txtHoTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtHoTen.Location = new System.Drawing.Point(308, 101);
+            this.txtHoTen.Location = new System.Drawing.Point(308, 70);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(247, 34);
@@ -120,7 +120,7 @@ namespace DoAnSE104.GUI
             // 
             this.labelGioiTinh.AutoSize = true;
             this.labelGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelGioiTinh.Location = new System.Drawing.Point(585, 58);
+            this.labelGioiTinh.Location = new System.Drawing.Point(585, 40);
             this.labelGioiTinh.Name = "labelGioiTinh";
             this.labelGioiTinh.Size = new System.Drawing.Size(87, 28);
             this.labelGioiTinh.TabIndex = 5;
@@ -130,7 +130,7 @@ namespace DoAnSE104.GUI
             // 
             this.txtGioiTinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtGioiTinh.Location = new System.Drawing.Point(590, 101);
+            this.txtGioiTinh.Location = new System.Drawing.Point(590, 70);
             this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Size = new System.Drawing.Size(157, 34);
@@ -140,7 +140,7 @@ namespace DoAnSE104.GUI
             // 
             this.labelNamSinh.AutoSize = true;
             this.labelNamSinh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelNamSinh.Location = new System.Drawing.Point(34, 165);
+            this.labelNamSinh.Location = new System.Drawing.Point(34, 115);
             this.labelNamSinh.Name = "labelNamSinh";
             this.labelNamSinh.Size = new System.Drawing.Size(94, 28);
             this.labelNamSinh.TabIndex = 7;
@@ -150,7 +150,7 @@ namespace DoAnSE104.GUI
             // 
             this.txtNamSinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNamSinh.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtNamSinh.Location = new System.Drawing.Point(38, 208);
+            this.txtNamSinh.Location = new System.Drawing.Point(34, 145);
             this.txtNamSinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNamSinh.Name = "txtNamSinh";
             this.txtNamSinh.Size = new System.Drawing.Size(157, 34);
@@ -160,7 +160,7 @@ namespace DoAnSE104.GUI
             // 
             this.labelDiaChi.AutoSize = true;
             this.labelDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelDiaChi.Location = new System.Drawing.Point(225, 165);
+            this.labelDiaChi.Location = new System.Drawing.Point(225, 115);
             this.labelDiaChi.Name = "labelDiaChi";
             this.labelDiaChi.Size = new System.Drawing.Size(71, 28);
             this.labelDiaChi.TabIndex = 9;
@@ -170,7 +170,7 @@ namespace DoAnSE104.GUI
             // 
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtDiaChi.Location = new System.Drawing.Point(230, 208);
+            this.txtDiaChi.Location = new System.Drawing.Point(230, 145);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(517, 34);

@@ -229,7 +229,7 @@
             // 
             // txtNgayKham
             // 
-            this.txtNgayKham.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNgayKham.BackColor = System.Drawing.Color.White;
             this.txtNgayKham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNgayKham.Enabled = false;
             this.txtNgayKham.Font = new System.Drawing.Font("Segoe UI", 12F);

@@ -34,11 +34,11 @@ namespace DoAnSE104.GUI
                 dtLoaiBenh = new List<DTO_LoaiBenh>(dtLoaiBenhGoc); // clone danh sách
 
                 // Always clear and add columns
-                dataGridView1.Columns.Clear();
-                if (dataGridView1.Columns.Count == 0)
+                dgvDanhSachLoaiBenh.Columns.Clear();
+                if (dgvDanhSachLoaiBenh.Columns.Count == 0)
                 {
-                    dataGridView1.Columns.Add("MaLoaiBenh", "Mã Loại Bệnh");
-                    dataGridView1.Columns.Add("TenLoaiBenh", "Tên Loại Bệnh");
+                    dgvDanhSachLoaiBenh.Columns.Add("MaLoaiBenh", "Mã Loại Bệnh");
+                    dgvDanhSachLoaiBenh.Columns.Add("TenLoaiBenh", "Tên Loại Bệnh");
                 }
 
                 // Add the button column
@@ -49,29 +49,29 @@ namespace DoAnSE104.GUI
                 btnXoa.UseColumnTextForButtonValue = true;
                 btnXoa.DefaultCellStyle.BackColor = Color.Red;
                 btnXoa.DefaultCellStyle.ForeColor = Color.White;
-                dataGridView1.Columns.Add(btnXoa);
+                dgvDanhSachLoaiBenh.Columns.Add(btnXoa);
 
                 // Populate rows
-                dataGridView1.Rows.Clear();
+                dgvDanhSachLoaiBenh.Rows.Clear();
                 foreach (DTO_LoaiBenh lb in dtLoaiBenhGoc)
                 {
-                    dataGridView1.Rows.Add(
+                    dgvDanhSachLoaiBenh.Rows.Add(
                         //dataGridView1.Rows.Count + 1,
                         lb.maLoaiBenh,
                         lb.tenLoaiBenh
                     );
                 }
-                int rowHeight = dataGridView1.RowTemplate.Height;
-                int headerHeight = dataGridView1.ColumnHeadersHeight;
-                int totalRowsHeight = (dataGridView1.Rows.Count * rowHeight) + headerHeight;
+                int rowHeight = dgvDanhSachLoaiBenh.RowTemplate.Height;
+                int headerHeight = dgvDanhSachLoaiBenh.ColumnHeadersHeight;
+                int totalRowsHeight = (dgvDanhSachLoaiBenh.Rows.Count * rowHeight) + headerHeight;
 
                 // Set a maximum height to prevent excessive growth
                 int maxHeight = 200; // Adjust as needed
-                dataGridView1.Height = Math.Min(totalRowsHeight, maxHeight);
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView1.AllowUserToAddRows = false;
-                dataGridView1.ReadOnly = true;
-                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvDanhSachLoaiBenh.Height = Math.Min(totalRowsHeight, maxHeight);
+                dgvDanhSachLoaiBenh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvDanhSachLoaiBenh.AllowUserToAddRows = false;
+                dgvDanhSachLoaiBenh.ReadOnly = true;
+                dgvDanhSachLoaiBenh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             }
             catch (Exception ex)
             {
@@ -117,12 +117,12 @@ namespace DoAnSE104.GUI
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var btnXoaColumn = dataGridView1.Columns["btnXoa"];
+            var btnXoaColumn = dgvDanhSachLoaiBenh.Columns["btnXoa"];
             if (btnXoaColumn != null && e.ColumnIndex == btnXoaColumn.Index && e.RowIndex >= 0)
             {
                 try
                 {
-                    string ma = dataGridView1.Rows[e.RowIndex].Cells["MaLoaiBenh"].Value?.ToString();
+                    string ma = dgvDanhSachLoaiBenh.Rows[e.RowIndex].Cells["MaLoaiBenh"].Value?.ToString();
                     var confirm = MessageBox.Show($"Xóa loại bệnh có mã {ma}?", "Xác nhận", MessageBoxButtons.YesNo);
                     if (confirm == DialogResult.Yes)
                     {
@@ -177,41 +177,41 @@ namespace DoAnSE104.GUI
         {
             try
             {
-                if (!dataGridView1.Columns.Contains("btnXoa"))
+                if (!dgvDanhSachLoaiBenh.Columns.Contains("btnXoa"))
                 {
-                    dataGridView1.Columns.Clear();
+                    dgvDanhSachLoaiBenh.Columns.Clear();
                     //dataGridView1.Columns.Add("STT", "STT");
-                    dataGridView1.Columns.Add("MaLoaiBenh", "Mã Loại Bệnh");
-                    dataGridView1.Columns.Add("TenLoaiBenh", "Tên Loại Bệnh");
+                    dgvDanhSachLoaiBenh.Columns.Add("MaLoaiBenh", "Mã Loại Bệnh");
+                    dgvDanhSachLoaiBenh.Columns.Add("TenLoaiBenh", "Tên Loại Bệnh");
 
                     DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
                     btnXoa.HeaderText = "Xóa";
                     btnXoa.Text = "Xóa";
                     btnXoa.Name = "btnXoa";
                     btnXoa.UseColumnTextForButtonValue = true;
-                    dataGridView1.Columns.Add(btnXoa);
+                    dgvDanhSachLoaiBenh.Columns.Add(btnXoa);
                 }
 
-                dataGridView1.Rows.Clear();
+                dgvDanhSachLoaiBenh.Rows.Clear();
                 foreach (DTO_LoaiBenh lb in dtLoaiBenh)
                 {
-                    dataGridView1.Rows.Add(
+                    dgvDanhSachLoaiBenh.Rows.Add(
                         //dataGridView1.Rows.Count + 1,
                         lb.maLoaiBenh,
                         lb.tenLoaiBenh);
                 }
-                int rowHeight = dataGridView1.RowTemplate.Height;
-                int headerHeight = dataGridView1.ColumnHeadersHeight;
-                int totalRowsHeight = (dataGridView1.Rows.Count * rowHeight) + headerHeight;
+                int rowHeight = dgvDanhSachLoaiBenh.RowTemplate.Height;
+                int headerHeight = dgvDanhSachLoaiBenh.ColumnHeadersHeight;
+                int totalRowsHeight = (dgvDanhSachLoaiBenh.Rows.Count * rowHeight) + headerHeight;
 
                 // Set a maximum height to prevent excessive growth
                 int maxHeight = 200; // Adjust as needed
-                dataGridView1.Height = Math.Min(totalRowsHeight, maxHeight);
+                dgvDanhSachLoaiBenh.Height = Math.Min(totalRowsHeight, maxHeight);
 
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView1.AllowUserToAddRows = false;
-                dataGridView1.ReadOnly = true;
-                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvDanhSachLoaiBenh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvDanhSachLoaiBenh.AllowUserToAddRows = false;
+                dgvDanhSachLoaiBenh.ReadOnly = true;
+                dgvDanhSachLoaiBenh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             }
             catch (Exception ex)
             {
@@ -223,14 +223,14 @@ namespace DoAnSE104.GUI
         {
             try
             {
-                if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "btnXoa")
+                if (e.RowIndex >= 0 && dgvDanhSachLoaiBenh.Columns[e.ColumnIndex].Name == "btnXoa")
                 {
                     e.PaintBackground(e.ClipBounds, true);
 
                     // Check if the mouse is hovering over the cell
-                    bool isHovered = dataGridView1.CurrentCell != null &&
-                                     dataGridView1.CurrentCell.RowIndex == e.RowIndex &&
-                                     dataGridView1.CurrentCell.ColumnIndex == e.ColumnIndex;
+                    bool isHovered = dgvDanhSachLoaiBenh.CurrentCell != null &&
+                                     dgvDanhSachLoaiBenh.CurrentCell.RowIndex == e.RowIndex &&
+                                     dgvDanhSachLoaiBenh.CurrentCell.ColumnIndex == e.ColumnIndex;
 
                     // Change background color based on hover state
                     Color backColor = isHovered ? Color.Orange : Color.Red;
@@ -241,7 +241,7 @@ namespace DoAnSE104.GUI
                     }
 
                     // Draw the text in the cell
-                    TextRenderer.DrawText(e.Graphics, "Xóa", dataGridView1.Font, e.CellBounds, Color.White,
+                    TextRenderer.DrawText(e.Graphics, "Xóa", dgvDanhSachLoaiBenh.Font, e.CellBounds, Color.White,
                         TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
 
                     e.Handled = true;

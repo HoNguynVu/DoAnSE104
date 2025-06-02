@@ -137,3 +137,164 @@ Tải ứng dụng tại website: <a href="Đường link file">Link</a>
 ## MÔ TẢ CHI TIẾT
 <a name="specific"></a>
 
+<h3> 1. Database </h3>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Tên Bảng</th>
+      <th>Ý Nghĩa</th>
+      <th>Các Thuộc Tính</th>
+      <th>Kiểu Dữ Liệu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>BENHNHAN</td>
+      <td>Lưu trữ thông tin bệnh nhân</td>
+      <td>
+        <b>MaBenhNhan</b> - <span style="color:red">Primary key</span><br>
+        HoTen<br>
+        GioiTinh<br>
+        NamSinh<br>
+        DiaChi
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(100)<br>
+        VARCHAR(10)<br>
+        YEAR<br>
+        VARCHAR(255)
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>LOAIBENH</td>
+      <td>Lưu trữ các loại bệnh</td>
+      <td>
+        <b>MaLoaiBenh</b> - <span style="color:red">Primary key</span><br>
+        TenLoaiBenh
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(100)
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>KHAMBENH</td>
+      <td>Lưu trữ thông tin khám bệnh</td>
+      <td>
+        <b>MaKhamBenh</b> - <span style="color:red">Primary key</span><br>
+        NgayKham<br>
+        MaBenhNhan - <span style="color:blue">Foreign key</span><br>
+        TrieuChung<br>
+        MaLoaiBenh - <span style="color:blue">Foreign key</span>
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        DATE<br>
+        VARCHAR(10)<br>
+        TEXT<br>
+        VARCHAR(10)
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>THAMSO</td>
+      <td>Các tham số cấu hình hệ thống</td>
+      <td>
+        SoLuongBenhNhanToiDaTrongNgay<br>
+        QuyDinhSoLuongBenhNhanToiDaTrongNgay<br>
+        TienKhamCoDinh<br>
+        QuyDinhTienKhamCoDinh
+      </td>
+      <td>
+        INT<br>
+        BOOLEAN<br>
+        DECIMAL(10,2)<br>
+        BOOLEAN
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>HOADON</td>
+      <td>Lưu trữ thông tin hóa đơn</td>
+      <td>
+        <b>MaHoaDon</b> - <span style="color:red">Primary key</span><br>
+        TienKham<br>
+        TienThuoc<br>
+        MaKhamBenh - <span style="color:blue">Foreign key</span>
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        DECIMAL(10,2)<br>
+        DECIMAL(10,2)<br>
+        VARCHAR(10)
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>DONVI</td>
+      <td>Lưu trữ các đơn vị tính</td>
+      <td>
+        <b>MaDonVi</b> - <span style="color:red">Primary key</span><br>
+        TenDonVi
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(50)
+      </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>CACHDUNG</td>
+      <td>Lưu trữ cách dùng thuốc</td>
+      <td>
+        <b>MaCachDung</b> - <span style="color:red">Primary key</span><br>
+        TenCachDung
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(100)
+      </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>LOAITHUOC</td>
+      <td>Lưu trữ các loại thuốc</td>
+      <td>
+        <b>MaLoaiThuoc</b> - <span style="color:red">Primary key</span><br>
+        TenLoaiThuoc<br>
+        MaDonVi - <span style="color:blue">Foreign key</span><br>
+        MaCachDung - <span style="color:blue">Foreign key</span><br>
+        DonGia
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(100)<br>
+        VARCHAR(10)<br>
+        VARCHAR(10)<br>
+        DECIMAL(10,2)
+      </td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>CTKHAMBENH</td>
+      <td>Lưu trữ chi tiết thuốc theo từng lần khám bệnh</td>
+      <td>
+        <b>MaKhamBenh</b> - <span style="color:red">Primary key</span>, <span style="color:blue">Foreign key</span><br>
+        <b>MaLoaiThuoc</b> - <span style="color:red">Primary key</span>, <span style="color:blue">Foreign key</span><br>
+        SoLuongThuoc
+      </td>
+      <td>
+        VARCHAR(10)<br>
+        VARCHAR(10)<br>
+        INT
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

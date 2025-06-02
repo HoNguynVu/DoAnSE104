@@ -2,6 +2,7 @@
 using DoAnSE104.DTO;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,17 +12,22 @@ namespace DoAnSE104.GUI {
         private List<DTO_CachDung> listCachDung = new List<DTO_CachDung>();
         private List<DTO_CachDung> listCachDungMoi = new List<DTO_CachDung>();
         private string tenCachDung = string.Empty;
+        private int hoverRowIndex = -1;
+        private int hoverColIndex = -1;
 
         public GUI_QuanLyCachDung() {
             InitializeComponent();
             LoadDataToGridView();
             
-            // Display initial new code
+            // Hiển thị mã mới ban đầu
             txtMaCachDung.Text = busCachDung.LayMaCachDungMoi(listCachDungMoi);
-            txtMaCachDung.Enabled = false; // Make it read-only
+            txtMaCachDung.Enabled = false; // Không cho sửa
             
-            // Add CellClick event handler
+            // Đăng ký các event cho DataGridView
             dgvDanhSachCachDung.CellClick += dgvDanhSachCachDung_CellClick;
+            dgvDanhSachCachDung.CellPainting += dgvDanhSachCachDung_CellPainting;
+            dgvDanhSachCachDung.CellMouseMove += dgvDanhSachCachDung_CellMouseMove;
+            dgvDanhSachCachDung.CellMouseLeave += dgvDanhSachCachDung_CellMouseLeave;
         }
         private void LoadData() {
             dgvDanhSachCachDung.Rows.Clear();
@@ -67,28 +73,28 @@ namespace DoAnSE104.GUI {
 
         private void btnThemCachDung_Click(object sender, EventArgs e) {
             try {
-                // Generate new usage code first
+                // Sinh mã mới
                 string maCachDungMoi = busCachDung.LayMaCachDungMoi(listCachDungMoi);
                 
-                // Validate inputs
+                // Kiểm tra nhập liệu
                 if (string.IsNullOrWhiteSpace(tenCachDung)) {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin cách dùng!",
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Display new code
+                // Hiển thị mã mới
                 txtMaCachDung.Text = maCachDungMoi;
 
-                // Create new usage type with the generated code
+                // Tạo đối tượng mới
                 DTO_CachDung newCachDung = new DTO_CachDung(maCachDungMoi, tenCachDung);
 
-                // Add to the lists and refresh DataGridView
+                // Thêm vào danh sách và refresh
                 listCachDung.Add(newCachDung);
                 listCachDungMoi.Add(newCachDung);
                 reloadData();
 
-                // Clear input fields
+                // Xóa trường nhập
                 txtCachDung.Clear();
 
                 MessageBox.Show($"Thêm cách dùng thành công! Mã cách dùng mới: {maCachDungMoi}",
@@ -162,21 +168,21 @@ namespace DoAnSE104.GUI {
                     var cachDungMoi = listCachDungMoi.FirstOrDefault(cd => cd.maCachDung == maCachDung);
 
                     if (cachDungMoi != null) {
-                        // If it's a new item, remove directly
+                        // Nếu là mới, xóa trực tiếp
                         listCachDungMoi.Remove(cachDungMoi);
                         listCachDung.RemoveAll(cd => cd.maCachDung == maCachDung);
                         reloadData();
                         MessageBox.Show("Đã xóa cách dùng khỏi danh sách mới!", 
                             "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } else {
-                        // If it exists in DB, first check if it's being used
+                        // Nếu đã lưu DB, kiểm tra sử dụng
                         if (busCachDung.KiemTraCachDungDangDuocSuDung(maCachDung)) {
                             MessageBox.Show("Không thể xóa cách dùng này vì đang được sử dụng cho một số loại thuốc!", 
                                 "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
 
-                        // If not being used, ask for confirmation
+                        // Nếu không bị sử dụng, xác nhận xóa
                         var result = MessageBox.Show(
                             "Bạn có chắc muốn xóa cách dùng này khỏi cơ sở dữ liệu?",
                             "Xác nhận xóa",
@@ -200,6 +206,58 @@ namespace DoAnSE104.GUI {
                     MessageBox.Show($"Lỗi khi xóa cách dùng: {ex.Message}", 
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void dgvDanhSachCachDung_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e) {
+            if (e.RowIndex >= 0 && dgvDanhSachCachDung.Columns[e.ColumnIndex].Name == "btnXoa") {
+                if (hoverRowIndex != e.RowIndex || hoverColIndex != e.ColumnIndex) {
+                    hoverRowIndex = e.RowIndex;
+                    hoverColIndex = e.ColumnIndex;
+                    dgvDanhSachCachDung.InvalidateCell(e.ColumnIndex, e.RowIndex);
+                }
+            } else if (hoverRowIndex != -1 || hoverColIndex != -1) {
+                int oldRow = hoverRowIndex, oldCol = hoverColIndex;
+                hoverRowIndex = -1;
+                hoverColIndex = -1;
+            }
+        }
+
+        private void dgvDanhSachCachDung_CellMouseLeave(object sender, DataGridViewCellEventArgs e) {
+            if (hoverRowIndex != -1 || hoverColIndex != -1) {
+                int oldRow = hoverRowIndex, oldCol = hoverColIndex;
+                hoverRowIndex = -1;
+                hoverColIndex = -1;
+                dgvDanhSachCachDung.InvalidateCell(oldCol, oldRow);
+            }
+        }
+
+        private void dgvDanhSachCachDung_CellPainting(object sender, DataGridViewCellPaintingEventArgs e) {
+            if (e.RowIndex >= 0 && dgvDanhSachCachDung.Columns[e.ColumnIndex].Name == "btnXoa") {
+                e.PaintBackground(e.ClipBounds, true);
+
+                Color backColor = (e.RowIndex == hoverRowIndex && e.ColumnIndex == hoverColIndex)
+                    ? Color.FromArgb(211, 47, 47) // Màu hover (đỏ đậm hơn)
+                    : Color.FromArgb(244, 67, 54); // Màu mặc định giống nút Thoát
+
+                using (var brush = new SolidBrush(backColor)) {
+                    e.Graphics.FillRectangle(brush, e.CellBounds);
+                }
+
+                using (var pen = new Pen(dgvDanhSachCachDung.GridColor)) {
+                    e.Graphics.DrawRectangle(pen, e.CellBounds.X, e.CellBounds.Y, e.CellBounds.Width - 1, e.CellBounds.Height - 1);
+                }
+
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    "Xóa",
+                    dgvDanhSachCachDung.Font,
+                    e.CellBounds,
+                    Color.White,
+                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
+                );
+
+                e.Handled = true;
             }
         }
     }

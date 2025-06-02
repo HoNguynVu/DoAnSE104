@@ -154,6 +154,8 @@ namespace DoAnSE104.GUI
                                 "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        
+                        MessageBox.Show(BUS_LoaiThuoc.KiemTraLoaiThuocDangDuocSuDung(maLoaiThuoc).ToString()+maLoaiThuoc);
 
                         // Nếu chưa được sử dụng, hỏi xác nhận xóa
                         var result = MessageBox.Show(

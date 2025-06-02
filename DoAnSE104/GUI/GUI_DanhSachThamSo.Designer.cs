@@ -28,178 +28,191 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label13 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
+            this.labelQDSLBNToiDaTrongNgay = new System.Windows.Forms.Label();
+            this.labelSLBNToiDaTrongNgay = new System.Windows.Forms.Label();
             this.txtSoLuongBenhNhanToiDaTrongNgay = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textblock = new System.Windows.Forms.Label();
+            this.labelQDTienKhamCoDinh = new System.Windows.Forms.Label();
+            this.textTienKhamCoDinh = new System.Windows.Forms.Label();
             this.txtTienKhamCoDinh = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.QuyDinhTienKhamCoDinh = new Styling_Toggle_Button.SButton();
             this.QuyDinhSoLuongBenhNhanToiDaTrongNgay = new Styling_Toggle_Button.SButton();
+            this.QuyDinhTienKhamCoDinh = new Styling_Toggle_Button.SButton();
+            this.groupBoxInfo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label13
+            // labelTitle
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(7, 9);
-            this.label13.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(443, 62);
-            this.label13.TabIndex = 117;
-            this.label13.Text = "Danh sách tham số";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold);
+            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.labelTitle.Location = new System.Drawing.Point(30, 20);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(511, 72);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Danh sách tham số";
             // 
-            // label1
+            // groupBoxInfo
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(16, 115);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(333, 67);
-            this.label1.TabIndex = 117;
-            this.label1.Text = "Quy định số lượng bệnh nhân tối đa trong ngày";
+            this.groupBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxInfo.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfo.Controls.Add(this.labelQDSLBNToiDaTrongNgay);
+            this.groupBoxInfo.Controls.Add(this.QuyDinhSoLuongBenhNhanToiDaTrongNgay);
+            this.groupBoxInfo.Controls.Add(this.labelSLBNToiDaTrongNgay);
+            this.groupBoxInfo.Controls.Add(this.txtSoLuongBenhNhanToiDaTrongNgay);
+            this.groupBoxInfo.Controls.Add(this.labelQDTienKhamCoDinh);
+            this.groupBoxInfo.Controls.Add(this.QuyDinhTienKhamCoDinh);
+            this.groupBoxInfo.Controls.Add(this.textTienKhamCoDinh);
+            this.groupBoxInfo.Controls.Add(this.txtTienKhamCoDinh);
+            this.groupBoxInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBoxInfo.Location = new System.Drawing.Point(30, 110);
+            this.groupBoxInfo.Name = "groupBoxInfo";
+            this.groupBoxInfo.Padding = new System.Windows.Forms.Padding(20);
+            this.groupBoxInfo.Size = new System.Drawing.Size(1033, 260);
+            this.groupBoxInfo.TabIndex = 1;
+            this.groupBoxInfo.TabStop = false;
+            this.groupBoxInfo.Text = "Thông tin tham số";
+            // 
+            // labelQDSLBNToiDaTrongNgay
+            // 
+            this.labelQDSLBNToiDaTrongNgay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.labelQDSLBNToiDaTrongNgay.Location = new System.Drawing.Point(30, 50);
+            this.labelQDSLBNToiDaTrongNgay.Name = "labelQDSLBNToiDaTrongNgay";
+            this.labelQDSLBNToiDaTrongNgay.Size = new System.Drawing.Size(414, 30);
+            this.labelQDSLBNToiDaTrongNgay.TabIndex = 0;
+            this.labelQDSLBNToiDaTrongNgay.Text = "Quy định số lượng bệnh nhân tối đa trong ngày";
+            // 
+            // labelSLBNToiDaTrongNgay
+            // 
+            this.labelSLBNToiDaTrongNgay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.labelSLBNToiDaTrongNgay.Location = new System.Drawing.Point(560, 50);
+            this.labelSLBNToiDaTrongNgay.Name = "labelSLBNToiDaTrongNgay";
+            this.labelSLBNToiDaTrongNgay.Size = new System.Drawing.Size(321, 30);
+            this.labelSLBNToiDaTrongNgay.TabIndex = 2;
+            this.labelSLBNToiDaTrongNgay.Text = "Số lượng bệnh nhân tối đa trong ngày";
             // 
             // txtSoLuongBenhNhanToiDaTrongNgay
             // 
-            this.txtSoLuongBenhNhanToiDaTrongNgay.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSoLuongBenhNhanToiDaTrongNgay.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSoLuongBenhNhanToiDaTrongNgay.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtSoLuongBenhNhanToiDaTrongNgay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSoLuongBenhNhanToiDaTrongNgay.Enabled = false;
-            this.txtSoLuongBenhNhanToiDaTrongNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuongBenhNhanToiDaTrongNgay.Location = new System.Drawing.Point(865, 129);
-            this.txtSoLuongBenhNhanToiDaTrongNgay.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSoLuongBenhNhanToiDaTrongNgay.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtSoLuongBenhNhanToiDaTrongNgay.Location = new System.Drawing.Point(887, 46);
             this.txtSoLuongBenhNhanToiDaTrongNgay.Name = "txtSoLuongBenhNhanToiDaTrongNgay";
-            this.txtSoLuongBenhNhanToiDaTrongNgay.Size = new System.Drawing.Size(252, 34);
-            this.txtSoLuongBenhNhanToiDaTrongNgay.TabIndex = 118;
+            this.txtSoLuongBenhNhanToiDaTrongNgay.Size = new System.Drawing.Size(120, 34);
+            this.txtSoLuongBenhNhanToiDaTrongNgay.TabIndex = 3;
             this.txtSoLuongBenhNhanToiDaTrongNgay.TabStop = false;
             this.txtSoLuongBenhNhanToiDaTrongNgay.TextChanged += new System.EventHandler(this.txtSoLuongBenhNhanToiDaTrongNgay_TextChanged);
             // 
-            // label2
+            // labelQDTienKhamCoDinh
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(582, 114);
-            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(268, 67);
-            this.label2.TabIndex = 117;
-            this.label2.Text = "Số lượng bệnh nhân tối đa trong ngày";
+            this.labelQDTienKhamCoDinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.labelQDTienKhamCoDinh.Location = new System.Drawing.Point(30, 120);
+            this.labelQDTienKhamCoDinh.Name = "labelQDTienKhamCoDinh";
+            this.labelQDTienKhamCoDinh.Size = new System.Drawing.Size(350, 30);
+            this.labelQDTienKhamCoDinh.TabIndex = 4;
+            this.labelQDTienKhamCoDinh.Text = "Quy định tiền khám cố định";
             // 
-            // label3
+            // textTienKhamCoDinh
             // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(16, 332);
-            this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(333, 35);
-            this.label3.TabIndex = 117;
-            this.label3.Text = "Quy định tiền khám cố định";
-            // 
-            // textblock
-            // 
-            this.textblock.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textblock.Location = new System.Drawing.Point(582, 332);
-            this.textblock.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.textblock.Name = "textblock";
-            this.textblock.Size = new System.Drawing.Size(268, 31);
-            this.textblock.TabIndex = 117;
-            this.textblock.Text = "Tiền khám cố định";
+            this.textTienKhamCoDinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.textTienKhamCoDinh.Location = new System.Drawing.Point(560, 120);
+            this.textTienKhamCoDinh.Name = "textTienKhamCoDinh";
+            this.textTienKhamCoDinh.Size = new System.Drawing.Size(220, 30);
+            this.textTienKhamCoDinh.TabIndex = 6;
+            this.textTienKhamCoDinh.Text = "Tiền khám cố định";
             // 
             // txtTienKhamCoDinh
             // 
-            this.txtTienKhamCoDinh.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtTienKhamCoDinh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTienKhamCoDinh.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTienKhamCoDinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTienKhamCoDinh.Enabled = false;
-            this.txtTienKhamCoDinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTienKhamCoDinh.Location = new System.Drawing.Point(865, 334);
-            this.txtTienKhamCoDinh.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTienKhamCoDinh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtTienKhamCoDinh.Location = new System.Drawing.Point(887, 116);
             this.txtTienKhamCoDinh.Name = "txtTienKhamCoDinh";
-            this.txtTienKhamCoDinh.Size = new System.Drawing.Size(252, 34);
-            this.txtTienKhamCoDinh.TabIndex = 118;
+            this.txtTienKhamCoDinh.Size = new System.Drawing.Size(120, 34);
+            this.txtTienKhamCoDinh.TabIndex = 7;
             this.txtTienKhamCoDinh.TabStop = false;
             this.txtTienKhamCoDinh.TextChanged += new System.EventHandler(this.txtTienKhamCoDinh_TextChanged);
             // 
             // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(803, 426);
+            this.btnSave.Location = new System.Drawing.Point(30, 400);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(160, 45);
-            this.btnSave.TabIndex = 122;
+            this.btnSave.Size = new System.Drawing.Size(200, 44);
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Gray;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(979, 426);
+            this.btnCancel.Location = new System.Drawing.Point(863, 400);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(147, 45);
-            this.btnCancel.TabIndex = 121;
+            this.btnCancel.Size = new System.Drawing.Size(200, 44);
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Thoát";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // QuyDinhTienKhamCoDinh
-            // 
-            this.QuyDinhTienKhamCoDinh.Location = new System.Drawing.Point(359, 332);
-            this.QuyDinhTienKhamCoDinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.QuyDinhTienKhamCoDinh.MinimumSize = new System.Drawing.Size(40, 18);
-            this.QuyDinhTienKhamCoDinh.Name = "QuyDinhTienKhamCoDinh";
-            this.QuyDinhTienKhamCoDinh.OffBackColor = System.Drawing.Color.Gray;
-            this.QuyDinhTienKhamCoDinh.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.QuyDinhTienKhamCoDinh.OnBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.QuyDinhTienKhamCoDinh.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.QuyDinhTienKhamCoDinh.Size = new System.Drawing.Size(89, 40);
-            this.QuyDinhTienKhamCoDinh.TabIndex = 120;
-            this.QuyDinhTienKhamCoDinh.UseVisualStyleBackColor = true;
-            this.QuyDinhTienKhamCoDinh.CheckedChanged += new System.EventHandler(this.QuyDinhTienKhamCoDinh_CheckedChanged);
-            // 
             // QuyDinhSoLuongBenhNhanToiDaTrongNgay
             // 
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Location = new System.Drawing.Point(359, 129);
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Location = new System.Drawing.Point(450, 46);
             this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.MinimumSize = new System.Drawing.Size(40, 18);
             this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Name = "QuyDinhSoLuongBenhNhanToiDaTrongNgay";
             this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OffBackColor = System.Drawing.Color.Gray;
             this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OffToggleColor = System.Drawing.Color.Gainsboro;
             this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OnBackColor = System.Drawing.Color.MediumSlateBlue;
             this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Size = new System.Drawing.Size(89, 40);
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.TabIndex = 119;
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Size = new System.Drawing.Size(70, 30);
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.TabIndex = 1;
             this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.UseVisualStyleBackColor = true;
             this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.CheckedChanged += new System.EventHandler(this.QuyDinhSoLuongBenhNhanToiDaTrongNgay_CheckedChanged);
             // 
+            // QuyDinhTienKhamCoDinh
+            // 
+            this.QuyDinhTienKhamCoDinh.Location = new System.Drawing.Point(450, 116);
+            this.QuyDinhTienKhamCoDinh.MinimumSize = new System.Drawing.Size(40, 18);
+            this.QuyDinhTienKhamCoDinh.Name = "QuyDinhTienKhamCoDinh";
+            this.QuyDinhTienKhamCoDinh.OffBackColor = System.Drawing.Color.Gray;
+            this.QuyDinhTienKhamCoDinh.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.QuyDinhTienKhamCoDinh.OnBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.QuyDinhTienKhamCoDinh.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.QuyDinhTienKhamCoDinh.Size = new System.Drawing.Size(70, 30);
+            this.QuyDinhTienKhamCoDinh.TabIndex = 5;
+            this.QuyDinhTienKhamCoDinh.UseVisualStyleBackColor = true;
+            this.QuyDinhTienKhamCoDinh.CheckedChanged += new System.EventHandler(this.QuyDinhTienKhamCoDinh_CheckedChanged);
+            // 
             // GUI_DanhSachThamSo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 490);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1093, 470);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.QuyDinhTienKhamCoDinh);
-            this.Controls.Add(this.QuyDinhSoLuongBenhNhanToiDaTrongNgay);
-            this.Controls.Add(this.txtTienKhamCoDinh);
-            this.Controls.Add(this.txtSoLuongBenhNhanToiDaTrongNgay);
-            this.Controls.Add(this.textblock);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.groupBoxInfo);
+            this.Controls.Add(this.labelTitle);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.MinimumSize = new System.Drawing.Size(960, 470);
             this.Name = "GUI_DanhSachThamSo";
-            this.Text = "Form1";
-            this.TextChanged += new System.EventHandler(this.QuyDinhTienKhamCoDinh_CheckedChanged);
+            this.Text = "Danh sách tham số";
+            this.groupBoxInfo.ResumeLayout(false);
+            this.groupBoxInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,15 +220,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSoLuongBenhNhanToiDaTrongNgay;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label textblock;
-        private System.Windows.Forms.TextBox txtTienKhamCoDinh;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.GroupBox groupBoxInfo;
+        private System.Windows.Forms.Label labelQDSLBNToiDaTrongNgay;
         private Styling_Toggle_Button.SButton QuyDinhSoLuongBenhNhanToiDaTrongNgay;
+        private System.Windows.Forms.Label labelSLBNToiDaTrongNgay;
+        private System.Windows.Forms.TextBox txtSoLuongBenhNhanToiDaTrongNgay;
+        private System.Windows.Forms.Label labelQDTienKhamCoDinh;
         private Styling_Toggle_Button.SButton QuyDinhTienKhamCoDinh;
+        private System.Windows.Forms.Label textTienKhamCoDinh;
+        private System.Windows.Forms.TextBox txtTienKhamCoDinh;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
     }

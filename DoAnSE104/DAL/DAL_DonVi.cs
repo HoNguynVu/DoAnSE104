@@ -16,7 +16,7 @@ namespace DoAnSE104.DAL
         // Lấy danh sách đơn vị
         public List<DTO_DonVi> LayDanhSachDonVi()
         {
-            string query = "SELECT * FROM DONVI"; // Bảng DONVI theo đúng DTO
+            string query = "SELECT * FROM DONVI"; 
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
             List<DTO_DonVi> danhSachDonVi = new List<DTO_DonVi>();
 
@@ -69,7 +69,7 @@ namespace DoAnSE104.DAL
             }
             catch (MySqlException ex)
             {
-                // Nếu lỗi do ràng buộc khóa ngoại (MySQL lỗi 1451)
+                // Nếu lỗi do ràng buộc khóa ngoại
                 if (ex.Number == 1451)
                 {
                     MessageBox.Show("Không thể xóa vì đơn vị này đang được sử dụng.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

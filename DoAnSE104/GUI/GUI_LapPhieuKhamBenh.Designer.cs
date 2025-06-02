@@ -13,7 +13,7 @@ namespace DoAnSE104.GUI
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true if managed resources should be disposed.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -27,185 +27,237 @@ namespace DoAnSE104.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtTrieuChung = new System.Windows.Forms.TextBox();
-            this.cboLoaiBenh = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNgayKham = new System.Windows.Forms.TextBox();
-            this.txtTenBenhNhan = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
+            this.labelMaKhamBenh = new System.Windows.Forms.Label();
             this.txtMaKhamBenh = new System.Windows.Forms.TextBox();
+            this.labelNgayKham = new System.Windows.Forms.Label();
+            this.txtNgayKham = new System.Windows.Forms.TextBox();
+            this.labelTenBenhNhan = new System.Windows.Forms.Label();
+            this.txtTenBenhNhan = new System.Windows.Forms.TextBox();
+            this.labelLoaiBenh = new System.Windows.Forms.Label();
+            this.cbbLoaiBenh = new System.Windows.Forms.ComboBox();
+            this.labelTrieuChung = new System.Windows.Forms.Label();
+            this.txtTrieuChung = new System.Windows.Forms.TextBox();
             this.btnLapPhieuKham = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.dgvPhieuKham = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+
             this.dataGridViewPhieuKham = new System.Windows.Forms.DataGridView();
             this.btnTimPhieuKham = new System.Windows.Forms.Button();
+
+            this.groupBoxInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuKham)).BeginInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPhieuKham)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtTrieuChung
+            // labelTitle
             // 
-            this.txtTrieuChung.Location = new System.Drawing.Point(173, 245);
-            this.txtTrieuChung.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.txtTrieuChung.Name = "txtTrieuChung";
-            this.txtTrieuChung.Size = new System.Drawing.Size(944, 34);
-            this.txtTrieuChung.TabIndex = 94;
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold);
+            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.labelTitle.Location = new System.Drawing.Point(30, 20);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(577, 72);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Lập phiếu khám bệnh";
             // 
-            // cboLoaiBenh
+            // groupBoxInfo
             // 
-            this.cboLoaiBenh.BackColor = System.Drawing.Color.LightGray;
-            this.cboLoaiBenh.FormattingEnabled = true;
-            this.cboLoaiBenh.ItemHeight = 29;
-            this.cboLoaiBenh.Items.AddRange(new object[] {
-            "df",
-            "df",
-            "df",
-            "fed",
-            "bd",
-            "bfd"});
-            this.cboLoaiBenh.Location = new System.Drawing.Point(859, 152);
-            this.cboLoaiBenh.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.cboLoaiBenh.MaxDropDownItems = 20;
-            this.cboLoaiBenh.Name = "cboLoaiBenh";
-            this.cboLoaiBenh.Size = new System.Drawing.Size(237, 37);
-            this.cboLoaiBenh.TabIndex = 74;
+            this.groupBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxInfo.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfo.Controls.Add(this.labelMaKhamBenh);
+            this.groupBoxInfo.Controls.Add(this.txtMaKhamBenh);
+            this.groupBoxInfo.Controls.Add(this.labelNgayKham);
+            this.groupBoxInfo.Controls.Add(this.txtNgayKham);
+            this.groupBoxInfo.Controls.Add(this.labelTenBenhNhan);
+            this.groupBoxInfo.Controls.Add(this.txtTenBenhNhan);
+            this.groupBoxInfo.Controls.Add(this.labelLoaiBenh);
+            this.groupBoxInfo.Controls.Add(this.cbbLoaiBenh);
+            this.groupBoxInfo.Controls.Add(this.labelTrieuChung);
+            this.groupBoxInfo.Controls.Add(this.txtTrieuChung);
+            this.groupBoxInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBoxInfo.Location = new System.Drawing.Point(30, 110);
+            this.groupBoxInfo.Name = "groupBoxInfo";
+            this.groupBoxInfo.Padding = new System.Windows.Forms.Padding(20);
+            this.groupBoxInfo.Size = new System.Drawing.Size(1100, 230);
+            this.groupBoxInfo.TabIndex = 1;
+            this.groupBoxInfo.TabStop = false;
+            this.groupBoxInfo.Text = "Thông tin phiếu khám";
             // 
-            // label6
+            // labelMaKhamBenh
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label6.Location = new System.Drawing.Point(887, 109);
-            this.label6.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 29);
-            this.label6.TabIndex = 72;
-            this.label6.Text = "Loại bệnh";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label5.Location = new System.Drawing.Point(564, 109);
-            this.label5.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(174, 29);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "Tên bệnh nhân";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label4.Location = new System.Drawing.Point(306, 109);
-            this.label4.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 29);
-            this.label4.TabIndex = 70;
-            this.label4.Text = "Ngày khám";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label3.Location = new System.Drawing.Point(30, 248);
-            this.label3.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 29);
-            this.label3.TabIndex = 69;
-            this.label3.Text = "Triệu chứng";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.Location = new System.Drawing.Point(30, 109);
-            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 29);
-            this.label2.TabIndex = 68;
-            this.label2.Text = "Mã khám bệnh";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(33, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(499, 62);
-            this.label1.TabIndex = 67;
-            this.label1.Text = "Lập phiếu khám bệnh";
-            // 
-            // txtNgayKham
-            // 
-            this.txtNgayKham.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtNgayKham.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtNgayKham.Enabled = false;
-            this.txtNgayKham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayKham.Location = new System.Drawing.Point(302, 145);
-            this.txtNgayKham.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNgayKham.Multiline = true;
-            this.txtNgayKham.Name = "txtNgayKham";
-            this.txtNgayKham.Size = new System.Drawing.Size(221, 45);
-            this.txtNgayKham.TabIndex = 96;
-            this.txtNgayKham.TabStop = false;
-            // 
-            // txtTenBenhNhan
-            // 
-            this.txtTenBenhNhan.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtTenBenhNhan.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtTenBenhNhan.Enabled = false;
-            this.txtTenBenhNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenBenhNhan.Location = new System.Drawing.Point(550, 145);
-            this.txtTenBenhNhan.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenBenhNhan.Multiline = true;
-            this.txtTenBenhNhan.Name = "txtTenBenhNhan";
-            this.txtTenBenhNhan.Size = new System.Drawing.Size(268, 45);
-            this.txtTenBenhNhan.TabIndex = 96;
-            this.txtTenBenhNhan.TabStop = false;
+            this.labelMaKhamBenh.AutoSize = true;
+            this.labelMaKhamBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelMaKhamBenh.Location = new System.Drawing.Point(30, 40);
+            this.labelMaKhamBenh.Name = "labelMaKhamBenh";
+            this.labelMaKhamBenh.Size = new System.Drawing.Size(142, 28);
+            this.labelMaKhamBenh.TabIndex = 0;
+            this.labelMaKhamBenh.Text = "Mã khám bệnh";
             // 
             // txtMaKhamBenh
             // 
-            this.txtMaKhamBenh.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtMaKhamBenh.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtMaKhamBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKhamBenh.Location = new System.Drawing.Point(35, 145);
-            this.txtMaKhamBenh.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaKhamBenh.Multiline = true;
+            this.txtMaKhamBenh.BackColor = System.Drawing.Color.White;
+            this.txtMaKhamBenh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaKhamBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtMaKhamBenh.Location = new System.Drawing.Point(34, 70);
             this.txtMaKhamBenh.Name = "txtMaKhamBenh";
-            this.txtMaKhamBenh.Size = new System.Drawing.Size(221, 45);
-            this.txtMaKhamBenh.TabIndex = 96;
-            this.txtMaKhamBenh.TabStop = false;
+            this.txtMaKhamBenh.Size = new System.Drawing.Size(180, 34);
+            this.txtMaKhamBenh.TabIndex = 1;
             this.txtMaKhamBenh.TextChanged += new System.EventHandler(this.txtMaKhamBenh_TextChanged);
+            // 
+            // labelNgayKham
+            // 
+            this.labelNgayKham.AutoSize = true;
+            this.labelNgayKham.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelNgayKham.Location = new System.Drawing.Point(240, 40);
+            this.labelNgayKham.Name = "labelNgayKham";
+            this.labelNgayKham.Size = new System.Drawing.Size(112, 28);
+            this.labelNgayKham.TabIndex = 2;
+            this.labelNgayKham.Text = "Ngày khám";
+            // 
+            // txtNgayKham
+            // 
+            this.txtNgayKham.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNgayKham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNgayKham.Enabled = false;
+            this.txtNgayKham.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtNgayKham.Location = new System.Drawing.Point(244, 70);
+            this.txtNgayKham.Name = "txtNgayKham";
+            this.txtNgayKham.Size = new System.Drawing.Size(180, 34);
+            this.txtNgayKham.TabIndex = 3;
+            this.txtNgayKham.TabStop = false;
+            // 
+            // labelTenBenhNhan
+            // 
+            this.labelTenBenhNhan.AutoSize = true;
+            this.labelTenBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelTenBenhNhan.Location = new System.Drawing.Point(450, 40);
+            this.labelTenBenhNhan.Name = "labelTenBenhNhan";
+            this.labelTenBenhNhan.Size = new System.Drawing.Size(138, 28);
+            this.labelTenBenhNhan.TabIndex = 4;
+            this.labelTenBenhNhan.Text = "Tên bệnh nhân";
+            // 
+            // txtTenBenhNhan
+            // 
+            this.txtTenBenhNhan.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTenBenhNhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTenBenhNhan.Enabled = false;
+            this.txtTenBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtTenBenhNhan.Location = new System.Drawing.Point(454, 70);
+            this.txtTenBenhNhan.Name = "txtTenBenhNhan";
+            this.txtTenBenhNhan.Size = new System.Drawing.Size(220, 34);
+            this.txtTenBenhNhan.TabIndex = 5;
+            this.txtTenBenhNhan.TabStop = false;
+            // 
+            // labelLoaiBenh
+            // 
+            this.labelLoaiBenh.AutoSize = true;
+            this.labelLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelLoaiBenh.Location = new System.Drawing.Point(700, 40);
+            this.labelLoaiBenh.Name = "labelLoaiBenh";
+            this.labelLoaiBenh.Size = new System.Drawing.Size(97, 28);
+            this.labelLoaiBenh.TabIndex = 6;
+            this.labelLoaiBenh.Text = "Loại bệnh";
+            // 
+            // cbbLoaiBenh
+            // 
+            this.cbbLoaiBenh.BackColor = System.Drawing.Color.Gainsboro;
+            this.cbbLoaiBenh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbbLoaiBenh.FormattingEnabled = true;
+            this.cbbLoaiBenh.Location = new System.Drawing.Point(704, 70);
+            this.cbbLoaiBenh.Name = "cbbLoaiBenh";
+            this.cbbLoaiBenh.Size = new System.Drawing.Size(220, 36);
+            this.cbbLoaiBenh.TabIndex = 7;
+            // 
+            // labelTrieuChung
+            // 
+            this.labelTrieuChung.AutoSize = true;
+            this.labelTrieuChung.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelTrieuChung.Location = new System.Drawing.Point(30, 120);
+            this.labelTrieuChung.Name = "labelTrieuChung";
+            this.labelTrieuChung.Size = new System.Drawing.Size(113, 28);
+            this.labelTrieuChung.TabIndex = 8;
+            this.labelTrieuChung.Text = "Triệu chứng";
+            // 
+            // txtTrieuChung
+            // 
+            this.txtTrieuChung.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTrieuChung.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtTrieuChung.Location = new System.Drawing.Point(34, 150);
+            this.txtTrieuChung.Name = "txtTrieuChung";
+            this.txtTrieuChung.Size = new System.Drawing.Size(890, 34);
+            this.txtTrieuChung.TabIndex = 9;
             // 
             // btnLapPhieuKham
             // 
-            this.btnLapPhieuKham.Location = new System.Drawing.Point(35, 594);
+            this.btnLapPhieuKham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLapPhieuKham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnLapPhieuKham.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLapPhieuKham.FlatAppearance.BorderSize = 0;
+            this.btnLapPhieuKham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLapPhieuKham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLapPhieuKham.ForeColor = System.Drawing.Color.White;
+            this.btnLapPhieuKham.Location = new System.Drawing.Point(30, 587);
             this.btnLapPhieuKham.Name = "btnLapPhieuKham";
-            this.btnLapPhieuKham.Size = new System.Drawing.Size(221, 44);
-            this.btnLapPhieuKham.TabIndex = 97;
+            this.btnLapPhieuKham.Size = new System.Drawing.Size(200, 44);
+            this.btnLapPhieuKham.TabIndex = 10;
             this.btnLapPhieuKham.Text = "Lập phiếu khám";
-            this.btnLapPhieuKham.UseVisualStyleBackColor = true;
+            this.btnLapPhieuKham.UseVisualStyleBackColor = false;
             this.btnLapPhieuKham.Click += new System.EventHandler(this.btnLapPhieu_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1003, 594);
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(930, 587);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(114, 44);
-            this.btnExit.TabIndex = 98;
+            this.btnExit.Size = new System.Drawing.Size(200, 44);
+            this.btnExit.TabIndex = 11;
             this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // dgvPhieuKham
+            // 
+            this.dgvPhieuKham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhieuKham.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPhieuKham.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhieuKham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPhieuKham.ColumnHeadersHeight = 32;
+            this.dgvPhieuKham.EnableHeadersVisualStyles = false;
+            this.dgvPhieuKham.GridColor = System.Drawing.Color.LightGray;
+            this.dgvPhieuKham.Location = new System.Drawing.Point(30, 346);
+            this.dgvPhieuKham.Name = "dgvPhieuKham";
+            this.dgvPhieuKham.RowHeadersVisible = false;
+            this.dgvPhieuKham.RowHeadersWidth = 51;
+            this.dgvPhieuKham.RowTemplate.Height = 32;
+            this.dgvPhieuKham.Size = new System.Drawing.Size(1100, 230);
+            this.dgvPhieuKham.TabIndex = 12;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+
             // dataGridViewPhieuKham
             // 
             this.dataGridViewPhieuKham.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
@@ -227,54 +279,57 @@ namespace DoAnSE104.GUI
             this.btnTimPhieuKham.UseVisualStyleBackColor = true;
             this.btnTimPhieuKham.Click += new System.EventHandler(this.btnTimPhieuKham_Click);
             // 
+
             // GUI_LapPhieuKhamBenh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(1157, 700);
             this.Controls.Add(this.btnTimPhieuKham);
             this.Controls.Add(this.dataGridViewPhieuKham);
+
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1160, 643);
+            this.Controls.Add(this.dgvPhieuKham);
+
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLapPhieuKham);
-            this.Controls.Add(this.txtTenBenhNhan);
-            this.Controls.Add(this.txtMaKhamBenh);
-            this.Controls.Add(this.txtNgayKham);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtTrieuChung);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cboLoaiBenh);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.Controls.Add(this.groupBoxInfo);
+            this.Controls.Add(this.labelTitle);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Name = "GUI_LapPhieuKhamBenh";
-            this.Text = "Form1";
+            this.Text = "Lập phiếu khám bệnh";
+            this.groupBoxInfo.ResumeLayout(false);
+            this.groupBoxInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuKham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPhieuKham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private TextBox txtTrieuChung;
-        private ComboBox cboLoaiBenh;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private TextBox txtNgayKham;
-        private TextBox txtTenBenhNhan;
+        private Label labelTitle;
+        private GroupBox groupBoxInfo;
+        private Label labelMaKhamBenh;
         private TextBox txtMaKhamBenh;
+        private Label labelNgayKham;
+        private TextBox txtNgayKham;
+        private Label labelTenBenhNhan;
+        private TextBox txtTenBenhNhan;
+        private Label labelLoaiBenh;
+        private ComboBox cbbLoaiBenh;
+        private Label labelTrieuChung;
+        private TextBox txtTrieuChung;
         private Button btnLapPhieuKham;
         private Button btnExit;
+        private DataGridView dgvPhieuKham;
         private ErrorProvider errorProvider1;
+
         private DataGridView dataGridViewPhieuKham;
         private Button btnTimPhieuKham;
+
     }
 }

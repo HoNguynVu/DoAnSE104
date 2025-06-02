@@ -72,14 +72,21 @@ namespace DoAnSE104.DAL
 
         public bool KiemTraLoaiThuocDangDuocSuDung(string maLoaiThuoc)
         {
-            string query = "SELECT COUNT(*) FROM CT_KHAMBENH WHERE MaLoaiThuoc = @MaLoaiThuoc";
+            string query = "SELECT COUNT(*) FROM CTKHAMBENH WHERE MaLoaiThuoc = @MaLoaiThuoc";
             MySqlParameter[] parameters = new MySqlParameter[]
             {
-                 new MySqlParameter("@MaLoaiThuoc", maLoaiThuoc)
+                new MySqlParameter("@MaLoaiThuoc", maLoaiThuoc)
             };
-            
-            int count = (int)DatabaseHelper.ExecuteNonQuery(query, parameters);
-            return count > 0;
+
+            object result = DatabaseHelper.ExcuteScalar(query, parameters);
+            if (result != null && result != DBNull.Value)
+            {
+                int count = Convert.ToInt32(result);
+                return count > 0;
+            }
+
+            return false;
         }
+
     }
 }

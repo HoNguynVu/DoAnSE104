@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.labelThemLoaiThuoc = new System.Windows.Forms.Label();
             this.labelMaLoaiThuoc = new System.Windows.Forms.Label();
             this.txtMaLoaiThuoc = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLoaiThuoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,35 +68,38 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Quản lý loại thuốc";
             // 
-            // groupBox1
+            // groupBoxInfo
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.labelThemLoaiThuoc);
-            this.groupBox1.Controls.Add(this.labelMaLoaiThuoc);
-            this.groupBox1.Controls.Add(this.txtMaLoaiThuoc);
-            this.groupBox1.Controls.Add(this.labelTenLoaiThuoc);
-            this.groupBox1.Controls.Add(this.txtTenLoaiThuoc);
-            this.groupBox1.Controls.Add(this.labelDonVi);
-            this.groupBox1.Controls.Add(this.cbDonVi);
-            this.groupBox1.Controls.Add(this.labelCachDung);
-            this.groupBox1.Controls.Add(this.cbCachDung);
-            this.groupBox1.Controls.Add(this.labelDonGia);
-            this.groupBox1.Controls.Add(this.txtDonGia);
-            this.groupBox1.Controls.Add(this.btnThemLoaiThuoc);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(30, 110);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(20);
-            this.groupBox1.Size = new System.Drawing.Size(1100, 230);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            this.groupBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxInfo.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfo.Controls.Add(this.labelThemLoaiThuoc);
+            this.groupBoxInfo.Controls.Add(this.labelMaLoaiThuoc);
+            this.groupBoxInfo.Controls.Add(this.txtMaLoaiThuoc);
+            this.groupBoxInfo.Controls.Add(this.labelTenLoaiThuoc);
+            this.groupBoxInfo.Controls.Add(this.txtTenLoaiThuoc);
+            this.groupBoxInfo.Controls.Add(this.labelDonVi);
+            this.groupBoxInfo.Controls.Add(this.cbDonVi);
+            this.groupBoxInfo.Controls.Add(this.labelCachDung);
+            this.groupBoxInfo.Controls.Add(this.cbCachDung);
+            this.groupBoxInfo.Controls.Add(this.labelDonGia);
+            this.groupBoxInfo.Controls.Add(this.txtDonGia);
+            this.groupBoxInfo.Controls.Add(this.btnThemLoaiThuoc);
+            this.groupBoxInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBoxInfo.Location = new System.Drawing.Point(30, 110);
+            this.groupBoxInfo.Name = "groupBoxInfo";
+            this.groupBoxInfo.Padding = new System.Windows.Forms.Padding(20);
+            this.groupBoxInfo.Size = new System.Drawing.Size(1100, 255);
+            this.groupBoxInfo.TabIndex = 1;
+            this.groupBoxInfo.TabStop = false;
             // 
             // labelThemLoaiThuoc
             // 
             this.labelThemLoaiThuoc.AutoSize = true;
             this.labelThemLoaiThuoc.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.labelThemLoaiThuoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.labelThemLoaiThuoc.Location = new System.Drawing.Point(25, 25);
+            this.labelThemLoaiThuoc.Location = new System.Drawing.Point(25, 35);
             this.labelThemLoaiThuoc.Name = "labelThemLoaiThuoc";
             this.labelThemLoaiThuoc.Size = new System.Drawing.Size(224, 37);
             this.labelThemLoaiThuoc.TabIndex = 0;
@@ -106,7 +109,7 @@
             // 
             this.labelMaLoaiThuoc.AutoSize = true;
             this.labelMaLoaiThuoc.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelMaLoaiThuoc.Location = new System.Drawing.Point(30, 75);
+            this.labelMaLoaiThuoc.Location = new System.Drawing.Point(30, 90);
             this.labelMaLoaiThuoc.Name = "labelMaLoaiThuoc";
             this.labelMaLoaiThuoc.Size = new System.Drawing.Size(132, 28);
             this.labelMaLoaiThuoc.TabIndex = 1;
@@ -117,7 +120,7 @@
             this.txtMaLoaiThuoc.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMaLoaiThuoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaLoaiThuoc.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtMaLoaiThuoc.Location = new System.Drawing.Point(34, 105);
+            this.txtMaLoaiThuoc.Location = new System.Drawing.Point(34, 120);
             this.txtMaLoaiThuoc.Name = "txtMaLoaiThuoc";
             this.txtMaLoaiThuoc.ReadOnly = true;
             this.txtMaLoaiThuoc.Size = new System.Drawing.Size(220, 34);
@@ -127,7 +130,7 @@
             // 
             this.labelTenLoaiThuoc.AutoSize = true;
             this.labelTenLoaiThuoc.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelTenLoaiThuoc.Location = new System.Drawing.Point(270, 75);
+            this.labelTenLoaiThuoc.Location = new System.Drawing.Point(270, 90);
             this.labelTenLoaiThuoc.Name = "labelTenLoaiThuoc";
             this.labelTenLoaiThuoc.Size = new System.Drawing.Size(133, 28);
             this.labelTenLoaiThuoc.TabIndex = 3;
@@ -137,7 +140,7 @@
             // 
             this.txtTenLoaiThuoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTenLoaiThuoc.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtTenLoaiThuoc.Location = new System.Drawing.Point(274, 105);
+            this.txtTenLoaiThuoc.Location = new System.Drawing.Point(274, 120);
             this.txtTenLoaiThuoc.Name = "txtTenLoaiThuoc";
             this.txtTenLoaiThuoc.Size = new System.Drawing.Size(220, 34);
             this.txtTenLoaiThuoc.TabIndex = 4;
@@ -147,7 +150,7 @@
             // 
             this.labelDonVi.AutoSize = true;
             this.labelDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelDonVi.Location = new System.Drawing.Point(520, 75);
+            this.labelDonVi.Location = new System.Drawing.Point(520, 90);
             this.labelDonVi.Name = "labelDonVi";
             this.labelDonVi.Size = new System.Drawing.Size(69, 28);
             this.labelDonVi.TabIndex = 5;
@@ -157,7 +160,7 @@
             // 
             this.cbDonVi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDonVi.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbDonVi.Location = new System.Drawing.Point(524, 105);
+            this.cbDonVi.Location = new System.Drawing.Point(524, 120);
             this.cbDonVi.Name = "cbDonVi";
             this.cbDonVi.Size = new System.Drawing.Size(180, 36);
             this.cbDonVi.TabIndex = 6;
@@ -167,7 +170,7 @@
             // 
             this.labelCachDung.AutoSize = true;
             this.labelCachDung.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelCachDung.Location = new System.Drawing.Point(30, 150);
+            this.labelCachDung.Location = new System.Drawing.Point(30, 170);
             this.labelCachDung.Name = "labelCachDung";
             this.labelCachDung.Size = new System.Drawing.Size(105, 28);
             this.labelCachDung.TabIndex = 7;
@@ -177,7 +180,7 @@
             // 
             this.cbCachDung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCachDung.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbCachDung.Location = new System.Drawing.Point(34, 180);
+            this.cbCachDung.Location = new System.Drawing.Point(34, 200);
             this.cbCachDung.Name = "cbCachDung";
             this.cbCachDung.Size = new System.Drawing.Size(350, 36);
             this.cbCachDung.TabIndex = 8;
@@ -187,7 +190,7 @@
             // 
             this.labelDonGia.AutoSize = true;
             this.labelDonGia.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelDonGia.Location = new System.Drawing.Point(730, 75);
+            this.labelDonGia.Location = new System.Drawing.Point(730, 90);
             this.labelDonGia.Name = "labelDonGia";
             this.labelDonGia.Size = new System.Drawing.Size(81, 28);
             this.labelDonGia.TabIndex = 9;
@@ -197,7 +200,7 @@
             // 
             this.txtDonGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtDonGia.Location = new System.Drawing.Point(734, 105);
+            this.txtDonGia.Location = new System.Drawing.Point(734, 120);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(180, 34);
             this.txtDonGia.TabIndex = 10;
@@ -205,15 +208,16 @@
             // 
             // btnThemLoaiThuoc
             // 
+            this.btnThemLoaiThuoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemLoaiThuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnThemLoaiThuoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThemLoaiThuoc.FlatAppearance.BorderSize = 0;
             this.btnThemLoaiThuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemLoaiThuoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnThemLoaiThuoc.ForeColor = System.Drawing.Color.White;
-            this.btnThemLoaiThuoc.Location = new System.Drawing.Point(892, 25);
+            this.btnThemLoaiThuoc.Location = new System.Drawing.Point(877, 34);
             this.btnThemLoaiThuoc.Name = "btnThemLoaiThuoc";
-            this.btnThemLoaiThuoc.Size = new System.Drawing.Size(185, 45);
+            this.btnThemLoaiThuoc.Size = new System.Drawing.Size(200, 44);
             this.btnThemLoaiThuoc.TabIndex = 5;
             this.btnThemLoaiThuoc.Text = "Thêm loại thuốc";
             this.btnThemLoaiThuoc.UseVisualStyleBackColor = false;
@@ -221,18 +225,20 @@
             // 
             // dgvDanhSachLoaiThuoc
             // 
+            this.dgvDanhSachLoaiThuoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDanhSachLoaiThuoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachLoaiThuoc.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSachLoaiThuoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDanhSachLoaiThuoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDanhSachLoaiThuoc.ColumnHeadersHeight = 29;
+            this.dgvDanhSachLoaiThuoc.ColumnHeadersHeight = 32;
             this.dgvDanhSachLoaiThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.maLoaiThuocItem,
@@ -243,13 +249,12 @@
             this.btnXoa});
             this.dgvDanhSachLoaiThuoc.EnableHeadersVisualStyles = false;
             this.dgvDanhSachLoaiThuoc.GridColor = System.Drawing.Color.LightGray;
-            this.dgvDanhSachLoaiThuoc.Location = new System.Drawing.Point(30, 360);
-            this.dgvDanhSachLoaiThuoc.MultiSelect = false;
+            this.dgvDanhSachLoaiThuoc.Location = new System.Drawing.Point(30, 371);
             this.dgvDanhSachLoaiThuoc.Name = "dgvDanhSachLoaiThuoc";
             this.dgvDanhSachLoaiThuoc.RowHeadersVisible = false;
             this.dgvDanhSachLoaiThuoc.RowHeadersWidth = 51;
             this.dgvDanhSachLoaiThuoc.RowTemplate.Height = 32;
-            this.dgvDanhSachLoaiThuoc.Size = new System.Drawing.Size(978, 222);
+            this.dgvDanhSachLoaiThuoc.Size = new System.Drawing.Size(1100, 230);
             this.dgvDanhSachLoaiThuoc.TabIndex = 2;
             this.dgvDanhSachLoaiThuoc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDanhSachLoaiThuoc_CellPainting);
             // 
@@ -299,16 +304,16 @@
             // 
             // btnLuu
             // 
+            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLuu.FlatAppearance.BorderSize = 0;
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(652, 514);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLuu.Location = new System.Drawing.Point(30, 613);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(166, 36);
+            this.btnLuu.Size = new System.Drawing.Size(200, 44);
             this.btnLuu.TabIndex = 9;
             this.btnLuu.Text = "Lưu thay đổi";
             this.btnLuu.UseVisualStyleBackColor = false;
@@ -316,16 +321,16 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(838, 514);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThoat.Location = new System.Drawing.Point(930, 613);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(166, 36);
+            this.btnThoat.Size = new System.Drawing.Size(200, 44);
             this.btnThoat.TabIndex = 8;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -333,20 +338,21 @@
             // 
             // GUI_QuanLyLoaiThuoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1031, 560);
+            this.ClientSize = new System.Drawing.Size(1160, 678);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.dgvDanhSachLoaiThuoc);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxInfo);
             this.Controls.Add(this.labelTitle);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Name = "GUI_QuanLyLoaiThuoc";
             this.Text = "Quản lý loại thuốc";
             this.Load += new System.EventHandler(this.GUI_QuanLyLoaiThuoc_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxInfo.ResumeLayout(false);
+            this.groupBoxInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachLoaiThuoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -356,7 +362,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxInfo;
         private System.Windows.Forms.Label labelThemLoaiThuoc;
         private System.Windows.Forms.Label labelMaLoaiThuoc;
         private System.Windows.Forms.TextBox txtMaLoaiThuoc;

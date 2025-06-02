@@ -12,26 +12,18 @@ namespace DoAnSE104.BUS
     public class BUS_HoaDon
     {
         private DAL_HoaDon DAL_HoaDon = new DAL_HoaDon();
-
-        // Lấy danh sách hóa đơn từ database
         public List<DTO_HoaDon> LayDanhSachHoaDon()
         {
             return DAL_HoaDon.LayDanhSachHoaDon();
         }
-
-        // Sinh mã hóa đơn mới
         public string LayMaHoaDonMoi()
         {
             return DAL_HoaDon.LayMaHoaDonMoi();
         }
-
-        // Lấy tiền khám từ bảng THAMSO
         public double LayTienKham()
         {
             return DAL_HoaDon.LayTienKham();
         }
-
-        // Tính tiền thuốc theo mã khám bệnh
         public double TinhTienThuoc(string maKhamBenh)
         {
             return DAL_HoaDon.TinhTienThuoc(maKhamBenh);

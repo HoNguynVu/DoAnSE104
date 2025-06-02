@@ -34,7 +34,7 @@ namespace DoAnSE104.GUI
         }
         private void btnLapPhieuKhamBenh_Click(object sender, EventArgs e)
         {
-            ShowFormInMainPanel(new GUI_LapPhieuKhamBenh());
+            ShowFormInMainPanel(new GUI_LapPhieuKhamBenh(this));
         }
         private void btnTraCuuBenhNhan_Click(object sender, EventArgs e)
         {
@@ -68,6 +68,16 @@ namespace DoAnSE104.GUI
                 homeForm.GetType()
                     .GetMethod("ShowFormInMainPanel", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                     .Invoke(homeForm, new object[] { new GUI_TiepNhanBenhNhan() });
+            }));
+        }
+
+        private void btnTimBenhNhan_Click(object sender, EventArgs e)
+        {
+            homeForm.Invoke(new Action(() =>
+            {
+                homeForm.GetType()
+                    .GetMethod("ShowFormInMainPanel", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                    .Invoke(homeForm, new object[] { new GUI_LapPhieuKhamBenh() });
             }));
         }
 

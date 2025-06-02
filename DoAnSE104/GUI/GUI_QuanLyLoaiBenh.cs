@@ -252,5 +252,10 @@ namespace DoAnSE104.GUI
                 MessageBox.Show($"Lỗi khi vẽ ô: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnTimPhieuKham_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

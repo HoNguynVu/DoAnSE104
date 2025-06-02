@@ -16,6 +16,7 @@ namespace DoAnSE104.GUI
         private BUS_LoaiThuoc BUS_LoaiThuoc;
         private BUS_CTKhamBenh BUS_CTKhamBenh;
         private List<DTO_LoaiThuoc> danhSachLoaiThuoc;
+        private GUI_Home homeForm;
 
         public GUI_LapPhieuKhamBenh()
         {
@@ -28,6 +29,20 @@ namespace DoAnSE104.GUI
             InitializeDataGridView();
             LoadLoaiBenh();
             LoadDanhSachThuoc();
+        }
+
+        public GUI_LapPhieuKhamBenh(GUI_Home home)
+        {
+            InitializeComponent();
+            BUS_KhamBenh = new BUS_KhamBenh();
+            BUS_BenhNhan = new BUS_BenhNhan();
+            BUS_LoaiBenh = new BUS_LoaiBenh();
+            BUS_LoaiThuoc = new BUS_LoaiThuoc();
+            BUS_CTKhamBenh = new BUS_CTKhamBenh();
+            InitializeDataGridView();
+            LoadLoaiBenh();
+            LoadDanhSachThuoc();
+            this.homeForm = home;
         }
 
         private void LoadLoaiBenh()
@@ -458,6 +473,13 @@ namespace DoAnSE104.GUI
                 MessageBox.Show("Lỗi khi tìm thông tin khám bệnh: " + ex.Message, 
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnTimBenhNhan_Click(object sender, EventArgs e)
+        {
+            GUI_TraCuuBenhNhan traCuuForm = new GUI_TraCuuBenhNhan(homeForm);
+            homeForm.ShowFormInMainPanel(traCuuForm);
+            this.Close();
         }
     }
 }

@@ -8,7 +8,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DoAnSE104.GUI
@@ -25,7 +24,7 @@ namespace DoAnSE104.GUI
         }
         private void SetupDataGridView()
         {
-            dgvDanhSachDonVi.AllowUserToAddRows = false; // nên tắt nếu bạn không muốn dòng mới do user thêm trực tiếp
+            dgvDanhSachDonVi.AllowUserToAddRows = false; // tắt không muốn dòng mới do user thêm trực tiếp
             dgvDanhSachDonVi.EditMode = DataGridViewEditMode.EditOnEnter;
             dgvDanhSachDonVi.AutoGenerateColumns = false; // Tắt tự động tạo cột
 
@@ -56,7 +55,7 @@ namespace DoAnSE104.GUI
             colTenDonVi.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvDanhSachDonVi.Columns.Add(colTenDonVi);
 
-            // Nếu cần thêm cột ThaoTac (nút xóa)
+            // thêm cột ThaoTac (nút xóa)
             if (!dgvDanhSachDonVi.Columns.Contains("ThaoTac"))
             {
                 DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
@@ -68,7 +67,7 @@ namespace DoAnSE104.GUI
                 dgvDanhSachDonVi.Columns.Add(btnXoa);
             }
 
-            // Sự kiện đánh số STT
+            // đánh số STT
             dgvDanhSachDonVi.RowPrePaint += (sender, e) =>
             {
                 if (e.RowIndex >= 0 && e.RowIndex < dgvDanhSachDonVi.Rows.Count)
@@ -154,7 +153,6 @@ namespace DoAnSE104.GUI
                 }
             }
 
-            // Thông báo kết quả
             if (thanhCong > 0 || xoaThanhCong > 0)
             {
                 MessageBox.Show($"Đã lưu {thanhCong} đơn vị mới và xóa {xoaThanhCong} đơn vị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -199,7 +197,7 @@ namespace DoAnSE104.GUI
                     }
                     else
                     {
-                        // Nếu không nằm trong danh sách tạm thì nằm trong DB → thêm vào danh sách chờ xóa
+                        // Nếu không nằm trong danh sách tạm thì nằm trong DB -> thêm vào danh sách chờ xóa
                         DTO_DonVi donViTuDB = BUS_DonVi.LayDanhSachDonVi().FirstOrDefault(d => d.maDonVi == maDonVi);
                         if (donViTuDB != null)
                         {
@@ -207,7 +205,7 @@ namespace DoAnSE104.GUI
                         }
                     }
 
-                    // Cập nhật lại DataGridView: danh sách tạm + dữ liệu từ DB (trừ các đơn vị đã chọn xóa)
+                    // Cập nhật danh sách tạm + dữ liệu từ DB (trừ các đơn vị đã chọn xóa)
                     var danhSachHienThi = danhSachTam
                         .Concat(BUS_DonVi.LayDanhSachDonVi().Where(d => !danhSachCanXoa.Any(x => x.maDonVi == d.maDonVi)))
                         .ToList();

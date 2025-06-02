@@ -12,8 +12,6 @@ namespace DoAnSE104.BUS
     public class BUS_ThamSo
     {
         private DAL_ThamSo dalThamSo = new DAL_ThamSo();
-
-       
         public int SoLuongBenhNhanToiDaTrongNgay()
         {
             return dalThamSo.SoLuongBenhNhanToiDaTrongNgay();
@@ -52,5 +50,6 @@ namespace DoAnSE104.BUS
         {
             return dalThamSo.QuyDinhTienKhamCoDinh();
         }
+        
     }
 }

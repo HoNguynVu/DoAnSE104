@@ -17,11 +17,12 @@ namespace DoAnSE104.GUI
     {
         private List<DTO_LoaiBenh> dtLoaiBenh = new List<DTO_LoaiBenh>();
         private List<DTO_LoaiBenh> dtLoaiBenhGoc = new List<DTO_LoaiBenh>();
-        private DAL_LoaiBenh dalLoaiBenh = new DAL.DAL_LoaiBenh();
+        private BUS_LoaiBenh busLoaiBenh = new BUS_LoaiBenh();
         public GUI_QuanLyLoaiBenh()
         {
             InitializeComponent();
             LoadDataToDataGridView();
+
             //dataGridView1.CellPainting += dataGridView1_CellPainting;
 
         }
@@ -29,7 +30,7 @@ namespace DoAnSE104.GUI
         {
             try
             {
-                dtLoaiBenhGoc = dalLoaiBenh.LayDanhSachLoaiBenh();
+                dtLoaiBenhGoc = busLoaiBenh.LayDanhSachLoaiBenh();
                 dtLoaiBenh = new List<DTO_LoaiBenh>(dtLoaiBenhGoc); // clone danh sách
 
                 // Always clear and add columns
@@ -80,7 +81,7 @@ namespace DoAnSE104.GUI
         }
         private void GUI_QuanLyLoaiBenh_Load(object sender, EventArgs e)
         {
-            string newMa = dalLoaiBenh.GetNextMaLoaiBenh();
+            string newMa = busLoaiBenh.NextMaLoaiBenh();
             txtMaLoaiBenh.Text = newMa;
             txtMaLoaiBenh.Enabled = false;
         }
@@ -100,7 +101,7 @@ namespace DoAnSE104.GUI
             dtLoaiBenh.Add(loaiBenh); // Add to the list only
             MessageBox.Show("Thêm loại bệnh thành công!");
             txtTenLoaiBenh.Clear();
-            txtMaLoaiBenh.Text = dalLoaiBenh.GetNextMaLoaiBenh(); // Generate new ID
+            txtMaLoaiBenh.Text = busLoaiBenh.NextMaLoaiBenh(); // Generate new ID
             ReloadDataGridView(); // Refresh the DataGridView
         }
 
@@ -152,13 +153,13 @@ namespace DoAnSE104.GUI
                 // Thực hiện thêm
                 foreach (var lb in danhSachThem)
                 {
-                    dalLoaiBenh.ThemLoaiBenh(lb);
+                    busLoaiBenh.ThemLoaiBenh(lb);
                 }
 
                 // Thực hiện xóa
                 foreach (var lb in danhSachXoa)
                 {
-                    dalLoaiBenh.XoaLoaiBenh(lb.maLoaiBenh);
+                    busLoaiBenh.XoaLoaiBenh(lb.maLoaiBenh);
                 }
 
                 MessageBox.Show("Lưu thành công vào cơ sở dữ liệu!");

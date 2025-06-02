@@ -70,5 +70,10 @@ namespace DoAnSE104.GUI
                     .Invoke(homeForm, new object[] { new GUI_TiepNhanBenhNhan() });
             }));
         }
+
+        private void btnTiepNhanKhamBenh_Click_1(object sender, EventArgs e)
+        {
+            ShowFormInMainPanel(new GUI_TiepNhanKhamBenh());
+        }
     }  
 }

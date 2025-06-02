@@ -31,15 +31,15 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.labelQDSLBNToiDaTrongNgay = new System.Windows.Forms.Label();
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay = new Styling_Toggle_Button.SButton();
             this.labelSLBNToiDaTrongNgay = new System.Windows.Forms.Label();
             this.txtSoLuongBenhNhanToiDaTrongNgay = new System.Windows.Forms.TextBox();
             this.labelQDTienKhamCoDinh = new System.Windows.Forms.Label();
+            this.QuyDinhTienKhamCoDinh = new Styling_Toggle_Button.SButton();
             this.textTienKhamCoDinh = new System.Windows.Forms.Label();
             this.txtTienKhamCoDinh = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay = new Styling_Toggle_Button.SButton();
-            this.QuyDinhTienKhamCoDinh = new Styling_Toggle_Button.SButton();
             this.groupBoxInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.labelTitle.Location = new System.Drawing.Point(30, 20);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(511, 72);
+            this.labelTitle.Size = new System.Drawing.Size(407, 59);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Danh sách tham số";
             // 
@@ -85,6 +85,20 @@
             this.labelQDSLBNToiDaTrongNgay.TabIndex = 0;
             this.labelQDSLBNToiDaTrongNgay.Text = "Quy định số lượng bệnh nhân tối đa trong ngày";
             // 
+            // QuyDinhSoLuongBenhNhanToiDaTrongNgay
+            // 
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Location = new System.Drawing.Point(450, 46);
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.MinimumSize = new System.Drawing.Size(40, 18);
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Name = "QuyDinhSoLuongBenhNhanToiDaTrongNgay";
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OffBackColor = System.Drawing.Color.Gray;
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OnBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Size = new System.Drawing.Size(70, 30);
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.TabIndex = 1;
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.UseVisualStyleBackColor = true;
+            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.CheckedChanged += new System.EventHandler(this.QuyDinhSoLuongBenhNhanToiDaTrongNgay_CheckedChanged);
+            // 
             // labelSLBNToiDaTrongNgay
             // 
             this.labelSLBNToiDaTrongNgay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -102,7 +116,7 @@
             this.txtSoLuongBenhNhanToiDaTrongNgay.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtSoLuongBenhNhanToiDaTrongNgay.Location = new System.Drawing.Point(887, 46);
             this.txtSoLuongBenhNhanToiDaTrongNgay.Name = "txtSoLuongBenhNhanToiDaTrongNgay";
-            this.txtSoLuongBenhNhanToiDaTrongNgay.Size = new System.Drawing.Size(120, 34);
+            this.txtSoLuongBenhNhanToiDaTrongNgay.Size = new System.Drawing.Size(120, 29);
             this.txtSoLuongBenhNhanToiDaTrongNgay.TabIndex = 3;
             this.txtSoLuongBenhNhanToiDaTrongNgay.TabStop = false;
             this.txtSoLuongBenhNhanToiDaTrongNgay.TextChanged += new System.EventHandler(this.txtSoLuongBenhNhanToiDaTrongNgay_TextChanged);
@@ -115,6 +129,20 @@
             this.labelQDTienKhamCoDinh.Size = new System.Drawing.Size(350, 30);
             this.labelQDTienKhamCoDinh.TabIndex = 4;
             this.labelQDTienKhamCoDinh.Text = "Quy định tiền khám cố định";
+            // 
+            // QuyDinhTienKhamCoDinh
+            // 
+            this.QuyDinhTienKhamCoDinh.Location = new System.Drawing.Point(450, 116);
+            this.QuyDinhTienKhamCoDinh.MinimumSize = new System.Drawing.Size(40, 18);
+            this.QuyDinhTienKhamCoDinh.Name = "QuyDinhTienKhamCoDinh";
+            this.QuyDinhTienKhamCoDinh.OffBackColor = System.Drawing.Color.Gray;
+            this.QuyDinhTienKhamCoDinh.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.QuyDinhTienKhamCoDinh.OnBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.QuyDinhTienKhamCoDinh.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.QuyDinhTienKhamCoDinh.Size = new System.Drawing.Size(70, 30);
+            this.QuyDinhTienKhamCoDinh.TabIndex = 5;
+            this.QuyDinhTienKhamCoDinh.UseVisualStyleBackColor = true;
+            this.QuyDinhTienKhamCoDinh.CheckedChanged += new System.EventHandler(this.QuyDinhTienKhamCoDinh_CheckedChanged);
             // 
             // textTienKhamCoDinh
             // 
@@ -133,7 +161,7 @@
             this.txtTienKhamCoDinh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtTienKhamCoDinh.Location = new System.Drawing.Point(887, 116);
             this.txtTienKhamCoDinh.Name = "txtTienKhamCoDinh";
-            this.txtTienKhamCoDinh.Size = new System.Drawing.Size(120, 34);
+            this.txtTienKhamCoDinh.Size = new System.Drawing.Size(120, 29);
             this.txtTienKhamCoDinh.TabIndex = 7;
             this.txtTienKhamCoDinh.TabStop = false;
             this.txtTienKhamCoDinh.TextChanged += new System.EventHandler(this.txtTienKhamCoDinh_TextChanged);
@@ -168,38 +196,11 @@
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Thoát";
             this.btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // QuyDinhSoLuongBenhNhanToiDaTrongNgay
-            // 
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Location = new System.Drawing.Point(450, 46);
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.MinimumSize = new System.Drawing.Size(40, 18);
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Name = "QuyDinhSoLuongBenhNhanToiDaTrongNgay";
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OffBackColor = System.Drawing.Color.Gray;
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OnBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.Size = new System.Drawing.Size(70, 30);
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.TabIndex = 1;
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.UseVisualStyleBackColor = true;
-            this.QuyDinhSoLuongBenhNhanToiDaTrongNgay.CheckedChanged += new System.EventHandler(this.QuyDinhSoLuongBenhNhanToiDaTrongNgay_CheckedChanged);
-            // 
-            // QuyDinhTienKhamCoDinh
-            // 
-            this.QuyDinhTienKhamCoDinh.Location = new System.Drawing.Point(450, 116);
-            this.QuyDinhTienKhamCoDinh.MinimumSize = new System.Drawing.Size(40, 18);
-            this.QuyDinhTienKhamCoDinh.Name = "QuyDinhTienKhamCoDinh";
-            this.QuyDinhTienKhamCoDinh.OffBackColor = System.Drawing.Color.Gray;
-            this.QuyDinhTienKhamCoDinh.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.QuyDinhTienKhamCoDinh.OnBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.QuyDinhTienKhamCoDinh.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.QuyDinhTienKhamCoDinh.Size = new System.Drawing.Size(70, 30);
-            this.QuyDinhTienKhamCoDinh.TabIndex = 5;
-            this.QuyDinhTienKhamCoDinh.UseVisualStyleBackColor = true;
-            this.QuyDinhTienKhamCoDinh.CheckedChanged += new System.EventHandler(this.QuyDinhTienKhamCoDinh_CheckedChanged);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // GUI_DanhSachThamSo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1093, 470);

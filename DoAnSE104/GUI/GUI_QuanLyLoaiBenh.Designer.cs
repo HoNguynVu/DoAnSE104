@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelTitle = new System.Windows.Forms.Label();
             this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.labelThemLoaiBenh = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.labelTitle.Location = new System.Drawing.Point(30, 20);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(475, 72);
+            this.labelTitle.Size = new System.Drawing.Size(379, 59);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Quản lý loại bệnh";
             // 
@@ -86,7 +86,7 @@
             this.labelThemLoaiBenh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.labelThemLoaiBenh.Location = new System.Drawing.Point(25, 35);
             this.labelThemLoaiBenh.Name = "labelThemLoaiBenh";
-            this.labelThemLoaiBenh.Size = new System.Drawing.Size(215, 37);
+            this.labelThemLoaiBenh.Size = new System.Drawing.Size(172, 30);
             this.labelThemLoaiBenh.TabIndex = 0;
             this.labelThemLoaiBenh.Text = "Thêm loại bệnh";
             // 
@@ -96,7 +96,7 @@
             this.labelMaLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelMaLoaiBenh.Location = new System.Drawing.Point(30, 90);
             this.labelMaLoaiBenh.Name = "labelMaLoaiBenh";
-            this.labelMaLoaiBenh.Size = new System.Drawing.Size(126, 28);
+            this.labelMaLoaiBenh.Size = new System.Drawing.Size(100, 21);
             this.labelMaLoaiBenh.TabIndex = 1;
             this.labelMaLoaiBenh.Text = "Mã loại bệnh";
             // 
@@ -108,7 +108,7 @@
             this.txtMaLoaiBenh.Location = new System.Drawing.Point(34, 120);
             this.txtMaLoaiBenh.Name = "txtMaLoaiBenh";
             this.txtMaLoaiBenh.ReadOnly = true;
-            this.txtMaLoaiBenh.Size = new System.Drawing.Size(220, 34);
+            this.txtMaLoaiBenh.Size = new System.Drawing.Size(220, 29);
             this.txtMaLoaiBenh.TabIndex = 2;
             // 
             // labelTenLoaiBenh
@@ -117,7 +117,7 @@
             this.labelTenLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelTenLoaiBenh.Location = new System.Drawing.Point(270, 90);
             this.labelTenLoaiBenh.Name = "labelTenLoaiBenh";
-            this.labelTenLoaiBenh.Size = new System.Drawing.Size(127, 28);
+            this.labelTenLoaiBenh.Size = new System.Drawing.Size(101, 21);
             this.labelTenLoaiBenh.TabIndex = 3;
             this.labelTenLoaiBenh.Text = "Tên loại bệnh";
             // 
@@ -127,7 +127,7 @@
             this.txtTenLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtTenLoaiBenh.Location = new System.Drawing.Point(274, 120);
             this.txtTenLoaiBenh.Name = "txtTenLoaiBenh";
-            this.txtTenLoaiBenh.Size = new System.Drawing.Size(220, 34);
+            this.txtTenLoaiBenh.Size = new System.Drawing.Size(220, 29);
             this.txtTenLoaiBenh.TabIndex = 4;
             // 
             // btnThemLoaiBenh
@@ -154,14 +154,14 @@
             this.dgvDanhSachLoaiBenh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachLoaiBenh.BackgroundColor = System.Drawing.Color.White;
             this.dgvDanhSachLoaiBenh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachLoaiBenh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachLoaiBenh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachLoaiBenh.ColumnHeadersHeight = 32;
             this.dgvDanhSachLoaiBenh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -241,7 +241,7 @@
             // 
             // GUI_QuanLyLoaiBenh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1160, 670);

@@ -17,11 +17,20 @@ namespace DoAnSE104.GUI
         private List<DTO_DonVi> danhSachCanXoa = new List<DTO_DonVi>();
         private List<DTO_DonVi> danhSachTam = new List<DTO_DonVi>();
         BUS_DonVi BUS_DonVi = new BUS_DonVi();
+
+        private int hoverRowIndex = -1;
+        private int hoverColIndex = -1;
+
         public GUI_QuanLyDonViTinh()
         {
             InitializeComponent();
             SetupDataGridView();
+
+            dgvDanhSachDonVi.CellPainting += dgvDanhSachDonVi_CellPainting;
+            dgvDanhSachDonVi.CellMouseMove += dgvDanhSachDonVi_CellMouseMove;
+            dgvDanhSachDonVi.CellMouseLeave += dgvDanhSachDonVi_CellMouseLeave;
         }
+
         private void SetupDataGridView()
         {
             dgvDanhSachDonVi.AllowUserToAddRows = false; // tắt không muốn dòng mới do user thêm trực tiếp
@@ -76,6 +85,74 @@ namespace DoAnSE104.GUI
                 }
             };
         }
+
+        // Sự kiện khi chuột di chuyển trên cell
+        private void dgvDanhSachDonVi_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvDanhSachDonVi.Columns[e.ColumnIndex].Name == "ThaoTac")
+            {
+                if (hoverRowIndex != e.RowIndex || hoverColIndex != e.ColumnIndex)
+                {
+                    hoverRowIndex = e.RowIndex;
+                    hoverColIndex = e.ColumnIndex;
+                    dgvDanhSachDonVi.InvalidateCell(e.ColumnIndex, e.RowIndex);
+                }
+            }
+            else if (hoverRowIndex != -1 || hoverColIndex != -1)
+            {
+                int oldRow = hoverRowIndex, oldCol = hoverColIndex;
+                hoverRowIndex = -1;
+                hoverColIndex = -1;
+                dgvDanhSachDonVi.InvalidateCell(oldCol, oldRow);
+            }
+        }
+
+        // Sự kiện khi chuột rời khỏi DataGridView
+        private void dgvDanhSachDonVi_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (hoverRowIndex != -1 || hoverColIndex != -1)
+            {
+                int oldRow = hoverRowIndex, oldCol = hoverColIndex;
+                hoverRowIndex = -1;
+                hoverColIndex = -1;
+                dgvDanhSachDonVi.InvalidateCell(oldCol, oldRow);
+            }
+        }
+
+        // Hàm xử lý vẽ lại nút Xóa với màu nền giống nút Thoát
+        private void dgvDanhSachDonVi_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dgvDanhSachDonVi.Columns[e.ColumnIndex].Name == "ThaoTac" && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.ClipBounds, true);
+
+                Color backColor = (e.RowIndex == hoverRowIndex && e.ColumnIndex == hoverColIndex)
+                    ? Color.FromArgb(211, 47, 47) // Màu hover (đỏ đậm hơn)
+                    : Color.FromArgb(244, 67, 54); // Màu mặc định
+
+                using (SolidBrush brush = new SolidBrush(backColor))
+                {
+                    e.Graphics.FillRectangle(brush, e.CellBounds);
+                }
+
+                using (Pen pen = new Pen(dgvDanhSachDonVi.GridColor))
+                {
+                    e.Graphics.DrawRectangle(pen, e.CellBounds.X, e.CellBounds.Y, e.CellBounds.Width - 1, e.CellBounds.Height - 1);
+                }
+
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    "Xóa",
+                    dgvDanhSachDonVi.Font,
+                    e.CellBounds,
+                    Color.White,
+                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter
+                );
+
+                e.Handled = true;
+            }
+        }
+
         private void TaiLai()
         {
             dgvDanhSachDonVi.DataSource = BUS_DonVi.LayDanhSachDonVi();

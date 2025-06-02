@@ -245,104 +245,104 @@ namespace DoAnSE104.GUI
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh!",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
-
+            }   
 
             string maKhamBenh = txtMaKhamBenh.Text.Trim();
 
             try
             {
                 DTO_KhamBenh khamBenh = BUS_KhamBenh.LayThongTinKhamBenh(maKhamBenh);
-                if (khamBenh != null && !string.IsNullOrEmpty(khamBenh.maLoaiBenh))
+                if (khamBenh == null)
+                {
+                    MessageBox.Show("Mã khám bệnh không tồn tại!",
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!string.IsNullOrEmpty(khamBenh.maLoaiBenh) || !string.IsNullOrEmpty(khamBenh.trieuChung))
                 {
                     MessageBox.Show("Phiếu khám bệnh này đã được lập trước đó!",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi kiểm tra thông tin khám bệnh: " + ex.Message,
-                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
-
-                // Kiểm tra danh sách thuốc
-            if (dgvPhieuKham.Rows.Count <= 1) // Chỉ có dòng new row
-
-            {
-                    MessageBox.Show("Vui lòng thêm ít nhất một loại thuốc!",
-                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-            }
-
-            try
-            {
-
-                string maLoaiBenh = cbbLoaiBenh.SelectedValue?.ToString();
-                string trieuChung = txtTrieuChung.Text.Trim();
-
-                if (BUS_KhamBenh.CapNhatKhamBenh(maKhamBenh, maLoaiBenh, trieuChung))
+                List<DTO_CTKhamBenh> chiTietKhamBenh = BUS_CTKhamBenh.LayDanhSachChiTietKhamBenh(maKhamBenh);
+                //if (chiTietKhamBenh != null && chiTietKhamBenh.Count > 0)
+                //{
+                //    MessageBox.Show("Phiếu khám bệnh này đã tồn tại chi tiết khám bệnh!",
+                //        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
+                try
                 {
-                    bool success = true;
-                    string errorMessage = "";
+                    string maLoaiBenh = cbbLoaiBenh.SelectedValue?.ToString();
+                    string trieuChung = txtTrieuChung.Text.Trim();
 
-                    foreach (DataGridViewRow row in dgvPhieuKham.Rows)
+                    if (BUS_KhamBenh.CapNhatKhamBenh(maKhamBenh, maLoaiBenh, trieuChung))
                     {
-                        if (row.IsNewRow) continue;
+                        bool success = true;
+                        string errorMessage = "";
 
-                        string maThuoc = row.Cells["colTenThuoc"].Value?.ToString();
-                        if (string.IsNullOrEmpty(maThuoc)) continue;
-
-                        string soLuongStr = row.Cells["colSoLuong"].Value?.ToString();
-                        if (string.IsNullOrEmpty(soLuongStr) || !int.TryParse(soLuongStr, out int soLuong))
+                        foreach (DataGridViewRow row in dgvPhieuKham.Rows)
                         {
-                            errorMessage = "Số lượng thuốc không hợp lệ";
-                            success = false;
-                            break;
-                        }
+                            if (row.IsNewRow) continue;
 
+                            string maThuoc = row.Cells["colTenThuoc"].Value?.ToString();
+                            if (string.IsNullOrEmpty(maThuoc)) continue;
 
-                        try
-                        {
-                            if (!BUS_CTKhamBenh.ThemChiTietThuoc(maKhamBenh, maThuoc, soLuong))
+                            string soLuongStr = row.Cells["colSoLuong"].Value?.ToString();
+                            if (string.IsNullOrEmpty(soLuongStr) || !int.TryParse(soLuongStr, out int soLuong))
+                            {
+                                errorMessage = "Số lượng thuốc không hợp lệ";
+                                success = false;
+                                break;
+                            }
+
+                            try
+                            {
+                                if (!BUS_CTKhamBenh.ThemChiTietThuoc(maKhamBenh, maThuoc, soLuong))
+                                {
+                                    success = false;
+                                    errorMessage = "Không thể thêm chi tiết thuốc";
+                                    break;
+                                }
+                            }
+                            catch (Exception ex)
                             {
                                 success = false;
-                                errorMessage = "Không thể thêm chi tiết thuốc";
+                                errorMessage = ex.Message;
                                 break;
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            success = false;
-                            errorMessage = ex.Message;
-                            break;
-                        }
-                    }
 
-                    if (success)
-                    {
-                        MessageBox.Show("Lập phiếu khám bệnh thành công!",
-                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (success)
+                        {
+                            MessageBox.Show("Lập phiếu khám bệnh thành công!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.DialogResult = DialogResult.OK;
+                            //this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi khi lưu chi tiết thuốc: " + errorMessage,
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Lỗi khi lưu chi tiết thuốc: " + errorMessage,
+                        MessageBox.Show("Không thể cập nhật thông tin khám bệnh!",
                             "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Không thể cập nhật thông tin khám bệnh!",
+                    MessageBox.Show("Lỗi: " + ex.Message,
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message,
+                MessageBox.Show("Lỗi khi kiểm tra thông tin khám bệnh: " + ex.Message,
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

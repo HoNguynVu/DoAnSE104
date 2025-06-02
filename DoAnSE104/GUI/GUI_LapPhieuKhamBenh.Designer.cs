@@ -27,7 +27,7 @@ namespace DoAnSE104.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelTitle = new System.Windows.Forms.Label();
             this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.labelMaKhamBenh = new System.Windows.Forms.Label();
@@ -44,7 +44,6 @@ namespace DoAnSE104.GUI
             this.btnExit = new System.Windows.Forms.Button();
             this.dgvPhieuKham = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnTimPhieuKham = new System.Windows.Forms.Button();
             this.groupBoxInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuKham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -57,13 +56,13 @@ namespace DoAnSE104.GUI
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.labelTitle.Location = new System.Drawing.Point(30, 20);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(461, 59);
+            this.labelTitle.Size = new System.Drawing.Size(577, 72);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Lập phiếu khám bệnh";
             // 
             // groupBoxInfo
             // 
-            this.groupBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBoxInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxInfo.BackColor = System.Drawing.Color.White;
             this.groupBoxInfo.Controls.Add(this.labelMaKhamBenh);
@@ -92,7 +91,7 @@ namespace DoAnSE104.GUI
             this.labelMaKhamBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelMaKhamBenh.Location = new System.Drawing.Point(30, 40);
             this.labelMaKhamBenh.Name = "labelMaKhamBenh";
-            this.labelMaKhamBenh.Size = new System.Drawing.Size(114, 21);
+            this.labelMaKhamBenh.Size = new System.Drawing.Size(142, 28);
             this.labelMaKhamBenh.TabIndex = 0;
             this.labelMaKhamBenh.Text = "Mã khám bệnh";
             // 
@@ -103,7 +102,7 @@ namespace DoAnSE104.GUI
             this.txtMaKhamBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtMaKhamBenh.Location = new System.Drawing.Point(34, 70);
             this.txtMaKhamBenh.Name = "txtMaKhamBenh";
-            this.txtMaKhamBenh.Size = new System.Drawing.Size(180, 29);
+            this.txtMaKhamBenh.Size = new System.Drawing.Size(180, 34);
             this.txtMaKhamBenh.TabIndex = 1;
             this.txtMaKhamBenh.TextChanged += new System.EventHandler(this.txtMaKhamBenh_TextChanged);
             // 
@@ -113,7 +112,7 @@ namespace DoAnSE104.GUI
             this.labelNgayKham.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelNgayKham.Location = new System.Drawing.Point(240, 40);
             this.labelNgayKham.Name = "labelNgayKham";
-            this.labelNgayKham.Size = new System.Drawing.Size(90, 21);
+            this.labelNgayKham.Size = new System.Drawing.Size(112, 28);
             this.labelNgayKham.TabIndex = 2;
             this.labelNgayKham.Text = "Ngày khám";
             // 
@@ -125,7 +124,7 @@ namespace DoAnSE104.GUI
             this.txtNgayKham.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtNgayKham.Location = new System.Drawing.Point(244, 70);
             this.txtNgayKham.Name = "txtNgayKham";
-            this.txtNgayKham.Size = new System.Drawing.Size(180, 29);
+            this.txtNgayKham.Size = new System.Drawing.Size(180, 34);
             this.txtNgayKham.TabIndex = 3;
             this.txtNgayKham.TabStop = false;
             // 
@@ -135,7 +134,7 @@ namespace DoAnSE104.GUI
             this.labelTenBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelTenBenhNhan.Location = new System.Drawing.Point(450, 40);
             this.labelTenBenhNhan.Name = "labelTenBenhNhan";
-            this.labelTenBenhNhan.Size = new System.Drawing.Size(111, 21);
+            this.labelTenBenhNhan.Size = new System.Drawing.Size(138, 28);
             this.labelTenBenhNhan.TabIndex = 4;
             this.labelTenBenhNhan.Text = "Tên bệnh nhân";
             // 
@@ -147,7 +146,7 @@ namespace DoAnSE104.GUI
             this.txtTenBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtTenBenhNhan.Location = new System.Drawing.Point(454, 70);
             this.txtTenBenhNhan.Name = "txtTenBenhNhan";
-            this.txtTenBenhNhan.Size = new System.Drawing.Size(220, 29);
+            this.txtTenBenhNhan.Size = new System.Drawing.Size(220, 34);
             this.txtTenBenhNhan.TabIndex = 5;
             this.txtTenBenhNhan.TabStop = false;
             // 
@@ -157,7 +156,7 @@ namespace DoAnSE104.GUI
             this.labelLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelLoaiBenh.Location = new System.Drawing.Point(700, 40);
             this.labelLoaiBenh.Name = "labelLoaiBenh";
-            this.labelLoaiBenh.Size = new System.Drawing.Size(78, 21);
+            this.labelLoaiBenh.Size = new System.Drawing.Size(97, 28);
             this.labelLoaiBenh.TabIndex = 6;
             this.labelLoaiBenh.Text = "Loại bệnh";
             // 
@@ -169,7 +168,7 @@ namespace DoAnSE104.GUI
             this.cbbLoaiBenh.FormattingEnabled = true;
             this.cbbLoaiBenh.Location = new System.Drawing.Point(704, 70);
             this.cbbLoaiBenh.Name = "cbbLoaiBenh";
-            this.cbbLoaiBenh.Size = new System.Drawing.Size(220, 29);
+            this.cbbLoaiBenh.Size = new System.Drawing.Size(220, 36);
             this.cbbLoaiBenh.TabIndex = 7;
             // 
             // labelTrieuChung
@@ -178,7 +177,7 @@ namespace DoAnSE104.GUI
             this.labelTrieuChung.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelTrieuChung.Location = new System.Drawing.Point(30, 120);
             this.labelTrieuChung.Name = "labelTrieuChung";
-            this.labelTrieuChung.Size = new System.Drawing.Size(91, 21);
+            this.labelTrieuChung.Size = new System.Drawing.Size(113, 28);
             this.labelTrieuChung.TabIndex = 8;
             this.labelTrieuChung.Text = "Triệu chứng";
             // 
@@ -188,7 +187,7 @@ namespace DoAnSE104.GUI
             this.txtTrieuChung.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtTrieuChung.Location = new System.Drawing.Point(34, 150);
             this.txtTrieuChung.Name = "txtTrieuChung";
-            this.txtTrieuChung.Size = new System.Drawing.Size(890, 29);
+            this.txtTrieuChung.Size = new System.Drawing.Size(890, 34);
             this.txtTrieuChung.TabIndex = 9;
             // 
             // btnLapPhieuKham
@@ -230,14 +229,14 @@ namespace DoAnSE104.GUI
             this.dgvPhieuKham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhieuKham.BackgroundColor = System.Drawing.Color.White;
             this.dgvPhieuKham.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhieuKham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhieuKham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPhieuKham.ColumnHeadersHeight = 32;
             this.dgvPhieuKham.EnableHeadersVisualStyles = false;
             this.dgvPhieuKham.GridColor = System.Drawing.Color.LightGray;
@@ -253,24 +252,12 @@ namespace DoAnSE104.GUI
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnTimPhieuKham
-            // 
-            this.btnTimPhieuKham.Location = new System.Drawing.Point(685, 587);
-            this.btnTimPhieuKham.Name = "btnTimPhieuKham";
-            this.btnTimPhieuKham.Size = new System.Drawing.Size(221, 44);
-            this.btnTimPhieuKham.TabIndex = 100;
-            this.btnTimPhieuKham.Text = "Tìm phiếu khám";
-            this.btnTimPhieuKham.UseVisualStyleBackColor = true;
-            this.btnTimPhieuKham.Click += new System.EventHandler(this.btnTimPhieuKham_Click);
-            // 
             // GUI_LapPhieuKhamBenh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1160, 643);
-            this.Controls.Add(this.btnTimPhieuKham);
             this.Controls.Add(this.dgvPhieuKham);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLapPhieuKham);
@@ -305,6 +292,5 @@ namespace DoAnSE104.GUI
         private Button btnExit;
         private DataGridView dgvPhieuKham;
         private ErrorProvider errorProvider1;
-        private Button btnTimPhieuKham;
     }
 }

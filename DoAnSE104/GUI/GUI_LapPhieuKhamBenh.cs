@@ -238,11 +238,11 @@ namespace DoAnSE104.GUI
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtMaKhamBenh.Text) || 
-                string.IsNullOrWhiteSpace(cbbLoaiBenh.Text) || 
+            if (string.IsNullOrWhiteSpace(txtMaKhamBenh.Text) ||
+                string.IsNullOrWhiteSpace(cbbLoaiBenh.Text) ||
                 string.IsNullOrWhiteSpace(txtTrieuChung.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh!", 
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh!",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -250,12 +250,12 @@ namespace DoAnSE104.GUI
 
             string maKhamBenh = txtMaKhamBenh.Text.Trim();
 
-            try 
+            try
             {
                 DTO_KhamBenh khamBenh = BUS_KhamBenh.LayThongTinKhamBenh(maKhamBenh);
                 if (khamBenh != null && !string.IsNullOrEmpty(khamBenh.maLoaiBenh))
                 {
-                    MessageBox.Show("Phiếu khám bệnh này đã được lập trước đó!", 
+                    MessageBox.Show("Phiếu khám bệnh này đã được lập trước đó!",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
@@ -267,29 +267,23 @@ namespace DoAnSE104.GUI
                 return;
             }
 
-            if (dgvPhieuKham.Rows.Count <= 1) 
 
-            // Kiểm tra danh sách thuốc
+                // Kiểm tra danh sách thuốc
             if (dgvPhieuKham.Rows.Count <= 1) // Chỉ có dòng new row
 
             {
-                MessageBox.Show("Vui lòng thêm ít nhất một loại thuốc!", 
-                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                    MessageBox.Show("Vui lòng thêm ít nhất một loại thuốc!",
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
             }
 
             try
             {
 
-                string MaLoaiBenh = cbbLoaiBenh.SelectedValue?.ToString();
-
-                // 1. Cập nhật thông tin khám bệnh (loại bệnh và triệu chứng)
-                string MaKhamBenh = txtMaKhamBenh.Text.Trim();
                 string maLoaiBenh = cbbLoaiBenh.SelectedValue?.ToString();
-
                 string trieuChung = txtTrieuChung.Text.Trim();
 
-                if (BUS_KhamBenh.CapNhatKhamBenh(MaKhamBenh, maLoaiBenh, trieuChung))
+                if (BUS_KhamBenh.CapNhatKhamBenh(maKhamBenh, maLoaiBenh, trieuChung))
                 {
                     bool success = true;
                     string errorMessage = "";
@@ -312,7 +306,8 @@ namespace DoAnSE104.GUI
 
                         try
                         {
-                            if (!BUS_CTKhamBenh.ThemChiTietThuoc(MaKhamBenh, maThuoc, soLuong)) {
+                            if (!BUS_CTKhamBenh.ThemChiTietThuoc(maKhamBenh, maThuoc, soLuong))
+                            {
                                 success = false;
                                 errorMessage = "Không thể thêm chi tiết thuốc";
                                 break;
@@ -328,26 +323,26 @@ namespace DoAnSE104.GUI
 
                     if (success)
                     {
-                        MessageBox.Show("Lập phiếu khám bệnh thành công!", 
+                        MessageBox.Show("Lập phiếu khám bệnh thành công!",
                             "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Lỗi khi lưu chi tiết thuốc: " + errorMessage, 
+                        MessageBox.Show("Lỗi khi lưu chi tiết thuốc: " + errorMessage,
                             "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Không thể cập nhật thông tin khám bệnh!", 
+                    MessageBox.Show("Không thể cập nhật thông tin khám bệnh!",
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, 
+                MessageBox.Show("Lỗi: " + ex.Message,
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

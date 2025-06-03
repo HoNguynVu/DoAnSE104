@@ -199,6 +199,66 @@ namespace DoAnSE104.GUI
                     };
                 }
             }
+            else if (dgvPhieuKham.CurrentCell.ColumnIndex == dgvPhieuKham.Columns["colTenThuoc"].Index)
+            {
+                if (e.Control is ComboBox cb)
+                {
+                    // Remove previous event to avoid multiple subscriptions
+                    cb.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
+                    cb.DropDownClosed -= ComboBox_DropDownClosed;
+
+                    // Add the event handlers
+                    cb.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+                    cb.DropDownClosed += ComboBox_DropDownClosed;
+                }
+            }
+        }
+
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sender is ComboBox cb)
+            {
+                // Chỉ xử lý khi dropdown đã đóng và có item được chọn thực sự
+                if (!cb.DroppedDown && cb.SelectedItem != null)
+                {
+                    var currentRow = dgvPhieuKham.CurrentRow;
+                    if (currentRow != null)
+                    {
+                        var thuoc = cb.SelectedItem as DTO_LoaiThuoc;
+                        if (thuoc != null)
+                        {
+                            try
+                            {
+                                string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(thuoc.maDonVi);
+                                if (!string.IsNullOrEmpty(tenDonVi))
+                                {
+                                    currentRow.Cells["colDonVi"].Value = tenDonVi;
+                                }
+
+                                string cachDung = BUS_LoaiThuoc.LayTenCachDung(thuoc.maCachDung);
+                                if (!string.IsNullOrEmpty(cachDung))
+                                {
+                                    currentRow.Cells["colCachDung"].Value = cachDung;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Lỗi khi lấy thông tin thuốc: " + ex.Message,
+                                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void ComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            // Đảm bảo giá trị được cập nhật chỉ khi dropdown đóng lại
+            if (sender is ComboBox cb && cb.SelectedItem != null)
+            {
+                ComboBox_SelectedIndexChanged(sender, e);
+            }
         }
 
         private void txtMaKhamBenh_TextChanged(object sender, EventArgs e)

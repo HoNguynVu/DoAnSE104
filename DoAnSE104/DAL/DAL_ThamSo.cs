@@ -32,21 +32,36 @@ namespace DoAnSE104.DAL
             }
             return 0;
         }
-        public bool CapNhatQuyDinhSoLuongBenhNhan(int soLuongBenhNhanToiDaTrongNgay)
-        {
+        public bool CapNhatSoLuongBenhNhanToiDaTrongNgay(int soLuong) {
             string query = "UPDATE THAMSO SET SoLuongBenhNhanToiDaTrongNgay = @SoLuongBenhNhanToiDaTrongNgay";
             MySqlParameter[] parameters = new MySqlParameter[]
             {
-                new MySqlParameter("@SoLuongBenhNhanToiDaTrongNgay", soLuongBenhNhanToiDaTrongNgay)
+                new MySqlParameter("@SoLuongBenhNhanToiDaTrongNgay", soLuong)
             };
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
         }
-        public bool CapNhatQuyDinhTienKham(double tienKhamCoDinh)
+        public bool CapNhatQuyDinhSoLuongBenhNhan(bool quyDinh) {
+            string query = "UPDATE THAMSO SET QuyDinhSoLuongBenhNhanToiDaTrongNgay = @QuyDinhSoLuongBenhNhanToiDaTrongNgay";
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                new MySqlParameter("@QuyDinhSoLuongBenhNhanToiDaTrongNgay", quyDinh)
+            };
+            return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
+        }
+        public bool CapNhatTienKham(double tienKhamCoDinh)
         {
             string query = "UPDATE THAMSO SET TienKhamCoDinh = @TienKhamCoDinh";
             MySqlParameter[] parameters = new MySqlParameter[]
             {
                 new MySqlParameter("@TienKhamCoDinh", tienKhamCoDinh)
+            };
+            return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
+        }
+        public bool CapNhatQuyDinhTienKham(bool quyDinh) {
+            string query = "UPDATE THAMSO SET QuyDinhTienKhamCoDinh = @QuyDinhTienKhamCoDinh";
+            MySqlParameter[] parameters = new MySqlParameter[]
+            {
+                new MySqlParameter("@QuyDinhTienKhamCoDinh", quyDinh)
             };
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
         }

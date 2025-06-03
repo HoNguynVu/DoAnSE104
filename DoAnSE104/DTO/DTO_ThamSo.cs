@@ -10,14 +10,14 @@ namespace DoAnSE104.DTO
     public class DTO_ThamSo
     {
         private int SoLuongBenhNhanToiDaTrongNgay;
-        private Boolean QuyDinhSoLuongBenhNhanToiDaTrongNgay;
+        private bool QuyDinhSoLuongBenhNhanToiDaTrongNgay;
         private double TienKhamCoDinh;
-        private Boolean QuyDinhTienKhamCoDinh;
+        private bool QuyDinhTienKhamCoDinh;
         public int soLuongBenhNhanToiDaTrongNgay { get => SoLuongBenhNhanToiDaTrongNgay; set => SoLuongBenhNhanToiDaTrongNgay = value; }
-        public Boolean quyDinhSoLuongBenhNhanToiDaTrongNgay { get => QuyDinhSoLuongBenhNhanToiDaTrongNgay; set => QuyDinhSoLuongBenhNhanToiDaTrongNgay = value; }
+        public bool quyDinhSoLuongBenhNhanToiDaTrongNgay { get => QuyDinhSoLuongBenhNhanToiDaTrongNgay; set => QuyDinhSoLuongBenhNhanToiDaTrongNgay = value; }
         public double tienKhamCoDinh { get => TienKhamCoDinh; set => TienKhamCoDinh = value; }
         public bool quyDinhTienKhamCoDinh { get => QuyDinhTienKhamCoDinh; set => QuyDinhTienKhamCoDinh = value; }
-        public DTO_ThamSo(int soLuongBenhNhanToiDaTrongNgay, Boolean quyDinhSoLuongBenhNhanToiDaTrongNgay, double tienKhamCoDinh, bool quyDinhTienKhamCoDinh)
+        public DTO_ThamSo(int soLuongBenhNhanToiDaTrongNgay, bool quyDinhSoLuongBenhNhanToiDaTrongNgay, double tienKhamCoDinh, bool quyDinhTienKhamCoDinh)
         {
             this.SoLuongBenhNhanToiDaTrongNgay = soLuongBenhNhanToiDaTrongNgay;
             this.QuyDinhSoLuongBenhNhanToiDaTrongNgay = quyDinhSoLuongBenhNhanToiDaTrongNgay;

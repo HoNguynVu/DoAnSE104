@@ -20,7 +20,6 @@ namespace DoAnSE104.GUI
         {
             InitializeComponent();
             this.homeForm = home;
-
         }
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {

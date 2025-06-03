@@ -33,10 +33,9 @@
             this.btnLapHoaDon = new System.Windows.Forms.Button();
             this.btnTiepNhanBenhNhan = new System.Windows.Forms.Button();
             this.panelSideBar = new System.Windows.Forms.Panel();
+            this.btnTiepNhanKhamBenh = new System.Windows.Forms.Button();
             this.btnBaoCaoSuDungThuoc = new System.Windows.Forms.Button();
             this.btnBaoCaoDoanhThu = new System.Windows.Forms.Button();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.btnTiepNhanKhamBenh = new System.Windows.Forms.Button();
             this.btnCaiDat = new System.Windows.Forms.Button();
             this.panelCaiDat = new System.Windows.Forms.Panel();
             this.btnThamSo = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@
             this.btnLoaiBenh = new System.Windows.Forms.Button();
             this.btnDonViTinh = new System.Windows.Forms.Button();
             this.btnCachDung = new System.Windows.Forms.Button();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelSideBar.SuspendLayout();
             this.panelCaiDat.SuspendLayout();
             this.SuspendLayout();
@@ -56,9 +56,10 @@
             this.btnLapPhieuKhamBenh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLapPhieuKhamBenh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLapPhieuKhamBenh.ForeColor = System.Drawing.Color.White;
-            this.btnLapPhieuKhamBenh.Location = new System.Drawing.Point(0, 230);
+            this.btnLapPhieuKhamBenh.Location = new System.Drawing.Point(0, 187);
+            this.btnLapPhieuKhamBenh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLapPhieuKhamBenh.Name = "btnLapPhieuKhamBenh";
-            this.btnLapPhieuKhamBenh.Size = new System.Drawing.Size(300, 65);
+            this.btnLapPhieuKhamBenh.Size = new System.Drawing.Size(225, 53);
             this.btnLapPhieuKhamBenh.TabIndex = 2;
             this.btnLapPhieuKhamBenh.Text = "📄 Lập phiếu khám";
             this.btnLapPhieuKhamBenh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -73,9 +74,10 @@
             this.btnTraCuuBenhNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTraCuuBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuuBenhNhan.ForeColor = System.Drawing.Color.White;
-            this.btnTraCuuBenhNhan.Location = new System.Drawing.Point(0, 295);
+            this.btnTraCuuBenhNhan.Location = new System.Drawing.Point(0, 240);
+            this.btnTraCuuBenhNhan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTraCuuBenhNhan.Name = "btnTraCuuBenhNhan";
-            this.btnTraCuuBenhNhan.Size = new System.Drawing.Size(300, 65);
+            this.btnTraCuuBenhNhan.Size = new System.Drawing.Size(225, 53);
             this.btnTraCuuBenhNhan.TabIndex = 3;
             this.btnTraCuuBenhNhan.Text = "🔍 Tra cứu bệnh nhân";
             this.btnTraCuuBenhNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -90,9 +92,10 @@
             this.btnLapHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLapHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLapHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnLapHoaDon.Location = new System.Drawing.Point(0, 360);
+            this.btnLapHoaDon.Location = new System.Drawing.Point(0, 292);
+            this.btnLapHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLapHoaDon.Name = "btnLapHoaDon";
-            this.btnLapHoaDon.Size = new System.Drawing.Size(300, 65);
+            this.btnLapHoaDon.Size = new System.Drawing.Size(225, 53);
             this.btnLapHoaDon.TabIndex = 4;
             this.btnLapHoaDon.Text = "💵 Lập hoá đơn";
             this.btnLapHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,9 +110,10 @@
             this.btnTiepNhanBenhNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTiepNhanBenhNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTiepNhanBenhNhan.ForeColor = System.Drawing.Color.White;
-            this.btnTiepNhanBenhNhan.Location = new System.Drawing.Point(0, 100);
+            this.btnTiepNhanBenhNhan.Location = new System.Drawing.Point(0, 81);
+            this.btnTiepNhanBenhNhan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTiepNhanBenhNhan.Name = "btnTiepNhanBenhNhan";
-            this.btnTiepNhanBenhNhan.Size = new System.Drawing.Size(300, 65);
+            this.btnTiepNhanBenhNhan.Size = new System.Drawing.Size(225, 53);
             this.btnTiepNhanBenhNhan.TabIndex = 5;
             this.btnTiepNhanBenhNhan.Text = "👤 Tiếp nhận bệnh nhân";
             this.btnTiepNhanBenhNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,9 +135,28 @@
             this.panelSideBar.Controls.Add(this.panelCaiDat);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
+            this.panelSideBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelSideBar.Name = "panelSideBar";
-            this.panelSideBar.Size = new System.Drawing.Size(303, 632);
+            this.panelSideBar.Size = new System.Drawing.Size(227, 514);
             this.panelSideBar.TabIndex = 1;
+            // 
+            // btnTiepNhanKhamBenh
+            // 
+            this.btnTiepNhanKhamBenh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnTiepNhanKhamBenh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTiepNhanKhamBenh.FlatAppearance.BorderSize = 0;
+            this.btnTiepNhanKhamBenh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTiepNhanKhamBenh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiepNhanKhamBenh.ForeColor = System.Drawing.Color.White;
+            this.btnTiepNhanKhamBenh.Location = new System.Drawing.Point(0, 134);
+            this.btnTiepNhanKhamBenh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTiepNhanKhamBenh.Name = "btnTiepNhanKhamBenh";
+            this.btnTiepNhanKhamBenh.Size = new System.Drawing.Size(225, 53);
+            this.btnTiepNhanKhamBenh.TabIndex = 8;
+            this.btnTiepNhanKhamBenh.Text = "🩺 Tiếp nhận khám bệnh";
+            this.btnTiepNhanKhamBenh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTiepNhanKhamBenh.UseVisualStyleBackColor = false;
+            this.btnTiepNhanKhamBenh.Click += new System.EventHandler(this.btnTiepNhanKhamBenh_Click);
             // 
             // btnBaoCaoSuDungThuoc
             // 
@@ -143,9 +166,10 @@
             this.btnBaoCaoSuDungThuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBaoCaoSuDungThuoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaoCaoSuDungThuoc.ForeColor = System.Drawing.Color.White;
-            this.btnBaoCaoSuDungThuoc.Location = new System.Drawing.Point(0, 490);
+            this.btnBaoCaoSuDungThuoc.Location = new System.Drawing.Point(0, 398);
+            this.btnBaoCaoSuDungThuoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBaoCaoSuDungThuoc.Name = "btnBaoCaoSuDungThuoc";
-            this.btnBaoCaoSuDungThuoc.Size = new System.Drawing.Size(300, 65);
+            this.btnBaoCaoSuDungThuoc.Size = new System.Drawing.Size(225, 53);
             this.btnBaoCaoSuDungThuoc.TabIndex = 7;
             this.btnBaoCaoSuDungThuoc.Text = "💊 Báo cáo sử dụng thuốc";
             this.btnBaoCaoSuDungThuoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,41 +184,15 @@
             this.btnBaoCaoDoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBaoCaoDoanhThu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaoCaoDoanhThu.ForeColor = System.Drawing.Color.White;
-            this.btnBaoCaoDoanhThu.Location = new System.Drawing.Point(0, 425);
+            this.btnBaoCaoDoanhThu.Location = new System.Drawing.Point(0, 345);
+            this.btnBaoCaoDoanhThu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBaoCaoDoanhThu.Name = "btnBaoCaoDoanhThu";
-            this.btnBaoCaoDoanhThu.Size = new System.Drawing.Size(300, 65);
+            this.btnBaoCaoDoanhThu.Size = new System.Drawing.Size(225, 53);
             this.btnBaoCaoDoanhThu.TabIndex = 6;
             this.btnBaoCaoDoanhThu.Text = "📊 Báo cáo doanh thu";
             this.btnBaoCaoDoanhThu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBaoCaoDoanhThu.UseVisualStyleBackColor = false;
             this.btnBaoCaoDoanhThu.Click += new System.EventHandler(this.btnBaoCaoDoanhThu_Click);
-            // 
-            // panelMain
-            // 
-            this.panelMain.AutoSize = true;
-            this.panelMain.BackColor = System.Drawing.Color.White;
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(303, 0);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(646, 632);
-            this.panelMain.TabIndex = 0;
-            // 
-            // btnTiepNhanKhamBenh
-            // 
-            this.btnTiepNhanKhamBenh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnTiepNhanKhamBenh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTiepNhanKhamBenh.FlatAppearance.BorderSize = 0;
-            this.btnTiepNhanKhamBenh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTiepNhanKhamBenh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTiepNhanKhamBenh.ForeColor = System.Drawing.Color.White;
-            this.btnTiepNhanKhamBenh.Location = new System.Drawing.Point(0, 165);
-            this.btnTiepNhanKhamBenh.Name = "btnTiepNhanKhamBenh";
-            this.btnTiepNhanKhamBenh.Size = new System.Drawing.Size(300, 65);
-            this.btnTiepNhanKhamBenh.TabIndex = 8;
-            this.btnTiepNhanKhamBenh.Text = "🩺 Tiếp nhận khám bệnh";
-            this.btnTiepNhanKhamBenh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTiepNhanKhamBenh.UseVisualStyleBackColor = false;
-            this.btnTiepNhanKhamBenh.Click += new System.EventHandler(this.btnTiepNhanKhamBenh_Click_1);
             // 
             // btnCaiDat
             // 
@@ -204,9 +202,10 @@
             this.btnCaiDat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaiDat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCaiDat.ForeColor = System.Drawing.Color.White;
-            this.btnCaiDat.Location = new System.Drawing.Point(0, 555);
+            this.btnCaiDat.Location = new System.Drawing.Point(0, 451);
+            this.btnCaiDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCaiDat.Name = "btnCaiDat";
-            this.btnCaiDat.Size = new System.Drawing.Size(300, 65);
+            this.btnCaiDat.Size = new System.Drawing.Size(225, 53);
             this.btnCaiDat.TabIndex = 9;
             this.btnCaiDat.Text = "⚙️ Cài đặt";
             this.btnCaiDat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,9 +220,10 @@
             this.panelCaiDat.Controls.Add(this.btnLoaiBenh);
             this.panelCaiDat.Controls.Add(this.btnDonViTinh);
             this.panelCaiDat.Controls.Add(this.btnCachDung);
-            this.panelCaiDat.Location = new System.Drawing.Point(0, 620);
+            this.panelCaiDat.Location = new System.Drawing.Point(0, 504);
+            this.panelCaiDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelCaiDat.Name = "panelCaiDat";
-            this.panelCaiDat.Size = new System.Drawing.Size(300, 325);
+            this.panelCaiDat.Size = new System.Drawing.Size(225, 264);
             this.panelCaiDat.TabIndex = 10;
             this.panelCaiDat.Visible = false;
             // 
@@ -236,8 +236,9 @@
             this.btnThamSo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThamSo.ForeColor = System.Drawing.Color.White;
             this.btnThamSo.Location = new System.Drawing.Point(0, 0);
+            this.btnThamSo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThamSo.Name = "btnThamSo";
-            this.btnThamSo.Size = new System.Drawing.Size(300, 65);
+            this.btnThamSo.Size = new System.Drawing.Size(225, 53);
             this.btnThamSo.TabIndex = 0;
             this.btnThamSo.Text = "🔧 Tham số";
             this.btnThamSo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,9 +253,10 @@
             this.btnLoaiThuoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoaiThuoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoaiThuoc.ForeColor = System.Drawing.Color.White;
-            this.btnLoaiThuoc.Location = new System.Drawing.Point(0, 65);
+            this.btnLoaiThuoc.Location = new System.Drawing.Point(0, 53);
+            this.btnLoaiThuoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLoaiThuoc.Name = "btnLoaiThuoc";
-            this.btnLoaiThuoc.Size = new System.Drawing.Size(300, 65);
+            this.btnLoaiThuoc.Size = new System.Drawing.Size(225, 53);
             this.btnLoaiThuoc.TabIndex = 1;
             this.btnLoaiThuoc.Text = "💊 Loại thuốc";
             this.btnLoaiThuoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -269,9 +271,10 @@
             this.btnLoaiBenh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoaiBenh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoaiBenh.ForeColor = System.Drawing.Color.White;
-            this.btnLoaiBenh.Location = new System.Drawing.Point(0, 130);
+            this.btnLoaiBenh.Location = new System.Drawing.Point(0, 106);
+            this.btnLoaiBenh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLoaiBenh.Name = "btnLoaiBenh";
-            this.btnLoaiBenh.Size = new System.Drawing.Size(300, 65);
+            this.btnLoaiBenh.Size = new System.Drawing.Size(225, 53);
             this.btnLoaiBenh.TabIndex = 2;
             this.btnLoaiBenh.Text = "🩺 Loại bệnh";
             this.btnLoaiBenh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -286,9 +289,10 @@
             this.btnDonViTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDonViTinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDonViTinh.ForeColor = System.Drawing.Color.White;
-            this.btnDonViTinh.Location = new System.Drawing.Point(0, 195);
+            this.btnDonViTinh.Location = new System.Drawing.Point(0, 158);
+            this.btnDonViTinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDonViTinh.Name = "btnDonViTinh";
-            this.btnDonViTinh.Size = new System.Drawing.Size(300, 65);
+            this.btnDonViTinh.Size = new System.Drawing.Size(225, 53);
             this.btnDonViTinh.TabIndex = 3;
             this.btnDonViTinh.Text = "📏 Đơn vị tính";
             this.btnDonViTinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -303,24 +307,36 @@
             this.btnCachDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCachDung.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCachDung.ForeColor = System.Drawing.Color.White;
-            this.btnCachDung.Location = new System.Drawing.Point(0, 260);
+            this.btnCachDung.Location = new System.Drawing.Point(0, 211);
+            this.btnCachDung.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCachDung.Name = "btnCachDung";
-            this.btnCachDung.Size = new System.Drawing.Size(300, 65);
+            this.btnCachDung.Size = new System.Drawing.Size(225, 53);
             this.btnCachDung.TabIndex = 4;
             this.btnCachDung.Text = "📖 Cách dùng";
             this.btnCachDung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCachDung.UseVisualStyleBackColor = false;
             this.btnCachDung.Click += new System.EventHandler(this.btnCachDung_Click);
             // 
+            // panelMain
+            // 
+            this.panelMain.AutoSize = true;
+            this.panelMain.BackColor = System.Drawing.Color.White;
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(227, 0);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(485, 514);
+            this.panelMain.TabIndex = 0;
+            // 
             // GUI_Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(949, 632);
+            this.ClientSize = new System.Drawing.Size(712, 514);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelSideBar);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GUI_Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";

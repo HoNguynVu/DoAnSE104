@@ -87,6 +87,7 @@ namespace DoAnSE104.GUI
                 double tienKham = Convert.ToDouble(txtTienKham.Text);
                 double tienThuoc = busHoaDon.TinhTienThuoc(maKhamBenh);
                 double tongTien = tienKham + tienThuoc;
+                txtTongTien.Text = tongTien.ToString("N0");
 
                 string maHoaDon = busHoaDon.LayMaHoaDonMoi();
                 DTO_HoaDon hoaDon = new DTO_HoaDon(maHoaDon, tienKham, tienThuoc, maKhamBenh);
@@ -155,6 +156,9 @@ namespace DoAnSE104.GUI
                     double tienThuoc = busHoaDon.TinhTienThuoc(maKhamBenh);
                     txtTienThuoc.Text = tienThuoc.ToString("N0");
 
+                    double tienKham = string.IsNullOrWhiteSpace(txtTienKham.Text) ? 0 : Convert.ToDouble(txtTienKham.Text);
+                    txtTongTien.Text = (tienKham + tienThuoc).ToString("N0");
+
                     HienThiChiTietThuoc(maKhamBenh);
 
                     errorProvider1.SetError(txtMaKhamBenh, "");
@@ -177,6 +181,7 @@ namespace DoAnSE104.GUI
             txtNgayKham.Text = "";
             txtTienKham.Text = "";
             txtTienThuoc.Text = "";
+            txtTongTien.Text = "";
             dgvDanhSachThuoc.DataSource = null;
 
             if (clearMaHoaDon)
@@ -244,6 +249,8 @@ namespace DoAnSE104.GUI
                     txtMaHoaDon.Text = hoaDon.maHoaDon;
                     txtTienKham.Text = hoaDon.tienKham.ToString("N0");
                     txtTienThuoc.Text = hoaDon.tienThuoc.ToString("N0");
+                    double tongTien = hoaDon.tienKham + hoaDon.tienThuoc;
+                    txtTongTien.Text = tongTien.ToString("N0");
 
                     // Hiển thị thêm label + textbox Mã Hóa Đơn
                     labelMaHoaDon.Visible = true;
@@ -299,5 +306,7 @@ namespace DoAnSE104.GUI
                 e.Handled = true; 
             }
         }
+
+      
     }
 }

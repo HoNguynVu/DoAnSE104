@@ -82,10 +82,7 @@ namespace DoAnSE104.GUI
             }));
         }
 
-        private void btnTiepNhanKhamBenh_Click_1(object sender, EventArgs e)
-        {
-            ShowFormInMainPanel(new GUI_TiepNhanKhamBenh());
-        }
+        
 
         private void btnCaiDat_Click(object sender, EventArgs e)
         {

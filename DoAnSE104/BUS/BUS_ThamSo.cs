@@ -25,7 +25,7 @@ namespace DoAnSE104.BUS
         {
             if (dalThamSo.CapNhatSoLuongBenhNhanToiDaTrongNgay(soLuongBenhNhanToiDaTrongNgay))
             {
-                MessageBox.Show("Cập nhật số lượng bệnh nhân tối đa trong ngày thành công.");
+               
             }
             else
             {
@@ -37,7 +37,7 @@ namespace DoAnSE104.BUS
         {
             if (dalThamSo.CapNhatTienKham(tienKhamCoDinh))
             {
-                MessageBox.Show("Cập nhật tiền khám cố định thành công.");
+                
             }
             else
             {
@@ -49,7 +49,7 @@ namespace DoAnSE104.BUS
         {
             if (dalThamSo.CapNhatQuyDinhSoLuongBenhNhan(quyDinhSoLuongBenhNhanToiDaTrongNgay))
             {
-                MessageBox.Show("Cập nhật quy định số lượng bệnh nhân tối đa trong ngày thành công.");
+
             }
             else
             {
@@ -61,7 +61,7 @@ namespace DoAnSE104.BUS
         {
             if (dalThamSo.CapNhatQuyDinhTienKham(quyDinhTienKhamCoDinh))
             {
-                MessageBox.Show("Cập nhật quy định tiền khám cố định thành công.");
+                
             }
             else
             {

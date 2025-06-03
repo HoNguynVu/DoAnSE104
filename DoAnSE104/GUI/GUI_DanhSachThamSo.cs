@@ -17,8 +17,31 @@ namespace DoAnSE104.GUI
         {
             try
             {
-                txtSoLuongBenhNhanToiDaTrongNgay.Text = BUS_ThamSo.SoLuongBenhNhanToiDaTrongNgay().ToString();
-                txtTienKhamCoDinh.Text = BUS_ThamSo.TienKhamCoDinh().ToString("F4");
+                if (BUS_ThamSo.QuyDinhSoLuongBenhNhanToiDaTrongNgay()) {
+                    QuyDinhSoLuongBenhNhanToiDaTrongNgay.Checked = true;
+                    txtSoLuongBenhNhanToiDaTrongNgay.Enabled = true;
+                    txtSoLuongBenhNhanToiDaTrongNgay.Text = BUS_ThamSo.SoLuongBenhNhanToiDaTrongNgay().ToString();
+                }
+                else
+                {
+                    QuyDinhSoLuongBenhNhanToiDaTrongNgay.Checked = false;
+                    txtSoLuongBenhNhanToiDaTrongNgay.Enabled = false;
+                    txtSoLuongBenhNhanToiDaTrongNgay.Text = string.Empty;
+
+                }
+                if (BUS_ThamSo.QuyDinhTienKhamCoDinh()) { 
+                    QuyDinhTienKhamCoDinh.Checked = true;
+                    txtTienKhamCoDinh.Enabled = true;
+                    txtTienKhamCoDinh.Text = BUS_ThamSo.TienKhamCoDinh().ToString("F4");
+
+                }
+                else
+                {
+                    QuyDinhTienKhamCoDinh.Checked = false;
+                    txtTienKhamCoDinh.Enabled = false;
+                    txtTienKhamCoDinh.Text = string.Empty;
+                }
+
             }
             catch (Exception ex)
             {
@@ -40,7 +63,9 @@ namespace DoAnSE104.GUI
                 {
                     // Disable the text box and clear its value
                     txtSoLuongBenhNhanToiDaTrongNgay.Enabled = false;
-                    txtSoLuongBenhNhanToiDaTrongNgay.Text = BUS_ThamSo.SoLuongBenhNhanToiDaTrongNgay().ToString();
+                    //txtSoLuongBenhNhanToiDaTrongNgay.Text = BUS_ThamSo.SoLuongBenhNhanToiDaTrongNgay().ToString();
+                    txtSoLuongBenhNhanToiDaTrongNgay.Text = string.Empty;
+
                 }
             }
             catch (Exception ex)
@@ -64,7 +89,8 @@ namespace DoAnSE104.GUI
                 {
                     // Disable the text box and clear its value
                     txtTienKhamCoDinh.Enabled = false;
-                    txtTienKhamCoDinh.Text = BUS_ThamSo.TienKhamCoDinh().ToString("F4");
+                    //txtTienKhamCoDinh.Text = BUS_ThamSo.TienKhamCoDinh().ToString("F4");
+                    txtTienKhamCoDinh.Text = string.Empty;
                 }
             }
             catch (Exception ex)
@@ -76,12 +102,11 @@ namespace DoAnSE104.GUI
         {
             try
             {
-                string slbn = txtSoLuongBenhNhanToiDaTrongNgay.Text.Trim();
-                string tien = txtTienKhamCoDinh.Text.Trim();
-                int soLuongBenhNhan = int.Parse(txtSoLuongBenhNhanToiDaTrongNgay.Text);
-                double tienKhamCoDinh = double.Parse(txtTienKhamCoDinh.Text);
                 if (QuyDinhSoLuongBenhNhanToiDaTrongNgay.Checked)
                 {
+                    string slbn = txtSoLuongBenhNhanToiDaTrongNgay.Text.Trim();
+                    int soLuongBenhNhan = int.Parse(txtSoLuongBenhNhanToiDaTrongNgay.Text);
+
                     if (string.IsNullOrEmpty(slbn))
                     {
                         MessageBox.Show("Vui lòng nhập số lượng bệnh nhân");
@@ -92,21 +117,36 @@ namespace DoAnSE104.GUI
                         MessageBox.Show("Số lượng bệnh nhân phải lớn hơn 0");
                         return;
                     }
+                    BUS_ThamSo.updateQuyDinhSoLuongBenhNhanToiDaTrongNgay(true);
                     BUS_ThamSo.updateSoLuongBenhNhanToiDaTrongNgay(soLuongBenhNhan);
-                }
-                if (QuyDinhTienKhamCoDinh.Checked)
+                } 
+                else 
                 {
-                    if (string.IsNullOrEmpty(tien))
+                    BUS_ThamSo.updateQuyDinhSoLuongBenhNhanToiDaTrongNgay(false);
+                    //BUS_ThamSo.updateSoLuongBenhNhanToiDaTrongNgay(0);
+                }
+
+                if (QuyDinhTienKhamCoDinh.Checked) 
+                {
+                    string tien = txtTienKhamCoDinh.Text.Trim();
+                    double tienKhamCoDinh = double.Parse(txtTienKhamCoDinh.Text);
+                    if (string.IsNullOrEmpty(tien)) 
                     {
                         MessageBox.Show("Vui lòng tiền khám cố định");
                         return;
                     }
-                    if(tienKhamCoDinh <= 1000)
+                    if (tienKhamCoDinh <= 1000) 
                     {
                         MessageBox.Show("Tiền khám cố định phải lớn hơn 1000");
                         return;
                     }
                     BUS_ThamSo.updateTienKhamCoDinh(tienKhamCoDinh);
+                    BUS_ThamSo.updateQuyDinhTienKhamCoDinh(true);
+                } 
+                else 
+                {
+                    BUS_ThamSo.updateQuyDinhTienKhamCoDinh(false);
+                    //BUS_ThamSo.updateTienKhamCoDinh(0);
                 }
 
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

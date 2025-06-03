@@ -105,8 +105,16 @@ namespace DoAnSE104.GUI
             dgvPhieuKham.RowsAdded += DgvChiTietThuoc_RowsAdded;
             dgvPhieuKham.CellValueChanged += DgvChiTietThuoc_CellValueChanged;
             dgvPhieuKham.EditingControlShowing += DgvChiTietThuoc_EditingControlShowing;
+            dgvPhieuKham.CurrentCellDirtyStateChanged += DgvPhieuKham_CurrentCellDirtyStateChanged;
         }
 
+        private void DgvPhieuKham_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dgvPhieuKham.IsCurrentCellDirty)
+            {
+                dgvPhieuKham.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
         private void LoadDanhSachThuoc()
         {
             try

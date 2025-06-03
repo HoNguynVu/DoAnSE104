@@ -20,9 +20,10 @@ namespace DoAnSE104.BUS
         {
             return dalThamSo.TienKhamCoDinh();
         }
+        //so luong
         public void updateSoLuongBenhNhanToiDaTrongNgay(int soLuongBenhNhanToiDaTrongNgay)
         {
-            if (dalThamSo.CapNhatQuyDinhSoLuongBenhNhan(soLuongBenhNhanToiDaTrongNgay))
+            if (dalThamSo.CapNhatSoLuongBenhNhanToiDaTrongNgay(soLuongBenhNhanToiDaTrongNgay))
             {
                 MessageBox.Show("Cập nhật số lượng bệnh nhân tối đa trong ngày thành công.");
             }
@@ -31,15 +32,40 @@ namespace DoAnSE104.BUS
                 MessageBox.Show("Cập nhật số lượng bệnh nhân tối đa trong ngày thất bại.");
             }
         }
+        // tien kham
         public void updateTienKhamCoDinh(double tienKhamCoDinh)
         {
-            if (dalThamSo.CapNhatQuyDinhTienKham(tienKhamCoDinh))
+            if (dalThamSo.CapNhatTienKham(tienKhamCoDinh))
             {
                 MessageBox.Show("Cập nhật tiền khám cố định thành công.");
             }
             else
             {
                 MessageBox.Show("Cập nhật tiền khám cố định thất bại.");
+            }
+        }
+        //quy dinh so luong
+        public void updateQuyDinhSoLuongBenhNhanToiDaTrongNgay(bool quyDinhSoLuongBenhNhanToiDaTrongNgay)
+        {
+            if (dalThamSo.CapNhatQuyDinhSoLuongBenhNhan(quyDinhSoLuongBenhNhanToiDaTrongNgay))
+            {
+                MessageBox.Show("Cập nhật quy định số lượng bệnh nhân tối đa trong ngày thành công.");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật quy định số lượng bệnh nhân tối đa trong ngày thất bại.");
+            }
+        }
+        //quy dinh tien kham
+        public void updateQuyDinhTienKhamCoDinh(bool quyDinhTienKhamCoDinh)
+        {
+            if (dalThamSo.CapNhatQuyDinhTienKham(quyDinhTienKhamCoDinh))
+            {
+                MessageBox.Show("Cập nhật quy định tiền khám cố định thành công.");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật quy định tiền khám cố định thất bại.");
             }
         }
         public bool QuyDinhSoLuongBenhNhanToiDaTrongNgay()
@@ -50,6 +76,5 @@ namespace DoAnSE104.BUS
         {
             return dalThamSo.QuyDinhTienKhamCoDinh();
         }
-        
     }
 }

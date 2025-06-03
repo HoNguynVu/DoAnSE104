@@ -10,9 +10,7 @@ namespace DoAnSE104.DAL
 {
     class DatabaseHelper
     {
-
         private string connectionString = "server=localhost;database=PhongKham;user=root;password=Quangvinh263@;";
-
         public MySqlConnection GetConnection()
         {
             return new MySqlConnection(connectionString);

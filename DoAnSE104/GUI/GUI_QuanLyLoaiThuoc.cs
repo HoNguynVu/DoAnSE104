@@ -9,7 +9,8 @@ using System.Drawing.Drawing2D;
 
 namespace DoAnSE104.GUI
 {
-    public partial class GUI_QuanLyLoaiThuoc : Form {
+    public partial class GUI_QuanLyLoaiThuoc : Form
+    {
         private BUS_LoaiThuoc BUS_LoaiThuoc = new BUS_LoaiThuoc();
         private BUS_DonVi BUS_DonVi = new BUS_DonVi();
         private BUS_CachDung BUS_CachDung = new BUS_CachDung();
@@ -21,6 +22,7 @@ namespace DoAnSE104.GUI
         private int hoverColIndex = -1;
         List<DTO_LoaiThuoc> danhSachLoaiThuoc;
         List<DTO_LoaiThuoc> danhSachLoaiThuocMoi = new List<DTO_LoaiThuoc>();
+        private Dictionary<string, double> changedPrices = new Dictionary<string, double>();
 
         public GUI_QuanLyLoaiThuoc()
         {
@@ -36,68 +38,51 @@ namespace DoAnSE104.GUI
             txtMaLoaiThuoc.Enabled = false;
 
             dgvDanhSachLoaiThuoc.CellClick += dgvDanhSachLoaiThuoc_CellClick;
+            dgvDanhSachLoaiThuoc.CellValueChanged += dgvDanhSachLoaiThuoc_CellValueChanged;
+            dgvDanhSachLoaiThuoc.CellEndEdit += dgvDanhSachLoaiThuoc_CellEndEdit;
         }
-        private void LoadDataDonVi() {
-            try {
+        private void LoadDataDonVi()
+        {
+            try
+            {
                 List<DTO_DonVi> danhSachDonVi = BUS_DonVi.LayDanhSachDonVi();
                 cbDonVi.Items.Clear();
-                foreach (DTO_DonVi donVi in danhSachDonVi) {
+                foreach (DTO_DonVi donVi in danhSachDonVi)
+                {
                     cbDonVi.Items.Add(donVi.tenDonVi);
                 }
-            } catch (Exception ex) {
-                MessageBox.Show($"Lỗi khi tải dữ liệu đơn vị: {ex.Message}", 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải dữ liệu đơn vị: {ex.Message}",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LoadDataCachDung() {
-            try {
+        private void LoadDataCachDung()
+        {
+            try
+            {
                 List<DTO_CachDung> danhSachCachDung = BUS_CachDung.LayDanhSachCachDung();
                 cbCachDung.Items.Clear();
-                foreach (DTO_CachDung cachDung in danhSachCachDung) {
+                foreach (DTO_CachDung cachDung in danhSachCachDung)
+                {
                     cbCachDung.Items.Add(cachDung.tenCachDung);
                 }
-            } catch (Exception ex) {
-                MessageBox.Show($"Lỗi khi tải dữ liệu cách dùng: {ex.Message}", 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải dữ liệu cách dùng: {ex.Message}",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void LoadData() {
-            if (dgvDanhSachLoaiThuoc.Columns.Count == 0) {
-                dgvDanhSachLoaiThuoc.Columns.Add("STT", "STT");
-                dgvDanhSachLoaiThuoc.Columns.Add("MaLoaiThuoc", "Mã loại thuốc");
-                dgvDanhSachLoaiThuoc.Columns.Add("TenLoaiThuoc", "Tên loại thuốc");
-                dgvDanhSachLoaiThuoc.Columns.Add("DonVi", "Đơn vị");
-                dgvDanhSachLoaiThuoc.Columns.Add("CachDung", "Cách dùng");
-                dgvDanhSachLoaiThuoc.Columns.Add("DonGia", "Đơn giá");
-
-                // Thêm cột button xóa
-                DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
-                btnXoa.HeaderText = "Xóa";
-                btnXoa.Text = "Xóa";
-                btnXoa.Name = "btnXoa";
-                btnXoa.UseColumnTextForButtonValue = true;
-                btnXoa.DefaultCellStyle.BackColor = Color.Red;
-                btnXoa.DefaultCellStyle.ForeColor = Color.White;
-                btnXoa.DefaultCellStyle.SelectionBackColor = Color.Red;  // Keep red even when selected
-                btnXoa.DefaultCellStyle.SelectionForeColor = Color.White; // Keep text white when selected
-                // Make the button look clickable
-                btnXoa.FlatStyle = FlatStyle.Flat;
-                dgvDanhSachLoaiThuoc.Columns.Add(btnXoa);
-
-                // Set cursor for the whole DataGridView
-                dgvDanhSachLoaiThuoc.CellMouseEnter += (sender, e) => {
-                    if (e.ColumnIndex == dgvDanhSachLoaiThuoc.Columns["btnXoa"].Index && e.RowIndex >= 0)
-                        dgvDanhSachLoaiThuoc.Cursor = Cursors.Hand;
-                };
-
-                dgvDanhSachLoaiThuoc.CellMouseLeave += (sender, e) => {
-                    dgvDanhSachLoaiThuoc.Cursor = Cursors.Default;
-                };
-            }
-
+        private void LoadData()
+        {
+            // Xóa các hàng hiện có mà không ảnh hưởng đến các cột
             dgvDanhSachLoaiThuoc.Rows.Clear();
+
             int stt = 0;
-            foreach (DTO_LoaiThuoc loaiThuoc in danhSachLoaiThuoc) {
+            foreach (DTO_LoaiThuoc loaiThuoc in danhSachLoaiThuoc)
+            {
                 string tenDonVi = BUS_LoaiThuoc.LayTenDonVi(loaiThuoc.maDonVi);
                 string cachDung = BUS_LoaiThuoc.LayTenCachDung(loaiThuoc.maCachDung);
 
@@ -111,19 +96,32 @@ namespace DoAnSE104.GUI
                 );
             }
 
+            // Chỉ cho phép chỉnh sửa cột Đơn giá
+            dgvDanhSachLoaiThuoc.Columns["donGiaItem"].ReadOnly = false;
+
+            foreach (DataGridViewColumn column in dgvDanhSachLoaiThuoc.Columns)
+            {
+                if (column.Name != "donGiaItem" && column.Name != "btnXoa")
+                {
+                    column.ReadOnly = true;
+                }
+            }
+
             dgvDanhSachLoaiThuoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDanhSachLoaiThuoc.AllowUserToAddRows = false;
-            dgvDanhSachLoaiThuoc.ReadOnly = true;
             dgvDanhSachLoaiThuoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-        private void LoadDataToGridView() {
-            try {
+        private void LoadDataToGridView()
+        {
+            try
+            {
                 danhSachLoaiThuoc = BUS_LoaiThuoc.LayDanhSachLoaiThuoc();
                 LoadData();
 
             }
-            catch (Exception ex) {
-                MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}", 
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -193,54 +191,64 @@ namespace DoAnSE104.GUI
             }
         }
 
-        private void txtTenLoaiThuoc_TextChanged(object sender, EventArgs e) {
+        private void txtTenLoaiThuoc_TextChanged(object sender, EventArgs e)
+        {
             tenLoaiThuoc = txtTenLoaiThuoc.Text.Trim();
         }
 
-        private void txtDonGia_TextChanged(object sender, EventArgs e) {
+        private void txtDonGia_TextChanged(object sender, EventArgs e)
+        {
             donGia = txtDonGia.Text.Trim();
         }
 
-        private void cbDonVi_SelectedIndexChanged(object sender, EventArgs e) {
+        private void cbDonVi_SelectedIndexChanged(object sender, EventArgs e)
+        {
             tenDonVi = cbDonVi.SelectedItem?.ToString() ?? string.Empty;
         }
 
-        private void cbCachDung_SelectedIndexChanged(object sender, EventArgs e) {
+        private void cbCachDung_SelectedIndexChanged(object sender, EventArgs e)
+        {
             tenCachDung = cbCachDung.SelectedItem?.ToString() ?? string.Empty;
         }
 
-        private void btnThemLoaiThuoc_Click(object sender, EventArgs e) {
-            try {
-                // Generate new medication code
+        private void btnThemLoaiThuoc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Tạo mã loại thuốc mới
                 string maLoaiThuocMoi = BUS_LoaiThuoc.LayMaLoaiThuocMoi(danhSachLoaiThuocMoi);
 
-                // Validate inputs
+                // Kiểm tra dữ liệu đầu vào
                 if (!string.IsNullOrWhiteSpace(tenLoaiThuoc) &&
                     !string.IsNullOrWhiteSpace(tenDonVi) &&
                     !string.IsNullOrWhiteSpace(tenCachDung) &&
-                    !string.IsNullOrWhiteSpace(donGia)) {
-                    // Convert price to double
-                    if (!double.TryParse(txtDonGia.Text.Trim(), out double donGia) || donGia <= 0) {
+                    !string.IsNullOrWhiteSpace(donGia))
+                {
+                    // Chuyển đổi giá thành double
+                    if (!double.TryParse(txtDonGia.Text.Trim(), out double donGia) || donGia <= 0)
+                    {
                         MessageBox.Show("Đơn giá không hợp lệ!",
                             "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
-                    // Find selected DonVi and CachDung objects
+                    // Tìm các đối tượng DonVi và CachDung đã chọn
                     DTO_DonVi selectedDonVi = BUS_DonVi.LayDanhSachDonVi()
                         .FirstOrDefault(d => d.tenDonVi == tenDonVi);
                     DTO_CachDung selectedCachDung = BUS_CachDung.LayDanhSachCachDung()
                         .FirstOrDefault(c => c.tenCachDung == tenCachDung);
 
-                    if (selectedDonVi == null || selectedCachDung == null) {
+                    if (selectedDonVi == null || selectedCachDung == null)
+                    {
                         MessageBox.Show("Đơn vị hoặc cách dùng không hợp lệ!",
                             "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
 
-                    // Create new drug type with the generated code
-                    DTO_LoaiThuoc newLoaiThuoc = new DTO_LoaiThuoc {
+                    // Tạo loại thuốc mới với mã được tạo
+                    DTO_LoaiThuoc newLoaiThuoc = new DTO_LoaiThuoc
+                    {
                         maLoaiThuoc = maLoaiThuocMoi,
                         tenLoaiThuoc = tenLoaiThuoc,
                         maDonVi = selectedDonVi.maDonVi,
@@ -248,12 +256,12 @@ namespace DoAnSE104.GUI
                         donGia = donGia
                     };
 
-                    // Add to the lists and refresh DataGridView
+                    // Thêm vào danh sách và làm mới DataGridView
                     danhSachLoaiThuoc.Add(newLoaiThuoc);
                     danhSachLoaiThuocMoi.Add(newLoaiThuoc);
                     ReloadDataToGridView();
 
-                    // Clear input fields
+                    // Xóa các trường nhập liệu
                     txtTenLoaiThuoc.Clear();
                     txtDonGia.Clear();
                     cbDonVi.SelectedIndex = -1;
@@ -262,63 +270,154 @@ namespace DoAnSE104.GUI
                     MessageBox.Show($"Thêm loại thuốc thành công! Mã loại thuốc mới: {maLoaiThuocMoi}",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else {
+                else
+                {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin loại thuốc!",
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
-            catch (Exception ex) {
-                MessageBox.Show($"Lỗi khi thêm loại thuốc: {ex.Message}", 
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi thêm loại thuốc: {ex.Message}",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public void ReloadDataToGridView() {
-            try {
+        public void ReloadDataToGridView()
+        {
+            try
+            {
                 LoadData();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void btnLuu_Click(object sender, EventArgs e) {
-            try {
-                if (danhSachLoaiThuocMoi.Count == 0) {
-                    MessageBox.Show("Không có loại thuốc mới để lưu!", 
-                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool hasChanges = false;
+
+                // Kiểm tra xem có loại thuốc mới nào cần lưu không
+                if (danhSachLoaiThuocMoi.Count > 0)
+                {
+                    hasChanges = true;
+                    var result = MessageBox.Show(
+                        $"Bạn có chắc muốn lưu {danhSachLoaiThuocMoi.Count} loại thuốc mới vào cơ sở dữ liệu?",
+                        "Xác nhận",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (result == DialogResult.Yes)
+                    {
+                        if (BUS_LoaiThuoc.ThemNhieuLoaiThuoc(danhSachLoaiThuocMoi))
+                        {
+                            MessageBox.Show("Đã lưu thành công tất cả loại thuốc mới vào cơ sở dữ liệu!",
+                                "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            danhSachLoaiThuocMoi.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể lưu một số loại thuốc mới. Vui lòng kiểm tra lại!",
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        return; // Người dùng hủy thao tác lưu
+                    }
                 }
 
-                var result = MessageBox.Show(
-                    $"Bạn có chắc muốn lưu {danhSachLoaiThuocMoi.Count} loại thuốc mới vào cơ sở dữ liệu?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                );
+                // Kiểm tra xem có thay đổi giá nào cần lưu không
+                if (changedPrices.Count > 0)
+                {
+                    hasChanges = true;
+                    var result = MessageBox.Show(
+                        $"Bạn có chắc muốn cập nhật đơn giá cho {changedPrices.Count} loại thuốc?",
+                        "Xác nhận",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
 
-                if (result == DialogResult.Yes) {
-                    if (BUS_LoaiThuoc.ThemNhieuLoaiThuoc(danhSachLoaiThuocMoi)) {
-                        MessageBox.Show("Đã lưu thành công tất cả loại thuốc mới vào cơ sở dữ liệu!", 
-                            "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
-                        danhSachLoaiThuocMoi.Clear();
-                        
-                        LoadDataToGridView();
+                    if (result == DialogResult.Yes)
+                    {
+                        int successCount = 0;
+                        List<string> failedItems = new List<string>();
+
+                        foreach (var item in changedPrices)
+                        {
+                            string maLoaiThuoc = item.Key;
+                            double donGiaMoi = item.Value;
+
+                            if (BUS_LoaiThuoc.CapNhatDonGia(maLoaiThuoc, donGiaMoi))
+                            {
+                                // Cập nhật giá trong danh sách cục bộ
+                                var loaiThuoc = danhSachLoaiThuoc.Find(t => t.maLoaiThuoc == maLoaiThuoc);
+                                if (loaiThuoc != null)
+                                {
+                                    loaiThuoc.donGia = donGiaMoi;
+                                }
+                                successCount++;
+                            }
+                            else
+                            {
+                                failedItems.Add(maLoaiThuoc);
+                            }
+                        }
+
+                        if (successCount == changedPrices.Count)
+                        {
+                            MessageBox.Show($"Đã cập nhật thành công đơn giá cho {successCount} loại thuốc!",
+                                "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            changedPrices.Clear();
+                        }
+                        else
+                        {
+                            string failedMessage = string.Join(", ", failedItems);
+                            MessageBox.Show($"Đã cập nhật {successCount}/{changedPrices.Count} loại thuốc.\nCác mã loại thuốc cập nhật không thành công: {failedMessage}",
+                                "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            // Xóa các cập nhật thành công khỏi từ điển changedPrices
+                            foreach (string maLoaiThuoc in failedItems)
+                            {
+                                changedPrices.Remove(maLoaiThuoc);
+                            }
+                        }
                     }
-                    else {
-                        MessageBox.Show("Không thể lưu một số loại thuốc. Vui lòng kiểm tra lại!", 
-                            "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        return; // Người dùng hủy việc cập nhật giá
                     }
+                }
+
+                if (!hasChanges)
+                {
+                    MessageBox.Show("Không có thay đổi nào để lưu!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Tải lại dữ liệu để làm mới giao diện và xóa đánh dấu
+                    LoadDataToGridView();
+                    // Đặt lại txt mã loại thuốc
+                    txtMaLoaiThuoc.Text = BUS_LoaiThuoc.LayMaLoaiThuocMoi(danhSachLoaiThuocMoi);
                 }
             }
-            catch (Exception ex) {
-                MessageBox.Show($"Lỗi khi lưu dữ liệu: {ex.Message}", 
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lưu dữ liệu: {ex.Message}",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnThoat_Click(object sender, EventArgs e) {
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
 
@@ -379,7 +478,10 @@ namespace DoAnSE104.GUI
                 int oldRow = hoverRowIndex, oldCol = hoverColIndex;
                 hoverRowIndex = -1;
                 hoverColIndex = -1;
-                dgvDanhSachLoaiThuoc.InvalidateCell(oldCol, oldRow);
+                if (oldRow >= 0 && oldCol >= 0 && oldRow < dgvDanhSachLoaiThuoc.RowCount && oldCol < dgvDanhSachLoaiThuoc.ColumnCount)
+                {
+                    dgvDanhSachLoaiThuoc.InvalidateCell(oldCol, oldRow);
+                }
             }
         }
 
@@ -391,6 +493,67 @@ namespace DoAnSE104.GUI
                 hoverRowIndex = -1;
                 hoverColIndex = -1;
                 dgvDanhSachLoaiThuoc.InvalidateCell(oldCol, oldRow);
+            }
+        }
+
+        private void dgvDanhSachLoaiThuoc_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Chỉ xử lý thay đổi đối với cột giá
+            if (e.RowIndex >= 0 && dgvDanhSachLoaiThuoc.Columns[e.ColumnIndex].Name == "donGiaItem")
+            {
+                try
+                {
+                    string maLoaiThuoc = dgvDanhSachLoaiThuoc.Rows[e.RowIndex].Cells["maLoaiThuocItem"].Value.ToString();
+                    string donGiaStr = dgvDanhSachLoaiThuoc.Rows[e.RowIndex].Cells["donGiaItem"].Value.ToString();
+
+                    // Xóa dấu phẩy phân cách hàng nghìn và phân tích
+                    donGiaStr = donGiaStr.Replace(",", "");
+
+                    if (double.TryParse(donGiaStr, out double donGiaMoi) && donGiaMoi > 0)
+                    {
+                        // Lưu vào từ điển changedPrices để lưu sau
+                        changedPrices[maLoaiThuoc] = donGiaMoi;
+
+                        // Đánh dấu hàng để chỉ ra thay đổi đang chờ xử lý
+                        dgvDanhSachLoaiThuoc.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightYellow;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đơn giá không hợp lệ! Vui lòng nhập số dương.",
+                            "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        // Khôi phục về giá trị ban đầu
+                        DTO_LoaiThuoc loaiThuoc = danhSachLoaiThuoc.Find(t => t.maLoaiThuoc == maLoaiThuoc);
+                        if (loaiThuoc != null)
+                        {
+                            dgvDanhSachLoaiThuoc.Rows[e.RowIndex].Cells["donGiaItem"].Value = loaiThuoc.donGia.ToString("N0");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi cập nhật đơn giá: {ex.Message}",
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dgvDanhSachLoaiThuoc_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            // Định dạng giá với dấu phẩy phân cách hàng nghìn sau khi chỉnh sửa
+            if (e.RowIndex >= 0 && dgvDanhSachLoaiThuoc.Columns[e.ColumnIndex].Name == "donGiaItem")
+            {
+                string donGiaStr = dgvDanhSachLoaiThuoc.Rows[e.RowIndex].Cells["donGiaItem"].Value?.ToString();
+                if (!string.IsNullOrEmpty(donGiaStr))
+                {
+                    // Xóa bất kỳ định dạng nào hiện có
+                    donGiaStr = donGiaStr.Replace(",", "");
+
+                    if (double.TryParse(donGiaStr, out double donGia))
+                    {
+                        dgvDanhSachLoaiThuoc.Rows[e.RowIndex].Cells["donGiaItem"].Value = donGia.ToString("N0");
+                    }
+                }
             }
         }
     }

@@ -82,5 +82,9 @@ namespace DoAnSE104.BUS
         {
             return DAL_LoaiThuoc.KiemTraLoaiThuocDangDuocSuDung(maLoaiThuoc);
         }
+        public bool CapNhatDonGia(string maLoaiThuoc, double donGia)
+        {
+            return DAL_LoaiThuoc.CapNhatDonGia(maLoaiThuoc, donGia);
+        }
     }
 }

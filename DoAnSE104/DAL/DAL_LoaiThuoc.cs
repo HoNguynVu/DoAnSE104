@@ -87,6 +87,22 @@ namespace DoAnSE104.DAL
 
             return false;
         }
-
+        public bool CapNhatDonGia(string maLoaiThuoc, double donGiaMoi)
+        {
+            try
+            {
+                string query = "UPDATE LOAITHUOC SET DonGia = @DonGia WHERE MaLoaiThuoc = @MaLoaiThuoc";
+                MySqlParameter[] parameters = new MySqlParameter[]
+                {
+            new MySqlParameter("@DonGia", donGiaMoi),
+            new MySqlParameter("@MaLoaiThuoc", maLoaiThuoc)
+                };
+                return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -118,6 +118,13 @@ namespace DoAnSE104.GUI
             cbbMaPhieuKhamTu.DisplayMember = "maKhamBenh";
             cbbMaPhieuKhamTu.ValueMember = "maKhamBenh";
             cbbMaPhieuKhamTu.SelectedIndex = 0;
+
+            List<DTO_KhamBenh> danhSachDen = BUS_KhamBenh.LayDanhSachKhamBenh();
+            danhSachDen.Insert(0, new DTO_KhamBenh { maKhamBenh = "" });
+            cbbMaPhieuKhamDen.DataSource = danhSachDen;
+            cbbMaPhieuKhamDen.DisplayMember = "maKhamBenh";
+            cbbMaPhieuKhamDen.ValueMember = "maKhamBenh";
+            cbbMaPhieuKhamDen.SelectedIndex = 0;
         }
 
         private void HienThiKetQua(List<DTO_BenhNhanTraCuu> danhSach)

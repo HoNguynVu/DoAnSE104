@@ -379,7 +379,10 @@ namespace DoAnSE104.GUI
                 int oldRow = hoverRowIndex, oldCol = hoverColIndex;
                 hoverRowIndex = -1;
                 hoverColIndex = -1;
-                dgvDanhSachLoaiThuoc.InvalidateCell(oldCol, oldRow);
+                if (oldRow >= 0 && oldCol >= 0 && oldRow < dgvDanhSachLoaiThuoc.RowCount && oldCol < dgvDanhSachLoaiThuoc.ColumnCount)
+                {
+                    dgvDanhSachLoaiThuoc.InvalidateCell(oldCol, oldRow);
+                }
             }
         }
 

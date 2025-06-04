@@ -18,7 +18,7 @@ namespace DoAnSE104.GUI
         public GUI_TiepNhanBenhNhan()
         {
             InitializeComponent();
-           
+
 
         }
 
@@ -68,6 +68,8 @@ namespace DoAnSE104.GUI
                 if (BUS_BenhNhan.ThemBenhNhan(newBenhNhan))
                 {
                     MessageBox.Show("Thêm bệnh nhân thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    ResetForm();
                 }
                 else
                 {
@@ -87,6 +89,14 @@ namespace DoAnSE104.GUI
             GUI_TraCuuBenhNhan traCuuForm = new GUI_TraCuuBenhNhan(homeForm);
             homeForm.ShowFormInMainPanel(traCuuForm);
             this.Close(); // Đóng form hiện tại nếu muốn
+        }
+        private void ResetForm()
+        {
+            txtHoTen.Clear();
+            txtGioiTinh.Clear();
+            txtNamSinh.Clear();
+            txtDiaChi.Clear();
+            LayMaBenhNhanMoi(); // Cập nhật mã bệnh nhân mới
         }
     }
 }

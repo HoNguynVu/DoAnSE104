@@ -57,7 +57,7 @@ namespace DoAnSE104.GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải danh sách loại bệnh: " + ex.Message, 
+                MessageBox.Show("Lỗi khi tải danh sách loại bệnh: " + ex.Message,
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -85,14 +85,14 @@ namespace DoAnSE104.GUI
             colDonVi.Name = "colDonVi";
             colDonVi.ReadOnly = true;
             colDonVi.Width = 100;
-            colDonVi.DefaultCellStyle.BackColor = Color.LightGray; 
+            colDonVi.DefaultCellStyle.BackColor = Color.LightGray;
 
             DataGridViewTextBoxColumn colCachDung = new DataGridViewTextBoxColumn();
             colCachDung.HeaderText = "Cách dùng";
             colCachDung.Name = "colCachDung";
             colCachDung.ReadOnly = true;
             colCachDung.Width = 200;
-            colCachDung.DefaultCellStyle.BackColor = Color.LightGray; 
+            colCachDung.DefaultCellStyle.BackColor = Color.LightGray;
 
             dgvPhieuKham.Columns.AddRange(new DataGridViewColumn[] {
                 colSTT,
@@ -149,7 +149,7 @@ namespace DoAnSE104.GUI
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
 
             var row = dgvPhieuKham.Rows[e.RowIndex];
-            
+
             if (e.ColumnIndex == dgvPhieuKham.Columns["colTenThuoc"].Index)
             {
                 row.Cells["colDonVi"].Value = "";
@@ -328,7 +328,7 @@ namespace DoAnSE104.GUI
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh!",
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }   
+            }
 
             string maKhamBenh = txtMaKhamBenh.Text.Trim();
 
@@ -403,7 +403,7 @@ namespace DoAnSE104.GUI
                             MessageBox.Show("Lập phiếu khám bệnh thành công!",
                                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.DialogResult = DialogResult.OK;
-                            //this.Close();
+                            ResetForm();
                         }
                         else
                         {
@@ -440,7 +440,7 @@ namespace DoAnSE104.GUI
                 {
                     string maLoaiThuoc = selectedValue.ToString();
                     var thuoc = danhSachLoaiThuoc.FirstOrDefault(t => t.maLoaiThuoc == maLoaiThuoc);
-                    
+
                     if (thuoc != null)
                     {
                         dgvPhieuKham.Rows[e.RowIndex].Cells["DonVi"].Value = thuoc.maDonVi;
@@ -458,8 +458,8 @@ namespace DoAnSE104.GUI
                 return;
             }
 
-            int lastNonNewRowIndex = dgvPhieuKham.Rows.Count - 2;  
-            
+            int lastNonNewRowIndex = dgvPhieuKham.Rows.Count - 2;
+
             if (lastNonNewRowIndex >= 0 && dgvPhieuKham.Rows[lastNonNewRowIndex].Cells["TenLoaiThuoc"].Value != null)
 
             {
@@ -473,7 +473,7 @@ namespace DoAnSE104.GUI
 
             if (string.IsNullOrEmpty(maKhamBenh))
             {
-                MessageBox.Show("Vui lòng nhập mã khám bệnh!", 
+                MessageBox.Show("Vui lòng nhập mã khám bệnh!",
                     "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaKhamBenh.Focus();
                 return;
@@ -484,13 +484,13 @@ namespace DoAnSE104.GUI
                 DTO_KhamBenh khamBenh = BUS_KhamBenh.LayThongTinKhamBenh(maKhamBenh);
                 if (khamBenh == null)
                 {
-                    MessageBox.Show("Không tìm thấy thông tin khám bệnh!", 
+                    MessageBox.Show("Không tìm thấy thông tin khám bệnh!",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
                 txtNgayKham.Text = khamBenh.ngayKham.ToString("dd/MM/yyyy");
-                
+
                 if (!string.IsNullOrEmpty(khamBenh.maLoaiBenh))
                 {
                     for (int i = 0; i < cbbLoaiBenh.Items.Count; i++)
@@ -525,7 +525,7 @@ namespace DoAnSE104.GUI
 
                         var index = dgvPhieuKham.Rows.Add();
                         var row = dgvPhieuKham.Rows[index];
-                        
+
                         row.Cells["colSTT"].Value = (index + 1).ToString();
                         row.Cells["colTenThuoc"].Value = thuoc.maLoaiThuoc;
                         row.Cells["colSoLuong"].Value = chiTiet.soLuongThuoc;
@@ -538,7 +538,7 @@ namespace DoAnSE104.GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tìm thông tin khám bệnh: " + ex.Message, 
+                MessageBox.Show("Lỗi khi tìm thông tin khám bệnh: " + ex.Message,
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -548,6 +548,17 @@ namespace DoAnSE104.GUI
             GUI_TraCuuBenhNhan traCuuForm = new GUI_TraCuuBenhNhan(homeForm);
             homeForm.ShowFormInMainPanel(traCuuForm);
             this.Close();
+        }
+        private void ResetForm()
+        {
+            txtMaKhamBenh.Clear();
+            txtNgayKham.Clear();
+            cbbLoaiBenh.SelectedIndex = -1;
+            txtTrieuChung.Clear();
+            txtTenBenhNhan.Clear();
+            dgvPhieuKham.Rows.Clear();
+            errorProvider1.Clear();
+            LoadDanhSachThuoc(); // Tải lại danh sách thuốc
         }
     }
 }

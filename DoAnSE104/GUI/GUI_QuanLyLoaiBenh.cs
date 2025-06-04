@@ -104,9 +104,10 @@ namespace DoAnSE104.GUI
 
             DTO_LoaiBenh loaiBenh = new DTO_LoaiBenh(ma, ten);
             dtLoaiBenh.Add(loaiBenh); // Add to the list only
-            MessageBox.Show("Thêm loại bệnh thành công!");
+            MessageBox.Show($"Đã thêm đơn vị thành công! Mã đơn vị: {ma}",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtTenLoaiBenh.Clear();
-            txtMaLoaiBenh.Text = busLoaiBenh.NextMaLoaiBenh(); // Generate new ID
+            txtMaLoaiBenh.Text = busLoaiBenh.NextMaLoaiBenh(dtLoaiBenh); // Generate new ID
             ReloadDataGridView(); // Refresh the DataGridView
         }
 
@@ -122,22 +123,57 @@ namespace DoAnSE104.GUI
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var btnXoaColumn = dgvDanhSachLoaiBenh.Columns["btnXoa"];
-            if (btnXoaColumn != null && e.ColumnIndex == btnXoaColumn.Index && e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && dgvDanhSachLoaiBenh.Columns[e.ColumnIndex].Name == "btnXoa")
             {
                 try
                 {
-                    string ma = dgvDanhSachLoaiBenh.Rows[e.RowIndex].Cells["MaLoaiBenh"].Value?.ToString();
-                    var confirm = MessageBox.Show($"Xóa loại bệnh có mã {ma}?", "Xác nhận", MessageBoxButtons.YesNo);
-                    if (confirm == DialogResult.Yes)
+                    string maLoaiBenh = dgvDanhSachLoaiBenh.Rows[e.RowIndex].Cells["MaLoaiBenh"].Value?.ToString();
+
+                    // Kiểm tra xem loại bệnh có trong danh sách mới không (chưa lưu vào DB)
+                    var loaiBenhMoi = dtLoaiBenh.FirstOrDefault(lb => lb.maLoaiBenh == maLoaiBenh &&
+                                                                       !dtLoaiBenhGoc.Any(goc => goc.maLoaiBenh == lb.maLoaiBenh));
+                    if (loaiBenhMoi != null)
                     {
-                        dtLoaiBenh.RemoveAll(lb => lb.maLoaiBenh == ma); // Remove from the list only
-                        ReloadDataGridView(); // Refresh the DataGridView
+                        dtLoaiBenh.Remove(loaiBenhMoi);
+                        ReloadDataGridView();
+                        MessageBox.Show("Đã xóa loại bệnh khỏi danh sách mới!",
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        // Kiểm tra xem loại bệnh đã được sử dụng chưa
+                        bool isUsed = busLoaiBenh.KiemTraLoaiBenhDangDuocSuDung(maLoaiBenh);
+                        if (isUsed)
+                        {
+                            MessageBox.Show("Không thể xóa loại bệnh này vì đang được sử dụng trong hồ sơ bệnh nhân!",
+                                "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        var confirm = MessageBox.Show("Bạn có chắc muốn xóa loại bệnh này khỏi cơ sở dữ liệu?",
+                            "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (confirm == DialogResult.Yes)
+                        {
+                            if (busLoaiBenh.XoaLoaiBenh(maLoaiBenh))
+                            {
+                                dtLoaiBenh.RemoveAll(lb => lb.maLoaiBenh == maLoaiBenh);
+                                dtLoaiBenhGoc.RemoveAll(lb => lb.maLoaiBenh == maLoaiBenh);
+                                ReloadDataGridView();
+                                MessageBox.Show("Đã xóa loại bệnh khỏi cơ sở dữ liệu!",
+                                    "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Xóa loại bệnh không thành công!",
+                                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi xóa loại thuốc: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Lỗi khi xóa loại bệnh: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -148,27 +184,30 @@ namespace DoAnSE104.GUI
             {
                 // THÊM mới: có trong dtLoaiBenh nhưng không có trong dtLoaiBenhGoc
                 var danhSachThem = dtLoaiBenh
-                    .Where(lb => !dtLoaiBenhGoc.Any(goc => goc.maLoaiBenh == lb.maLoaiBenh))
-                    .ToList();
+                .Where(lb =>
+                !dtLoaiBenhGoc.Any(goc => goc.maLoaiBenh == lb.maLoaiBenh) // chưa có trong DB
+                && !string.IsNullOrWhiteSpace(lb.tenLoaiBenh)) // vẫn còn trong danh sách hiện tại
+                .ToList();
 
-                // XÓA: có trong dtLoaiBenhGoc nhưng không còn trong dtLoaiBenh
-                var danhSachXoa = dtLoaiBenhGoc
-                    .Where(goc => !dtLoaiBenh.Any(lb => lb.maLoaiBenh == goc.maLoaiBenh))
-                    .ToList();
 
-                // Thực hiện thêm
-                foreach (var lb in danhSachThem)
+                if (danhSachThem.Count > 0)
                 {
-                    busLoaiBenh.ThemLoaiBenh(lb);
+                    foreach (var lb in danhSachThem)
+                    {
+                        busLoaiBenh.ThemLoaiBenh(lb);
+                    }
+                    MessageBox.Show("Lưu thành công vào cơ sở dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu mới để lưu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                // Thực hiện xóa
-                foreach (var lb in danhSachXoa)
-                {
-                    busLoaiBenh.XoaLoaiBenh(lb.maLoaiBenh);
-                }
 
-                MessageBox.Show("Lưu thành công vào cơ sở dữ liệu!");
+
+
+
+              
 
                 // Cập nhật danh sách gốc để tránh trùng lần sau
                 dtLoaiBenhGoc = new List<DTO_LoaiBenh>(dtLoaiBenh);

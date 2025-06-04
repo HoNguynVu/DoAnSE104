@@ -35,7 +35,7 @@ namespace DoAnSE104.BUS
             return cachDung != null ? cachDung.tenCachDung : maCachDung;
         }
 
-        public string LayMaLoaiThuocMoi(List<DTO_LoaiThuoc> danhSachThuocmoi = null)
+        public string LayMaLoaiThuocMoi(List<DTO_LoaiThuoc> danhSachThuocmoi)
         {
             var danhSach = (danhSachThuocmoi != null && danhSachThuocmoi.Count > 0)
                 ? danhSachThuocmoi

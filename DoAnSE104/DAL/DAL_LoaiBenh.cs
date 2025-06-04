@@ -92,5 +92,26 @@ namespace DoAnSE104.DAL
                 return "LB001";
             }
         }
-    }
+
+
+        public bool KiemTraLoaiBenhDangDuocSuDung(string maLoaiBenh)
+        {
+            try
+            {
+                // Kiểm tra trong bảng BENHNHAN
+                string query = @"SELECT COUNT(*) 
+                                FROM KHAMBENH  
+                                WHERE MaLoaiBenh = @MaLoaiBenh";
+                MySqlParameter[] parameters = new MySqlParameter[] {
+                    new MySqlParameter("@MaLoaiBenh", maLoaiBenh)
+                };
+                int count = Convert.ToInt32(DatabaseHelper.ExcuteScalar(query, parameters));
+                return count > 0;
+            }
+            catch
+            {
+                return false; // Nếu có lỗi, trả về false để đảm bảo an toàn
+            }
+        }
+    } 
 }

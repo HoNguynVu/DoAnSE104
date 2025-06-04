@@ -14,7 +14,7 @@ namespace DoAnSE104.GUI
 {
     public partial class GUI_QuanLyDonViTinh : Form
     {
-        private List<DTO_DonVi> danhSachCanXoa = new List<DTO_DonVi>();
+        private List<DTO_DonVi> danhSachDonVi = new List<DTO_DonVi>();
         private List<DTO_DonVi> danhSachTam = new List<DTO_DonVi>();
         BUS_DonVi BUS_DonVi = new BUS_DonVi();
 
@@ -81,7 +81,10 @@ namespace DoAnSE104.GUI
             {
                 if (e.RowIndex >= 0 && e.RowIndex < dgvDanhSachDonVi.Rows.Count)
                 {
-                    dgvDanhSachDonVi.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
+                    if (dgvDanhSachDonVi.Rows[e.RowIndex].Cells["STT"] != null)
+                    {
+                        dgvDanhSachDonVi.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
+                    }
                 }
             };
         }
@@ -155,10 +158,11 @@ namespace DoAnSE104.GUI
 
         private void TaiLai()
         {
-            dgvDanhSachDonVi.DataSource = BUS_DonVi.LayDanhSachDonVi();
+            danhSachDonVi = BUS_DonVi.LayDanhSachDonVi();
+            dgvDanhSachDonVi.DataSource = danhSachDonVi;
             dgvDanhSachDonVi.ClearSelection();
 
-            txtMaDonVi.Text = BUS_DonVi.TaoMaDonViMoi();
+            txtMaDonVi.Text = BUS_DonVi.TaoMaDonViMoi(danhSachTam);
             txtMaDonVi.Enabled = false; // Không cho phép sửa mã đơn vị
             txtTenDonVi.Clear();
         }
@@ -170,36 +174,52 @@ namespace DoAnSE104.GUI
 
         private void btnThemDonVi_Click_1(object sender, EventArgs e)
         {
-
-            string ten = txtTenDonVi.Text.Trim();
-
-            // Kiểm tra rỗng
-            if (string.IsNullOrEmpty(ten))
+            try
             {
-                MessageBox.Show("Vui lòng nhập tên đơn vị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                string maDonViMoi = BUS_DonVi.TaoMaDonViMoi(danhSachTam);
+                string tenDonVi = txtTenDonVi.Text.Trim();
 
-            // Kiểm tra chỉ chứa chữ cái
-            if (!Regex.IsMatch(ten, @"^[\p{L}\s]+$"))
+                if (string.IsNullOrWhiteSpace(tenDonVi))
+                {
+                    MessageBox.Show("Vui lòng nhập tên đơn vị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!Regex.IsMatch(tenDonVi, @"^[\p{L}\s]+$"))
+                {
+                    MessageBox.Show("Tên đơn vị chỉ được chứa chữ cái và khoảng trắng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Kiểm tra trùng tên
+                if (danhSachTam.Any(d => d.tenDonVi.Equals(tenDonVi, StringComparison.OrdinalIgnoreCase)) ||
+                    danhSachDonVi.Any(d => d.tenDonVi.Equals(tenDonVi, StringComparison.OrdinalIgnoreCase)))
+                {
+                    MessageBox.Show("Tên đơn vị đã tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DTO_DonVi donViMoi = new DTO_DonVi(maDonViMoi, tenDonVi);
+                danhSachTam.Add(donViMoi);
+
+                // Gộp lại để hiển thị: đơn vị từ DB + mới thêm
+                var danhSachHienThi = danhSachDonVi.Concat(danhSachTam).ToList();
+                dgvDanhSachDonVi.DataSource = null;
+                dgvDanhSachDonVi.DataSource = danhSachHienThi;
+                dgvDanhSachDonVi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                txtTenDonVi.Clear();
+                txtMaDonVi.Text = BUS_DonVi.TaoMaDonViMoi(danhSachTam);
+
+                MessageBox.Show($"Đã thêm đơn vị thành công! Mã đơn vị: {maDonViMoi}",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Tên đơn vị chỉ được chứa chữ cái và khoảng trắng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show("Lỗi khi thêm đơn vị: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            string ma = txtMaDonVi.Text.Trim(); // Lấy mã đơn vị từ ô nhập
-            string tenDv = txtTenDonVi.Text.Trim();
-            // Tạo đối tượng đơn vị mới và thêm vào danh sách tạm
-            DTO_DonVi donVi = new DTO_DonVi(ma, tenDv);
-            danhSachTam.Add(donVi);
-
-            // Cập nhật lại DataGridView
-            dgvDanhSachDonVi.DataSource = null;
-            dgvDanhSachDonVi.DataSource = danhSachTam;
-
-            // Reset
-            txtMaDonVi.Text = BUS_DonVi.TaoMaDonViMoi();
-            txtTenDonVi.Clear();
         }
+
 
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
@@ -215,25 +235,11 @@ namespace DoAnSE104.GUI
             }
 
             // Xóa các đơn vị đã được chọn xóa
-            int xoaThanhCong = 0;
-            foreach (DTO_DonVi donVi in danhSachCanXoa)
-            {
-                try
-                {
-                    if (BUS_DonVi.Xoa(donVi.maDonVi))
-                    {
-                        xoaThanhCong++;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Không thể xóa đơn vị {donVi.maDonVi}: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
+           
 
-            if (thanhCong > 0 || xoaThanhCong > 0)
+            if (thanhCong > 0)
             {
-                MessageBox.Show($"Đã lưu {thanhCong} đơn vị mới và xóa {xoaThanhCong} đơn vị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Đã lưu {thanhCong} đơn vị mới.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -242,7 +248,6 @@ namespace DoAnSE104.GUI
 
             // Clear danh sách tạm và load lại
             danhSachTam.Clear();
-            danhSachCanXoa.Clear();
             TaiLai();
         }
 
@@ -253,45 +258,74 @@ namespace DoAnSE104.GUI
 
         private void dgvDanhSachDonVi_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dgvDanhSachDonVi.Columns[e.ColumnIndex].Name == "ThaoTac")
+            if (e.ColumnIndex == dgvDanhSachDonVi.Columns["ThaoTac"].Index && e.RowIndex >= 0)
             {
-                string maDonVi = dgvDanhSachDonVi.Rows[e.RowIndex].Cells["MaDonVi"].Value?.ToString();
-
-                if (string.IsNullOrEmpty(maDonVi))
+                try
                 {
-                    MessageBox.Show("Không thể xác định mã đơn vị để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                    string maDonVi = dgvDanhSachDonVi.Rows[e.RowIndex].Cells["MaDonVi"].Value?.ToString();
 
-                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa đơn vị có mã {maDonVi} không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    // Tìm và xóa trong danh sách tạm nếu có
-                    DTO_DonVi donViCanXoa = danhSachTam.FirstOrDefault(d => d.maDonVi == maDonVi);
-                    if (donViCanXoa != null)
+                    if (string.IsNullOrWhiteSpace(maDonVi))
                     {
-                        danhSachTam.Remove(donViCanXoa);
+                        MessageBox.Show("Không thể xác định mã đơn vị để xóa.",
+                            "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    var donViMoi = danhSachTam.FirstOrDefault(d => d.maDonVi == maDonVi);
+                    if (donViMoi != null)
+                    {
+                        danhSachTam.Remove(donViMoi);
+
+                        // Gộp lại để hiển thị
+                        var danhSachHienThi = danhSachDonVi.Concat(danhSachTam).ToList();
+                        dgvDanhSachDonVi.DataSource = null;
+                        dgvDanhSachDonVi.DataSource = danhSachHienThi;
+
+                        MessageBox.Show("Đã xóa đơn vị khỏi danh sách mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        // Nếu không nằm trong danh sách tạm thì nằm trong DB -> thêm vào danh sách chờ xóa
-                        DTO_DonVi donViTuDB = BUS_DonVi.LayDanhSachDonVi().FirstOrDefault(d => d.maDonVi == maDonVi);
-                        if (donViTuDB != null)
+                        bool isUsed = BUS_DonVi.KiemTraDonViDangDuocSuDung(maDonVi);
+                        if (isUsed)
                         {
-                            danhSachCanXoa.Add(donViTuDB);
+                            MessageBox.Show("Không thể xóa đơn vị này vì đang được sử dụng!",
+                                "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        var result = MessageBox.Show(
+                            $"Bạn có chắc muốn xóa đơn vị có mã {maDonVi} khỏi cơ sở dữ liệu?",
+                            "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (BUS_DonVi.Xoa(maDonVi))
+                            {
+                                danhSachDonVi = BUS_DonVi.LayDanhSachDonVi();
+                                var danhSachHienThi = danhSachDonVi.Concat(danhSachTam).ToList();
+                                dgvDanhSachDonVi.DataSource = null;
+                                dgvDanhSachDonVi.DataSource = danhSachHienThi;
+
+                                MessageBox.Show("Đã xóa đơn vị khỏi cơ sở dữ liệu!",
+                                    "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không thể xóa đơn vị này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
-
-                    // Cập nhật danh sách tạm + dữ liệu từ DB (trừ các đơn vị đã chọn xóa)
-                    var danhSachHienThi = danhSachTam
-                        .Concat(BUS_DonVi.LayDanhSachDonVi().Where(d => !danhSachCanXoa.Any(x => x.maDonVi == d.maDonVi)))
-                        .ToList();
-
-                    dgvDanhSachDonVi.DataSource = null;
-                    dgvDanhSachDonVi.DataSource = danhSachHienThi;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi xóa đơn vị: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+
+
+
+
     }
 }

@@ -16,7 +16,7 @@ namespace DoAnSE104.DAL
         // Lấy danh sách đơn vị
         public List<DTO_DonVi> LayDanhSachDonVi()
         {
-            string query = "SELECT * FROM DONVI"; 
+            string query = "SELECT * FROM DONVI";
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
             List<DTO_DonVi> danhSachDonVi = new List<DTO_DonVi>();
 
@@ -89,16 +89,24 @@ namespace DoAnSE104.DAL
 
             if (dt.Rows.Count > 0)
             {
-                string maCuoi = dt.Rows[0]["MaDonVi"].ToString(); // VD: DV09
-                int so = int.Parse(maCuoi.Substring(2));          // Lấy số: 9
-                so++;                                              // +1 → 10
-                return "DV" + so.ToString("D3");                   // "DV10"
+                string lastID = dt.Rows[0]["MaDonVi"].ToString(); // VD: DV004
+                int number = int.Parse(lastID.Substring(2));
+                return "DV" + number.ToString("D3");
             }
             else
             {
-                return "DV01"; // Nếu chưa có mã nào
+                return "DV001";
             }
         }
 
-    }
+        public bool KiemTraDonViDangDuocSuDung(string maDonVi)
+        {
+            string query = "SELECT COUNT(*) FROM LOAITHUOC WHERE MaDonVi = @ma";
+            MySqlParameter[] parameters = {
+                new MySqlParameter("@ma", maDonVi)
+            };
+            int count = Convert.ToInt32(DatabaseHelper.ExcuteScalar(query, parameters));
+            return count > 0; // Trả về true nếu có ít nhất 1 bản ghi
+        }
+    } 
 }

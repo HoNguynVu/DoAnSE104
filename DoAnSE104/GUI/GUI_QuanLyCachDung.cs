@@ -96,7 +96,7 @@ namespace DoAnSE104.GUI {
 
                 // Xóa trường nhập
                 txtCachDung.Clear();
-
+                txtMaCachDung.Text = busCachDung.LayMaCachDungMoi(listCachDungMoi);
                 MessageBox.Show($"Thêm cách dùng thành công! Mã cách dùng mới: {maCachDungMoi}",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

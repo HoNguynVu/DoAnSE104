@@ -27,10 +27,32 @@ namespace DoAnSE104.BUS
             return DAL_DonVi.XoaDonVi(ma);
         }
 
-        public string TaoMaDonViMoi()
+        public string TaoMaDonViMoi(List<DTO_DonVi> danhSachTam)
         {
-            return DAL_DonVi.LayMaDonViMoi();
+            // Lấy mã mới nhất từ DB
+            string maCuoiDb = DAL_DonVi.LayMaDonViMoi(); // Ví dụ: DV008
+            int maxDb = int.Parse(maCuoiDb.Substring(2));
+
+            // Lấy mã cao nhất trong danh sách tạm (nếu có)
+            int maxTam = danhSachTam
+                .Select(dv => dv.maDonVi)
+                .Where(ma => ma.StartsWith("DV") && int.TryParse(ma.Substring(2), out _))
+                .Select(ma => int.Parse(ma.Substring(2)))
+                .DefaultIfEmpty(0)
+                .Max();
+
+            int next = Math.Max(maxDb, maxTam) + 1;
+
+            return "DV" + next.ToString("D3");
         }
 
-    }
+        public bool CapNhat(DTO_DonVi dvt)
+        {
+            return DAL_DonVi.CapNhatDonVi(dvt);
+        }
+        public bool KiemTraDonViDangDuocSuDung(string maDonVi)
+        {
+            return DAL_DonVi.KiemTraDonViDangDuocSuDung(maDonVi);
+        }
+    } 
 }

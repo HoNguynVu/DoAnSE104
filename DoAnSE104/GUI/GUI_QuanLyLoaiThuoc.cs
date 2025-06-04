@@ -262,6 +262,7 @@ namespace DoAnSE104.GUI
                     ReloadDataToGridView();
 
                     // Xóa các trường nhập liệu
+                    txtMaLoaiThuoc.Text = BUS_LoaiThuoc.LayMaLoaiThuocMoi(danhSachLoaiThuocMoi);
                     txtTenLoaiThuoc.Clear();
                     txtDonGia.Clear();
                     cbDonVi.SelectedIndex = -1;

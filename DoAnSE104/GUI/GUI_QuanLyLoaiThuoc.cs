@@ -146,20 +146,19 @@ namespace DoAnSE104.GUI
                         danhSachLoaiThuocMoi.Remove(thuocMoi);
                         danhSachLoaiThuoc.RemoveAll(t => t.maLoaiThuoc == maLoaiThuoc);
                         ReloadDataToGridView();
-                        MessageBox.Show("Đã xóa loại thuốc khỏi danh sách mới!", 
+                        MessageBox.Show("Đã xóa loại thuốc khỏi danh sách mới!",
                             "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         // Kiểm tra xem loại thuốc đã được sử dụng chưa
-                        if (BUS_LoaiThuoc.KiemTraLoaiThuocDangDuocSuDung(maLoaiThuoc))
+                        bool isBeingUsed = BUS_LoaiThuoc.KiemTraLoaiThuocDangDuocSuDung(maLoaiThuoc);
+                        if (isBeingUsed)
                         {
-                            MessageBox.Show("Không thể xóa loại thuốc này vì đang được sử dụng trong đơn thuốc!", 
+                            MessageBox.Show("Không thể xóa loại thuốc này vì đang được sử dụng trong đơn thuốc!",
                                 "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
-                        
-                        MessageBox.Show(BUS_LoaiThuoc.KiemTraLoaiThuocDangDuocSuDung(maLoaiThuoc).ToString()+maLoaiThuoc);
 
                         // Nếu chưa được sử dụng, hỏi xác nhận xóa
                         var result = MessageBox.Show(
@@ -175,12 +174,12 @@ namespace DoAnSE104.GUI
                             {
                                 danhSachLoaiThuoc.RemoveAll(t => t.maLoaiThuoc == maLoaiThuoc);
                                 ReloadDataToGridView();
-                                MessageBox.Show("Đã xóa loại thuốc khỏi cơ sở dữ liệu!", 
+                                MessageBox.Show("Đã xóa loại thuốc khỏi cơ sở dữ liệu!",
                                     "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
-                                MessageBox.Show("Không thể xóa loại thuốc này!", 
+                                MessageBox.Show("Không thể xóa loại thuốc này!",
                                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
@@ -188,7 +187,7 @@ namespace DoAnSE104.GUI
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi xóa loại thuốc: {ex.Message}", 
+                    MessageBox.Show($"Lỗi khi xóa loại thuốc: {ex.Message}",
                         "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
